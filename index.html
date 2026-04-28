@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude スキルアップ</title>
+  <link rel="stylesheet" href="css/style.css?v=22">
+</head>
+<body>
+  <!-- グローバルヘッダー -->
+  <header id="global-header">
+    <div class="header-inner">
+      <a href="#" class="header-logo" data-page="home">
+        <img src="assets/ehi-logo.png" alt="800" height="22">
+        <span>Claude スキルアップ</span>
+      </a>
+      <nav class="header-nav" id="header-nav">
+        <a href="#" class="header-nav-link active" data-page="home">ホーム</a>
+        <a href="#" class="header-nav-link" data-page="learn">学習コンテンツ</a>
+        <a href="#" class="header-nav-link" data-page="quiz-hub">クイズ</a>
+        <a href="#" class="header-nav-link" data-page="links">リンク集</a>
+        <a href="#" class="header-nav-link" data-page="faq">FAQ</a>
+      </nav>
+      <div class="header-right">
+        <div class="mode-toggle">
+          <button class="mode-btn" data-mode="present">研修モード</button>
+          <button class="mode-btn active" data-mode="self-study">自習モード</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main id="main-content">
+    <div id="page-container"></div>
+  </main>
+
+  <!-- フッター -->
+  <footer id="global-footer">
+    <div class="footer-inner">
+      <span>&copy; Eight Hundred, Inc.</span>
+      <div style="display:flex;gap:16px;align-items:center">
+        <button id="reset-progress" class="footer-link">進捗をリセット</button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/modules.js?v=22"></script>
+  <script src="js/quiz.js?v=22"></script>
+  <script src="js/app.js?v=22"></script>
+</body>
+</html>
