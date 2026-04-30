@@ -2336,7 +2336,7 @@ body.present-mode #page-container {
   width: 240px;
   flex-shrink: 0;
   background: var(--surface);
-  border-right: 1px solid var(--border);
+  border-left: 1px solid var(--border);
   padding: 16px 0;
   position: sticky;
   top: 60px;
@@ -2376,7 +2376,7 @@ body.present-mode #page-container {
   color: var(--text-secondary);
   cursor: pointer;
   line-height: 1.4;
-  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
 }
 
 .sidebar-item:hover {
@@ -2387,8 +2387,20 @@ body.present-mode #page-container {
 .sidebar-item.active {
   color: var(--primary);
   font-weight: 700;
-  border-left-color: var(--primary);
+  border-right-color: var(--primary);
   background: var(--primary-bg);
+}
+
+.sidebar-num {
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-size: 11px;
+  min-width: 24px;
+  display: inline-block;
+}
+
+.sidebar-item.active .sidebar-num {
+  color: var(--primary);
 }
 
 .present-main {

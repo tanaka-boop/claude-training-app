@@ -806,22 +806,24 @@
           </div>
         </div>
         <div class="present-body">
-          <aside class="present-sidebar${slideIdx === 0 ? ' hidden' : ''}" id="present-sidebar">
-            <div class="sidebar-cover-link" data-goto-slide="0">📋 表紙</div>
-            ${sideGroups.map(g => `
-              <div class="sidebar-group">
-                <div class="sidebar-group-label">${g.icon || ''} ${g.label}</div>
-                ${g.sections.map(si => `
-                  <div class="sidebar-item ${slideIdx === si + 1 ? 'active' : ''}" data-goto-slide="${si + 1}">
-                    ${mod.sections[si].title.replace(/^[A-D]-\d+\.\s*/, '')}
-                  </div>
-                `).join('')}
-              </div>
-            `).join('')}
-          </aside>
           <div class="present-main">
             <div class="slide-content">${slideContent}</div>
           </div>
+          <aside class="present-sidebar${slideIdx === 0 ? ' hidden' : ''}" id="present-sidebar">
+            <div class="sidebar-cover-link" data-goto-slide="0">← 表紙に戻る</div>
+            ${sideGroups.map(g => `
+              <div class="sidebar-group">
+                <div class="sidebar-group-label">${g.icon || ''} ${g.label}</div>
+                ${g.sections.map(si => {
+                  const num = mod.sections[si].title.match(/^[A-D]-(\d+)/);
+                  const label = mod.sections[si].title.replace(/^[A-D]-\d+\.\s*/, '');
+                  return `<div class="sidebar-item ${slideIdx === si + 1 ? 'active' : ''}" data-goto-slide="${si + 1}">
+                    <span class="sidebar-num">${num ? num[0] : si + 1}</span> ${label}
+                  </div>`;
+                }).join('')}
+              </div>
+            `).join('')}
+          </aside>
         </div>
         <div class="slide-nav">
           <button class="slide-nav-btn" id="slide-prev" ${slideIdx===0?'disabled':''}>
