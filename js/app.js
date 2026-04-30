@@ -773,9 +773,11 @@
               <div class="cover-group">
                 <div class="cover-group-label">${g.icon || ''} ${g.label}</div>
                 <div class="cover-group-items">
-                  ${g.sections.map(si => `
-                    <div class="cover-group-item" data-goto-slide="${si + 1}">${mod.sections[si].title.replace(/^[A-D]-\d+\.\s*/, '')}</div>
-                  `).join('')}
+                  ${g.sections.map(si => {
+                    const cNum = mod.sections[si].title.match(/^[A-D]-\d+/);
+                    const cLabel = mod.sections[si].title.replace(/^[A-D]-\d+\.\s*/, '');
+                    return `<div class="cover-group-item" data-goto-slide="${si + 1}"><span class="cover-item-num">${cNum ? cNum[0] : ''}</span>${cLabel}</div>`;
+                  }).join('')}
                 </div>
               </div>
             `).join('')}

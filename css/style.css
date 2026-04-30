@@ -2400,8 +2400,12 @@ body.present-mode #page-container {
   color: var(--primary);
 }
 
-.present-slide-view.has-sidebar .present-main {
-  margin-right: 248px;
+.present-slide-view.has-sidebar .slide-content {
+  padding-right: 252px;
+}
+
+.present-slide-view.has-sidebar .slide-nav {
+  padding-right: 252px;
 }
 
 .present-sidebar.hidden {
@@ -2451,6 +2455,14 @@ body.present-mode #page-container {
 .cover-group-item:hover {
   background: var(--primary-bg);
   color: var(--primary);
+}
+
+.cover-item-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  min-width: 30px;
+  display: inline-block;
 }
 
 /* --- 表紙 到達目標リスト --- */
