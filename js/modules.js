@@ -1794,21 +1794,25 @@ const MODULES = [
     selfStudyResources: {
       links: [
 
-        { title: 'Claude.ai（公式サイト）', url: 'https://claude.ai/', desc: 'Claudeのチャット・Coworkはここからアクセス', category: '公式' },
-        { title: 'Anthropic 公式ドキュメント', url: 'https://docs.anthropic.com/', desc: 'Claude の技術仕様・機能一覧・ベストプラクティス', category: '公式' },
-        { title: 'Claude プロンプトライブラリ', url: 'https://docs.anthropic.com/en/prompt-library/library', desc: '用途別のプロンプト例を多数掲載', category: '学習' },
-        { title: 'Anthropic Cookbook', url: 'https://github.com/anthropics/anthropic-cookbook', desc: '実践的なユースケースとコード例', category: '学習' },
-        { title: 'Claude Tips & Tricks（YouTube）', url: 'https://www.youtube.com/playlist?list=PLf2m23nhTg5VEz8sS0ORurJk3lBL7nB0V', desc: 'Anthropic 公式の使い方動画', category: '学習' },
-        { title: 'Claude デスクトップアプリ ダウンロード', url: 'https://claude.com/download', desc: 'Mac / Windows 対応', category: '公式' },
-        { title: 'Claude Code ドキュメント', url: 'https://docs.anthropic.com/en/docs/claude-code', desc: 'Claude Code の導入・使い方ガイド', category: '公式' },
-        
-        { title: 'Claude プロジェクト 公式ガイド', url: 'https://support.claude.com/', desc: 'プロジェクトの作成・管理・共有方法', category: '公式' },
-        { title: 'Claude アーティファクトガイド', url: 'https://support.claude.com/', desc: 'アーティファクトの種類・共有・公開方法', category: '公式' },
-        { title: 'Claude Skills ドキュメント', url: 'https://docs.anthropic.com/', desc: 'Skills の作成・管理・組織展開', category: '公式' },
-        { title: 'MCP（Model Context Protocol）', url: 'https://docs.anthropic.com/en/docs/agents-and-tools/model-context-protocol', desc: 'MCP の仕様・設定方法', category: '公式' },
-        { title: 'Claude リサーチ', url: 'https://support.claude.com/', desc: 'リサーチ の使い方・プロンプトのコツ', category: '公式' },
-        { title: 'Claude in Office', url: 'https://support.claude.com/', desc: 'Excel / PowerPoint / Word アドインの設定', category: '公式' },
-        { title: 'Claude in Chrome', url: 'https://support.claude.com/', desc: 'Chrome 拡張機能の使い方', category: '公式' }
+        { title: 'Claude.ai（公式サイト）', url: 'https://claude.ai/', desc: 'Claudeのチャット・Coworkはここからアクセス', category: '🚀 はじめる' },
+        { title: 'Claude デスクトップアプリ ダウンロード', url: 'https://claude.com/download', desc: 'Mac / Windows 対応', category: '🚀 はじめる' },
+
+        { title: 'Claude プロンプトライブラリ', url: 'https://docs.anthropic.com/en/prompt-library/library', desc: '用途別のプロンプト例を多数掲載', category: '📖 プロンプトを学ぶ' },
+        { title: 'Claude Tips & Tricks（YouTube）', url: 'https://www.youtube.com/playlist?list=PLf2m23nhTg5VEz8sS0ORurJk3lBL7nB0V', desc: 'Anthropic 公式の使い方動画', category: '📖 プロンプトを学ぶ' },
+        { title: 'Anthropic Cookbook', url: 'https://github.com/anthropics/anthropic-cookbook', desc: '実践的なユースケースとコード例', category: '📖 プロンプトを学ぶ' },
+
+        { title: 'Claude in Office', url: 'https://support.claude.com/', desc: 'Excel / PowerPoint / Word アドインの設定', category: '💼 Officeで使う' },
+        { title: 'Claude in Chrome', url: 'https://support.claude.com/', desc: 'Chrome 拡張機能の使い方', category: '💼 Officeで使う' },
+
+        { title: 'Claude Code ドキュメント', url: 'https://docs.anthropic.com/en/docs/claude-code', desc: 'Claude Code の導入・使い方ガイド', category: '🔧 Claude Codeで使う' },
+        { title: 'Claude Skills ドキュメント', url: 'https://docs.anthropic.com/', desc: 'Skills の作成・管理・組織展開', category: '🔧 Claude Codeで使う' },
+
+        { title: 'MCP（Model Context Protocol）', url: 'https://docs.anthropic.com/en/docs/agents-and-tools/model-context-protocol', desc: 'MCP の仕様・設定方法', category: '🔗 外部ツールと連携する' },
+
+        { title: 'Anthropic 公式ドキュメント', url: 'https://docs.anthropic.com/', desc: 'Claude の技術仕様・機能一覧・ベストプラクティス', category: '📚 公式リファレンス' },
+        { title: 'Claude プロジェクト 公式ガイド', url: 'https://support.claude.com/', desc: 'プロジェクトの作成・管理・共有方法', category: '📚 公式リファレンス' },
+        { title: 'Claude アーティファクトガイド', url: 'https://support.claude.com/', desc: 'アーティファクトの種類・共有・公開方法', category: '📚 公式リファレンス' },
+        { title: 'Claude リサーチ', url: 'https://support.claude.com/', desc: 'リサーチ の使い方・プロンプトのコツ', category: '📚 公式リファレンス' }
       ],
       faq: [
         
@@ -3133,17 +3137,18 @@ const MODULES = [
     selfStudyResources: {
       links: [
         
-        { title: 'Cowork 公式ドキュメント', url: 'https://docs.anthropic.com/en/docs/cowork', desc: 'Cowork の公式ガイド', category: '公式' },
-        { title: 'Claude Desktop ダウンロード', url: 'https://claude.ai/download', desc: 'Cowork を使うためのデスクトップアプリ', category: 'ツール' },
-        { title: 'MCP 公式', url: 'https://modelcontextprotocol.io/', desc: 'MCP の仕様・対応サービス一覧', category: '公式' },
-        { title: 'Anthropic ブログ', url: 'https://www.anthropic.com/blog', desc: '最新アップデート・事例', category: '学習' },
-        
-        { title: 'Claude Code 公式ドキュメント', url: 'https://docs.anthropic.com/en/docs/claude-code', desc: 'Claude Code の公式ガイド', category: '公式' },
-        { title: 'Claude Code ベストプラクティス', url: 'https://docs.anthropic.com/en/docs/claude-code/best-practices', desc: '効果的な Claude Code の使い方', category: '学習' },
-        { title: 'Claude Skills ガイド', url: 'https://docs.anthropic.com/en/docs/claude-code/skills', desc: 'Skills の作成方法', category: '学習' },
-        { title: 'MCP 公式', url: 'https://modelcontextprotocol.io/', desc: 'MCP の仕様・対応サービス一覧', category: '公式' },
-        { title: 'MCP サーバー一覧', url: 'https://github.com/modelcontextprotocol/servers', desc: 'Slack・Drive・Notion 等の対応一覧', category: 'ツール' },
-        { title: 'Anthropic ブログ', url: 'https://www.anthropic.com/blog', desc: '最新アップデート・事例', category: '学習' }
+        { title: 'Claude Desktop ダウンロード', url: 'https://claude.ai/download', desc: 'Cowork を使うためのデスクトップアプリ', category: '🚀 はじめる' },
+
+        { title: 'Cowork 公式ドキュメント', url: 'https://docs.anthropic.com/en/docs/cowork', desc: 'Cowork の公式ガイド', category: '💼 Officeで使う' },
+
+        { title: 'Claude Code 公式ドキュメント', url: 'https://docs.anthropic.com/en/docs/claude-code', desc: 'Claude Code の公式ガイド', category: '🔧 Claude Codeで使う' },
+        { title: 'Claude Code ベストプラクティス', url: 'https://docs.anthropic.com/en/docs/claude-code/best-practices', desc: '効果的な Claude Code の使い方', category: '🔧 Claude Codeで使う' },
+        { title: 'Claude Skills ガイド', url: 'https://docs.anthropic.com/en/docs/claude-code/skills', desc: 'Skills の作成方法', category: '🔧 Claude Codeで使う' },
+
+        { title: 'MCP 公式', url: 'https://modelcontextprotocol.io/', desc: 'MCP の仕様・対応サービス一覧', category: '🔗 外部ツールと連携する' },
+        { title: 'MCP サーバー一覧', url: 'https://github.com/modelcontextprotocol/servers', desc: 'Slack・Drive・Notion 等の対応一覧', category: '🔗 外部ツールと連携する' },
+
+        { title: 'Anthropic ブログ', url: 'https://www.anthropic.com/blog', desc: '最新アップデート・事例', category: '📚 公式リファレンス' }
       ],
       faq: [
         

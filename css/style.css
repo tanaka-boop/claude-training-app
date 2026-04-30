@@ -41,6 +41,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 body {
@@ -2489,9 +2490,10 @@ body.present-mode #page-container:has(.slide-cover) {
   position: fixed;
   right: 12px;
   top: calc(var(--header-height) + 8px);
-  width: 200px;
+  width: 240px;
   max-height: calc(100vh - var(--header-height) - 80px);
   overflow-y: auto;
+  scrollbar-gutter: stable;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -2525,7 +2527,7 @@ body.present-mode #page-container:has(.slide-cover) {
 }
 
 .sidebar-group-label {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
   color: var(--primary);
   text-transform: uppercase;
@@ -4304,6 +4306,19 @@ body.landing-mode #global-footer {
   font-size: 13px;
   color: var(--text-secondary);
   margin: 0;
+  line-height: 1.6;
+}
+
+.visual-step-item .step-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.visual-step-item .step-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 

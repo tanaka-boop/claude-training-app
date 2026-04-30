@@ -42,9 +42,19 @@
 
   // --- ヘルパー ---
   function getAllLinks() {
+    const categoryOrder = ['🚀 はじめる', '📖 プロンプトを学ぶ', '💼 Officeで使う', '🔧 Claude Codeで使う', '🔗 外部ツールと連携する', '📚 公式リファレンス'];
+    const seen = new Set();
     const links = [];
     MODULES.forEach(mod => {
-      (mod.selfStudyResources?.links || []).forEach(l => links.push({ ...l, session: mod.shortTitle }));
+      (mod.selfStudyResources?.links || []).forEach(l => {
+        const key = l.url + l.title;
+        if (!seen.has(key)) { seen.add(key); links.push({ ...l, session: mod.shortTitle }); }
+      });
+    });
+    links.sort((a, b) => {
+      const ai = categoryOrder.indexOf(a.category);
+      const bi = categoryOrder.indexOf(b.category);
+      return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
     });
     return links;
   }
