@@ -774,11 +774,12 @@
                 <div class="cover-group-label">${g.icon || ''} ${g.label}</div>
                 <div class="cover-group-items">
                   ${g.sections.map(si => {
-                    const cNum = mod.sections[si].title.match(/^[A-D]-\d+/);
-                    const cLabel = mod.sections[si].title.replace(/^[A-D]-\d+\.\s*/, '');
+                    const cNum = mod.sections[si].title.match(/^\d+-\d+/);
+                    const cLabel = mod.sections[si].title.replace(/^\d+-\d+\.\s*/, '');
                     return `<div class="cover-group-item" data-goto-slide="${si + 1}"><span class="cover-item-num">${cNum ? cNum[0] : ''}</span>${cLabel}</div>`;
                   }).join('')}
                 </div>
+                ${g.objectives ? `<div class="cover-group-objectives">${g.objectives.map(o => `<div class="cover-obj-item">✓ ${o}</div>`).join('')}</div>` : ''}
               </div>
             `).join('')}
           </div>

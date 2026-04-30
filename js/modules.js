@@ -28,10 +28,10 @@ const MODULES = [
       'Office アドイン（Excel / PowerPoint / Word）を業務で使い倒せる'
     ],
     coverGroups: [
-      { label: 'Claudeを知る', icon: '💡', sections: [0, 1, 2, 3, 4] },
-      { label: 'ワークスペースを作る', icon: '🏗️', sections: [5, 6] },
-      { label: '品質を安定させる', icon: '🎯', sections: [7, 8, 9] },
-      { label: '活用の幅を広げる', icon: '🚀', sections: [10, 11, 12] }
+      { label: 'Claudeを知る', icon: '💡', sections: [0, 1, 2, 3, 4], objectives: ['Claudeが何者か、ChatGPT/Geminiと何が違うかを説明できる', 'プロンプト3要素で的確に指示が出せる', '3モードを場面に応じて選べる', '業務PCでClaudeを使い始められる'] },
+      { label: 'ワークスペースを作る', icon: '🏗️', sections: [5, 6], objectives: ['Projectで案件ごとに「自分用Claude」を作れる', 'Artifactで成果物を独立した形で生成・共有できる'] },
+      { label: '品質を安定させる', icon: '🎯', sections: [7, 8, 9], objectives: ['Skillsでクライアント標準を覚えさせられる', 'MCPで社内ツールと安全に連携できる', 'Enterprise Searchの位置づけを理解する'] },
+      { label: '活用の幅を広げる', icon: '🚀', sections: [10, 11, 12], objectives: ['Research modeで多段リサーチを走らせられる', 'Officeアドインを業務で使いこなせる', 'Chrome/Slackの補助インターフェースを使える'] }
     ],
     sections: [
       
@@ -2078,13 +2078,13 @@ const MODULES = [
       'Hooks で deterministic な制御ができる'
     ],
     coverGroups: [
-      { label: 'Coworkを始める', icon: '🚀', sections: [0, 1, 2] },
-      { label: '環境を整える', icon: '🏗️', sections: [3, 4, 5] },
-      { label: '業務で使い倒す', icon: '💼', sections: [6, 7, 8, 9] },
-      { label: 'Claude Codeの基礎', icon: '💡', sections: [10, 11, 12] },
-      { label: 'ワークフローを回す', icon: '🔄', sections: [13, 14] },
-      { label: '品質を制御する', icon: '🎯', sections: [15, 16, 17] },
-      { label: '拡張する', icon: '🔧', sections: [18, 19, 20] }
+      { label: 'Coworkを始める', icon: '🚀', sections: [0, 1, 2], objectives: ['「対話」から「委任」へ発想転換できる', 'タスクループを回せる'] },
+      { label: '環境を整える', icon: '🏗️', sections: [3, 4, 5], objectives: ['Cowork Projectで文脈を永続化できる', 'Pluginで職種特化バンドルを使える', 'Scheduled tasksで定型業務を自動化できる'] },
+      { label: '業務で使い倒す', icon: '💼', sections: [6, 7, 8, 9], objectives: ['大量ファイル処理・並列分析を委任できる', '利用量・モデル選択を意識して効率的に使える'] },
+      { label: 'Claude Codeの基礎', icon: '💡', sections: [10, 11, 12], objectives: ['Claude Codeの仕組みを理解する', '4タッチポイントを使い分けられる'] },
+      { label: 'ワークフローを回す', icon: '🔄', sections: [13, 14], objectives: ['Explore→Plan→Code→Commitで安全に進められる', 'Context管理で長時間セッションを維持できる'] },
+      { label: '品質を制御する', icon: '🎯', sections: [15, 16, 17], objectives: ['CLAUDE.mdでルールを永続化できる', 'Skillsで再利用可能な手順を定義できる', 'Subagentsで並列・専門化できる'] },
+      { label: '拡張する', icon: '🔧', sections: [18, 19, 20], objectives: ['MCPで外部ツールと連携できる', 'Hooksで確実に実行されるルールを設定できる'] }
     ],
     sections: [
       
