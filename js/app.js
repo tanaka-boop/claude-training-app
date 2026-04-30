@@ -140,7 +140,6 @@
         case 'links': renderLinks(container); break;
         case 'faq': renderFaq(container); break;
         case 'quiz-hub': renderQuizHub(container); break;
-        case 'setup': renderSetup(container); break;
         case 'module': renderModule(container, moduleIndex); break;
         case 'quiz': renderQuiz(container, moduleIndex); break;
         case 'final-test': renderFinalTest(container); break;
@@ -311,15 +310,6 @@
             <div>
               <h4>FAQ</h4>
               <p>よくある質問と回答 (${totalFaqs}件)</p>
-            </div>
-          </div>
-          <div class="home-sub-card" data-nav="setup">
-            <div class="sub-icon">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 00-2 2v.18a2 2 0 01-1 1.73l-.43.25a2 2 0 01-2 0l-.15-.08a2 2 0 00-2.73.73l-.22.38a2 2 0 00.73 2.73l.15.1a2 2 0 011 1.72v.51a2 2 0 01-1 1.74l-.15.09a2 2 0 00-.73 2.73l.22.38a2 2 0 002.73.73l.15-.08a2 2 0 012 0l.43.25a2 2 0 011 1.73V20a2 2 0 002 2h.44a2 2 0 002-2v-.18a2 2 0 011-1.73l.43-.25a2 2 0 012 0l.15.08a2 2 0 002.73-.73l.22-.39a2 2 0 00-.73-2.73l-.15-.08a2 2 0 01-1-1.74v-.5a2 2 0 011-1.74l.15-.09a2 2 0 00.73-2.73l-.22-.38a2 2 0 00-2.73-.73l-.15.08a2 2 0 01-2 0l-.43-.25a2 2 0 01-1-1.73V4a2 2 0 00-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-            <div>
-              <h4>初期セットアップ</h4>
-              <p>Google Drive 同期の設定手順</p>
             </div>
           </div>
         </div>
@@ -666,81 +656,6 @@
   }
 
   // --- セットアップ ---
-  function renderSetup(container) {
-    container.innerHTML = `
-      <div class="fade-in">
-        <div class="page-header">
-          <h1>研修アプリの開き方</h1>
-          <p>Google Drive for Desktop 経由で、常に最新版の研修アプリを開けます。</p>
-        </div>
-        <div class="setup-guide">
-
-          <div class="setup-section">
-
-            <div class="setup-step"><div class="setup-step-number">1</div><div class="setup-step-content">
-              <h3>共有リンクを開き、ショートカットを追加</h3>
-              <p class="setup-step-sub">講師から届いた共有リンクをブラウザで開きます。</p>
-              <div class="ui-mock">
-                <div class="ui-mock-titlebar">
-                  <div class="mock-dots"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
-                  <div class="mock-url">drive.google.com/drive/folders/xxxxx</div>
-                </div>
-                <div class="ui-mock-toolbar">
-                  <span style="font-weight:600;color:#3c4043;">Claude Skill Up</span>
-                  <span style="margin-left:auto;"></span>
-                  <span class="mock-btn">⋮</span>
-                </div>
-                <div class="ui-mock-body" style="padding:12px 16px;">
-                  <div style="font-size:12px;color:#5f6368;margin-bottom:6px;">フォルダを右クリック、または「⋮」メニュー</div>
-                  <div class="ui-mock-dropdown">
-                    <div class="mock-dropdown-item">共有</div>
-                    <div class="mock-dropdown-item highlight">ドライブへのショートカットを追加</div>
-                    <div class="mock-dropdown-item">ダウンロード</div>
-                  </div>
-                  <p style="font-size:11px;color:#5f6368;margin-top:10px;">→「マイドライブ」を選択して追加</p>
-                </div>
-              </div>
-            </div></div>
-
-            <div class="setup-step"><div class="setup-step-number">2</div><div class="setup-step-content">
-              <h3>エクスプローラーで START.html を開く</h3>
-              <p class="setup-step-sub">ショートカットを追加すると、PCのエクスプローラーに自動同期されます。</p>
-              <div class="ui-mock">
-                <div class="ui-mock-explorer">
-                  <div class="ui-mock-explorer-bar">
-                    <span>📁</span>
-                    <div class="mock-path">PC &gt; Google Drive (G:) &gt; マイドライブ &gt; Claude Skill Up</div>
-                  </div>
-                  <div class="ui-mock-file-list">
-                    <div class="ui-mock-file">
-                      <span class="file-icon">📁</span> <span>assets</span>
-                    </div>
-                    <div class="ui-mock-file">
-                      <span class="file-icon">📁</span> <span>css</span>
-                    </div>
-                    <div class="ui-mock-file">
-                      <span class="file-icon">📁</span> <span>js</span>
-                    </div>
-                    <div class="ui-mock-file highlight">
-                      <span class="file-icon">🌐</span>
-                      <span>START.html</span>
-                      <span style="margin-left:auto;font-size:11px;font-weight:400;color:#d93025;">← ダブルクリックで開く</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p style="font-size:11px;color:var(--text-secondary);margin-top:8px;">※ ブラウザが起動し、研修アプリが表示されます。次回以降も同じ手順で開けます</p>
-            </div></div>
-
-            <div class="info-box" style="margin-top:16px;">
-              <strong>自動更新について</strong><br>
-              講師がファイルを更新すると、Google Drive 経由で自動的に最新版に同期されます。特別な操作は不要です。
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-  }
 
   // --- クイズ ---
   function renderQuiz(container, moduleIndex) {
