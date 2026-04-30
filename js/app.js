@@ -807,11 +807,9 @@
             `).join('')}
           </div>
         </div>
-        <div class="present-body">
-          <div class="present-main">
-            <div class="slide-content">${slideContent}</div>
-          </div>
-          <aside class="present-sidebar${slideIdx === 0 ? ' hidden' : ''}" id="present-sidebar">
+        <div class="slide-area">
+          <div class="slide-content">${slideContent}</div>
+          ${slideIdx !== 0 ? `<aside class="present-sidebar" id="present-sidebar">
             <div class="sidebar-cover-link" data-goto-slide="0">← 表紙に戻る</div>
             ${sideGroups.map(g => `
               <div class="sidebar-group">
@@ -825,7 +823,7 @@
                 }).join('')}
               </div>
             `).join('')}
-          </aside>
+          </aside>` : ''}
         </div>
         <div class="slide-nav">
           <button class="slide-nav-btn" id="slide-prev" ${slideIdx===0?'disabled':''}>

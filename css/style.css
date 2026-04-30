@@ -2326,19 +2326,28 @@ body.present-mode #page-container {
 }
 
 /* --- 研修モード サイドバー --- */
+.present-slide-view.has-sidebar .slide-area {
+  display: flex;
+  gap: 0;
+  align-items: flex-start;
+}
+
+.present-slide-view.has-sidebar .slide-area .slide-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .present-sidebar {
-  position: fixed;
-  right: 16px;
-  top: 72px;
-  width: 220px;
-  max-height: calc(100vh - 150px);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  padding: 12px 0;
+  width: 200px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 60px;
+  max-height: calc(100vh - 80px);
   overflow-y: auto;
-  z-index: 90;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  padding: 12px 0;
+  font-size: 13px;
 }
 
 .sidebar-cover-link {
@@ -2400,13 +2409,6 @@ body.present-mode #page-container {
   color: var(--primary);
 }
 
-.present-slide-view.has-sidebar .slide-content {
-  padding-right: 252px;
-}
-
-.present-slide-view.has-sidebar .slide-nav {
-  padding-right: 252px;
-}
 
 .present-sidebar.hidden {
   display: none;
