@@ -1,17 +1,17 @@
-﻿// ========================================
+// ========================================
 // Claude 研修アプリ - 学習コンテンツデータ
 // 実践型カリキュラム: チャット・Cowork・Claude Code
 // ========================================
 
 const MODULES = [
   // ============================================================
-  // Level A：導入
+  // 第1回：Claudeを理解し、Chatを使いこなす
   // ============================================================
   {
-    id: 'level-a',
-    title: 'Level A：導入',
-    shortTitle: 'Level A',
-    description: 'Claudeが何者かを理解し、プロンプトの基本・4D Framework・3モード使い分け・セットアップまでを完了する',
+    id: 'session-1',
+    title: '第1回：Claudeを理解し、Chatを使いこなす',
+    shortTitle: '第1回',
+    description: 'Claudeの基本を理解し、プロンプト・4D Framework・セットアップを完了。さらにProject・Artifact・Skills・MCP・Office連携で業務の中核ツールとして使いこなす',
     target: 'マネージャー以上（ChatGPT/Gemini経験者）',
     duration: '自分のペースで',
     prereq: 'Claudeアカウント（事前準備済み）',
@@ -20,17 +20,24 @@ const MODULES = [
       'Claudeが何者か、ChatGPT/Geminiと何が違うかを説明できる',
       'プロンプト3要素（舞台設定・タスク・ルール）で的確に指示が出せる',
       'Chat / Cowork / Code の3モードを場面に応じて選べる',
-      '業務PC・モバイルでClaudeを使い始められる状態になっている'
+      '業務PC・モバイルでClaudeを使い始められる状態になっている',
+      'Project で案件ごとに「自分用 Claude」を作れる',
+      'Artifact で成果物を独立した形で生成・共有できる',
+      'Skills でクライアント標準・自分の作法を Claude に覚えさせられる',
+      'MCP で社内 Slack / Notion を限定範囲で繋ぎ、二重担保で運用できる',
+      'Office アドイン（Excel / PowerPoint / Word）を業務で使い倒せる'
     ],
     coverGroups: [
-      { label: '理解する', icon: '💡', sections: [0, 1] },
-      { label: '使いこなす', icon: '🎯', sections: [2, 3] },
-      { label: '準備する', icon: '🔧', sections: [4] }
+      { label: '導入', icon: '💡', sections: [0, 1, 2, 3, 4] },
+      { label: 'ワークスペースを作る', icon: '🏗️', sections: [5, 6] },
+      { label: '品質を安定させる', icon: '🎯', sections: [7, 8, 9] },
+      { label: '活用の幅を広げる', icon: '🚀', sections: [10, 11, 12] }
     ],
     sections: [
+      
       // --- A-1: Claudeとは何か ---
       {
-        title: 'A-1. Claudeとは何か',
+        title: '1-1. Claudeとは何か',
         type: 'lecture',
         content: `
           <div class="visual-highlight-card opening">
@@ -148,7 +155,7 @@ const MODULES = [
 
       // --- A-2: プロンプトの基本 ---
       {
-        title: 'A-2. プロンプトの基本 — 3要素',
+        title: '1-2. プロンプトの基本 — 3要素',
         type: 'hands-on',
         content: `
           <div class="visual-big-message">
@@ -298,7 +305,7 @@ const MODULES = [
 
       // --- A-3: 4D Framework ---
       {
-        title: 'A-3. 良い結果を出すための4D Framework',
+        title: '1-3. 良い結果を出すための4D Framework',
         type: 'lecture',
         content: `
           <div class="visual-equation">
@@ -470,7 +477,7 @@ const MODULES = [
               <div class="step-number">4</div>
               <div class="step-content">
                 <strong>改善する</strong>
-                <p>プロンプトを足す、Project に例を入れる、Skill 化を検討する（Level B-3）</p>
+                <p>プロンプトを足す、Project に例を入れる、Skill 化を検討する（第1回後半-3）</p>
               </div>
             </div>
           </div>
@@ -510,7 +517,7 @@ const MODULES = [
 
       // --- A-4: Chat / Cowork / Code の3モード比較 ---
       {
-        title: 'A-4. Chat / Cowork / Code の3モード比較',
+        title: '1-4. Chat / Cowork / Code の3モード比較',
         type: 'lecture',
         content: `
           <h3>Claude 製品マップ — 全体像</h3>
@@ -521,7 +528,7 @@ const MODULES = [
               <div class="product-group browser">
                 <div class="product-group-header"><span class="group-icon">🌐</span> ブラウザ（claude.ai）</div>
                 <div class="product-group-body">
-                  <div class="visual-grid-item"><div class="grid-icon">💬</div><div class="grid-title">Chat</div><div class="grid-desc">対話・壁打ち<br><small>Level B</small></div></div>
+                  <div class="visual-grid-item"><div class="grid-icon">💬</div><div class="grid-title">Chat</div><div class="grid-desc">対話・壁打ち<br><small>第1回後半</small></div></div>
                   <div class="visual-grid-item"><div class="grid-icon">📦</div><div class="grid-title">Project</div><div class="grid-desc">案件ワークスペース<br><small>B-1</small></div></div>
                   <div class="visual-grid-item"><div class="grid-icon">🎨</div><div class="grid-title">Artifact</div><div class="grid-desc">成果物生成<br><small>B-2</small></div></div>
                   <div class="visual-grid-item"><div class="grid-icon">🔍</div><div class="grid-title">Research</div><div class="grid-desc">多段リサーチ<br><small>B-6</small></div></div>
@@ -532,8 +539,8 @@ const MODULES = [
               <div class="product-group desktop">
                 <div class="product-group-header"><span class="group-icon">🖥️</span> デスクトップアプリ</div>
                 <div class="product-group-body">
-                  <div class="visual-grid-item"><div class="grid-icon">🤖</div><div class="grid-title">Cowork</div><div class="grid-desc">業務委任<br><small>Level C</small></div></div>
-                  <div class="visual-grid-item"><div class="grid-icon">💻</div><div class="grid-title">Claude Code</div><div class="grid-desc">品質制御<br><small>Level D</small></div></div>
+                  <div class="visual-grid-item"><div class="grid-icon">🤖</div><div class="grid-title">Cowork</div><div class="grid-desc">業務委任<br><small>第2回前半</small></div></div>
+                  <div class="visual-grid-item"><div class="grid-icon">💻</div><div class="grid-title">Claude Code</div><div class="grid-desc">品質制御<br><small>第2回後半</small></div></div>
                 </div>
               </div>
               <div class="product-group office">
@@ -570,7 +577,7 @@ const MODULES = [
           <div class="visual-big-message">
             <div class="big-message-icon">💻</div>
             <div class="big-message-text">Code — 制御モード</div>
-            <div class="big-message-sub">再現性・自動化レベルの品質制御。CLAUDE.md / Skills / MCP / Hooks / Subagents で制御手段が圧倒的に多い（Level D）。</div>
+            <div class="big-message-sub">再現性・自動化レベルの品質制御。CLAUDE.md / Skills / MCP / Hooks / Subagents で制御手段が圧倒的に多い（第2回後半）。</div>
           </div>
 
           <h3>判断軸 — どのモード?</h3>
@@ -643,7 +650,7 @@ const MODULES = [
           </div>
           <div class="warning-box">
             <strong>落とし穴：Code = プログラマー専用ではない</strong>
-            <p>コンサル業務での Code 活用は強力です（Level D）。「自分には関係ない」は早計。</p>
+            <p>コンサル業務での Code 活用は強力です（第2回後半）。「自分には関係ない」は早計。</p>
           </div>
           <div class="warning-box">
             <strong>落とし穴：全部使えば偉いわけではない</strong>
@@ -654,13 +661,13 @@ const MODULES = [
 
       // --- A-5: セットアップ ---
       {
-        title: 'A-5. セットアップ',
+        title: '1-5. セットアップ',
         type: 'hands-on',
         content: `
           <div class="visual-big-message">
             <div class="big-message-icon">🚀</div>
             <div class="big-message-text">ゴール：全ツールが動く状態を作る</div>
-            <div class="big-message-sub">claude.ai + デスクトップアプリ + Office アドイン。ここが完了すれば Level B 以降に進めます。</div>
+            <div class="big-message-sub">claude.ai + デスクトップアプリ + Office アドイン。ここが完了すれば 第1回後半 以降に進めます。</div>
           </div>
 
           <h3>セットアップ全体像</h3>
@@ -697,7 +704,7 @@ const MODULES = [
               <div class="step-number">5</div>
               <div class="step-content">
                 <strong>Claude Code インストール（任意）</strong>
-                <p>Level D で詳述するので、まず触りたい人向け。ターミナルまたは VS Code 拡張から導入。（3〜5分）</p>
+                <p>第2回後半 で詳述するので、まず触りたい人向け。ターミナルまたは VS Code 拡張から導入。（3〜5分）</p>
               </div>
             </div>
             <div class="step-item">
@@ -806,275 +813,11 @@ const MODULES = [
           </div>
         `
       }
-    ],
-    quiz: [
-      // --- A-1 の確認問題 ---
-      {
-        question: 'Claude の設計思想「Constitutional AI」の3つの原則として正しい組み合わせはどれですか?',
-        options: [
-          'Helpful, Harmless, Honest',
-          'Fast, Accurate, Cheap',
-          'Smart, Safe, Scalable',
-          'Open, Private, Personal'
-        ],
-        correct: 0,
-        explanation: 'Constitutional AI の3原則は Helpful（役に立つ）、Harmless（害がない）、Honest（誠実である）です。'
-      },
-      {
-        question: 'ChatGPT/Gemini と比べた Claude の業務上の強みとして、本モジュールで挙げていないものはどれですか?',
-        options: [
-          '長文の安定性が高い',
-          '出力の操縦性が高い',
-          '思考のパートナーとして設計されている',
-          '画像生成の品質が圧倒的に高い'
-        ],
-        correct: 3,
-        explanation: '画像生成については Level A で触れていません。Claude の業務上の強みとして挙げたのは「長文の安定性」「出力の操縦性」「思考のパートナー」の3点です。'
-      },
-      {
-        question: 'Claude を「思考のパートナー」として使うべき例として最も適切なのはどれですか?',
-        options: [
-          '「東京の天気を教えて」',
-          '「この提案ストーリーを聞いて、クライアントが反応しそうな点と懸念点を一緒に考えてほしい」',
-          '「1+1は?」',
-          '「明日の会議の時間を教えて」'
-        ],
-        correct: 1,
-        explanation: '対話で深掘りする「思考のパートナー」用途として、提案ストーリーの壁打ちが最も適切です。'
-      },
-      // --- A-2 の確認問題 ---
-      {
-        question: 'プロンプト3要素として正しい組み合わせはどれですか?',
-        options: [
-          '名前 / 質問 / 終了',
-          'Setting the stage（舞台設定）/ Defining the task（タスク定義）/ Specifying rules（ルール指定）',
-          'Input / Process / Output',
-          'Hello / Question / Goodbye'
-        ],
-        correct: 1,
-        explanation: 'プロンプト3要素は舞台設定（Setting the stage）、タスク定義（Defining the task）、ルール指定（Specifying rules）です。'
-      },
-      {
-        question: '「悪い例：競合分析して」を改善するときに、3要素のうち最も追加が必要な要素は何ですか?',
-        options: [
-          '1つもない、これで十分',
-          'すべて足りない（舞台設定・タスク定義・ルール指定すべて）',
-          '文字数指定だけ',
-          '挨拶'
-        ],
-        correct: 1,
-        explanation: '誰が何業界で何を比較したいかも、どんな出力が欲しいかも書かれていないため、3要素すべてが不足しています。'
-      },
-      {
-        question: 'Claude の回答が思ったものと違ったときの対応として、本モジュールで推奨されていないものはどれですか?',
-        options: [
-          '追加質問で深掘りする',
-          'フィードバックを伝えて修正させる',
-          'すべてを諦めて Claude を使うのをやめる',
-          '新規チャットでプロンプトをやり直す'
-        ],
-        correct: 2,
-        explanation: '推奨されているのは「追加質問」「フィードバック」「新規チャットでやり直し」の3つです。諦めるのは推奨されていません。'
-      },
-      {
-        question: '個人プリファレンス（Personal Preferences）を設定する目的として正しいのはどれですか?',
-        options: [
-          '案件ごとの細かい前提を入れるため',
-          '毎回書くのが面倒な「自分の役割」「希望するトーン」など、全会話共通の前提を入れるため',
-          'パスワードを保存するため',
-          'ChatGPT のデータを読み込むため'
-        ],
-        correct: 1,
-        explanation: '案件固有のことは Project に書きます。プリファレンスは全会話共通の前提を入れる場所です（Level B-1 で Project を扱います）。'
-      },
-      // --- A-3 の確認問題 ---
-      {
-        question: '4D Framework の4つの D として正しい組み合わせはどれですか?',
-        options: [
-          'Data / Direction / Decision / Discussion',
-          'Delegation / Description / Discernment / Diligence',
-          'Develop / Deploy / Debug / Document',
-          'Design / Draft / Deliver / Discuss'
-        ],
-        correct: 1,
-        explanation: '4D Framework は Delegation（委任）、Description（指示）、Discernment（評価）、Diligence（責任）の4つです。'
-      },
-      {
-        question: 'Claude の出力を Discernment（評価）するとき、特に注意すべきものはどれですか?',
-        options: [
-          '文字色',
-          '改行の位置',
-          '固有名詞・数字・引用（Hallucination が起きやすい）',
-          '絵文字の使い方'
-        ],
-        correct: 2,
-        explanation: 'Claude が捏造（Hallucination）しやすいのは固有名詞、具体的な数字、引用文です。これらは特に注意して検証が必要です。'
-      },
-      {
-        question: '簡易 Evals の目的として最も適切なのはどれですか?',
-        options: [
-          'Claude が完璧であることを証明するため',
-          '自分の業務で Claude が使える範囲・使えない範囲を見極めるため',
-          '同僚に成果を見せるため',
-          'Claude をやめる理由を探すため'
-        ],
-        correct: 1,
-        explanation: 'Evals の目的は、自分の業務で Claude がどの程度使えるか、使える範囲と使えない範囲を見極めることです。'
-      },
-      {
-        question: '自分の専門領域で Claude を使うとき、本モジュールでは何を強調していますか?',
-        options: [
-          '専門領域なのでチェックは不要',
-          '専門領域こそ Claude も間違えやすく、自分の知識で見抜けるはずなので慎重に読む',
-          '専門領域は Claude に任せず使わない',
-          '専門領域は別の AI を使う'
-        ],
-        correct: 1,
-        explanation: '専門領域こそ Claude が間違えやすく、かつ自分の知識で見抜けるはずなので、慎重に読むことが重要です。'
-      },
-      // --- A-4 の確認問題 ---
-      {
-        question: '「議事録30本から論点マップを作成し、PPTX として保存したい」場合、最も適したモードはどれですか?',
-        options: [
-          'Chat',
-          'Cowork',
-          'Code',
-          'どれでも同じ'
-        ],
-        correct: 1,
-        explanation: '大量ファイルの横断処理と完成品（PPTX）が欲しい場合は Cowork が最適です。'
-      },
-      {
-        question: '「クライアントへの提案ストーリーを壁打ちしたい」場合、最初に使うモードはどれですか?',
-        options: [
-          'Chat',
-          'Cowork',
-          'Code',
-          'デスクトップアプリは閉じて Slack で議論'
-        ],
-        correct: 0,
-        explanation: '対話で深める用途では Chat が最適です。壁打ちは Chat のベースキャンプ的な使い方です。'
-      },
-      {
-        question: 'Cowork と Code が共有しているものは何ですか?',
-        options: [
-          'ターミナルでの操作',
-          'Claude Code 由来のエージェント基盤',
-          'プログラミング能力のみ',
-          '共通点はない'
-        ],
-        correct: 1,
-        explanation: 'Cowork と Code はどちらも Claude Code 由来のエージェント基盤を共有しています。'
-      },
-      {
-        question: '3モードの使い分けについて、本モジュールの推奨はどれですか?',
-        options: [
-          '全モードを毎日使う',
-          '業務の8割は Chat で十分、Cowork と Code は必要な場面で',
-          'Code だけ使えばよい（最強なので）',
-          'Chat だけ使う（他は不要）'
-        ],
-        correct: 1,
-        explanation: '業務の8割は Chat で十分です。Cowork は1〜2割の重要タスク、Code はさらに絞られた領域で使い分けます。'
-      },
-      // --- A-5 の確認問題 ---
-      {
-        question: 'Cowork を使うために必要なものはどれですか?',
-        options: [
-          'Free プランで OK',
-          'Pro / Max / Team / Enterprise のいずれかと、デスクトップアプリ',
-          'ターミナルだけで使える',
-          'Web 版でも使える'
-        ],
-        correct: 1,
-        explanation: 'Cowork は有料プラン（Pro / Max / Team / Enterprise）とデスクトップアプリが必要です。'
-      },
-      {
-        question: '本研修（マクロミル環境）での運用方針として正しいのはどれですか?',
-        options: [
-          'すべての Connector を GUI から接続して使う',
-          'ローカルフォルダ + Office アドイン + Chrome 拡張 + 社内 Slack / Notion（MCP・限定範囲）で運用、Connector は使わない',
-          'Claude は使わずに ChatGPT を使う',
-          'Web版 claude.ai だけしか使えない'
-        ],
-        correct: 1,
-        explanation: 'マクロミル環境では Connector は使わず、ローカルフォルダ + Office アドイン + Chrome 拡張 + MCP（Slack/Notion 限定範囲）で運用します。'
-      },
-      {
-        question: 'Office アドイン3つのうち、2026年4月時点でリリースされているものはどれですか?',
-        options: [
-          'Excel のみ',
-          'Excel と PowerPoint のみ',
-          'Excel、PowerPoint、Word の3つすべて',
-          'PowerPoint のみ'
-        ],
-        correct: 2,
-        explanation: '2026年4月時点で Excel、PowerPoint、Word の3つすべてがリリース済みです。'
-      },
-      {
-        question: '個人プリファレンスを設定する場所はどこですか?',
-        options: [
-          'デスクトップアプリの Cowork タブ',
-          'claude.ai の Settings > General',
-          'Excel のリボン',
-          'ターミナル'
-        ],
-        correct: 1,
-        explanation: '個人プリファレンスは claude.ai の Settings > General から設定します。'
-      }
-    ],
-    selfStudyResources: {
-      links: [
-        { title: 'Claude.ai（公式サイト）', url: 'https://claude.ai/', desc: 'Claudeのチャット・Coworkはここからアクセス', category: '公式' },
-        { title: 'Anthropic 公式ドキュメント', url: 'https://docs.anthropic.com/', desc: 'Claude の技術仕様・機能一覧・ベストプラクティス', category: '公式' },
-        { title: 'Claude プロンプトライブラリ', url: 'https://docs.anthropic.com/en/prompt-library/library', desc: '用途別のプロンプト例を多数掲載', category: '学習' },
-        { title: 'Anthropic Cookbook', url: 'https://github.com/anthropics/anthropic-cookbook', desc: '実践的なユースケースとコード例', category: '学習' },
-        { title: 'Claude Tips & Tricks（YouTube）', url: 'https://www.youtube.com/playlist?list=PLf2m23nhTg5VEz8sS0ORurJk3lBL7nB0V', desc: 'Anthropic 公式の使い方動画', category: '学習' },
-        { title: 'Claude デスクトップアプリ ダウンロード', url: 'https://claude.com/download', desc: 'Mac / Windows 対応', category: '公式' },
-        { title: 'Claude Code ドキュメント', url: 'https://docs.anthropic.com/en/docs/claude-code', desc: 'Claude Code の導入・使い方ガイド', category: '公式' }
-      ],
-      faq: [
-        { q: 'Claude と ChatGPT の違いは?', a: 'Claude は長文の安定性（200K〜1Mトークン）、出力の操縦性、思考のパートナーとしての設計に強みがあります。タスクによって得意不得意が違うので、使い分けが現実的です。' },
-        { q: 'プロンプトの3要素は必ず全部入れるべき?', a: '必ずしも全部必要ではありません。簡単な質問なら不要ですが、業務で精度の高い出力が欲しいときは3要素（舞台設定・タスク定義・ルール指定）を意識すると品質が上がります。' },
-        { q: 'Chat / Cowork / Code の違いは?', a: 'Chat は対話で考える場所。Cowork は任せて完成品をもらう場所。Code はコード生成や高度な品質制御が必要な場合に使います。迷ったら Chat から始めましょう。' },
-        { q: '無料プランでも研修内容は実践できますか?', a: '基本的なチャット機能は無料でも使えますが、Cowork / Claude Code / Skills / Office アドインなどは有料プラン（Pro 以上）が必要です。本研修は有料プランの利用を前提としています。' },
-        { q: 'Hallucination（幻覚）はどう防ぐ?', a: '完全には防げませんが、出典の併記を要求する、Web検索をONにする、重要な数字・固有名詞は自分で裏取りする、の3つで大幅にリスクを下げられます。' },
-        { q: 'Connector はマクロミル環境で使える?', a: 'マクロミル環境では Connector（Drive / SharePoint 等のGUI接続）は使いません。社内ナレッジへのアクセスは MCP で Slack / Notion に限定範囲で繋ぐ方式です（Level B-4 で扱います）。' }
-      ]
-    }
-  },
-
-
-  // ============================================================
-  // Level B：Chatを使いこなす
-  // ============================================================
-  {
-    id: 'level-b',
-    title: 'Level B：Chatを使いこなす',
-    shortTitle: 'Level B',
-    description: 'Project・Artifact・Skills・MCP・Research・Office アドイン・Chrome/Slack を活用し、Claude Chat を業務の中核ツールとして使いこなす',
-    target: 'マネージャー以上（Level A 完了者）',
-    duration: '自分のペースで',
-    prereq: 'Level A 完了',
-    icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
-    objectives: [
-      'Project で案件ごとに「自分用 Claude」を作れる',
-      'Artifact で成果物を独立した形で生成・共有できる',
-      'Skills でクライアント標準・自分の作法を Claude に覚えさせられる',
-      'MCP で社内 Slack / Notion を限定範囲で繋ぎ、二重担保で運用できる',
-      'Research mode で多段のリサーチを Claude に走らせられる',
-      'Office アドイン（Excel / PowerPoint / Word）を業務で使い倒せる',
-      'Claude in Chrome / Slack の補助インターフェースを必要時に使える'
-    ],
-    coverGroups: [
-      { label: 'ワークスペースを作る', icon: '🏗️', sections: [0, 1] },
-      { label: '品質を安定させる', icon: '🎯', sections: [2, 3, 4] },
-      { label: '活用の幅を広げる', icon: '🚀', sections: [5, 6, 7] }
-    ],
-    sections: [
+    ,
+      
       // --- B-1: Projects ---
       {
-        title: 'B-1. Projects',
+        title: '1-6. Projects',
         type: 'hands-on',
         content: `
           <div class="visual-before-after">
@@ -1202,7 +945,7 @@ const MODULES = [
 
       // --- B-2: Artifacts ---
       {
-        title: 'B-2. Artifacts',
+        title: '1-7. Artifacts',
         type: 'hands-on',
         content: `
           <h3>Artifact とは</h3>
@@ -1309,7 +1052,7 @@ const MODULES = [
 
       // --- B-3: Skills ---
       {
-        title: 'B-3. Skills',
+        title: '1-8. Skills',
         type: 'hands-on',
         content: `
           <h3>Skill とは</h3>
@@ -1429,7 +1172,7 @@ const MODULES = [
 
       // --- B-4: MCP ---
       {
-        title: 'B-4. MCP',
+        title: '1-9. MCP',
         type: 'lecture',
         content: `
           <h3>MCP とは</h3>
@@ -1503,7 +1246,7 @@ const MODULES = [
 
       // --- B-5: Enterprise Search ---
       {
-        title: 'B-5. Enterprise Search（参考）',
+        title: '1-10. Enterprise Search（参考）',
         type: 'lecture',
         content: `
           <h3>Enterprise Search とは</h3>
@@ -1520,17 +1263,17 @@ const MODULES = [
             <div class="visual-grid-item">
               <div class="grid-icon">💬</div>
               <div class="grid-title">社内 Slack の議論</div>
-              <div class="grid-desc">B-4 の Slack MCP（社内チャンネル限定）で対応</div>
+              <div class="grid-desc">1-9 の Slack MCP（社内チャンネル限定）で対応</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📒</div>
               <div class="grid-title">社内 Notion ナレッジ</div>
-              <div class="grid-desc">B-4 の Notion MCP（DB / ページ限定）で対応</div>
+              <div class="grid-desc">1-9 の Notion MCP（DB / ページ限定）で対応</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📁</div>
               <div class="grid-title">過去案件ファイル</div>
-              <div class="grid-desc">ローカルフォルダ運用（Level C で詳述）</div>
+              <div class="grid-desc">ローカルフォルダ運用（第2回前半 で詳述）</div>
             </div>
           </div>
 
@@ -1543,7 +1286,7 @@ const MODULES = [
 
       // --- B-6: Research mode ---
       {
-        title: 'B-6. Research mode',
+        title: '1-11. Research mode',
         type: 'hands-on',
         content: `
           <h3>Research mode とは</h3>
@@ -1632,7 +1375,7 @@ const MODULES = [
 
       // --- B-7: Claude in Office ---
       {
-        title: 'B-7. Claude in Office',
+        title: '1-12. Claude in Office',
         type: 'hands-on',
         content: `
           <h3>3つの Office アドイン</h3>
@@ -1714,7 +1457,7 @@ const MODULES = [
 
       // --- B-8: Claude in Chrome / Slack ---
       {
-        title: 'B-8. Chrome / Slack',
+        title: '1-13. Chrome / Slack',
         type: 'lecture',
         content: `
           <h3>Claude in Chrome</h3>
@@ -1799,9 +1542,226 @@ const MODULES = [
           </div>
         `
       }
+    
     ],
-    // --- Level B クイズ ---
     quiz: [
+      
+      // --- 1-1 の確認問題 ---
+      {
+        question: 'Claude の設計思想「Constitutional AI」の3つの原則として正しい組み合わせはどれですか?',
+        options: [
+          'Helpful, Harmless, Honest',
+          'Fast, Accurate, Cheap',
+          'Smart, Safe, Scalable',
+          'Open, Private, Personal'
+        ],
+        correct: 0,
+        explanation: 'Constitutional AI の3原則は Helpful（役に立つ）、Harmless（害がない）、Honest（誠実である）です。'
+      },
+      {
+        question: 'ChatGPT/Gemini と比べた Claude の業務上の強みとして、本モジュールで挙げていないものはどれですか?',
+        options: [
+          '長文の安定性が高い',
+          '出力の操縦性が高い',
+          '思考のパートナーとして設計されている',
+          '画像生成の品質が圧倒的に高い'
+        ],
+        correct: 3,
+        explanation: '画像生成については 第1回前半 で触れていません。Claude の業務上の強みとして挙げたのは「長文の安定性」「出力の操縦性」「思考のパートナー」の3点です。'
+      },
+      {
+        question: 'Claude を「思考のパートナー」として使うべき例として最も適切なのはどれですか?',
+        options: [
+          '「東京の天気を教えて」',
+          '「この提案ストーリーを聞いて、クライアントが反応しそうな点と懸念点を一緒に考えてほしい」',
+          '「1+1は?」',
+          '「明日の会議の時間を教えて」'
+        ],
+        correct: 1,
+        explanation: '対話で深掘りする「思考のパートナー」用途として、提案ストーリーの壁打ちが最も適切です。'
+      },
+      // --- 1-2 の確認問題 ---
+      {
+        question: 'プロンプト3要素として正しい組み合わせはどれですか?',
+        options: [
+          '名前 / 質問 / 終了',
+          'Setting the stage（舞台設定）/ Defining the task（タスク定義）/ Specifying rules（ルール指定）',
+          'Input / Process / Output',
+          'Hello / Question / Goodbye'
+        ],
+        correct: 1,
+        explanation: 'プロンプト3要素は舞台設定（Setting the stage）、タスク定義（Defining the task）、ルール指定（Specifying rules）です。'
+      },
+      {
+        question: '「悪い例：競合分析して」を改善するときに、3要素のうち最も追加が必要な要素は何ですか?',
+        options: [
+          '1つもない、これで十分',
+          'すべて足りない（舞台設定・タスク定義・ルール指定すべて）',
+          '文字数指定だけ',
+          '挨拶'
+        ],
+        correct: 1,
+        explanation: '誰が何業界で何を比較したいかも、どんな出力が欲しいかも書かれていないため、3要素すべてが不足しています。'
+      },
+      {
+        question: 'Claude の回答が思ったものと違ったときの対応として、本モジュールで推奨されていないものはどれですか?',
+        options: [
+          '追加質問で深掘りする',
+          'フィードバックを伝えて修正させる',
+          'すべてを諦めて Claude を使うのをやめる',
+          '新規チャットでプロンプトをやり直す'
+        ],
+        correct: 2,
+        explanation: '推奨されているのは「追加質問」「フィードバック」「新規チャットでやり直し」の3つです。諦めるのは推奨されていません。'
+      },
+      {
+        question: '個人プリファレンス（Personal Preferences）を設定する目的として正しいのはどれですか?',
+        options: [
+          '案件ごとの細かい前提を入れるため',
+          '毎回書くのが面倒な「自分の役割」「希望するトーン」など、全会話共通の前提を入れるため',
+          'パスワードを保存するため',
+          'ChatGPT のデータを読み込むため'
+        ],
+        correct: 1,
+        explanation: '案件固有のことは Project に書きます。プリファレンスは全会話共通の前提を入れる場所です（第1回後半-1 で Project を扱います）。'
+      },
+      // --- 1-3 の確認問題 ---
+      {
+        question: '4D Framework の4つの D として正しい組み合わせはどれですか?',
+        options: [
+          'Data / Direction / Decision / Discussion',
+          'Delegation / Description / Discernment / Diligence',
+          'Develop / Deploy / Debug / Document',
+          'Design / Draft / Deliver / Discuss'
+        ],
+        correct: 1,
+        explanation: '4D Framework は Delegation（委任）、Description（指示）、Discernment（評価）、Diligence（責任）の4つです。'
+      },
+      {
+        question: 'Claude の出力を Discernment（評価）するとき、特に注意すべきものはどれですか?',
+        options: [
+          '文字色',
+          '改行の位置',
+          '固有名詞・数字・引用（Hallucination が起きやすい）',
+          '絵文字の使い方'
+        ],
+        correct: 2,
+        explanation: 'Claude が捏造（Hallucination）しやすいのは固有名詞、具体的な数字、引用文です。これらは特に注意して検証が必要です。'
+      },
+      {
+        question: '簡易 Evals の目的として最も適切なのはどれですか?',
+        options: [
+          'Claude が完璧であることを証明するため',
+          '自分の業務で Claude が使える範囲・使えない範囲を見極めるため',
+          '同僚に成果を見せるため',
+          'Claude をやめる理由を探すため'
+        ],
+        correct: 1,
+        explanation: 'Evals の目的は、自分の業務で Claude がどの程度使えるか、使える範囲と使えない範囲を見極めることです。'
+      },
+      {
+        question: '自分の専門領域で Claude を使うとき、本モジュールでは何を強調していますか?',
+        options: [
+          '専門領域なのでチェックは不要',
+          '専門領域こそ Claude も間違えやすく、自分の知識で見抜けるはずなので慎重に読む',
+          '専門領域は Claude に任せず使わない',
+          '専門領域は別の AI を使う'
+        ],
+        correct: 1,
+        explanation: '専門領域こそ Claude が間違えやすく、かつ自分の知識で見抜けるはずなので、慎重に読むことが重要です。'
+      },
+      // --- 1-4 の確認問題 ---
+      {
+        question: '「議事録30本から論点マップを作成し、PPTX として保存したい」場合、最も適したモードはどれですか?',
+        options: [
+          'Chat',
+          'Cowork',
+          'Code',
+          'どれでも同じ'
+        ],
+        correct: 1,
+        explanation: '大量ファイルの横断処理と完成品（PPTX）が欲しい場合は Cowork が最適です。'
+      },
+      {
+        question: '「クライアントへの提案ストーリーを壁打ちしたい」場合、最初に使うモードはどれですか?',
+        options: [
+          'Chat',
+          'Cowork',
+          'Code',
+          'デスクトップアプリは閉じて Slack で議論'
+        ],
+        correct: 0,
+        explanation: '対話で深める用途では Chat が最適です。壁打ちは Chat のベースキャンプ的な使い方です。'
+      },
+      {
+        question: 'Cowork と Code が共有しているものは何ですか?',
+        options: [
+          'ターミナルでの操作',
+          'Claude Code 由来のエージェント基盤',
+          'プログラミング能力のみ',
+          '共通点はない'
+        ],
+        correct: 1,
+        explanation: 'Cowork と Code はどちらも Claude Code 由来のエージェント基盤を共有しています。'
+      },
+      {
+        question: '3モードの使い分けについて、本モジュールの推奨はどれですか?',
+        options: [
+          '全モードを毎日使う',
+          '業務の8割は Chat で十分、Cowork と Code は必要な場面で',
+          'Code だけ使えばよい（最強なので）',
+          'Chat だけ使う（他は不要）'
+        ],
+        correct: 1,
+        explanation: '業務の8割は Chat で十分です。Cowork は1〜2割の重要タスク、Code はさらに絞られた領域で使い分けます。'
+      },
+      // --- 1-5 の確認問題 ---
+      {
+        question: 'Cowork を使うために必要なものはどれですか?',
+        options: [
+          'Free プランで OK',
+          'Pro / Max / Team / Enterprise のいずれかと、デスクトップアプリ',
+          'ターミナルだけで使える',
+          'Web 版でも使える'
+        ],
+        correct: 1,
+        explanation: 'Cowork は有料プラン（Pro / Max / Team / Enterprise）とデスクトップアプリが必要です。'
+      },
+      {
+        question: '本研修（マクロミル環境）での運用方針として正しいのはどれですか?',
+        options: [
+          'すべての Connector を GUI から接続して使う',
+          'ローカルフォルダ + Office アドイン + Chrome 拡張 + 社内 Slack / Notion（MCP・限定範囲）で運用、Connector は使わない',
+          'Claude は使わずに ChatGPT を使う',
+          'Web版 claude.ai だけしか使えない'
+        ],
+        correct: 1,
+        explanation: 'マクロミル環境では Connector は使わず、ローカルフォルダ + Office アドイン + Chrome 拡張 + MCP（Slack/Notion 限定範囲）で運用します。'
+      },
+      {
+        question: 'Office アドイン3つのうち、2026年4月時点でリリースされているものはどれですか?',
+        options: [
+          'Excel のみ',
+          'Excel と PowerPoint のみ',
+          'Excel、PowerPoint、Word の3つすべて',
+          'PowerPoint のみ'
+        ],
+        correct: 2,
+        explanation: '2026年4月時点で Excel、PowerPoint、Word の3つすべてがリリース済みです。'
+      },
+      {
+        question: '個人プリファレンスを設定する場所はどこですか?',
+        options: [
+          'デスクトップアプリの Cowork タブ',
+          'claude.ai の Settings > General',
+          'Excel のリボン',
+          'ターミナル'
+        ],
+        correct: 1,
+        explanation: '個人プリファレンスは claude.ai の Settings > General から設定します。'
+      }
+    ,
+      
       // B-1
       {
         question: 'Project に含まれる構成要素として、本モジュールで挙げていないものはどれですか?',
@@ -2054,9 +2014,19 @@ const MODULES = [
         correct: 1,
         explanation: 'Chrome 拡張は現在リサーチプレビュー段階です。信頼できるサイトでの低リスクなタスクから始めましょう。'
       }
+    
     ],
     selfStudyResources: {
       links: [
+        
+        { title: 'Claude.ai（公式サイト）', url: 'https://claude.ai/', desc: 'Claudeのチャット・Coworkはここからアクセス', category: '公式' },
+        { title: 'Anthropic 公式ドキュメント', url: 'https://docs.anthropic.com/', desc: 'Claude の技術仕様・機能一覧・ベストプラクティス', category: '公式' },
+        { title: 'Claude プロンプトライブラリ', url: 'https://docs.anthropic.com/en/prompt-library/library', desc: '用途別のプロンプト例を多数掲載', category: '学習' },
+        { title: 'Anthropic Cookbook', url: 'https://github.com/anthropics/anthropic-cookbook', desc: '実践的なユースケースとコード例', category: '学習' },
+        { title: 'Claude Tips & Tricks（YouTube）', url: 'https://www.youtube.com/playlist?list=PLf2m23nhTg5VEz8sS0ORurJk3lBL7nB0V', desc: 'Anthropic 公式の使い方動画', category: '学習' },
+        { title: 'Claude デスクトップアプリ ダウンロード', url: 'https://claude.com/download', desc: 'Mac / Windows 対応', category: '公式' },
+        { title: 'Claude Code ドキュメント', url: 'https://docs.anthropic.com/en/docs/claude-code', desc: 'Claude Code の導入・使い方ガイド', category: '公式' },
+        
         { title: 'Claude Projects 公式ガイド', url: 'https://support.claude.com/', desc: 'Projects の作成・管理・共有方法', category: '公式' },
         { title: 'Claude Artifacts ガイド', url: 'https://support.claude.com/', desc: 'Artifact の種類・共有・公開方法', category: '公式' },
         { title: 'Claude Skills ドキュメント', url: 'https://docs.anthropic.com/', desc: 'Skills の作成・管理・組織展開', category: '公式' },
@@ -2066,6 +2036,14 @@ const MODULES = [
         { title: 'Claude in Chrome', url: 'https://support.claude.com/', desc: 'Chrome 拡張機能の使い方', category: '公式' }
       ],
       faq: [
+        
+        { q: 'Claude と ChatGPT の違いは?', a: 'Claude は長文の安定性（200K〜1Mトークン）、出力の操縦性、思考のパートナーとしての設計に強みがあります。タスクによって得意不得意が違うので、使い分けが現実的です。' },
+        { q: 'プロンプトの3要素は必ず全部入れるべき?', a: '必ずしも全部必要ではありません。簡単な質問なら不要ですが、業務で精度の高い出力が欲しいときは3要素（舞台設定・タスク定義・ルール指定）を意識すると品質が上がります。' },
+        { q: 'Chat / Cowork / Code の違いは?', a: 'Chat は対話で考える場所。Cowork は任せて完成品をもらう場所。Code はコード生成や高度な品質制御が必要な場合に使います。迷ったら Chat から始めましょう。' },
+        { q: '無料プランでも研修内容は実践できますか?', a: '基本的なチャット機能は無料でも使えますが、Cowork / Claude Code / Skills / Office アドインなどは有料プラン（Pro 以上）が必要です。本研修は有料プランの利用を前提としています。' },
+        { q: 'Hallucination（幻覚）はどう防ぐ?', a: '完全には防げませんが、出典の併記を要求する、Web検索をONにする、重要な数字・固有名詞は自分で裏取りする、の3つで大幅にリスクを下げられます。' },
+        { q: 'Connector はマクロミル環境で使える?', a: 'マクロミル環境では Connector（Drive / SharePoint 等のGUI接続）は使いません。社内ナレッジへのアクセスは MCP で Slack / Notion に限定範囲で繋ぐ方式です（第1回後半-4 で扱います）。' },
+        
         { q: 'Project と個人プリファレンスの使い分けは?', a: '個人プリファレンスは全会話に効く自分の役割・好み。Project は案件固有の背景・ルール・参照資料を入れる場所です。両方併用するのが現実的です。' },
         { q: 'Artifact が自動生成されないときは?', a: '15行未満や会話の流れに依存する内容は自動 Artifact 化されません。「これを Artifact にしてください」と明示すれば作ってくれます。' },
         { q: 'カスタム Skill はどうやって作る?', a: 'Claude との対話で作れます。「○○のための Skill を作りたい」と話しかけ、質問に答えていくと zip ファイルが生成されます。コードを書く必要はありません。' },
@@ -2078,36 +2056,41 @@ const MODULES = [
   },
 
   // ============================================================
-  // Level C：Cowork で業務を委任する
+  // 第2回：Cowork・Claude Codeで業務を自動化する
   // ============================================================
   {
-    id: 'level-c',
-    title: 'Level C：Cowork で業務を委任する',
-    shortTitle: 'Level C',
-    description: '「対話する」から「任せる」へ。Cowork のタスクループ・Project・Plugin・Scheduled tasks で業務を委任する',
-    target: 'Chat での業務利用に慣れている方',
-    duration: '自習ペース',
-    prereq: 'Level B 完了',
-    icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    id: 'session-2',
+    title: '第2回：Cowork・Claude Codeで業務を自動化する',
+    shortTitle: '第2回',
+    description: '「対話する」から「任せる」へ。Coworkで業務を委任し、Claude Codeで再現性ある高品質な成果物と自動化パイプラインを構築する',
+    target: '第1回 完了者',
+    duration: '自分のペースで',
+    prereq: '第1回 完了',
+    icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
     objectives: [
       '「対話する」から「任せる」への発想転換ができている',
       'Cowork のタスクループ（Describe → Q&A → Run → Open）を回せる',
-      'フォルダ指定でローカルファイルを Claude に直接触らせられる',
       'Cowork Project でコンテキストを永続化できる',
-      'Plugin で職種特化のバンドルを使える',
       'Scheduled tasks で定型業務を自動化できる',
-      '大量データの並列処理・高度な分析を Cowork に委任できる',
-      '利用量・モデル選択を意識して効率的に使える'
+      'Claude Code の仕組み（Agentic loop / Context / Tools）を理解する',
+      'CLAUDE.md でプロジェクト固有のルールを永続化できる',
+      'Subagents で並列処理・専門化したエージェントを使える',
+      'Hooks で deterministic な制御ができる'
     ],
     coverGroups: [
       { label: 'Coworkを始める', icon: '🚀', sections: [0, 1, 2] },
       { label: '環境を整える', icon: '🏗️', sections: [3, 4, 5] },
-      { label: '業務で使い倒す', icon: '💼', sections: [6, 7, 8, 9] }
+      { label: '業務で使い倒す', icon: '💼', sections: [6, 7, 8, 9] },
+      { label: 'Claude Codeの基礎', icon: '💡', sections: [10, 11, 12] },
+      { label: 'ワークフローを回す', icon: '🔄', sections: [13, 14] },
+      { label: '品質を制御する', icon: '🎯', sections: [15, 16, 17] },
+      { label: '拡張する', icon: '🔧', sections: [18, 19, 20] }
     ],
     sections: [
+      
       // --- C-1: Cowork とは何か ---
       {
-        title: 'C-1. Cowork とは何か',
+        title: '2-1. Cowork とは何か',
         type: 'lecture',
         content: `
           <div class="visual-before-after">
@@ -2200,7 +2183,7 @@ const MODULES = [
       },
       // --- C-2: セットアップ — フォルダを指定する ---
       {
-        title: 'C-2. セットアップ — フォルダを指定する',
+        title: '2-2. セットアップ — フォルダを指定する',
         type: 'hands-on',
         content: `
           <h3>フォルダ指定 — Chat との最大の違い</h3>
@@ -2261,7 +2244,7 @@ const MODULES = [
       },
       // --- C-3: タスクループ — 4ステップ ---
       {
-        title: 'C-3. タスクループ — 4ステップ',
+        title: '2-3. タスクループ — 4ステップ',
         type: 'lecture',
         content: `
           <h3>タスクループの全体像</h3>
@@ -2328,7 +2311,7 @@ const MODULES = [
       },
       // --- C-4: Cowork Project — 文脈の永続化 ---
       {
-        title: 'C-4. Cowork Project — 文脈の永続化',
+        title: '2-4. Cowork Project — 文脈の永続化',
         type: 'lecture',
         content: `
           <h3>Cowork Project とは</h3>
@@ -2388,7 +2371,7 @@ const MODULES = [
       },
       // --- C-5: Plugins — ロール特化バンドル ---
       {
-        title: 'C-5. Plugins — ロール特化バンドル',
+        title: '2-5. Plugins — ロール特化バンドル',
         type: 'lecture',
         content: `
           <h3>Plugin とは</h3>
@@ -2435,7 +2418,7 @@ const MODULES = [
       },
       // --- C-6: Scheduled tasks — 定型業務の自動化 ---
       {
-        title: 'C-6. Scheduled tasks — 定型業務の自動化',
+        title: '2-6. Scheduled tasks — 定型業務の自動化',
         type: 'lecture',
         content: `
           <h3>Scheduled tasks とは</h3>
@@ -2497,7 +2480,7 @@ const MODULES = [
       },
       // --- C-7: ファイル・ドキュメントタスクのパターン ---
       {
-        title: 'C-7. ファイル・ドキュメントタスクのパターン',
+        title: '2-7. ファイル・ドキュメントタスクのパターン',
         type: 'hands-on',
         content: `
           <div class="visual-before-after">
@@ -2558,7 +2541,7 @@ const MODULES = [
       },
       // --- C-8: Research と分析を大規模に ---
       {
-        title: 'C-8. Research と分析を大規模に',
+        title: '2-8. Research と分析を大規模に',
         type: 'lecture',
         content: `
           <h3>Cowork が Chat より得意な3場面</h3>
@@ -2603,7 +2586,7 @@ const MODULES = [
       },
       // --- C-9: 権限・利用量・モデル選択 ---
       {
-        title: 'C-9. 権限・利用量・モデル選択',
+        title: '2-9. 権限・利用量・モデル選択',
         type: 'lecture',
         content: `
           <h3>Cowork の安全境界</h3>
@@ -2663,7 +2646,7 @@ const MODULES = [
       },
       // --- C-10: Troubleshooting と Dispatch ---
       {
-        title: 'C-10. Troubleshooting と Dispatch',
+        title: '2-10. Troubleshooting と Dispatch',
         type: 'lecture',
         content: `
           <h3>よくあるトラブルと対処</h3>
@@ -2681,7 +2664,7 @@ const MODULES = [
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
               <div class="grid-title">利用枠に当たった</div>
-              <div class="grid-desc">翌月リセット or プランアップ。C-9 の節約コツを実践</div>
+              <div class="grid-desc">翌月リセット or プランアップ。2-9 の節約コツを実践</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔌</div>
@@ -2726,81 +2709,11 @@ const MODULES = [
           </div>
         `
       }
-    ],
-    // --- Level C クイズ ---
-    quiz: [
-      { question: 'Chat と Cowork の最大の違いは何ですか？', options: ['値段', '「対話」と「委任」（Cowork はゴール提示→計画→実行→完成品）', '動くプラットフォーム', 'AIモデル'], correct: 1, explanation: 'Cowork は「対話」ではなく「委任」のためのモード。ゴールを提示し、計画→実行→完成品という流れで進みます。' },
-      { question: 'Cowork の3つの柱として正しい組み合わせはどれですか？', options: ['Plan / Execute / Connect', 'Read / Write / Delete', 'Input / Process / Output', 'Buy / Use / Sell'], correct: 0, explanation: 'Cowork の3つの柱は Plan（計画）、Execute（実行）、Connect（接続）です。' },
-      { question: 'Computer Use の優先順として正しいのはどれですか？', options: ['画面操作 → ブラウザ → Connector', 'MCP/アドイン → ブラウザ → 画面操作（Computer Use は最後の手段）', 'ブラウザ → Connector → 画面操作', 'すべて同時に使う'], correct: 1, explanation: 'まず MCP / Office アドイン（速くて確実）→ Claude in Chrome → Computer Use（最後の手段）の順です。' },
-      { question: 'Cowork で向いているタスクとして本モジュールで挙げているものはどれですか？', options: ['クライアントとの即時対話', '議事録30本からの論点マップ作成、完成品（.docx）が欲しい', '1行の質問に対する1行の回答', 'メール1通の返信'], correct: 1, explanation: '大量ファイルの処理や完成品ファイルが必要なタスクは Cowork 向きです。' },
-      { question: 'Cowork の起動方法として推奨されているのはどれですか？', options: ['ブラウザで claude.ai にアクセス', 'メールで起動依頼を送る', 'Claude Desktop アプリを起動して Cowork タブを選択', 'CLI で claude cowork と入力'], correct: 2, explanation: 'Cowork はデスクトップアプリの Cowork タブでのみ動きます。' },
-      { question: 'Cowork で「フォルダを開く」操作の意味として正しいのはどれですか？', options: ['フォルダの内容を Anthropic に送信する', 'そのフォルダを Cowork セッションの作業対象として認識させる', 'パスワードを変更する', '友達を招待する'], correct: 1, explanation: 'フォルダを開く操作は、そのフォルダを Cowork の作業範囲として指定する宣言です。' },
-      { question: 'Cowork のタスクループ4ステップとして正しい順序はどれですか？', options: ['Run → Open → Describe → Q&A', 'Describe → Q&A → Run → Open', 'Q&A → Describe → Open → Run', 'Open → Run → Q&A → Describe'], correct: 1, explanation: 'Describe（伝える）→ Q&A（質問応答）→ Run（実行）→ Open（開く）が正しい順序です。' },
-      { question: 'プロンプトに含めるべき3要素として推奨されているのはどれですか？', options: ['Input + Transformation + Output', 'Title + Author + Date', 'Header + Body + Footer', 'Login + Password + Logout'], correct: 0, explanation: 'Input（何を読むか）+ Transformation（何をするか）+ Output（何を出すか）の3点指定が推奨されています。' },
-      { question: 'Subagent（サブエージェント）の役割として正しいのはどれですか？', options: ['ユーザーをサポートするカスタマーサポート', '大きなタスクで並列処理を行い、結果を統合する仕組み', 'AI の倫理を監視する役割', '別の AI 製品'], correct: 1, explanation: 'Subagent は大きなタスクを分割して並列処理し、結果を統合する仕組みです。' },
-      { question: 'Cowork Project と Chat Project の主な違いとして挙げているものはどれですか？', options: ['Cowork Project は無料、Chat Project は有料', 'Cowork Project はローカル格納、Chat Project はクラウド格納', '両者は同じもの', 'Chat Project は廃止予定'], correct: 1, explanation: 'Cowork Project はローカル格納でファイル操作・委任向き、Chat Project はクラウド格納で対話向きです。' },
-      { question: 'Project Instructions に書くと効果的でないものはどれですか？', options: ['関係者', 'ファイル配置', '出力フォーマット', 'クレジットカード番号'], correct: 3, explanation: '機密情報（クレジットカード番号など）は Instructions に書いてはいけません。' },
-      { question: 'Global Instructions と Project Instructions の関係として正しいのはどれですか？', options: ['一方しか設定できない', '両方が読まれ、Project 側が後から読まれるので Global を上書きできる', 'Global が優先される', '互いに無関係で連動しない'], correct: 1, explanation: '両方が読まれ、Project Instructions が後から読まれるため、Global の設定を上書きできます。' },
-      { question: 'Plugin の中身として挙げているものはどれですか？', options: ['Skill だけ', '連携機能だけ', 'Skills + 連携機能（MCP）+ Subagents のバンドル', 'プログラムコードだけ'], correct: 2, explanation: 'Plugin は Skills + 連携機能（MCP / Connector）+ Subagents を職種単位でまとめたバンドルです。' },
-      { question: 'Plugin の中身がプレーンテキストである利点はどれですか？', options: ['速度が速い', 'ファイルを開いて直接編集できる、カスタマイズしやすい', 'ファイルサイズが小さい', '暗号化されている'], correct: 1, explanation: 'プレーンテキストなので、ファイルを開いて直接編集でき、自社流にカスタマイズしやすいのが利点です。' },
-      { question: 'Scheduled tasks の主な用途はどれですか？', options: ['1回限りのタスクの即時実行', 'Cowork タスクを定期的に自動実行（週次レポート、日次キャッチアップなど）', '異常検知', 'パスワード変更'], correct: 1, explanation: 'Scheduled tasks は Cowork タスクを決まった頻度で自動実行する機能です。' },
-      { question: 'Skill と Schedule の役割分担として正しいのはどれですか？', options: ['Skill が「いつやるか」、Schedule が「何をやるか」', 'Skill が「何をやるか（手順）」、Schedule が「いつやるか（頻度）」', '両者は同じもの', '一方しか使えない'], correct: 1, explanation: 'Skill は何をやるか（手順）、Schedule はいつやるか（頻度）の役割分担です。' },
-      { question: 'Cowork が Chat より得意な3場面はどれですか？', options: ['Speed / Quality / Cost', 'Volume / Parallelism / In-place computation', 'Read / Write / Edit', 'Buy / Sell / Hold'], correct: 1, explanation: '量（Volume）、並列処理（Parallelism）、ローカル計算（In-place computation）の3場面です。' },
-      { question: 'Cowork の安全境界として挙げていないものはどれですか？', options: ['隔離実行環境', 'フォルダ権限', '削除ゲート', 'すべての操作にPIN認証'], correct: 3, explanation: 'PIN認証はCoworkの安全境界に含まれません。隔離環境、フォルダ権限、削除ゲートが安全境界です。' },
-      { question: '3つのモデルのうち、複雑な多段推論や戦略立案に適しているのはどれですか？', options: ['Haiku', 'Sonnet', 'Opus', 'すべて同じ'], correct: 2, explanation: 'Opus は最も賢いモデルで、複雑な多段推論や戦略立案に適しています。' },
-      { question: 'Cowork タスクが途中で止まった時の最も多い原因は何ですか？', options: ['パスワードが切れた', 'デスクトップアプリを閉じてしまった', 'インターネットがダウンした', 'Anthropic のサーバー障害'], correct: 1, explanation: 'デスクトップアプリを閉じてしまうのが最も多い原因です。最小化や別ウィンドウ切り替えはOKです。' },
-      { question: 'Dispatch の仕組みとして正しいのはどれですか？', options: ['スマホで計算する', 'スマホから指示 → デスクトップで実行 → 結果を通知', 'すべてクラウドで実行', 'デスクトップ不要で動く'], correct: 1, explanation: 'Dispatch はスマホから指示を出し、デスクトップで実行、結果をスマホに通知する仕組みです。' },
-      { question: 'Cowork 習熟の推奨ステップとして挙げているものはどれですか？', options: ['Plugin → 実タスク → Skill化 → Schedule → チーム共有', 'すべて自分で書く', 'Schedule から始める', 'チーム共有が最初'], correct: 0, explanation: 'Plugin を入れる → 実タスクを1つ走らせる → Skill化 → Schedule → チーム共有が推奨ステップです。' }
-    ],
-    selfStudyResources: {
-      links: [
-        { title: 'Cowork 公式ドキュメント', url: 'https://docs.anthropic.com/en/docs/cowork', desc: 'Cowork の公式ガイド', category: '公式' },
-        { title: 'Claude Desktop ダウンロード', url: 'https://claude.ai/download', desc: 'Cowork を使うためのデスクトップアプリ', category: 'ツール' },
-        { title: 'MCP 公式', url: 'https://modelcontextprotocol.io/', desc: 'MCP の仕様・対応サービス一覧', category: '公式' },
-        { title: 'Anthropic ブログ', url: 'https://www.anthropic.com/blog', desc: '最新アップデート・事例', category: '学習' }
-      ],
-      faq: [
-        { q: 'Cowork はどのプランで使える？', a: 'Pro / Max / Team / Enterprise プランで利用可能です。Free プランでは使えません。' },
-        { q: 'Cowork と Chat はどう使い分ける？', a: '考える・壁打ちは Chat、完成品が欲しい・大量ファイル処理は Cowork。迷ったら Chat で始めて、足りなければ Cowork に切り替えましょう。' },
-        { q: 'フォルダ分離のルールは？', a: '案件メインフォルダは Claude に渡さず、必要分だけコピーした作業フォルダのみを Cowork に渡します。元データは絶対に触らせません。' },
-        { q: 'Scheduled tasks はアプリが閉じていても動く？', a: 'いいえ。Cowork はローカルで動くため、実行時にデスクトップアプリが開いている必要があります。PC 起動時に保留タスクが実行されます。' },
-        { q: 'モデルの使い分けは？', a: 'Sonnet をデフォルトにし、複雑な推論が必要な時だけ Opus、軽い処理は Haiku を使いましょう。' },
-        { q: 'Dispatch はいつ使える？', a: '800社内では Claude モバイルアプリの利用申請中です。利用開始時期は別途案内されます。' }
-      ]
-    }
-  },
-
-  // ============================================================
-  // Level D：Claude Code で品質を制御する
-  // ============================================================
-  {
-    id: 'level-d',
-    title: 'Level D：Claude Code で品質を制御する',
-    shortTitle: 'Level D',
-    description: 'Claude Code の仕組みを理解し、CLAUDE.md・Subagents・MCP・Hooks で再現性ある高品質な成果物と自動化パイプラインを構築する',
-    target: 'Cowork を業務で使っている方、または品質要求が極めて高い業務に取り組む方',
-    duration: '自習ペース',
-    prereq: 'Level C 完了',
-    icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
-    objectives: [
-      'Claude Code の仕組み（Agentic loop / Context / Tools / Permissions）を理解する',
-      '4タッチポイント（Desktop / CLI / VS Code / JetBrains）を使い分けられる',
-      'Explore→Plan→Code→Commit ワークフローで複雑タスクを安全に進められる',
-      'Context 管理（/compact、/clear、/context）で長時間セッションを維持できる',
-      'CLAUDE.md でプロジェクト固有のルールを永続化できる',
-      'Subagents で並列処理・専門化したエージェントを使える',
-      'Hooks で deterministic（必ず実行される）な制御ができる'
-    ],
-    coverGroups: [
-      { label: '基礎を知る', icon: '💡', sections: [0, 1, 2] },
-      { label: 'ワークフローを回す', icon: '🔄', sections: [3, 4] },
-      { label: '品質を制御する', icon: '🎯', sections: [5, 6, 7] },
-      { label: '拡張する', icon: '🔧', sections: [8, 9, 10] }
-    ],
-    sections: [
+    ,
+      
       // --- D-1: Claude Code とは何か ---
       {
-        title: 'D-1. Claude Code とは何か',
+        title: '2-11. Claude Code とは何か',
         type: 'lecture',
         content: `
           <div class="visual-equation">
@@ -2872,7 +2785,7 @@ const MODULES = [
       },
       // --- D-2: 4タッチポイントの使い分け ---
       {
-        title: 'D-2. 4タッチポイントの使い分け',
+        title: '2-12. 4タッチポイントの使い分け',
         type: 'lecture',
         content: `
           <h3>Claude Code の4つのタッチポイント</h3>
@@ -2911,7 +2824,7 @@ const MODULES = [
       },
       // --- D-3: インストールと最初のプロンプト ---
       {
-        title: 'D-3. インストールと最初のプロンプト',
+        title: '2-13. インストールと最初のプロンプト',
         type: 'hands-on',
         content: `
           <h3>動作モード — Permission の3つのレベル</h3>
@@ -2943,7 +2856,7 @@ const MODULES = [
       },
       // --- D-4: Explore → Plan → Code → Commit ---
       {
-        title: 'D-4. Explore → Plan → Code → Commit',
+        title: '2-14. Explore → Plan → Code → Commit',
         type: 'lecture',
         content: `
           <h3>公式推奨の4ステップワークフロー</h3>
@@ -2973,7 +2886,7 @@ const MODULES = [
       },
       // --- D-5: Context管理 ---
       {
-        title: 'D-5. Context管理 — /compact、/clear、/context',
+        title: '2-15. Context管理 — /compact、/clear、/context',
         type: 'lecture',
         content: `
           <h3>Context Window とは</h3>
@@ -3006,7 +2919,7 @@ const MODULES = [
       },
       // --- D-6: CLAUDE.md ---
       {
-        title: 'D-6. CLAUDE.md — プロジェクトの記憶',
+        title: '2-16. CLAUDE.md — プロジェクトの記憶',
         type: 'lecture',
         content: `
           <h3>CLAUDE.md とは</h3>
@@ -3049,7 +2962,7 @@ const MODULES = [
       },
       // --- D-7: Skills（Code文脈での使い方） ---
       {
-        title: 'D-7. Skills（Code文脈での使い方）',
+        title: '2-17. Skills（Code文脈での使い方）',
         type: 'lecture',
         content: `
           <h3>Code 文脈での Skill 特有機能</h3>
@@ -3091,7 +3004,7 @@ const MODULES = [
       },
       // --- D-8: Subagents ---
       {
-        title: 'D-8. Subagents — 並列と Context 隔離',
+        title: '2-18. Subagents — 並列と Context 隔離',
         type: 'lecture',
         content: `
           <h3>Subagent とは</h3>
@@ -3126,7 +3039,7 @@ const MODULES = [
       },
       // --- D-9: MCP — Code文脈での使い方 ---
       {
-        title: 'D-9. MCP — Code文脈での使い方',
+        title: '2-19. MCP — Code文脈での使い方',
         type: 'lecture',
         content: `
           <h3>MCP サーバーのスコープ</h3>
@@ -3170,7 +3083,7 @@ const MODULES = [
       },
       // --- D-10: Hooks ---
       {
-        title: 'D-10. Hooks — 確実に実行されるルール',
+        title: '2-20. Hooks — 確実に実行されるルール',
         type: 'lecture',
         content: `
           <div class="visual-stats">
@@ -3224,7 +3137,7 @@ const MODULES = [
       },
       // --- D-11: Code Review、コミット支援、Remote Control ---
       {
-        title: 'D-11. Code Review、コミット支援、Remote Control',
+        title: '2-21. Code Review、コミット支援、Remote Control',
         type: 'lecture',
         content: `
           <h3>Subagent によるコミット前レビュー</h3>
@@ -3262,14 +3175,39 @@ const MODULES = [
 
           <div class="visual-big-message">
             <div class="big-message-icon">🎓</div>
-            <div class="big-message-text">Level D 完了 — 研修全体修了</div>
+            <div class="big-message-text">第2回後半 完了 — 研修全体修了</div>
             <div class="big-message-sub">全34モジュール完了。CLAUDE.md・Subagents・MCP・Hooks で再現性ある高品質な成果物と自動化パイプラインを構築できます。</div>
           </div>
         `
       }
+    
     ],
-    // --- Level D クイズ ---
     quiz: [
+      
+      { question: 'Chat と Cowork の最大の違いは何ですか？', options: ['値段', '「対話」と「委任」（Cowork はゴール提示→計画→実行→完成品）', '動くプラットフォーム', 'AIモデル'], correct: 1, explanation: 'Cowork は「対話」ではなく「委任」のためのモード。ゴールを提示し、計画→実行→完成品という流れで進みます。' },
+      { question: 'Cowork の3つの柱として正しい組み合わせはどれですか？', options: ['Plan / Execute / Connect', 'Read / Write / Delete', 'Input / Process / Output', 'Buy / Use / Sell'], correct: 0, explanation: 'Cowork の3つの柱は Plan（計画）、Execute（実行）、Connect（接続）です。' },
+      { question: 'Computer Use の優先順として正しいのはどれですか？', options: ['画面操作 → ブラウザ → Connector', 'MCP/アドイン → ブラウザ → 画面操作（Computer Use は最後の手段）', 'ブラウザ → Connector → 画面操作', 'すべて同時に使う'], correct: 1, explanation: 'まず MCP / Office アドイン（速くて確実）→ Claude in Chrome → Computer Use（最後の手段）の順です。' },
+      { question: 'Cowork で向いているタスクとして本モジュールで挙げているものはどれですか？', options: ['クライアントとの即時対話', '議事録30本からの論点マップ作成、完成品（.docx）が欲しい', '1行の質問に対する1行の回答', 'メール1通の返信'], correct: 1, explanation: '大量ファイルの処理や完成品ファイルが必要なタスクは Cowork 向きです。' },
+      { question: 'Cowork の起動方法として推奨されているのはどれですか？', options: ['ブラウザで claude.ai にアクセス', 'メールで起動依頼を送る', 'Claude Desktop アプリを起動して Cowork タブを選択', 'CLI で claude cowork と入力'], correct: 2, explanation: 'Cowork はデスクトップアプリの Cowork タブでのみ動きます。' },
+      { question: 'Cowork で「フォルダを開く」操作の意味として正しいのはどれですか？', options: ['フォルダの内容を Anthropic に送信する', 'そのフォルダを Cowork セッションの作業対象として認識させる', 'パスワードを変更する', '友達を招待する'], correct: 1, explanation: 'フォルダを開く操作は、そのフォルダを Cowork の作業範囲として指定する宣言です。' },
+      { question: 'Cowork のタスクループ4ステップとして正しい順序はどれですか？', options: ['Run → Open → Describe → Q&A', 'Describe → Q&A → Run → Open', 'Q&A → Describe → Open → Run', 'Open → Run → Q&A → Describe'], correct: 1, explanation: 'Describe（伝える）→ Q&A（質問応答）→ Run（実行）→ Open（開く）が正しい順序です。' },
+      { question: 'プロンプトに含めるべき3要素として推奨されているのはどれですか？', options: ['Input + Transformation + Output', 'Title + Author + Date', 'Header + Body + Footer', 'Login + Password + Logout'], correct: 0, explanation: 'Input（何を読むか）+ Transformation（何をするか）+ Output（何を出すか）の3点指定が推奨されています。' },
+      { question: 'Subagent（サブエージェント）の役割として正しいのはどれですか？', options: ['ユーザーをサポートするカスタマーサポート', '大きなタスクで並列処理を行い、結果を統合する仕組み', 'AI の倫理を監視する役割', '別の AI 製品'], correct: 1, explanation: 'Subagent は大きなタスクを分割して並列処理し、結果を統合する仕組みです。' },
+      { question: 'Cowork Project と Chat Project の主な違いとして挙げているものはどれですか？', options: ['Cowork Project は無料、Chat Project は有料', 'Cowork Project はローカル格納、Chat Project はクラウド格納', '両者は同じもの', 'Chat Project は廃止予定'], correct: 1, explanation: 'Cowork Project はローカル格納でファイル操作・委任向き、Chat Project はクラウド格納で対話向きです。' },
+      { question: 'Project Instructions に書くと効果的でないものはどれですか？', options: ['関係者', 'ファイル配置', '出力フォーマット', 'クレジットカード番号'], correct: 3, explanation: '機密情報（クレジットカード番号など）は Instructions に書いてはいけません。' },
+      { question: 'Global Instructions と Project Instructions の関係として正しいのはどれですか？', options: ['一方しか設定できない', '両方が読まれ、Project 側が後から読まれるので Global を上書きできる', 'Global が優先される', '互いに無関係で連動しない'], correct: 1, explanation: '両方が読まれ、Project Instructions が後から読まれるため、Global の設定を上書きできます。' },
+      { question: 'Plugin の中身として挙げているものはどれですか？', options: ['Skill だけ', '連携機能だけ', 'Skills + 連携機能（MCP）+ Subagents のバンドル', 'プログラムコードだけ'], correct: 2, explanation: 'Plugin は Skills + 連携機能（MCP / Connector）+ Subagents を職種単位でまとめたバンドルです。' },
+      { question: 'Plugin の中身がプレーンテキストである利点はどれですか？', options: ['速度が速い', 'ファイルを開いて直接編集できる、カスタマイズしやすい', 'ファイルサイズが小さい', '暗号化されている'], correct: 1, explanation: 'プレーンテキストなので、ファイルを開いて直接編集でき、自社流にカスタマイズしやすいのが利点です。' },
+      { question: 'Scheduled tasks の主な用途はどれですか？', options: ['1回限りのタスクの即時実行', 'Cowork タスクを定期的に自動実行（週次レポート、日次キャッチアップなど）', '異常検知', 'パスワード変更'], correct: 1, explanation: 'Scheduled tasks は Cowork タスクを決まった頻度で自動実行する機能です。' },
+      { question: 'Skill と Schedule の役割分担として正しいのはどれですか？', options: ['Skill が「いつやるか」、Schedule が「何をやるか」', 'Skill が「何をやるか（手順）」、Schedule が「いつやるか（頻度）」', '両者は同じもの', '一方しか使えない'], correct: 1, explanation: 'Skill は何をやるか（手順）、Schedule はいつやるか（頻度）の役割分担です。' },
+      { question: 'Cowork が Chat より得意な3場面はどれですか？', options: ['Speed / Quality / Cost', 'Volume / Parallelism / In-place computation', 'Read / Write / Edit', 'Buy / Sell / Hold'], correct: 1, explanation: '量（Volume）、並列処理（Parallelism）、ローカル計算（In-place computation）の3場面です。' },
+      { question: 'Cowork の安全境界として挙げていないものはどれですか？', options: ['隔離実行環境', 'フォルダ権限', '削除ゲート', 'すべての操作にPIN認証'], correct: 3, explanation: 'PIN認証はCoworkの安全境界に含まれません。隔離環境、フォルダ権限、削除ゲートが安全境界です。' },
+      { question: '3つのモデルのうち、複雑な多段推論や戦略立案に適しているのはどれですか？', options: ['Haiku', 'Sonnet', 'Opus', 'すべて同じ'], correct: 2, explanation: 'Opus は最も賢いモデルで、複雑な多段推論や戦略立案に適しています。' },
+      { question: 'Cowork タスクが途中で止まった時の最も多い原因は何ですか？', options: ['パスワードが切れた', 'デスクトップアプリを閉じてしまった', 'インターネットがダウンした', 'Anthropic のサーバー障害'], correct: 1, explanation: 'デスクトップアプリを閉じてしまうのが最も多い原因です。最小化や別ウィンドウ切り替えはOKです。' },
+      { question: 'Dispatch の仕組みとして正しいのはどれですか？', options: ['スマホで計算する', 'スマホから指示 → デスクトップで実行 → 結果を通知', 'すべてクラウドで実行', 'デスクトップ不要で動く'], correct: 1, explanation: 'Dispatch はスマホから指示を出し、デスクトップで実行、結果をスマホに通知する仕組みです。' },
+      { question: 'Cowork 習熟の推奨ステップとして挙げているものはどれですか？', options: ['Plugin → 実タスク → Skill化 → Schedule → チーム共有', 'すべて自分で書く', 'Schedule から始める', 'チーム共有が最初'], correct: 0, explanation: 'Plugin を入れる → 実タスクを1つ走らせる → Skill化 → Schedule → チーム共有が推奨ステップです。' }
+    ,
+      
       { question: 'Claude Code と claude.ai Chat の根本的な違いは何ですか？', options: ['値段', 'Code はファイル・ターミナル・コードベースに直接アクセスして自律的に読み書き・実行する', 'Chat の方が機能が多い', '違いはない'], correct: 1, explanation: 'Claude Code はファイル・ターミナル・コードベースに直接アクセスして、Claude が自分で読み書き・実行するエージェント型ツールです。' },
       { question: 'AI Agent の特徴として正しいのはどれですか？', options: ['入力に対して1回だけ応答する', '環境とやりとりしながら目的達成のためにループで自律的に行動する', '人間の指示を全部受け取らないと動かない', 'インターネットがないと動かない'], correct: 1, explanation: 'AI Agent は環境とやりとりしながら、目的達成のためにループで自律的に行動するソフトウェアです。' },
       { question: 'Claude Code のタッチポイントとして挙げていないものはどれですか？', options: ['CLI（ターミナル）', 'VS Code 拡張', 'JetBrains プラグイン', 'iPhone 専用アプリ'], correct: 3, explanation: 'iPhone 専用アプリはタッチポイントに含まれません。CLI、VS Code 拡張、JetBrains プラグイン、Desktop アプリ、Web が挙げられています。' },
@@ -3292,9 +3230,16 @@ const MODULES = [
       { question: 'PreToolUse Hook で exit code 2 を返すと何が起きますか？', options: ['ツール実行が高速化', 'ツール実行がブロックされる（stderr メッセージが Claude に返る）', 'ツール実行が2回行われる', '何も起きない'], correct: 1, explanation: 'exit code 2 を返すとツール実行がブロックされ、stderr メッセージが Claude に返されます。' },
       { question: 'Subagent でコミット前レビューを行う理由として正しいのはどれですか？', options: ['速度を上げるため', 'メインエージェントは実装した側のバイアスがあり、Subagent は別 Context でフレッシュな視点でレビューできるから', 'クラウド負荷を減らすため', '値段を下げるため'], correct: 1, explanation: 'メインエージェントは「実装した側」のバイアスがあり、Subagent は別 Context でフレッシュな視点からレビューできます。' },
       { question: 'Dispatch と Remote Control の違いとして正しいのはどれですか？', options: ['両者は同じ', 'Dispatch は Cowork に新規タスク投入、Remote Control は Code セッションの継続操作', 'Dispatch は無料、Remote Control は有料', 'Remote Control の方が古い機能'], correct: 1, explanation: 'Dispatch は Cowork に新規タスクを投げる機能、Remote Control は走っている Code セッションを継続操作する機能です。' }
+    
     ],
     selfStudyResources: {
       links: [
+        
+        { title: 'Cowork 公式ドキュメント', url: 'https://docs.anthropic.com/en/docs/cowork', desc: 'Cowork の公式ガイド', category: '公式' },
+        { title: 'Claude Desktop ダウンロード', url: 'https://claude.ai/download', desc: 'Cowork を使うためのデスクトップアプリ', category: 'ツール' },
+        { title: 'MCP 公式', url: 'https://modelcontextprotocol.io/', desc: 'MCP の仕様・対応サービス一覧', category: '公式' },
+        { title: 'Anthropic ブログ', url: 'https://www.anthropic.com/blog', desc: '最新アップデート・事例', category: '学習' },
+        
         { title: 'Claude Code 公式ドキュメント', url: 'https://docs.anthropic.com/en/docs/claude-code', desc: 'Claude Code の公式ガイド', category: '公式' },
         { title: 'Claude Code ベストプラクティス', url: 'https://docs.anthropic.com/en/docs/claude-code/best-practices', desc: '効果的な Claude Code の使い方', category: '学習' },
         { title: 'Claude Skills ガイド', url: 'https://docs.anthropic.com/en/docs/claude-code/skills', desc: 'Skills の作成方法', category: '学習' },
@@ -3303,6 +3248,14 @@ const MODULES = [
         { title: 'Anthropic ブログ', url: 'https://www.anthropic.com/blog', desc: '最新アップデート・事例', category: '学習' }
       ],
       faq: [
+        
+        { q: 'Cowork はどのプランで使える？', a: 'Pro / Max / Team / Enterprise プランで利用可能です。Free プランでは使えません。' },
+        { q: 'Cowork と Chat はどう使い分ける？', a: '考える・壁打ちは Chat、完成品が欲しい・大量ファイル処理は Cowork。迷ったら Chat で始めて、足りなければ Cowork に切り替えましょう。' },
+        { q: 'フォルダ分離のルールは？', a: '案件メインフォルダは Claude に渡さず、必要分だけコピーした作業フォルダのみを Cowork に渡します。元データは絶対に触らせません。' },
+        { q: 'Scheduled tasks はアプリが閉じていても動く？', a: 'いいえ。Cowork はローカルで動くため、実行時にデスクトップアプリが開いている必要があります。PC 起動時に保留タスクが実行されます。' },
+        { q: 'モデルの使い分けは？', a: 'Sonnet をデフォルトにし、複雑な推論が必要な時だけ Opus、軽い処理は Haiku を使いましょう。' },
+        { q: 'Dispatch はいつ使える？', a: '800社内では Claude モバイルアプリの利用申請中です。利用開始時期は別途案内されます。' },
+        
         { q: 'Claude Code と Cowork はどう使い分ける？', a: 'Cowork は GUI ベースで成果物を作る協働ツール。Code はターミナル / IDE で複数ステップを自律実行し、CLAUDE.md + Hooks で品質を完全に固定できます。シンプルなタスクは Cowork、再現性が必要なら Code です。' },
         { q: 'CLAUDE.md はどう作る？', a: '/init コマンドで骨格を自動生成し、叩き台にして追加・修正していくのが効率的です。最初から完璧を目指さず、Course-correct した内容を追加していきましょう。' },
         { q: 'Context が足りなくなったら？', a: '/context で使用率を確認し、80% 超えたら /compact で整理。別タスクに切り替えるなら /clear でリセット。具体的な指示で Context を節約できます。' },
@@ -3313,6 +3266,7 @@ const MODULES = [
     }
   }
 ];
+
 
 // 修了テスト用の問題（全モジュールのクイズからシャッフルして出題）
 function generateFinalTestQuestions() {
