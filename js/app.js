@@ -771,10 +771,10 @@
           <div class="slide-cover-groups cols-${Math.min(groups.length, 4)}">
             ${groups.map(g => `
               <div class="cover-group">
-                <div class="cover-group-label">${g.label}</div>
+                <div class="cover-group-label">${g.icon || ''} ${g.label}</div>
                 <div class="cover-group-items">
                   ${g.sections.map(si => `
-                    <div class="cover-group-item">${mod.sections[si].title.replace(/^[A-D]-\d+\.\s*/, '')}</div>
+                    <div class="cover-group-item" data-goto-slide="${si + 1}">${mod.sections[si].title.replace(/^[A-D]-\d+\.\s*/, '')}</div>
                   `).join('')}
                 </div>
               </div>
@@ -795,32 +795,34 @@
         </div>`;
     }
 
+    const sideGroups = mod.coverGroups || [{ label: '全セクション', sections: mod.sections.map((_, i) => i) }];
     container.innerHTML = `
-      <div class="fade-in present-slide-view">
+      <div class="fade-in present-slide-view has-sidebar">
         <div class="present-nav-bar">
           <div class="present-session-tabs">
             ${MODULES.map((m, i) => `
               <button class="present-tab ${i===moduleIndex?'active':''}" data-session="${i}">${m.shortTitle}</button>
             `).join('')}
           </div>
-          <div class="present-section-select">
-            <button class="present-section-btn" id="section-dropdown-btn">
-              ${slideIdx === 0 ? '表紙' : mod.sections[slideIdx-1].title}
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="present-section-dropdown" id="section-dropdown">
-              <div class="present-section-dropdown-item ${slideIdx===0?'active':''}" data-slide="0">
-                <span class="dropdown-num">0</span> 表紙
+        </div>
+        <div class="present-body">
+          <aside class="present-sidebar" id="present-sidebar">
+            <div class="sidebar-cover-link" data-goto-slide="0">📋 表紙</div>
+            ${sideGroups.map(g => `
+              <div class="sidebar-group">
+                <div class="sidebar-group-label">${g.icon || ''} ${g.label}</div>
+                ${g.sections.map(si => `
+                  <div class="sidebar-item ${slideIdx === si + 1 ? 'active' : ''}" data-goto-slide="${si + 1}">
+                    ${mod.sections[si].title.replace(/^[A-D]-\d+\.\s*/, '')}
+                  </div>
+                `).join('')}
               </div>
-              ${mod.sections.map((sec, i) => `
-                <div class="present-section-dropdown-item ${slideIdx===i+1?'active':''}" data-slide="${i+1}">
-                  <span class="dropdown-num">${i+1}</span> ${sec.title}
-                </div>
-              `).join('')}
-            </div>
+            `).join('')}
+          </aside>
+          <div class="present-main">
+            <div class="slide-content">${slideContent}</div>
           </div>
         </div>
-        <div class="slide-content">${slideContent}</div>
         <div class="slide-nav">
           <button class="slide-nav-btn" id="slide-prev" ${slideIdx===0?'disabled':''}>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> 前へ
@@ -841,19 +843,10 @@
       });
     });
 
-    // セクションドロップダウン
-    const dropBtn = container.querySelector('#section-dropdown-btn');
-    const dropdown = container.querySelector('#section-dropdown');
-    dropBtn?.addEventListener('click', () => dropdown.classList.toggle('open'));
-    // クリック外で閉じる
-    document.addEventListener('click', function closeDropdown(e) {
-      if (!dropBtn?.contains(e.target) && !dropdown?.contains(e.target)) {
-        dropdown?.classList.remove('open');
-      }
-    });
-    container.querySelectorAll('.present-section-dropdown-item').forEach(item => {
+    // サイドバー & 表紙グループのクリックナビ
+    container.querySelectorAll('[data-goto-slide]').forEach(item => {
       item.addEventListener('click', () => {
-        presentSectionIndex = parseInt(item.dataset.slide);
+        presentSectionIndex = parseInt(item.dataset.gotoSlide);
         renderPresentModule(container, moduleIndex);
       });
     });
