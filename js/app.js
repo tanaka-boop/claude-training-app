@@ -797,7 +797,7 @@
 
     const sideGroups = mod.coverGroups || [{ label: '全セクション', sections: mod.sections.map((_, i) => i) }];
     container.innerHTML = `
-      <div class="fade-in present-slide-view has-sidebar">
+      <div class="fade-in present-slide-view${slideIdx !== 0 ? ' has-sidebar' : ''}">
         <div class="present-nav-bar">
           <div class="present-session-tabs">
             ${MODULES.map((m, i) => `

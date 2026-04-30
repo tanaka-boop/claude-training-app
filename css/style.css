@@ -2400,7 +2400,8 @@ body.present-mode #page-container {
   color: var(--primary);
 }
 
-.present-main {
+.present-slide-view.has-sidebar .present-main {
+  margin-right: 248px;
 }
 
 .present-sidebar.hidden {
