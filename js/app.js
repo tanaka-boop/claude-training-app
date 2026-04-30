@@ -768,7 +768,7 @@
         <div class="slide-cover">
           <h1 class="slide-cover-title">${mod.title}</h1>
           <p class="slide-cover-desc">${mod.description}</p>
-          <div class="slide-cover-roadmap">
+          <div class="slide-cover-roadmap${mod.sections.length <= 5 ? ' cols-1' : ''}">
             ${mod.sections.map((s, i) => `
               <div class="roadmap-item">
                 <div class="roadmap-num">${i + 1}</div>
