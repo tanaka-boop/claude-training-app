@@ -59,12 +59,23 @@
     return links;
   }
   function getAllFaqs() {
-    const faqs = [];
+    const categoryOrder = ['💡 Claudeの基本', '✍️ プロンプト・品質', '🖥️ Chat・Projects', '📂 Cowork', '💼 Office・Chrome', '🔧 Claude Code', '🔗 外部連携（MCP）'];
+    const seen = new Set();
+    const catMap = {};
     MODULES.forEach(mod => {
-      const items = mod.selfStudyResources?.faq || [];
-      if (items.length > 0) faqs.push({ sessionTitle: mod.title, shortTitle: mod.shortTitle, items });
+      (mod.selfStudyResources?.faq || []).forEach(f => {
+        const key = f.q;
+        if (seen.has(key)) return;
+        seen.add(key);
+        const cat = f.category || 'その他';
+        if (!catMap[cat]) catMap[cat] = [];
+        catMap[cat].push(f);
+      });
     });
-    return faqs;
+    const result = [];
+    categoryOrder.forEach(cat => { if (catMap[cat]) result.push({ categoryTitle: cat, items: catMap[cat] }); });
+    Object.keys(catMap).forEach(cat => { if (!categoryOrder.includes(cat)) result.push({ categoryTitle: cat, items: catMap[cat] }); });
+    return result;
   }
 
   // --- モード管理 ---
@@ -559,7 +570,7 @@
         </div>
         ${allFaqs.map(g => `
           <div class="faq-section">
-            <h2 class="faq-section-title">${g.sessionTitle}</h2>
+            <h2 class="faq-section-title">${g.categoryTitle}</h2>
             <div class="faq-list">
               ${g.items.map(f => `
                 <details class="faq-item"><summary>${f.q}</summary><p>${f.a}</p></details>
