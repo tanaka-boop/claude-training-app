@@ -2254,7 +2254,7 @@ body.present-mode #page-container {
   min-height: calc(100vh - 120px);
 }
 
-.slide-content {
+.slide-area {
   flex: 1;
 }
 
@@ -2326,15 +2326,15 @@ body.present-mode #page-container {
 }
 
 /* --- 研修モード サイドバー --- */
-.present-slide-view.has-sidebar .slide-area {
+.slide-area {
   display: flex;
-  gap: 0;
   align-items: flex-start;
 }
 
-.present-slide-view.has-sidebar .slide-area .slide-content {
+.slide-area > .slide-content {
   flex: 1;
   min-width: 0;
+  overflow: hidden;
 }
 
 .present-sidebar {
