@@ -3788,6 +3788,26 @@ body.landing-mode #global-footer {
   line-height: 1.6;
 }
 
+/* 導入メッセージ（講師の想い・掴み） */
+.visual-highlight-card.opening {
+  text-align: left;
+  background: linear-gradient(135deg, var(--primary-bg) 0%, var(--surface) 100%);
+  border-left: 4px solid var(--primary);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  padding: 28px 32px;
+}
+.visual-highlight-card.opening p {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+.visual-highlight-card.opening p:last-child {
+  margin-bottom: 0;
+}
+
 /* --- 横並びラベルカード --- */
 .visual-label-row {
   display: flex;
