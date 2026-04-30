@@ -806,7 +806,7 @@
           </div>
         </div>
         <div class="present-body">
-          <aside class="present-sidebar" id="present-sidebar">
+          <aside class="present-sidebar${slideIdx === 0 ? ' hidden' : ''}" id="present-sidebar">
             <div class="sidebar-cover-link" data-goto-slide="0">📋 表紙</div>
             ${sideGroups.map(g => `
               <div class="sidebar-group">

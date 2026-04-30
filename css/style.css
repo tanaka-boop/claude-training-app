@@ -2396,6 +2396,10 @@ body.present-mode #page-container {
   min-width: 0;
 }
 
+.present-sidebar.hidden {
+  display: none;
+}
+
 /* --- 表紙 グループ構造 --- */
 .slide-cover-groups {
   display: grid;
