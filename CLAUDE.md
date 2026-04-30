@@ -205,3 +205,10 @@ Claude Skill Up/
 ### 5. キャッシュバスティング忘れ
 - **問題**: CSS/JS を変更したが `?v=N` をインクリメントし忘れ、ブラウザに古いファイルがキャッシュされた
 - **対策**: JS/CSS を変更したら **必ず** `index.html` の `?v=N` をインクリメントする（開発ルール参照）
+
+### 6. `position: fixed` が効かない（CSS containing block）
+- **問題**: サイドバーに `position: fixed; right: 0` を指定したが、ビューポート基準にならず本文と重なった。原因は祖先要素の `.fade-in` アニメーションが `transform: translateY(0)` を `forwards` で保持しており、新しい containing block が生成されていたこと
+- **対策**:
+  - `position: fixed` が期待通り動かない場合、**まず祖先要素の computed style を確認する**（`transform`, `filter`, `will-change`, `contain` のいずれかが `none` 以外だと containing block が変わる）
+  - `animation-fill-mode: forwards` で `transform` が残るケースにも注意
+  - **CSSを変更する前に `getBoundingClientRect()` / `getComputedStyle()` で実測値を取得し、仮説を立ててから修正する**（手当たり次第に変更しない）
