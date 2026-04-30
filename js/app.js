@@ -763,12 +763,28 @@
 
     let slideContent = '';
     if (slideIdx === 0) {
+      const objIcons = ['🎯','💡','🔧','🚀','📊','🏗️','⚡','🔍','📋','🤝'];
+      const sectionCount = mod.sections.length;
+      const quizCount = mod.quiz ? mod.quiz.length : 0;
+      const handsonCount = mod.sections.filter(s => s.type === 'handson').length;
+      const lectureCount = sectionCount - handsonCount;
       slideContent = `
         <div class="slide-cover">
           <h1 class="slide-cover-title">${mod.title}</h1>
           <p class="slide-cover-desc">${mod.description}</p>
-          <div class="slide-cover-objectives"><h3>この回で身につくこと</h3>
-            <ul>${mod.objectives.map(o=>`<li>${o}</li>`).join('')}</ul>
+          <div class="slide-cover-grid">
+            ${mod.objectives.map((o, i) => `
+              <div class="slide-cover-card">
+                <span class="slide-cover-card-icon">${objIcons[i % objIcons.length]}</span>
+                <span class="slide-cover-card-text">${o}</span>
+              </div>
+            `).join('')}
+          </div>
+          <div class="slide-cover-stats">
+            <div class="slide-cover-stat"><span class="stat-num">${sectionCount}</span><span class="stat-label">セクション</span></div>
+            <div class="slide-cover-stat"><span class="stat-num">${lectureCount}</span><span class="stat-label">講義</span></div>
+            <div class="slide-cover-stat"><span class="stat-num">${handsonCount}</span><span class="stat-label">ハンズオン</span></div>
+            <div class="slide-cover-stat"><span class="stat-num">${quizCount}</span><span class="stat-label">クイズ問題</span></div>
           </div>
         </div>`;
     } else {
