@@ -2326,22 +2326,19 @@ body.present-mode #page-container {
 }
 
 /* --- 研修モード サイドバー --- */
-.present-slide-view.has-sidebar .present-body {
-  display: flex;
-  gap: 0;
-  min-height: calc(100vh - 120px);
-}
-
 .present-sidebar {
-  width: 240px;
-  flex-shrink: 0;
+  position: fixed;
+  right: 16px;
+  top: 72px;
+  width: 220px;
+  max-height: calc(100vh - 150px);
   background: var(--surface);
-  border-left: 1px solid var(--border);
-  padding: 16px 0;
-  position: sticky;
-  top: 60px;
-  height: calc(100vh - 120px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 12px 0;
   overflow-y: auto;
+  z-index: 90;
 }
 
 .sidebar-cover-link {
@@ -2376,7 +2373,7 @@ body.present-mode #page-container {
   color: var(--text-secondary);
   cursor: pointer;
   line-height: 1.4;
-  border-right: 3px solid transparent;
+  border-left: 3px solid transparent;
 }
 
 .sidebar-item:hover {
@@ -2387,7 +2384,7 @@ body.present-mode #page-container {
 .sidebar-item.active {
   color: var(--primary);
   font-weight: 700;
-  border-right-color: var(--primary);
+  border-left-color: var(--primary);
   background: var(--primary-bg);
 }
 
@@ -2404,8 +2401,6 @@ body.present-mode #page-container {
 }
 
 .present-main {
-  flex: 1;
-  min-width: 0;
 }
 
 .present-sidebar.hidden {
