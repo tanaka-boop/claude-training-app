@@ -22,6 +22,11 @@ const MODULES = [
       'Chat / Cowork / Code の3モードを場面に応じて選べる',
       '業務PC・モバイルでClaudeを使い始められる状態になっている'
     ],
+    coverGroups: [
+      { label: '理解する', icon: '💡', sections: [0, 1] },
+      { label: '使いこなす', icon: '🎯', sections: [2, 3] },
+      { label: '準備する', icon: '🔧', sections: [4] }
+    ],
     sections: [
       // --- A-1: Claudeとは何か ---
       {
@@ -1061,6 +1066,11 @@ const MODULES = [
       'Office アドイン（Excel / PowerPoint / Word）を業務で使い倒せる',
       'Claude in Chrome / Slack の補助インターフェースを必要時に使える'
     ],
+    coverGroups: [
+      { label: 'ワークスペースを作る', icon: '🏗️', sections: [0, 1] },
+      { label: '品質を安定させる', icon: '🎯', sections: [2, 3, 4] },
+      { label: '活用の幅を広げる', icon: '🚀', sections: [5, 6, 7] }
+    ],
     sections: [
       // --- B-1: Projects ---
       {
@@ -2089,6 +2099,11 @@ const MODULES = [
       '大量データの並列処理・高度な分析を Cowork に委任できる',
       '利用量・モデル選択を意識して効率的に使える'
     ],
+    coverGroups: [
+      { label: 'Coworkを始める', icon: '🚀', sections: [0, 1, 2] },
+      { label: '環境を整える', icon: '🏗️', sections: [3, 4, 5] },
+      { label: '業務で使い倒す', icon: '💼', sections: [6, 7, 8, 9] }
+    ],
     sections: [
       // --- C-1: Cowork とは何か ---
       {
@@ -2775,6 +2790,12 @@ const MODULES = [
       'CLAUDE.md でプロジェクト固有のルールを永続化できる',
       'Subagents で並列処理・専門化したエージェントを使える',
       'Hooks で deterministic（必ず実行される）な制御ができる'
+    ],
+    coverGroups: [
+      { label: '基礎を知る', icon: '💡', sections: [0, 1, 2] },
+      { label: 'ワークフローを回す', icon: '🔄', sections: [3, 4] },
+      { label: '品質を制御する', icon: '🎯', sections: [5, 6, 7] },
+      { label: '拡張する', icon: '🔧', sections: [8, 9, 10] }
     ],
     sections: [
       // --- D-1: Claude Code とは何か ---

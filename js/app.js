@@ -763,18 +763,19 @@
 
     let slideContent = '';
     if (slideIdx === 0) {
-      const typeLabel = s => s.type === 'handson' ? '🖐 ハンズオン' : '📖 講義';
+      const groups = mod.coverGroups || [{ label: '', sections: mod.sections.map((_, i) => i) }];
       slideContent = `
         <div class="slide-cover">
           <h1 class="slide-cover-title">${mod.title}</h1>
           <p class="slide-cover-desc">${mod.description}</p>
-          <div class="slide-cover-roadmap${mod.sections.length <= 5 ? ' cols-1' : ''}">
-            ${mod.sections.map((s, i) => `
-              <div class="roadmap-item">
-                <div class="roadmap-num">${i + 1}</div>
-                <div class="roadmap-body">
-                  <div class="roadmap-title">${s.title}</div>
-                  <div class="roadmap-type">${typeLabel(s)}</div>
+          <div class="slide-cover-groups cols-${Math.min(groups.length, 4)}">
+            ${groups.map(g => `
+              <div class="cover-group">
+                <div class="cover-group-label">${g.label}</div>
+                <div class="cover-group-items">
+                  ${g.sections.map(si => `
+                    <div class="cover-group-item">${mod.sections[si].title.replace(/^[A-D]-\d+\.\s*/, '')}</div>
+                  `).join('')}
                 </div>
               </div>
             `).join('')}
