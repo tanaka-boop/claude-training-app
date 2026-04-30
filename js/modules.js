@@ -28,7 +28,7 @@ const MODULES = [
       'Office アドイン（Excel / PowerPoint / Word）を業務で使い倒せる'
     ],
     coverGroups: [
-      { label: '基礎', icon: '💡', sections: [0, 1, 2, 3, 4] },
+      { label: 'Claudeを知る', icon: '💡', sections: [0, 1, 2, 3, 4] },
       { label: 'ワークスペースを作る', icon: '🏗️', sections: [5, 6] },
       { label: '品質を安定させる', icon: '🎯', sections: [7, 8, 9] },
       { label: '活用の幅を広げる', icon: '🚀', sections: [10, 11, 12] }
