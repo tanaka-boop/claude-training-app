@@ -2264,15 +2264,18 @@ body.present-mode #page-container {
 }
 
 .slide-cover-title {
-  font-size: 34px;
+  font-size: 42px;
   font-weight: 800;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .slide-cover-desc {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--text-secondary);
-  margin-bottom: 40px;
+  margin-bottom: 48px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .slide-cover-objectives {
@@ -2424,32 +2427,69 @@ body.present-mode #page-container {
 .slide-cover-groups.cols-4 { grid-template-columns: repeat(4, 1fr); }
 
 .cover-group {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .cover-group-label {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 800;
   color: var(--primary);
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  border-bottom: 2px solid var(--primary);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 3px solid var(--primary);
 }
 
-.cover-group-items {
+/* --- 到達目標（メイン表示） --- */
+.cover-group-objectives {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cover-obj-item {
+  font-size: 17px;
+  color: var(--text);
+  line-height: 1.5;
+  padding-left: 28px;
+  position: relative;
+}
+
+.cover-obj-item::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* --- セクション一覧（サブ表示） --- */
+.cover-group-items {
+  display: flex;
+  flex-wrap: wrap;
   gap: 6px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
 }
 
 .cover-group-item {
-  font-size: 14px;
-  color: var(--text);
-  line-height: 1.5;
-  padding: 6px 8px;
-  border-radius: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--bg);
   cursor: pointer;
-  transition: background 0.15s;
+  transition: all 0.15s;
 }
 
 .cover-group-item:hover {
@@ -2458,25 +2498,8 @@ body.present-mode #page-container {
 }
 
 .cover-item-num {
-  font-size: 12px;
   font-weight: 700;
-  color: var(--text-secondary);
-  min-width: 30px;
-  display: inline-block;
-}
-
-/* --- 表紙 グループ到達目標 --- */
-.cover-group-objectives {
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px dashed var(--border);
-}
-
-.cover-obj-item {
-  font-size: 12px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  padding: 2px 0;
+  margin-right: 2px;
 }
 
 /* --- 表紙 到達目標リスト --- */
