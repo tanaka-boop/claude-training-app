@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Claude スキルアップ</title>
-  <link rel="stylesheet" href="css/style.css?v=49">
+  <title>Claude スキルアップ講座</title>
+  <link rel="stylesheet" href="css/style.css?v=143">
 </head>
 <body>
   <!-- グローバルヘッダー -->
@@ -12,16 +12,20 @@
     <div class="header-inner">
       <a href="#" class="header-logo" data-page="home">
         <img src="assets/ehi-logo.png" alt="800" height="22">
-        <span>Claude スキルアップ</span>
+        <span>Claude スキルアップ講座</span>
       </a>
       <nav class="header-nav" id="header-nav">
         <a href="#" class="header-nav-link active" data-page="home">ホーム</a>
         <a href="#" class="header-nav-link" data-page="learn">学習コンテンツ</a>
+        <a href="#" class="header-nav-link" data-page="practices">練習問題</a>
         <a href="#" class="header-nav-link" data-page="quiz-hub">クイズ</a>
         <a href="#" class="header-nav-link" data-page="links">リンク集</a>
         <a href="#" class="header-nav-link" data-page="faq">FAQ</a>
       </nav>
       <div class="header-right">
+        <button class="header-search-btn" id="open-search" title="検索（Ctrl+K）">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
         <div class="mode-toggle">
           <button class="mode-btn" data-mode="present">研修モード</button>
           <button class="mode-btn active" data-mode="self-study">自習モード</button>
@@ -29,6 +33,18 @@
       </div>
     </div>
   </header>
+
+  <!-- 検索モーダル -->
+  <div class="search-modal" id="search-modal">
+    <div class="search-modal-inner">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-input" placeholder="セクション・FAQ・リンクを検索…" autocomplete="off">
+        <kbd class="search-kbd">ESC</kbd>
+      </div>
+      <div class="search-results" id="search-results"></div>
+    </div>
+  </div>
 
   <!-- メインコンテンツ -->
   <main id="main-content">
@@ -46,8 +62,8 @@
     </div>
   </footer>
 
-  <script src="js/modules.js?v=49"></script>
-  <script src="js/quiz.js?v=49"></script>
-  <script src="js/app.js?v=49"></script>
+  <script src="js/modules.js?v=143"></script>
+  <script src="js/quiz.js?v=143"></script>
+  <script src="js/app.js?v=143"></script>
 </body>
 </html>

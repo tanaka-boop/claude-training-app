@@ -1,5 +1,5 @@
 // ========================================
-// Claude スキルアップ - メインアプリケーション
+// Claude スキルアップ講座 - メインアプリケーション
 // ランディング → 研修モード / 自習モード
 // ========================================
 
@@ -137,6 +137,7 @@
         case 'home': renderHome(container); break;
         case 'learn': renderLearn(container); break;
         case 'topic-detail': renderTopicDetail(container, moduleIndex, sectionIndex); break;
+        case 'practices': renderPractices(container); break;
         case 'links': renderLinks(container); break;
         case 'faq': renderFaq(container); break;
         case 'quiz-hub': renderQuizHub(container); break;
@@ -158,7 +159,7 @@
         <div class="landing-logo">
           <img src="assets/ehi-logo.png" alt="800" height="36">
         </div>
-        <h1 class="landing-title">Claude スキルアップ</h1>
+        <h1 class="landing-title">Claude スキルアップ講座</h1>
         <p class="landing-subtitle">利用目的に合わせてモードを選んでください</p>
         <div class="landing-cards">
           <div class="landing-card" data-mode="present">
@@ -166,7 +167,7 @@
               <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
             <h2>研修を受ける</h2>
-            <p>講師が画面に投影するプレゼン形式です。スライド送りで研修コンテンツを表示します。</p>
+            <p>スライド形式で研修を進めます。</p>
             <span class="landing-btn">研修モードで開く</span>
           </div>
           <div class="landing-card" data-mode="self-study">
@@ -174,7 +175,7 @@
               <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
             </div>
             <h2>自分で学ぶ</h2>
-            <p>研修の復習、参考リンク、FAQ、クイズなど、自分のペースで学習を進められます。</p>
+            <p>復習・クイズ・FAQ を自分のペースで。</p>
             <span class="landing-btn">自習モードで開く</span>
           </div>
         </div>
@@ -199,77 +200,42 @@
     container.innerHTML = `
       <div class="fade-in">
         <div class="home-hero">
-          <h1>Claude スキルアップ</h1>
+          <h1>Claude スキルアップ講座</h1>
           <p class="subtitle">研修内容の復習、参考資料・リンク集、FAQで、Claude活用スキルを高めましょう。</p>
         </div>
 
         <div class="training-overview">
           <h2 class="overview-title">研修の全体像</h2>
-          <p class="overview-subtitle">全3回・16セクション — チャットから始めて、成果物を作れるようになるまで</p>
+          <p class="overview-subtitle">全${MODULES.length}回・${totalSections}セクション — Chatで理解し、Cowork・Claude Codeで仕事を任せる</p>
           <div class="overview-flow">
             <div class="overview-flow-item">
-              <span class="overview-flow-label">ツール</span>
               <div class="overview-flow-step">
                 <span class="overview-flow-icon">💬</span>
-                <span>チャットで調べる</span>
+                <span>Chat で理解する</span>
               </div>
               <div class="overview-flow-arrow">→</div>
               <div class="overview-flow-step">
                 <span class="overview-flow-icon">🤝</span>
-                <span>Coworkで一緒に作る</span>
+                <span>Cowork で一緒に作る</span>
               </div>
               <div class="overview-flow-arrow">→</div>
-              <div class="overview-flow-step active">
+              <div class="overview-flow-step">
                 <span class="overview-flow-icon">⚡</span>
-                <span>Claude Codeで任せて作る</span>
+                <span>Claude Code で任せる</span>
               </div>
             </div>
           </div>
           <div class="overview-sessions">
-            <div class="overview-session">
-              <div class="overview-session-header">
-                <span class="overview-session-num">第1回</span>
-                <strong>知る・使い始める</strong>
-              </div>
-              <ul>
-                <li>なぜClaudeか</li>
-                <li>3つの使い方</li>
-                <li>セットアップ</li>
-                <li>チャット・Cowork入門</li>
-              </ul>
-            </div>
-            <div class="overview-session">
-              <div class="overview-session-header">
-                <span class="overview-session-num">第2回</span>
-                <strong>作る・品質を上げる</strong>
-              </div>
-              <ul>
-                <li>Coworkでデータ分析・提案書</li>
-                <li>Claude Code基本操作</li>
-                <li>PPTX・XLSX生成</li>
-                <li>品質制御（CLAUDE.md & Skill）</li>
-              </ul>
-            </div>
-            <div class="overview-session">
-              <div class="overview-session-header">
-                <span class="overview-session-num">第3回</span>
-                <strong>実践する・展開する</strong>
-              </div>
-              <ul>
-                <li>提案書を一から作る</li>
-                <li>データ分析プロトタイプ</li>
-                <li>MCP（外部ツール連携）</li>
-                <li>カスタムSkill設計</li>
-              </ul>
-            </div>
-          </div>
-          <div class="overview-deliverables">
-            <span class="overview-deliverables-label">作れるようになる成果物</span>
-            <div class="overview-deliverables-items">
-              <span class="overview-deliverable">📊 提案書（PPTX）</span>
-              <span class="overview-deliverable">📈 データ分析（XLSX）</span>
-              <span class="overview-deliverable">🌐 プロトタイプ（HTML）</span>
-            </div>
+            ${MODULES.map((mod, i) => {
+              const groups = mod.coverGroups || [];
+              return `<div class="overview-session" data-go-module="${i}">
+                <div class="overview-session-header">
+                  <span class="overview-session-num">${mod.shortTitle}</span>
+                  <strong>${mod.title.replace(/^第\d+回[：:]\s*/, '')}</strong>
+                </div>
+                <ul>${groups.map(g => `<li>${g.label}</li>`).join('')}</ul>
+              </div>`;
+            }).join('')}
           </div>
         </div>
 
@@ -279,38 +245,40 @@
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
             </div>
             <h3>学習コンテンツ</h3>
-            <p>研修で扱ったトピックを復習できます。セクションごとに内容を確認し、理解を深めましょう。</p>
-            <div class="card-count">${totalSections} トピック &middot; ${MODULES.length} 回分</div>
+            <p>セクションごとに内容を確認し、理解を深めましょう。</p>
+            <div class="card-count">${totalSections} トピック</div>
           </div>
-          <div class="home-hero-card slide-up" data-nav="quiz-hub" style="animation-delay:.05s">
+          <div class="home-hero-card slide-up" data-nav="practices" style="animation-delay:.05s">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>練習問題</h3>
+            <p>手を動かして学んだ内容を実践。</p>
+            <div class="card-count">${MODULES.reduce((s,m) => s + (m.practices||[]).length, 0)} 問</div>
+          </div>
+          <div class="home-hero-card slide-up" data-nav="quiz-hub" style="animation-delay:.1s">
             <div class="card-icon">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
             </div>
             <h3>クイズ</h3>
-            <p>各回の確認クイズと修了テストに挑戦して、理解度をチェックしましょう。</p>
+            <p>確認クイズと修了テストで理解度をチェック。</p>
             <div class="card-count">${totalQuizzes} 問 &middot; 修了テストあり</div>
           </div>
-        </div>
-
-
-        <div class="home-sub-cards">
-          <div class="home-sub-card" data-nav="links">
-            <div class="sub-icon">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          <div class="home-hero-card slide-up" data-nav="links" style="animation-delay:.15s">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
             </div>
-            <div>
-              <h4>リンク集</h4>
-              <p>公式ドキュメント・参考資料 (${totalLinks}件)</p>
-            </div>
+            <h3>リンク集</h3>
+            <p>公式ドキュメント・参考資料。</p>
+            <div class="card-count">${totalLinks} 件</div>
           </div>
-          <div class="home-sub-card" data-nav="faq">
-            <div class="sub-icon">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <div class="home-hero-card slide-up" data-nav="faq" style="animation-delay:.2s">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
-            <div>
-              <h4>FAQ</h4>
-              <p>よくある質問と回答 (${totalFaqs}件)</p>
-            </div>
+            <h3>FAQ</h3>
+            <p>よくある質問と回答。</p>
+            <div class="card-count">${totalFaqs} 件</div>
           </div>
         </div>
       </div>
@@ -318,6 +286,11 @@
 
     container.querySelectorAll('[data-nav]').forEach(el => {
       el.addEventListener('click', () => navigateTo(el.dataset.nav));
+    });
+    container.querySelectorAll('[data-go-module]').forEach(el => {
+      el.addEventListener('click', () => {
+        navigateTo('topic-detail', parseInt(el.dataset.goModule), 0);
+      });
     });
   }
 
@@ -332,21 +305,29 @@
   function buildTocHTML(activeMi, activeSi) {
     return `
       <nav class="learn-toc">
-        <div class="learn-toc-title">目次</div>
-        ${MODULES.map((mod, mi) => `
-          <div class="toc-group">
-            <div class="toc-group-label">${mod.shortTitle}</div>
+        <div class="toc-tabs">
+          ${MODULES.map((mod, mi) => `
+            <button class="toc-tab ${mi === activeMi ? 'active' : ''}" data-toc-tab="${mi}">${mod.shortTitle}</button>
+          `).join('')}
+        </div>
+        ${MODULES.map((mod, mi) => {
+          const groups = mod.coverGroups || [];
+          const groupStarts = {};
+          groups.forEach(g => { if (g.sections.length) groupStarts[g.sections[0]] = g.label; });
+          return `
+          <div class="toc-group" data-toc-panel="${mi}" style="${mi !== activeMi ? 'display:none' : ''}">
             ${mod.sections.map((sec, si) => {
               const completed = isSectionComplete(mi, si);
               const isActive = mi === activeMi && si === activeSi;
-              return `
+              const groupHeader = groupStarts[si] ? `<div class="toc-group-name">${groupStarts[si]}</div>` : '';
+              return `${groupHeader}
                 <a class="toc-item ${isActive ? 'active' : ''} ${completed ? 'completed' : 'incomplete'}"
                    data-toc-mi="${mi}" data-toc-si="${si}">
                   ${sec.title}
                 </a>`;
             }).join('')}
-          </div>
-        `).join('')}
+          </div>`;
+        }).join('')}
       </nav>
     `;
   }
@@ -386,7 +367,6 @@
     container.innerHTML = `
       <div class="fade-in">
         <div class="learn-layout">
-          ${buildTocHTML(moduleIndex, sectionIndex)}
           <div class="learn-main">
             <div class="topic-detail">
               <div class="breadcrumb">
@@ -429,6 +409,7 @@
               </div>
             </div>
           </div>
+          ${buildTocHTML(moduleIndex, sectionIndex)}
         </div>
       </div>
     `;
@@ -454,6 +435,63 @@
         e.preventDefault();
         renderTopicDetail(container, parseInt(el.dataset.tocMi), parseInt(el.dataset.tocSi));
         window.scrollTo(0, 0);
+      });
+    });
+    // タブ切り替え
+    container.querySelectorAll('.toc-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const mi = parseInt(tab.dataset.tocTab);
+        container.querySelectorAll('.toc-tab').forEach(t => t.classList.toggle('active', parseInt(t.dataset.tocTab) === mi));
+        container.querySelectorAll('[data-toc-panel]').forEach(p => p.style.display = parseInt(p.dataset.tocPanel) === mi ? '' : 'none');
+      });
+    });
+  }
+
+  // --- 練習問題 ---
+  function renderPractices(container) {
+    container.innerHTML = `
+      <div class="practices-page">
+        <h1>練習問題</h1>
+        <p class="practices-subtitle">学習コンテンツで学んだ内容を、実際に手を動かして確認しましょう。</p>
+        <div class="practices-tabs">
+          ${MODULES.map((mod, mi) => `
+            <button class="practices-tab ${mi === 0 ? 'active' : ''}" data-practices-tab="${mi}">${mod.shortTitle}</button>
+          `).join('')}
+        </div>
+        ${MODULES.map((mod, mi) => {
+          const practices = mod.practices || [];
+          const sections = [...new Set(practices.map(p => p.section))];
+          return `
+          <div class="practices-panel" data-practices-panel="${mi}" style="${mi !== 0 ? 'display:none' : ''}">
+            ${sections.length === 0 ? '<p style="color:var(--text-muted);padding:24px 0;">この回の練習問題は準備中です。</p>' : ''}
+            ${sections.map(sec => {
+              const items = practices.filter(p => p.section === sec);
+              return `
+              <div class="practices-section">
+                <h3 class="practices-section-title">${sec}</h3>
+                ${items.map((p, idx) => `
+                  <div class="practices-card">
+                    <div class="practices-card-num">${idx + 1}</div>
+                    <div class="practices-card-body">
+                      <h4>${p.title}</h4>
+                      <p>${p.task}</p>
+                      ${p.hint ? `<div class="practices-hint">💡 ヒント：${p.hint}</div>` : ''}
+                    </div>
+                  </div>
+                `).join('')}
+              </div>`;
+            }).join('')}
+          </div>`;
+        }).join('')}
+      </div>
+    `;
+
+    // タブ切り替え
+    container.querySelectorAll('.practices-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const mi = parseInt(tab.dataset.practicesTab);
+        container.querySelectorAll('.practices-tab').forEach(t => t.classList.toggle('active', parseInt(t.dataset.practicesTab) === mi));
+        container.querySelectorAll('[data-practices-panel]').forEach(p => p.style.display = parseInt(p.dataset.practicesPanel) === mi ? '' : 'none');
       });
     });
   }
@@ -546,7 +584,7 @@
           }).join('')}
           <div class="quiz-hub-card" data-nav-final>
             <h3>修了テスト</h3>
-            <p>全3回の研修から出題される総合テストです。</p>
+            <p>全${MODULES.length}回の研修から出題される総合テストです。</p>
             <div class="quiz-meta">
               <span class="quiz-count">${MODULES.reduce((s, m) => s + m.quiz.length, 0)} 問 / 80%以上で修了</span>
               <span class="quiz-status ${loadProgress().finalTest ? 'done' : 'not-done'}">${loadProgress().finalTest ? '修了済み' : '未受験'}</span>
@@ -682,7 +720,7 @@
     const progress = loadProgress();
     if (!isAllModulesComplete()) {
       container.innerHTML = `<div class="fade-in"><div class="final-test-intro">
-        <h1>修了テスト</h1><p>全3回の研修を完了すると受験できます。</p>
+        <h1>修了テスト</h1><p>全${MODULES.length}回の研修を完了すると受験できます。</p>
         <div class="requirements"><ul>${MODULES.map((m,i) => {
           const p=getModuleProgress(i), d=p===100;
           return `<li style="color:${d?'var(--success)':'var(--text-secondary)'}">${d?'&#10003;':'&#9744;'} ${m.shortTitle}（${p}%）</li>`;
@@ -694,7 +732,7 @@
     }
     if (progress.finalTest) { renderCertificate(container, progress.finalTest); return; }
     container.innerHTML = `<div class="fade-in"><div class="final-test-intro">
-      <h1>修了テスト</h1><p>全3回の研修から合計15問。80%以上で修了証発行。</p>
+      <h1>修了テスト</h1><p>全${MODULES.length}回の研修から合計${MODULES.reduce((s, m) => s + m.quiz.length, 0)}問。80%以上で修了証発行。</p>
       <div style="margin-top:24px"><button class="btn btn-primary" id="start-final-test">テストを開始する</button></div>
     </div><div id="final-quiz-area"></div></div>`;
     container.querySelector('#start-final-test')?.addEventListener('click', () => {
@@ -710,7 +748,7 @@
     container.innerHTML = `<div class="fade-in">
       <div class="final-test-intro"><h1>修了テスト結果</h1><p>${result.total}問中 ${result.score}問正解（${Math.round((result.score/result.total)*100)}%）</p></div>
       <div class="certificate slide-up">
-        <h2>修了証</h2><p class="cert-subtitle">Claude 研修コース - 基礎編（全3回）</p>
+        <h2>修了証</h2><p class="cert-subtitle">Claude 研修コース - 基礎編（全${MODULES.length}回）</p>
         <p style="font-size:14px;color:var(--text-secondary);margin-bottom:24px">以下の研修プログラムを修了し、修了テストに合格したことを証明します。</p>
         <div style="margin:20px 0;padding:16px;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)">
           ${MODULES.map(m=>`<p style="font-size:14px;margin:4px 0">${m.title}</p>`).join('')}
@@ -768,10 +806,13 @@
         <div class="slide-cover">
           <h1 class="slide-cover-title">${mod.title}</h1>
           <p class="slide-cover-desc">${mod.description}</p>
-          <div class="slide-cover-groups cols-${Math.min(groups.length, 4)}">
-            ${groups.map(g => `
+          <div class="slide-cover-groups">
+            ${groups.map((g, gi) => `
               <div class="cover-group">
-                <div class="cover-group-label">${g.icon || ''} ${g.label}</div>
+                <div class="cover-group-header">
+                  <span class="cover-group-num"><small>STEP</small>${gi + 1}</span>
+                  <span class="cover-group-label">${g.label}</span>
+                </div>
                 ${g.objectives ? `<div class="cover-group-objectives">${g.objectives.map(o => `<div class="cover-obj-item">${o}</div>`).join('')}</div>` : ''}
                 <div class="cover-group-items">
                   ${g.sections.map(si => {
@@ -827,12 +868,12 @@
           </aside>` : ''}
         </div>
         <div class="slide-nav">
-          <button class="slide-nav-btn" id="slide-prev" ${slideIdx===0?'disabled':''}>
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> 前へ
+          <button class="slide-nav-btn" id="slide-prev" ${slideIdx===0 && moduleIndex===0?'disabled':''}>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg> ${slideIdx===0 && moduleIndex>0 ? MODULES[moduleIndex-1].shortTitle+'へ' : '前へ'}
           </button>
           <span class="slide-counter">${slideIdx+1} / ${totalSlides}</span>
-          <button class="slide-nav-btn" id="slide-next" ${slideIdx===totalSlides-1?'disabled':''}>
-            次へ <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <button class="slide-nav-btn slide-nav-next" id="slide-next" ${slideIdx===totalSlides-1 && moduleIndex>=MODULES.length-1?'disabled':''}>
+            ${slideIdx===totalSlides-1 && moduleIndex<MODULES.length-1 ? MODULES[moduleIndex+1].shortTitle+'へ' : '次へ'} <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
           </button>
         </div>
       </div>
@@ -857,9 +898,20 @@
     // スライドナビ
     container.querySelector('#slide-prev')?.addEventListener('click', () => {
       if (presentSectionIndex > 0) { presentSectionIndex--; renderPresentModule(container, moduleIndex); }
+      else if (moduleIndex > 0) {
+        const prevMod = MODULES[moduleIndex-1];
+        presentSectionIndex = prevMod.sections.length; // 前モジュールの最後のスライド
+        navigateTo('module', moduleIndex-1);
+      }
     });
     container.querySelector('#slide-next')?.addEventListener('click', () => {
-      if (presentSectionIndex < totalSlides-1) { presentSectionIndex++; renderPresentModule(container, moduleIndex); }
+      if (presentSectionIndex < totalSlides-1) {
+        presentSectionIndex++;
+        renderPresentModule(container, moduleIndex);
+      } else if (moduleIndex < MODULES.length-1) {
+        presentSectionIndex = 0;
+        navigateTo('module', moduleIndex+1);
+      }
     });
   }
 
@@ -867,11 +919,22 @@
   function presentPrev() {
     if (currentModule === null) return;
     if (presentSectionIndex > 0) { presentSectionIndex--; renderPresentModule(document.getElementById('page-container'), currentModule); }
+    else if (currentModule > 0) {
+      const prevMod = MODULES[currentModule-1];
+      presentSectionIndex = prevMod.sections.length;
+      navigateTo('module', currentModule-1);
+    }
   }
   function presentNext() {
     if (currentModule === null) return;
     const tot = MODULES[currentModule].sections.length + 1;
-    if (presentSectionIndex < tot-1) { presentSectionIndex++; renderPresentModule(document.getElementById('page-container'), currentModule); }
+    if (presentSectionIndex < tot-1) {
+      presentSectionIndex++;
+      renderPresentModule(document.getElementById('page-container'), currentModule);
+    } else if (currentModule < MODULES.length-1) {
+      presentSectionIndex = 0;
+      navigateTo('module', currentModule+1);
+    }
   }
 
   // ========================================
@@ -926,6 +989,110 @@
       `;
       document.body.appendChild(fab);
     }
+
+    // --- 検索機能 ---
+    const searchModal = document.getElementById('search-modal');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    function openSearch() {
+      if (currentMode === 'present') return;
+      searchModal.classList.add('open');
+      searchInput.value = '';
+      searchResults.innerHTML = '<div class="search-hint">キーワードを入力してください</div>';
+      setTimeout(() => searchInput.focus(), 50);
+    }
+    function closeSearch() {
+      searchModal.classList.remove('open');
+    }
+
+    function buildSearchIndex() {
+      const items = [];
+      // セクション
+      MODULES.forEach((mod, mi) => {
+        mod.sections.forEach((sec, si) => {
+          const text = (sec.title + ' ' + sec.content).replace(/<[^>]+>/g, ' ').toLowerCase();
+          items.push({ type: 'section', mi, si, title: sec.title, subtitle: mod.shortTitle, text });
+        });
+      });
+      // FAQ
+      MODULES.forEach(mod => {
+        const faq = mod.selfStudyResources?.faq || [];
+        faq.forEach(f => {
+          const text = (f.q + ' ' + f.a).replace(/<[^>]+>/g, ' ').toLowerCase();
+          items.push({ type: 'faq', title: f.q, text });
+        });
+      });
+      // 練習問題
+      MODULES.forEach(mod => {
+        const practices = mod.practices || [];
+        practices.forEach(p => {
+          const text = (p.title + ' ' + p.task + ' ' + p.section).replace(/<[^>]+>/g, ' ').toLowerCase();
+          items.push({ type: 'practice', title: p.title, subtitle: p.section, text });
+        });
+      });
+      // リンク
+      MODULES.forEach(mod => {
+        const links = mod.selfStudyResources?.links || [];
+        links.forEach(l => {
+          const text = (l.title + ' ' + (l.desc || '') + ' ' + (l.category || '')).toLowerCase();
+          items.push({ type: 'link', title: l.title, url: l.url, subtitle: l.category, text });
+        });
+      });
+      return items;
+    }
+
+    let searchIndex = null;
+
+    function doSearch(query) {
+      if (!searchIndex) searchIndex = buildSearchIndex();
+      const q = query.trim().toLowerCase();
+      if (!q) {
+        searchResults.innerHTML = '<div class="search-hint">キーワードを入力してください</div>';
+        return;
+      }
+      const terms = q.split(/\s+/);
+      const matches = searchIndex.filter(item => terms.every(t => item.text.includes(t)));
+      if (!matches.length) {
+        searchResults.innerHTML = '<div class="search-hint">該当する結果がありません</div>';
+        return;
+      }
+      const icons = { section: '📄', faq: '❓', link: '🔗' };
+      const labels = { section: 'セクション', practice: '練習問題', faq: 'FAQ', link: 'リンク' };
+      searchResults.innerHTML = matches.slice(0, 20).map((m, i) => `
+        <div class="search-result-item" data-search-idx="${i}">
+          <span class="search-result-icon">${icons[m.type]}</span>
+          <div class="search-result-body">
+            <div class="search-result-title">${m.title}</div>
+            ${m.subtitle ? `<span class="search-result-tag">${m.subtitle}</span>` : ''}
+            <span class="search-result-tag">${labels[m.type]}</span>
+          </div>
+        </div>
+      `).join('');
+      // 結果を保持
+      searchResults._matches = matches.slice(0, 20);
+    }
+
+    document.getElementById('open-search')?.addEventListener('click', openSearch);
+    searchModal?.addEventListener('click', (e) => { if (e.target === searchModal) closeSearch(); });
+    searchInput?.addEventListener('input', () => doSearch(searchInput.value));
+    searchResults?.addEventListener('click', (e) => {
+      const item = e.target.closest('.search-result-item');
+      if (!item || !searchResults._matches) return;
+      const idx = parseInt(item.dataset.searchIdx);
+      const m = searchResults._matches[idx];
+      closeSearch();
+      if (m.type === 'section') navigateTo('topic-detail', m.mi, m.si);
+      else if (m.type === 'practice') navigateTo('practices');
+      else if (m.type === 'faq') navigateTo('faq');
+      else if (m.type === 'link') navigateTo('links');
+    });
+
+    // Ctrl+K / Escape
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+      if (e.key === 'Escape' && searchModal.classList.contains('open')) { e.preventDefault(); closeSearch(); }
+    });
 
     // 初期表示: 常にランディングページから開始
     enterLanding();
