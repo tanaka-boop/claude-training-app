@@ -42,7 +42,7 @@
 
   // --- ヘルパー ---
   function getAllLinks() {
-    const categoryOrder = ['🚀 はじめる', '📖 プロンプトを学ぶ', '💼 Officeで使う', '🔧 Claude Codeで使う', '🔗 外部ツールと連携する', '📚 公式リファレンス'];
+    const categoryOrder = ['🚀 はじめる', '📖 プロンプトを学ぶ', '💼 Officeで使う', '🔧 Claude Codeで使う', '🔗 外部ツールと連携する', '📚 公式リファレンス', '🌐 Chromeで使う'];
     const seen = new Set();
     const links = [];
     MODULES.forEach(mod => {

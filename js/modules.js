@@ -989,32 +989,32 @@ const MODULES = [
           <div class="visual-grid cols-3">
             <div class="visual-grid-item">
               <div class="grid-icon">📝</div>
-              <div class="grid-label">文書</div>
+              <div class="grid-title">文書</div>
               <div class="grid-desc">議事録、報告書、提案メモ、メール、契約書レビュー</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
-              <div class="grid-label">表</div>
+              <div class="grid-title">表</div>
               <div class="grid-desc">比較表、課題一覧、ToDo リスト、評価表、チェックリスト</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🎯</div>
-              <div class="grid-label">スライド</div>
+              <div class="grid-title">スライド</div>
               <div class="grid-desc">構成案、スライド文言、ストーリーライン、役員向け要約</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔍</div>
-              <div class="grid-label">調査レポート</div>
+              <div class="grid-title">調査レポート</div>
               <div class="grid-desc">市場調査、競合調査、業界動向、出典付き論点整理</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📈</div>
-              <div class="grid-label">チャート</div>
+              <div class="grid-title">チャート</div>
               <div class="grid-desc">KPI 可視化、比較グラフ、簡易分析、傾向レポート</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🖥️</div>
-              <div class="grid-label">触れる成果物</div>
+              <div class="grid-title">触れる成果物</div>
               <div class="grid-desc">診断ツール、シミュレーター、画面モック、簡易ダッシュボード</div>
             </div>
           </div>
@@ -1093,22 +1093,22 @@ const MODULES = [
           <div class="visual-grid cols-2">
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
-              <div class="grid-label">データの傾向を読む</div>
+              <div class="grid-title">データの傾向を読む</div>
               <div class="grid-desc">「このシートの売上推移から読み取れるポイントを3つ挙げて」とデータの示唆を引き出す</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔢</div>
-              <div class="grid-label">集計観点を出す</div>
+              <div class="grid-title">集計観点を出す</div>
               <div class="grid-desc">「この顧客データを分析するとしたら、どんな軸で集計するのが有効か」と切り口を相談する</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📈</div>
-              <div class="grid-label">グラフ化の方針を考える</div>
+              <div class="grid-title">グラフ化の方針を考える</div>
               <div class="grid-desc">「このデータを経営会議で見せるとしたら、どんなグラフが適切か」と可視化の方向を聞く</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">⚠️</div>
-              <div class="grid-label">異常値・確認ポイントの洗い出し</div>
+              <div class="grid-title">異常値・確認ポイントの洗い出し</div>
               <div class="grid-desc">「このデータに不自然な値や外れ値がないかチェックして」と品質チェックを依頼する</div>
             </div>
           </div>
@@ -1119,22 +1119,22 @@ const MODULES = [
           <div class="visual-grid cols-2">
             <div class="visual-grid-item">
               <div class="grid-icon">🏗️</div>
-              <div class="grid-label">提案書の構成を作る</div>
+              <div class="grid-title">提案書の構成を作る</div>
               <div class="grid-desc">「この案件の提案書を10枚構成で作って。各スライドのタイトルとキーメッセージを提案して」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">💬</div>
-              <div class="grid-label">スライドタイトルを改善する</div>
+              <div class="grid-title">スライドタイトルを改善する</div>
               <div class="grid-desc">「このスライドのタイトルを、結論が伝わる一文に書き直して」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🎯</div>
-              <div class="grid-label">メッセージを明確にする</div>
+              <div class="grid-title">メッセージを明確にする</div>
               <div class="grid-desc">「このスライドで伝えたいことは何？」と問いかけ、1スライド1メッセージに整理する</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">👥</div>
-              <div class="grid-label">読み手に合わせて表現を変える</div>
+              <div class="grid-title">読み手に合わせて表現を変える</div>
               <div class="grid-desc">「このスライドを役員向けに書き直して。技術用語を経営指標に置き換えて」</div>
             </div>
           </div>
@@ -1145,22 +1145,22 @@ const MODULES = [
           <div class="visual-grid cols-2">
             <div class="visual-grid-item">
               <div class="grid-icon">📄</div>
-              <div class="grid-label">長文資料を要約する</div>
+              <div class="grid-title">長文資料を要約する</div>
               <div class="grid-desc">「この報告書を経営層向けに1ページで要約して。数字と結論を残して」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">✍️</div>
-              <div class="grid-label">文体を統一する</div>
+              <div class="grid-title">文体を統一する</div>
               <div class="grid-desc">「この文書全体を『です・ます調』に統一して。箇条書きの粒度も揃えて」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📑</div>
-              <div class="grid-label">章立てを見直す</div>
+              <div class="grid-title">章立てを見直す</div>
               <div class="grid-desc">「この報告書の構成を、結論→背景→詳細→提案の順に並べ替えて」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🏢</div>
-              <div class="grid-label">クライアント向け表現に変換する</div>
+              <div class="grid-title">クライアント向け表現に変換する</div>
               <div class="grid-desc">「社内メモをクライアント提出用に書き直して。敬語と表現の丁寧さを上げて」</div>
             </div>
           </div>
@@ -1189,40 +1189,40 @@ const MODULES = [
           <div class="visual-grid cols-3">
             <div class="visual-grid-item">
               <div class="grid-icon">🏭</div>
-              <div class="grid-label">市場調査</div>
+              <div class="grid-title">市場調査</div>
               <div class="grid-desc">「○○業界の市場規模と成長率を、直近3年の推移とともにまとめて」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🏢</div>
-              <div class="grid-label">競合調査</div>
+              <div class="grid-title">競合調査</div>
               <div class="grid-desc">「A社・B社・C社のクラウドサービスを、価格・機能・導入実績で比較して」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📰</div>
-              <div class="grid-label">業界動向整理</div>
+              <div class="grid-title">業界動向整理</div>
               <div class="grid-desc">「○○業界で直近半年に起きた主要な動きを時系列でまとめて」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📚</div>
-              <div class="grid-label">事例収集</div>
+              <div class="grid-title">事例収集</div>
               <div class="grid-desc">「DX推進の成功事例を業界別に3つずつ、施策と効果をまとめて」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📎</div>
-              <div class="grid-label">出典付き論点整理</div>
+              <div class="grid-title">出典付き論点整理</div>
               <div class="grid-desc">「○○に関する賛否両論を、出典を明記してそれぞれ3つずつ挙げて」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">💡</div>
-              <div class="grid-label">調査からの示唆出し</div>
+              <div class="grid-title">調査からの示唆出し</div>
               <div class="grid-desc">「上記の調査結果から、当社にとっての機会とリスクを整理して」</div>
             </div>
           </div>
 
           <h3>Research と通常の Web 検索の違い</h3>
           <div class="visual-before-after">
-            <div class="before-card">
-              <div class="before-after-label">通常の Web 検索</div>
+            <div class="ba-item before">
+              <div class="ba-label">通常の Web 検索</div>
               <ul>
                 <li>検索キーワードを自分で考える</li>
                 <li>複数サイトを1つずつ開いて読む</li>
@@ -1230,8 +1230,9 @@ const MODULES = [
                 <li>整理・まとめ作業も自分で行う</li>
               </ul>
             </div>
-            <div class="after-card">
-              <div class="before-after-label">Research</div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-item after">
+              <div class="ba-label">Research</div>
               <ul>
                 <li>調査の目的を日本語で伝える</li>
                 <li>複数の情報源を自動で横断調査</li>
@@ -1290,48 +1291,49 @@ const MODULES = [
           <div class="visual-grid cols-3">
             <div class="visual-grid-item">
               <div class="grid-icon">🩺</div>
-              <div class="grid-label">診断ツール</div>
+              <div class="grid-title">診断ツール</div>
               <div class="grid-desc">質問に回答すると結果が表示される。例：IT成熟度診断、業務改善優先度診断</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🧮</div>
-              <div class="grid-label">シミュレーター</div>
+              <div class="grid-title">シミュレーター</div>
               <div class="grid-desc">数値を変えると結果が連動する。例：コスト試算、ROI計算、料金プラン比較</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
-              <div class="grid-label">ダッシュボード</div>
+              <div class="grid-title">ダッシュボード</div>
               <div class="grid-desc">データを視覚的に一覧表示。例：KPIモニター、プロジェクト進捗一覧</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🖼️</div>
-              <div class="grid-label">画面モック</div>
+              <div class="grid-title">画面モック</div>
               <div class="grid-desc">システムの画面イメージを実物に近い形で表示。認識合わせに使う</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔀</div>
-              <div class="grid-label">業務フロー可視化</div>
+              <div class="grid-title">業務フロー可視化</div>
               <div class="grid-desc">業務プロセスをインタラクティブに表示。ボトルネック箇所をハイライト</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📋</div>
-              <div class="grid-label">入力フォーム型ツール</div>
+              <div class="grid-title">入力フォーム型ツール</div>
               <div class="grid-desc">入力欄に情報を入れると整形された出力が得られる。例：見積書ジェネレーター</div>
             </div>
           </div>
 
           <h3>なぜ「触れる成果物」が提案に効くのか</h3>
           <div class="visual-before-after">
-            <div class="before-card">
-              <div class="before-after-label">スライドだけの提案</div>
+            <div class="ba-item before">
+              <div class="ba-label">スライドだけの提案</div>
               <ul>
                 <li>「こういう仕組みを作ります」と文字で説明</li>
                 <li>クライアントはイメージしにくい</li>
                 <li>認識のずれが後工程で発覚する</li>
               </ul>
             </div>
-            <div class="after-card">
-              <div class="before-after-label">触れる成果物を添えた提案</div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-item after">
+              <div class="ba-label">触れる成果物を添えた提案</div>
               <ul>
                 <li>実際に操作して体験してもらう</li>
                 <li>「これがやりたいことです」が一瞬で伝わる</li>
@@ -1399,22 +1401,22 @@ const MODULES = [
           <div class="visual-grid cols-2">
             <div class="visual-grid-item">
               <div class="grid-icon">📄</div>
-              <div class="grid-label">Web ページの要約</div>
+              <div class="grid-title">Web ページの要約</div>
               <div class="grid-desc">長い記事やレポートを開いた状態で「このページを3行で要約して」と依頼。要点だけを素早く把握できる</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔍</div>
-              <div class="grid-label">情報収集の補助</div>
+              <div class="grid-title">情報収集の補助</div>
               <div class="grid-desc">競合サイトや製品ページを見ながら「このサービスの特徴を5つ抜き出して」と指示。手動で読み込む手間を省く</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">✏️</div>
-              <div class="grid-label">入力作業の補助</div>
+              <div class="grid-title">入力作業の補助</div>
               <div class="grid-desc">フォーム入力や文章作成時に Claude に相談。「このメールの返信案を作って」とその場で下書きを生成</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">⚖️</div>
-              <div class="grid-label">複数サイトの比較</div>
+              <div class="grid-title">複数サイトの比較</div>
               <div class="grid-desc">複数のサービスページを調べた後、「さっき見た3つのサービスの比較表を作って」と整理を依頼</div>
             </div>
           </div>
@@ -1468,8 +1470,8 @@ const MODULES = [
 
           <h3>Chat と Cowork の違い</h3>
           <div class="visual-before-after">
-            <div class="before-card">
-              <div class="before-after-label">Chat</div>
+            <div class="ba-item before">
+              <div class="ba-label">Chat</div>
               <ul>
                 <li>テキストで対話する</li>
                 <li>ファイルは添付して参照してもらう</li>
@@ -1477,8 +1479,9 @@ const MODULES = [
                 <li>出力をコピーして自分で貼り付ける</li>
               </ul>
             </div>
-            <div class="after-card">
-              <div class="before-after-label">Cowork</div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-item after">
+              <div class="ba-label">Cowork</div>
               <ul>
                 <li>ファイルを渡して作業を依頼する</li>
                 <li>Claude がファイルを直接読み書きする</li>
@@ -1493,32 +1496,32 @@ const MODULES = [
           <div class="visual-grid cols-3">
             <div class="visual-grid-item">
               <div class="grid-icon">📁</div>
-              <div class="grid-label">複数資料の整理</div>
+              <div class="grid-title">複数資料の整理</div>
               <div class="grid-desc">議事録5件を渡して「案件ごとに決定事項を整理して」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
-              <div class="grid-label">Excel の加工</div>
+              <div class="grid-title">Excel の加工</div>
               <div class="grid-desc">CSVデータを渡して「月別の売上集計表を作って」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📝</div>
-              <div class="grid-label">Word・PowerPoint の下書き</div>
+              <div class="grid-title">Word・PowerPoint の下書き</div>
               <div class="grid-desc">要件をまとめたメモを渡して「報告書の初稿を Word で作って」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🖼️</div>
-              <div class="grid-label">素材の整理</div>
+              <div class="grid-title">素材の整理</div>
               <div class="grid-desc">散在する画像や資料を渡して「カテゴリ別に整理して一覧を作って」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📋</div>
-              <div class="grid-label">ファイル構成の確認</div>
+              <div class="grid-title">ファイル構成の確認</div>
               <div class="grid-desc">フォルダ内のファイルを読み取り「不足しているドキュメントを指摘して」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📄</div>
-              <div class="grid-label">レポートの初稿作成</div>
+              <div class="grid-title">レポートの初稿作成</div>
               <div class="grid-desc">調査メモと過去レポートを渡して「同じフォーマットで今月分を作って」</div>
             </div>
           </div>
@@ -1583,32 +1586,32 @@ const MODULES = [
           <div class="visual-grid cols-2">
             <div class="visual-grid-item">
               <div class="grid-icon">📰</div>
-              <div class="grid-label">毎週の業界ニュース収集</div>
+              <div class="grid-title">毎週の業界ニュース収集</div>
               <div class="grid-desc">「毎週月曜朝に○○業界の主要ニュースを5件、要約付きでまとめて」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📋</div>
-              <div class="grid-label">定例会議前の確認事項整理</div>
+              <div class="grid-title">定例会議前の確認事項整理</div>
               <div class="grid-desc">「毎週水曜の定例前に、先週の議事録から宿題の進捗を整理して」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📝</div>
-              <div class="grid-label">週次レポートの下書き</div>
+              <div class="grid-title">週次レポートの下書き</div>
               <div class="grid-desc">「毎週金曜に、今週のタスク完了状況をまとめたレポートの下書きを作って」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔔</div>
-              <div class="grid-label">タスクのリマインド</div>
+              <div class="grid-title">タスクのリマインド</div>
               <div class="grid-desc">「毎朝、今日の期限のタスクを一覧で表示して」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🏢</div>
-              <div class="grid-label">定期的な競合情報チェック</div>
+              <div class="grid-title">定期的な競合情報チェック</div>
               <div class="grid-desc">「毎月1日に、A社・B社の新着プレスリリースをまとめて」</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
-              <div class="grid-label">データ更新の確認</div>
+              <div class="grid-title">データ更新の確認</div>
               <div class="grid-desc">「毎週、共有フォルダ内の売上データが更新されているかチェックして」</div>
             </div>
           </div>
@@ -1858,8 +1861,7 @@ const MODULES = [
         { title: 'Claude in Chrome 拡張', url: 'https://chromewebstore.google.com/detail/claude/danfoobapigkipfachmebkhbhegkahpc', desc: 'Chrome 拡張のインストールページ', category: '🌐 Chromeで使う' },
         { title: 'Artifact ガイド', url: 'https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them', desc: 'Artifact の使い方と活用例', category: '📚 公式リファレンス' },
         { title: 'Research 機能ガイド', url: 'https://support.anthropic.com/en/articles/10120029-how-does-research-work', desc: 'Research の仕組みと活用方法', category: '📚 公式リファレンス' },
-        { title: 'Scheduled tasks ガイド', url: 'https://support.anthropic.com/en/articles/11053627-what-are-scheduled-tasks', desc: 'Scheduled tasks の設定方法', category: '📚 公式リファレンス' },
-        { title: 'Claude プロンプトライブラリ', url: 'https://docs.anthropic.com/en/prompt-library/library', desc: '用途別のプロンプト例を多数掲載', category: '📖 プロンプトを学ぶ' }
+        { title: 'Scheduled tasks ガイド', url: 'https://support.anthropic.com/en/articles/11053627-what-are-scheduled-tasks', desc: 'Scheduled tasks の設定方法', category: '📚 公式リファレンス' }
       ],
       faq: [
         { q: 'Claude in Office では具体的に何ができますか？', a: 'Excel ではデータの傾向分析・集計観点の提案・グラフ化方針の相談・異常値の洗い出し、PowerPoint では構成案の作成・タイトル改善・ストーリーライン整理、Word では要約・文体統一・章立て見直し・クライアント向け表現変換ができます。Office 内で直接 Claude と対話する形で利用します。', category: '💼 Office・Chrome' },
@@ -1916,8 +1918,8 @@ const MODULES = [
           <p>Skills は、特定の業務タスクに対する<strong>手順・ルール・出力形式をまとめたテンプレート</strong>です。Claude に「この Skill を使って」と指示するだけで、定義した手順通りに作業を実行してくれます。</p>
 
           <div class="visual-before-after">
-            <div class="before-card">
-              <div class="before-after-label">Skills なし</div>
+            <div class="ba-item before">
+              <div class="ba-label">Skills なし</div>
               <ul>
                 <li>毎回プロンプトを一から書く</li>
                 <li>人によって指示の出し方が違う</li>
@@ -1925,8 +1927,9 @@ const MODULES = [
                 <li>うまくいった方法が属人化する</li>
               </ul>
             </div>
-            <div class="after-card">
-              <div class="before-after-label">Skills あり</div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-item after">
+              <div class="ba-label">Skills あり</div>
               <ul>
                 <li>「この Skill で」と指示するだけ</li>
                 <li>チーム全員が同じ手順を使える</li>
@@ -1940,32 +1943,32 @@ const MODULES = [
           <div class="visual-grid cols-3">
             <div class="visual-grid-item">
               <div class="grid-icon">📝</div>
-              <div class="grid-label">議事録作成ルール</div>
+              <div class="grid-title">議事録作成ルール</div>
               <div class="grid-desc">決定事項・宿題・参加者を必ず含める、時系列ではなくトピック別にまとめる等</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔍</div>
-              <div class="grid-label">提案書レビュー手順</div>
+              <div class="grid-title">提案書レビュー手順</div>
               <div class="grid-desc">構成の論理性、数値の根拠、読み手への配慮を順にチェックする手順</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
-              <div class="grid-label">調査レポート作成</div>
+              <div class="grid-title">調査レポート作成</div>
               <div class="grid-desc">調査項目、出典の記載ルール、示唆の書き方を標準化</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">✍️</div>
-              <div class="grid-label">クライアント向け文体ルール</div>
+              <div class="grid-title">クライアント向け文体ルール</div>
               <div class="grid-desc">敬語レベル、専門用語の扱い、結論先行の書き方</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📄</div>
-              <div class="grid-label">社内資料の要約フォーマット</div>
+              <div class="grid-title">社内資料の要約フォーマット</div>
               <div class="grid-desc">要約の粒度、必須項目、文字数の目安</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📈</div>
-              <div class="grid-label">Excel 分析の標準手順</div>
+              <div class="grid-title">Excel 分析の標準手順</div>
               <div class="grid-desc">確認すべき観点、グラフの種類選択基準、異常値の扱い方</div>
             </div>
           </div>
@@ -2026,8 +2029,8 @@ const MODULES = [
 
           <h3>なぜ「つなぐ」ことが重要か</h3>
           <div class="visual-before-after">
-            <div class="before-card">
-              <div class="before-after-label">情報をつながない場合</div>
+            <div class="ba-item before">
+              <div class="ba-label">情報をつながない場合</div>
               <ul>
                 <li>Claude は一般的な知識だけで回答する</li>
                 <li>自社固有の文脈が反映されない</li>
@@ -2035,8 +2038,9 @@ const MODULES = [
                 <li>過去の蓄積を活かせない</li>
               </ul>
             </div>
-            <div class="after-card">
-              <div class="before-after-label">情報をつないだ場合</div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-item after">
+              <div class="ba-label">情報をつないだ場合</div>
               <ul>
                 <li>社内資料を踏まえた回答が得られる</li>
                 <li>自社の用語・基準に沿った出力になる</li>
@@ -2050,32 +2054,32 @@ const MODULES = [
           <div class="visual-grid cols-3">
             <div class="visual-grid-item">
               <div class="grid-icon">📁</div>
-              <div class="grid-label">社内資料</div>
+              <div class="grid-title">社内資料</div>
               <div class="grid-desc">Google Drive、SharePoint、Notion に保存された資料を Claude から直接参照</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📋</div>
-              <div class="grid-label">過去提案</div>
+              <div class="grid-title">過去提案</div>
               <div class="grid-desc">過去の提案書・報告書を参照し、類似案件のアプローチを踏まえた提案ができる</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">💬</div>
-              <div class="grid-label">コミュニケーション</div>
+              <div class="grid-title">コミュニケーション</div>
               <div class="grid-desc">Slack のチャンネルやメールから、プロジェクトの最新状況を把握</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
-              <div class="grid-label">プロジェクト情報</div>
+              <div class="grid-title">プロジェクト情報</div>
               <div class="grid-desc">Jira、Asana 等のタスク管理ツールと連携し、進捗状況を整理</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📚</div>
-              <div class="grid-label">ナレッジベース</div>
+              <div class="grid-title">ナレッジベース</div>
               <div class="grid-desc">社内 Wiki、FAQ、過去の事例集など、組織の知見を参照</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📅</div>
-              <div class="grid-label">カレンダー・会議</div>
+              <div class="grid-title">カレンダー・会議</div>
               <div class="grid-desc">会議予定や議事録を参照し、準備や振り返りに活用</div>
             </div>
           </div>
@@ -2153,32 +2157,32 @@ const MODULES = [
           <div class="visual-grid cols-3">
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
-              <div class="grid-label">CSV / Excel 分析ツール</div>
+              <div class="grid-title">CSV / Excel 分析ツール</div>
               <div class="grid-desc">大量データを読み込み、集計・グラフ化・レポート生成を自動化</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📈</div>
-              <div class="grid-label">簡易ダッシュボード</div>
+              <div class="grid-title">簡易ダッシュボード</div>
               <div class="grid-desc">複数データソースを統合した KPI 表示画面を構築</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📁</div>
-              <div class="grid-label">複数ファイルの整理</div>
+              <div class="grid-title">複数ファイルの整理</div>
               <div class="grid-desc">散在するファイルを読み取り、分類・統合・レポート化</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🖥️</div>
-              <div class="grid-label">プロトタイプの本格化</div>
+              <div class="grid-title">プロトタイプの本格化</div>
               <div class="grid-desc">Artifact で作った試作品を複数画面・データ保存対応に発展</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔧</div>
-              <div class="grid-label">社内向けミニツール</div>
+              <div class="grid-title">社内向けミニツール</div>
               <div class="grid-desc">見積計算、申請フォーム、チェックリストなど業務支援ツール</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📄</div>
-              <div class="grid-label">定型レポート生成</div>
+              <div class="grid-title">定型レポート生成</div>
               <div class="grid-desc">毎月の報告書を、テンプレートとデータから自動生成する仕組み</div>
             </div>
           </div>
@@ -2239,17 +2243,17 @@ const MODULES = [
           <div class="visual-grid cols-3">
             <div class="visual-grid-item">
               <div class="grid-icon">📋</div>
-              <div class="grid-label">CLAUDE.md</div>
+              <div class="grid-title">CLAUDE.md</div>
               <div class="grid-desc">プロジェクトの作業ルールを書いたファイル。Claude Code が作業を始める前に自動で読み込む</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🪝</div>
-              <div class="grid-label">Hooks</div>
+              <div class="grid-title">Hooks</div>
               <div class="grid-desc">「特定のタイミングで自動実行される処理」。作業の前後にチェックを挟み込む</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🤖</div>
-              <div class="grid-label">Subagents</div>
+              <div class="grid-title">Subagents</div>
               <div class="grid-desc">役割分担した複数のエージェント。調査担当・実装担当・レビュー担当を分けられる</div>
             </div>
           </div>
@@ -2260,12 +2264,12 @@ const MODULES = [
           <div class="visual-grid cols-2">
             <div class="visual-grid-item">
               <div class="grid-icon">✅</div>
-              <div class="grid-label">書くべきこと</div>
+              <div class="grid-title">書くべきこと</div>
               <div class="grid-desc">プロジェクトの概要、ファイル構成、コーディング規約、禁止事項、出力形式のルール、レビュー基準</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">❌</div>
-              <div class="grid-label">書かなくてよいこと</div>
+              <div class="grid-title">書かなくてよいこと</div>
               <div class="grid-desc">一般的なプログラミング知識、一時的な作業指示（それはチャットで伝える）</div>
             </div>
           </div>
@@ -2296,17 +2300,17 @@ const MODULES = [
           <div class="visual-grid cols-3">
             <div class="visual-grid-item">
               <div class="grid-icon">🔍</div>
-              <div class="grid-label">調査担当</div>
+              <div class="grid-title">調査担当</div>
               <div class="grid-desc">情報収集と整理を専門に担当</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔧</div>
-              <div class="grid-label">実装担当</div>
+              <div class="grid-title">実装担当</div>
               <div class="grid-desc">実際のファイル作成・修正を担当</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">✅</div>
-              <div class="grid-label">レビュー担当</div>
+              <div class="grid-title">レビュー担当</div>
               <div class="grid-desc">成果物の品質チェックを担当</div>
             </div>
           </div>
@@ -2400,22 +2404,22 @@ const MODULES = [
           <div class="visual-grid cols-2">
             <div class="visual-grid-item">
               <div class="grid-icon">✅</div>
-              <div class="grid-label">すぐやること</div>
+              <div class="grid-title">すぐやること</div>
               <div class="grid-desc">対象業務の選定、既存の成功事例の棚卸し、情報管理ルールの明文化</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📅</div>
-              <div class="grid-label">1ヶ月以内にやること</div>
+              <div class="grid-title">1ヶ月以内にやること</div>
               <div class="grid-desc">チーム共通 Project の作成、主要 Skills の整備、レビュー体制の整備</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔄</div>
-              <div class="grid-label">継続的にやること</div>
+              <div class="grid-title">継続的にやること</div>
               <div class="grid-desc">活用事例の共有会、Skills の改善、新メンバーへの展開</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
-              <div class="grid-label">効果を測ること</div>
+              <div class="grid-title">効果を測ること</div>
               <div class="grid-desc">作業時間の変化、成果物の品質向上、メンバーの利用頻度</div>
             </div>
           </div>
@@ -2426,9 +2430,9 @@ const MODULES = [
           </div>
 
           <div class="visual-big-message">
-            <div class="big-icon">🎯</div>
-            <div class="big-text">人が判断し、Claude が実行する — このサイクルをチームで回す</div>
-            <div class="big-sub">個人の便利技を、チームの標準に。標準を、組織の力に。</div>
+            <div class="big-message-icon">🎯</div>
+            <div class="big-message-text">人が判断し、Claude が実行する — このサイクルをチームで回す</div>
+            <div class="big-message-sub">個人の便利技を、チームの標準に。標準を、組織の力に。</div>
           </div>
         `
       }
