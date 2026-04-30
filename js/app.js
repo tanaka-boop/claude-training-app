@@ -763,21 +763,21 @@
 
     let slideContent = '';
     if (slideIdx === 0) {
-      const sectionCount = mod.sections.length;
-      const quizCount = mod.quiz ? mod.quiz.length : 0;
-      const handsonCount = mod.sections.filter(s => s.type === 'handson').length;
-      const lectureCount = sectionCount - handsonCount;
+      const typeLabel = s => s.type === 'handson' ? '🖐 ハンズオン' : '📖 講義';
       slideContent = `
         <div class="slide-cover">
           <h1 class="slide-cover-title">${mod.title}</h1>
           <p class="slide-cover-desc">${mod.description}</p>
-          <div class="slide-cover-stats">
-            <div class="slide-cover-stat"><span class="stat-num">${lectureCount}</span><span class="stat-label">講義</span></div>
-            <div class="slide-cover-stat"><span class="stat-num">${handsonCount}</span><span class="stat-label">ハンズオン</span></div>
-            <div class="slide-cover-stat"><span class="stat-num">${quizCount}</span><span class="stat-label">クイズ</span></div>
-          </div>
-          <div class="slide-cover-obj-list">
-            ${mod.objectives.map(o => `<div class="slide-cover-obj-item">✓ ${o}</div>`).join('')}
+          <div class="slide-cover-roadmap">
+            ${mod.sections.map((s, i) => `
+              <div class="roadmap-item">
+                <div class="roadmap-num">${i + 1}</div>
+                <div class="roadmap-body">
+                  <div class="roadmap-title">${s.title}</div>
+                  <div class="roadmap-type">${typeLabel(s)}</div>
+                </div>
+              </div>
+            `).join('')}
           </div>
         </div>`;
     } else {

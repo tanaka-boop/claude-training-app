@@ -2325,6 +2325,66 @@ body.present-mode #page-container {
   color: var(--text-secondary);
 }
 
+/* --- 表紙 ロードマップ --- */
+.slide-cover-roadmap {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 28px;
+}
+
+.slide-cover-roadmap::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+
+.roadmap-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 10px 0;
+  position: relative;
+}
+
+.roadmap-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.roadmap-body {
+  text-align: left;
+  padding-top: 3px;
+}
+
+.roadmap-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.roadmap-type {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
 /* --- 表紙 到達目標リスト --- */
 .slide-cover-obj-list {
   max-width: 600px;
