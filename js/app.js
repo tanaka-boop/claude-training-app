@@ -227,22 +227,22 @@
 
         <div class="training-overview">
           <h2 class="overview-title">研修の全体像</h2>
-          <p class="overview-subtitle">全${MODULES.length}回・${totalSections}セクション — Chatで理解し、Cowork・Claude Codeで仕事を任せる</p>
+          <p class="overview-subtitle">全${MODULES.length}回・${totalSections}セクション — Chatで始め、成果物を作り、品質と再現性を上げる</p>
           <div class="overview-flow">
             <div class="overview-flow-item">
               <div class="overview-flow-step">
                 <span class="overview-flow-icon">💬</span>
-                <span>Chat で理解する</span>
+                <span>Chat で始める</span>
               </div>
               <div class="overview-flow-arrow">→</div>
               <div class="overview-flow-step">
-                <span class="overview-flow-icon">🤝</span>
-                <span>Cowork で一緒に作る</span>
+                <span class="overview-flow-icon">📋</span>
+                <span>成果物を作る</span>
               </div>
               <div class="overview-flow-arrow">→</div>
               <div class="overview-flow-step">
-                <span class="overview-flow-icon">⚡</span>
-                <span>Claude Code で任せる</span>
+                <span class="overview-flow-icon">✅</span>
+                <span>品質と再現性を上げる</span>
               </div>
             </div>
           </div>
