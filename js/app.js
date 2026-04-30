@@ -377,7 +377,6 @@
                 <h1>${sec.title}</h1>
                 <div class="topic-meta">
                   <span class="topic-meta-tag">${mod.shortTitle}</span>
-                  <span class="topic-meta-tag section-type-badge ${typeClass}">${typeLabel}</span>
                   <span class="topic-meta-tag">${completed ? '完了' : '未完了'}</span>
                 </div>
               </div>
@@ -634,7 +633,6 @@
                 <div class="section-header">
                   <span class="section-number">${c?'&#10003;':i+1}</span>
                   <span class="section-title">${sec.title}</span>
-                  <span class="section-type-badge ${tc}">${tl}</span>
                   <span class="section-status">${c?'完了':'未完了'}</span>
                   <svg class="section-chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                 </div>
@@ -837,7 +835,6 @@
         <div class="slide-section">
           <div class="slide-section-header">
             ${groupLabel ? `<span class="slide-group-label">${groupLabel}</span>` : ''}
-            <span class="section-type-badge ${tc}">${tl}</span>
             <h2 class="slide-section-title">${sec.title}</h2>
           </div>
           <div class="slide-section-body">${sec.content}</div>
