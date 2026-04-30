@@ -2705,6 +2705,17 @@ body.present-mode #page-container:has(.slide-cover) {
   border-bottom: 2px solid var(--border-light);
 }
 
+.slide-group-label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-bg);
+  padding: 3px 12px;
+  border-radius: 20px;
+  margin-bottom: 4px;
+}
+
 .slide-section-title {
   font-size: 26px;
   font-weight: 800;

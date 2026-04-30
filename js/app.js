@@ -373,6 +373,7 @@
                 <a href="#" data-nav="home">ホーム</a> / <a href="#" data-nav="learn">学習コンテンツ</a> / ${mod.shortTitle}
               </div>
               <div class="topic-detail-header">
+                ${(() => { const g = (mod.coverGroups || []).find(g => g.sections.includes(sectionIndex)); return g ? `<span class="slide-group-label">${(g.icon||'')} ${g.label}</span>` : ''; })()}
                 <h1>${sec.title}</h1>
                 <div class="topic-meta">
                   <span class="topic-meta-tag">${mod.shortTitle}</span>
@@ -829,9 +830,13 @@
       const sec = mod.sections[slideIdx - 1];
       const tl = sec.type==='handson'?'ハンズオン':'講義';
       const tc = sec.type||'lecture';
+      const sectionIdx = slideIdx - 1;
+      const groupForSection = (mod.coverGroups || []).find(g => g.sections.includes(sectionIdx));
+      const groupLabel = groupForSection ? `${groupForSection.icon || ''} ${groupForSection.label}`.trim() : '';
       slideContent = `
         <div class="slide-section">
           <div class="slide-section-header">
+            ${groupLabel ? `<span class="slide-group-label">${groupLabel}</span>` : ''}
             <span class="section-type-badge ${tc}">${tl}</span>
             <h2 class="slide-section-title">${sec.title}</h2>
           </div>
