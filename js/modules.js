@@ -11,7 +11,7 @@ const MODULES = [
     id: 'session-1',
     title: '第1回：Claudeで仕事の初速を上げる',
     shortTitle: '第1回',
-    description: '生成AI経験者が、Claudeの特徴を理解し、Chatで業務の初速を上げるまでを一気に体験する',
+    description: 'Claudeの特徴を理解し、Chatで業務の初速を上げるまでを一気に体験する',
     target: 'マネージャー以上（ChatGPT/Gemini経験者）',
     duration: '自分のペースで',
     prereq: 'Claudeアカウント（事前準備済み）',
