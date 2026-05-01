@@ -2229,6 +2229,160 @@ const MODULES = [
             <p><strong>Claude Code は「手を動かすアシスタント」であり「責任者」ではない</strong></p>
             <p>Claude Code が生成・修正したコードやファイルの最終責任は自分にあります。「Claude Code がやったから大丈夫」ではなく、結果を確認して責任を持つ姿勢は他の機能と同じです。</p>
           </div>
+
+          <h3>Claude Code を安全かつ快適に使う基本TIPS</h3>
+          <p>上の4つの基本（範囲を限定・禁止事項を明示・小さく進める・確認する）を押さえたうえで、日常的に Claude Code を使ううえで効果が大きい実践 TIPS を紹介します。<strong>すべてを覚える必要はありません</strong>。型として使えそうなものから取り入れてください。</p>
+
+          <h4>1. VS Code / Cursor 拡張版で使う</h4>
+          <p>Claude Code は VS Code や Cursor の拡張機能としても利用できます。ファイルを見ながら作業を依頼でき、ターミナル操作に慣れていない人でもチャットに近い感覚で使えます。閲覧・編集・確認を同じ画面で進められるため、非エンジニアにはまずエディター上での利用がおすすめです。</p>
+
+          <h4>2. 作業前に現状調査を依頼する</h4>
+          <p>いきなり実装させず、まずリポジトリ構造や対象ファイルを確認させます。どのファイルを変更するか、どこに影響があるかを説明させてから着手することで、既存構造を壊しにくくなります。</p>
+          <div class="example-box">
+            <strong>📌 指示例</strong><br>
+            「まず実装はせず、現在の構造を確認してください。変更対象ファイル、影響範囲、実装方針を整理してから報告してください。」
+          </div>
+
+          <h4>3. 変更対象ファイルを限定する</h4>
+          <p>「全部直して」ではなく、対象ファイルや対象範囲を明示します。既存機能や他の領域への影響を最小化し、小さく変更して都度確認する流れにします。</p>
+          <div class="example-box">
+            <strong>📌 指示例</strong><br>
+            「今回は js/modules.js の MODULES[2] のみを対象にしてください。第1回・第2回、表示ロジック、CSS には触らないでください。」
+          </div>
+
+          <h4>4. 実装前に計画を出させる</h4>
+          <p>実装に入る前に、変更方針・変更対象・確認方法・リスクを簡潔に出させます。小さな修正は承認不要で進めるルールも併記しておくと、過剰な確認待ちを避けられます。</p>
+          <div class="example-box">
+            <strong>📌 指示例</strong><br>
+            「実装前に、変更方針、変更対象、確認方法、リスクを簡潔に示してください。小さな文言修正や教材追加は承認不要で実装まで進めてください。」
+          </div>
+
+          <h4>5. 実装後に確認結果を報告させる</h4>
+          <p>実装して終わりにせず、表示確認・クイズ・FAQ・リンク集・コンソールエラーまで自分で確認させ、変更ファイルと結果を必ず報告させます。</p>
+          <div class="example-box">
+            <strong>📌 指示例</strong><br>
+            「実装後、変更ファイル、変更内容、確認した画面、コンソールエラーの有無、残課題を報告してください。」
+          </div>
+
+          <h4>6. ファイルパスをコピーして渡す</h4>
+          <p>Claude Code に外部ファイルを渡すときは、ファイルパスを指定するとスムーズです。PDF・Word・Markdown・画像などを扱うときに便利です。<strong>元ファイルを直接編集させず、作業コピーを使う</strong>のが安全です。契約書・顧客資料・機密資料は特に慎重に扱ってください。</p>
+
+          <h4>7. 作成ファイルをすぐ確認する</h4>
+          <p>Claude Code が作成した Markdown・PDF・画像・HTML などは、ファインダーやブラウザですぐに目視確認します。「作って終わり」ではなく、確認・共有までを作業フローに含めます。Slack・メール・Figma などに渡す前に、必ず人が確認してください。</p>
+
+          <h4>8. 非エンジニア向けの基本拡張機能</h4>
+          <p>VS Code / Cursor で役立つ拡張機能です。<strong>すべて入れる必要はありません</strong>。最初は「まず入れる」の2つから始めてください。</p>
+
+          <div class="visual-mapping">
+            <div class="mapping-header">
+              <span class="mapping-from">優先度</span>
+              <span class="mapping-arrow"></span>
+              <span class="mapping-to">拡張機能 — 目的</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">まず入れる</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">Japanese Language Pack — VS Code / Cursor の表示を理解しやすくする</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">まず入れる</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">Markdown Editor — Claude Code が作った Markdown を読みやすくする</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">慣れたら</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">Markdown All in One — Markdown 編集を効率化する</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">慣れたら</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">Markdown PDF — Markdown を PDF 化して共有しやすくする</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">慣れたら</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">Open in Browser — HTML やプロトタイプをブラウザで確認しやすくする</span>
+            </div>
+          </div>
+
+          <h3>慣れたら使う TIPS</h3>
+          <p>全員必須ではありませんが、業務によっては効果が大きい TIPS です。基本の型に慣れてから取り入れてください。</p>
+
+          <div class="visual-grid cols-2">
+            <div class="visual-grid-item">
+              <div class="grid-icon">📰</div>
+              <div class="grid-title">Web 記事を Markdown 化して渡す</div>
+              <div class="grid-desc">URL だけでは Claude Code が読みづらいページ（長文・ログイン要・SNS 投稿・note 系記事など）は、Web Clipper 系のツールで Markdown 化してから渡すと安定します。リサーチや教材化を頻繁に行う人向け。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🎚️</div>
+              <div class="grid-title">Effort 設定を使い分ける</div>
+              <div class="grid-desc">戦略立案・リサーチ・構成案作成・複雑な修正では、思考を深くする設定が役立ちます。軽い修正や単純作業では毎回高くする必要はありません。タスクの重さに応じて使い分けるのがコツです。</div>
+            </div>
+          </div>
+
+          <h3>補助資料・上級 TIPS（必須ではない）</h3>
+          <p>以下は便利ですが、<strong>環境依存・権限・誤操作のリスク</strong>があるため、本編では深掘りしません。必要な人が補助資料として参照する位置づけです。</p>
+
+          <div class="visual-grid cols-2">
+            <div class="visual-grid-item">
+              <div class="grid-icon">🔓</div>
+              <div class="grid-title">Bypass Permissions などの権限モード</div>
+              <div class="grid-desc">確認なしで実行できる代わりに、誤操作の影響が大きくなる</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">📥</div>
+              <div class="grid-title">Downloads 最新ファイルパスの自動コピー</div>
+              <div class="grid-desc">直近のダウンロードを取り回しやすくする工夫</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🔗</div>
+              <div class="grid-title">xurl による X 投稿取得</div>
+              <div class="grid-desc">SNS 投稿を Claude Code に取り込む補助</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">📂</div>
+              <div class="grid-title">.claude フォルダの確認・操作</div>
+              <div class="grid-desc">設定ファイルや履歴の確認・カスタマイズ</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">⚙️</div>
+              <div class="grid-title">自動化スクリプト・外部 CLI 連携</div>
+              <div class="grid-desc">作業の自動実行や他ツールとの連携</div>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <p><strong>補助資料・上級 TIPS の扱い</strong></p>
+            <p>これらの TIPS は作業効率を高める一方で、権限・環境依存・誤操作のリスクがあります。業務利用では、<strong>作業コピー・チームルール・レビュー・情報管理を前提</strong>に扱ってください。全員が使う必要はなく、必要な人が補助資料として参照する位置づけです。</p>
+          </div>
+
+          <h3>TIPS の分類</h3>
+          <p>TIPS の位置づけを整理しておくと、「いま自分がどこを学んでいるか」で迷わなくなります。</p>
+
+          <div class="visual-mapping">
+            <div class="mapping-header">
+              <span class="mapping-from">区分</span>
+              <span class="mapping-arrow"></span>
+              <span class="mapping-to">本編での扱い — 例</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">まず試す</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">本編に組み込む — VS Code / Cursor 拡張版、現状調査、変更対象限定、計画提示、確認報告、ファイルパス連携</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">慣れたら使う</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">本編で軽く紹介 — Web 記事の Markdown 化、Effort 設定、Markdown 系拡張機能</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">高度・チーム向け</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">補助資料扱い — Bypass Permissions、Downloads 自動コピー、xurl、.claude フォルダ操作</span>
+            </div>
+          </div>
         `
       },
 
@@ -2327,6 +2481,42 @@ const MODULES = [
           <div class="warning-box">
             <p><strong>仕組みは「入れて終わり」ではない</strong></p>
             <p>CLAUDE.md や Hooks を設定しても、実際の運用で問題が出ることがあります。「このルールが厳しすぎて作業効率が下がる」「このチェックが抜けている」といった声をチームで集め、継続的に改善してください。</p>
+          </div>
+
+          <h3>快適化TIPSをチームで再現可能にする</h3>
+          <p>3-3 で紹介した個人レベルの TIPS は、CLAUDE.md やテンプレートを通じて<strong>チームで再現できる状態にする</strong>ことで、組織としての強みになります。</p>
+
+          <div class="visual-grid cols-2">
+            <div class="visual-grid-item">
+              <div class="grid-icon">📋</div>
+              <div class="grid-title">CLAUDE.md やテンプレートに落とす</div>
+              <div class="grid-desc">よく使う指示の型・確認手順・禁止事項を CLAUDE.md やプロンプトテンプレートに集約し、誰が使っても同じ品質が出る状態にする</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">📣</div>
+              <div class="grid-title">指示パターンをチームで共有する</div>
+              <div class="grid-desc">「現状調査 → 計画 → 実装 → 確認報告」のような型を Slack・Notion・社内 Wiki などで共有し、属人化させない</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🚫</div>
+              <div class="grid-title">禁止事項とレビュー観点を明文化する</div>
+              <div class="grid-desc">触ってはいけないファイル・データ、レビュー時の必須チェック項目を文書化し、CLAUDE.md とレビューチェックリストに組み込む</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🔐</div>
+              <div class="grid-title">権限・自動化はチームルールに従う</div>
+              <div class="grid-desc">権限モードや自動化スクリプトは個人判断で使わず、チームのガイドラインに沿う。機密情報や重要ファイルでは特に慎重に運用する</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">📂</div>
+              <div class="grid-title">.claude フォルダや個人設定は不用意に編集しない</div>
+              <div class="grid-desc">仕組みを理解する目的で確認するのは有用だが、初心者の不用意な編集は避ける。チーム共通設定はレビュー前提で扱う</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🛠️</div>
+              <div class="grid-title">ショートカット・拡張機能を属人化させない</div>
+              <div class="grid-desc">「○○さんしか使えない」状態を作らない。チーム共通の拡張機能リストや、新メンバー向けセットアップ手順を整備する</div>
+            </div>
           </div>
         `
       },
@@ -2592,6 +2782,20 @@ const MODULES = [
         hint: '「月次レポートを改善して」ではなく「○○ファイルの△△セクションに□□を追加して。既存の◇◇は変更しないで」のように、範囲・禁止事項・完了条件を具体的に書くのがポイントです。'
       },
       {
+        section: '3-3. Claude Code で高度な作業を任せる',
+        title: 'Claude Code 用の安全な修正指示テンプレートを作る',
+        task: '<strong>目的</strong>：チームで再利用できる「Claude Code への安全な修正指示テンプレート」を作成し、誰が使っても同じ品質で作業を依頼できる状態にする。<br><br>' +
+          '<strong>想定シーン</strong>：自分が関わるプロジェクト（社内ツール、Webサイト、教材アプリなど）で、Claude Code に修正や追加機能の実装を依頼する場面。<br><br>' +
+          '<strong>使用する Claude 機能</strong>：Claude Code（VS Code / Cursor 拡張版を推奨）。必要に応じて CLAUDE.md にテンプレートを章として記載する。<br><br>' +
+          '<strong>入力情報</strong>：対象プロジェクトの概要、変更したい内容、触ってほしくないファイル、確認したい画面・項目、チームのレビュー体制。<br><br>' +
+          '<strong>作成する指示テンプレート（6点）</strong>：(1) 作業開始時の現状調査指示、(2) 変更対象ファイルを限定する指示、(3) 実装前に計画を出させる指示、(4) 実装後に確認結果を報告させる指示、(5) commit 前のチェック指示、(6) チームで共有する場合の注意点。<br><br>' +
+          '<strong>プロンプト例（参考）</strong>：「まず実装はせず、◯◯ファイルの構造と影響範囲を確認してください。今回の対象は△△のみで、□□には触らないでください。実装前に変更方針・確認方法・リスクを簡潔に提示してください。実装後は変更ファイル・確認した画面・コンソールエラーの有無・残課題を報告してください。」<br><br>' +
+          '<strong>期待アウトプット</strong>：再利用可能なテンプレート（テキスト or CLAUDE.md の章立て）と、それを使った1回の依頼サンプル（実際に Claude Code に投げて結果まで確認する）。<br><br>' +
+          '<strong>チェックポイント</strong>：(a) 範囲・禁止事項・確認条件が具体的か、(b)「全体を良くして」のような曖昧な表現が残っていないか、(c) commit 前チェック（変更ファイル一覧、コンソールエラー、既存機能の動作）が含まれているか、(d) チームで共有しても誤解されない明確さか。<br><br>' +
+          '<strong>発展課題</strong>：このテンプレートを CLAUDE.md にチーム共通ルールとして追加し、レビュー観点（人の判断が必要な箇所）と自動化できる観点を分けて整理する。',
+        hint: '最初から完璧を目指す必要はありません。直近で行った1件の依頼を「型」に当てはめて書き直してみると、自分の指示のどこが曖昧だったかが見えてきます。'
+      },
+      {
         section: '3-4. CLAUDE.md / Hooks / Subagents で品質を固定する',
         title: 'チーム品質チェックリストを作成する',
         task: 'Claude が生成した成果物の品質をチェックするためのリストを作成してください。\n\n1. 成果物の種類（文書、表、スライド、ツール）ごとにチェック項目を5つ以上定義する\n2. 各チェック項目に「確認方法」を具体的に書く（例：「数値は元データと照合する」「リンクは全てクリックして確認する」）\n3. 「誰が、いつ、どのタイミングでチェックするか」の運用ルールを決める\n4. このチェックリストを CLAUDE.md に組み込む形で整理する',
@@ -2632,6 +2836,11 @@ const MODULES = [
         { q: 'Claude Code に修正を依頼するときの注意点は？', a: '4点を意識してください。(1) 変更対象を具体的に指定する、(2) 触ってほしくない部分を禁止事項として明示する、(3) 一度に大きな変更をせず小さな単位で進める、(4) 実装後に必ず動作確認する。「全体を良くして」のような曖昧な指示は、意図しない変更を引き起こすリスクがあります。', category: '🔧 Claude Code' },
         { q: 'CLAUDE.md には何を書くべきですか？', a: 'プロジェクトの概要、ファイル構成、コーディング規約、禁止事項、出力形式のルール、レビュー基準など、プロジェクト固有の永続的なルールを書きます。一時的な作業指示はチャットで伝えます。CLAUDE.md はチームの「品質基準書」として機能し、新メンバーが読めばプロジェクトのルールがわかる状態を目指します。', category: '🔧 Claude Code' },
         { q: 'Hooks や Subagents はいつ必要ですか？', a: 'Hooks は「毎回必ず実行したいチェック」がある場合に使います（例：作業後のテスト実行、バックアップ取得）。Subagents は「1つのタスクを専門化した役割に分担したい」場合に使います（例：調査→実装→レビューを別々のエージェントに任せる）。最初は CLAUDE.md だけで十分で、品質管理の精度を上げたい段階で導入します。', category: '🔧 Claude Code' },
+        { q: 'Claude Code の快適化 TIPS は全員が覚える必要がありますか？', a: 'いいえ。まずは安全に作業を任せるための「指示の型」（現状調査・変更対象限定・計画提示・確認報告）を覚えれば十分です。ショートカットや拡張機能は慣れてから、権限モードや自動化設定はチームルールに従って必要な人だけ使ってください。', category: '🔧 Claude Code' },
+        { q: '本編でまず覚えるべき Claude Code の使い方は何ですか？', a: '次の5つの基本の型を押さえてください。(1) 現状調査を依頼する、(2) 変更対象ファイルを限定する、(3) 実装前に計画を出させる、(4) 小さく実装させる、(5) 実装後に確認結果を報告させる。これだけで意図しない変更や手戻りを大きく減らせます。', category: '🔧 Claude Code' },
+        { q: 'Bypass Permissions のような権限モードは使ってよいですか？', a: '便利ですが誤操作の影響も大きくなります。業務利用では「作業コピーで使う・低リスク作業に限定する・チームルールに従う・レビューを通す」を前提にしてください。機密情報や重要ファイルを扱う作業では特に慎重に運用します。', category: '🔧 Claude Code' },
+        { q: 'Web 記事や外部ファイルを Claude Code に渡すにはどうすればよいですか？', a: 'PDF・Word・Markdown・画像などはファイルパスで渡すと扱いやすくなります。長文記事・ログイン要のページ・SNS 投稿などは、Web Clipper 系のツールで Markdown 化してから渡すと安定します。元ファイルを直接編集させず、作業コピーで作業させるのが安全です。', category: '🔧 Claude Code' },
+        { q: '.claude フォルダは触ってよいですか？', a: '仕組みを理解する目的で確認するのは有用ですが、初心者が不用意に編集するのは避けてください。チームで使う場合は、共通ルールやレビューを前提に扱い、変更内容は記録・共有します。', category: '🔧 Claude Code' },
         { q: 'チームで Claude を使うときのルールは何ですか？', a: '最低限、以下を決めましょう。(1) 対象業務（どの業務から始めるか）、(2) 共通化するもの（Project・Skills・CLAUDE.md）、(3) 情報管理ルール（何を渡してよいか、結果の保存先）、(4) レビュー体制（誰が確認・承認するか）、(5) 成功事例の共有方法。完璧なルールを最初から作る必要はなく、運用しながら改善する前提で始めましょう。', category: '💡 Claudeの基本' },
         { q: 'クライアント情報や機密情報をどう扱うべきですか？', a: '「何を Claude に渡してよいか」のガイドラインをチームで策定してください。公開情報やサマリー化された情報は比較的安全ですが、個人情報・契約金額・NDA 対象情報は慎重に扱う必要があります。迷った場合は上長に確認する、というルールを設けるのも有効です。万一のインシデント対応フローも事前に決めておきましょう。', category: '💡 Claudeの基本' }
       ]

@@ -2788,6 +2788,8 @@ body.present-mode #page-container:has(.slide-cover) {
 .slide-section-body .visual-grid-item .grid-desc {
   font-size: 15px;
   line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 .slide-section-body .visual-before-after {
   margin: 32px 0;
@@ -3614,7 +3616,9 @@ body.landing-mode #global-footer {
 .tutor-fab {
   position: fixed;
   bottom: 28px;
-  right: 28px;
+  /* 本文（#page-container, max-width: 1200px, padding: 24px）の右端に揃える。
+     狭いビューポートでは最低 28px を確保。 */
+  right: max(28px, calc((100vw - 1200px) / 2 + 24px));
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -4151,6 +4155,8 @@ body.landing-mode #global-footer {
   font-size: 13px;
   color: var(--text-secondary);
   line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 .visual-grid-item .grid-desc ul {
   text-align: left;
