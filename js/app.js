@@ -159,6 +159,7 @@
         case 'learn': renderLearn(container); break;
         case 'topic-detail': renderTopicDetail(container, moduleIndex, sectionIndex); break;
         case 'practices': renderPractices(container); break;
+        case 'tips': renderTips(container); break;
         case 'links': renderLinks(container); break;
         case 'faq': renderFaq(container); break;
         case 'quiz-hub': renderQuizHub(container); break;
@@ -284,6 +285,14 @@
             <h3>クイズ</h3>
             <p>確認クイズと修了テストで理解度をチェック。</p>
             <div class="card-count">${totalQuizzes} 問 &middot; 修了テストあり</div>
+          </div>
+          <div class="home-hero-card slide-up" data-nav="tips" style="animation-delay:.13s">
+            <div class="card-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21h6"/><path d="M12 17v4"/><path d="M12 3a6 6 0 00-3.6 10.8c.4.3.6.7.6 1.2v.5a1 1 0 001 1h4a1 1 0 001-1V15c0-.5.2-.9.6-1.2A6 6 0 0012 3z"/></svg>
+            </div>
+            <h3>TIPS集</h3>
+            <p>研修本編の補助教材。実務で必要なときに参照する実践TIPS。</p>
+            <div class="card-count">${(typeof TIPS !== 'undefined' ? TIPS.length : 0)} 件 &middot; 8カテゴリ</div>
           </div>
           <div class="home-hero-card slide-up" data-nav="links" style="animation-delay:.15s">
             <div class="card-icon">
@@ -518,6 +527,128 @@
   }
 
   // --- リンク集 ---
+  // --- TIPS集（自習用補助教材） ---
+  function renderTips(container) {
+    const tips = (typeof TIPS !== 'undefined') ? TIPS : [];
+    const categories = (typeof TIPS_CATEGORIES !== 'undefined') ? TIPS_CATEGORIES : [];
+    const levels = (typeof TIPS_LEVELS !== 'undefined') ? TIPS_LEVELS : [];
+
+    const escape = (s) => String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+    const tipCard = (tip) => `
+      <article class="tip-card"
+        data-category="${escape(tip.category)}"
+        data-level="${escape(tip.level)}"
+        data-keywords="${escape((tip.title + ' ' + (tip.summary||'') + ' ' + (tip.whenToUse||'') + ' ' + (tip.caution||'') + ' ' + (tip.example||'') + ' ' + (tip.howToUse||[]).join(' ')).toLowerCase())}">
+        <div class="tip-card-head">
+          <span class="tip-badge tip-cat">${escape(tip.category)}</span>
+          <span class="tip-badge tip-level tip-level-${escape(tip.level)}">${escape((levels.find(l=>l.id===tip.level)||{}).label || tip.level)}</span>
+          ${tip.relatedSession ? `<span class="tip-badge tip-related">${escape(tip.relatedSession)}</span>` : ''}
+        </div>
+        <h3 class="tip-card-title">${escape(tip.title)}</h3>
+        <p class="tip-card-summary">${escape(tip.summary)}</p>
+        ${tip.whenToUse ? `<div class="tip-card-section"><span class="tip-card-label">使う場面</span><p>${escape(tip.whenToUse)}</p></div>` : ''}
+        ${(tip.howToUse && tip.howToUse.length) ? `<div class="tip-card-section"><span class="tip-card-label">使い方</span><ul>${tip.howToUse.map(s => `<li>${escape(s)}</li>`).join('')}</ul></div>` : ''}
+        ${tip.example ? `<div class="tip-card-section tip-example"><span class="tip-card-label">例文</span><pre>${escape(tip.example)}</pre></div>` : ''}
+        ${tip.caution ? `<div class="tip-card-section tip-caution"><span class="tip-card-label">注意点</span><p>${escape(tip.caution)}</p></div>` : ''}
+      </article>
+    `;
+
+    container.innerHTML = `
+      <div class="fade-in tips-page">
+        <div class="page-header">
+          <h1>TIPS集</h1>
+          <p>研修本編で扱った内容を、実務で使いやすい形に整理した補助教材です。すべてを覚える必要はありません。まずは「まず試す」から始め、必要に応じて Claude Code・Cowork・成果物作成・Research・Skills・チーム展開の TIPS を参照してください。権限設定や自動化などの上級 TIPS は、チームルールと情報管理を前提に扱ってください。</p>
+        </div>
+
+        <div class="tips-controls">
+          <div class="tips-search-wrap">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="tips-search" placeholder="キーワード検索（タイトル・概要・使う場面など）" autocomplete="off">
+          </div>
+
+          <div class="tips-filter-row">
+            <span class="tips-filter-label">カテゴリ</span>
+            <button class="filter-btn active" data-tip-cat="all">すべて (${tips.length})</button>
+            ${categories.map(cat => {
+              const count = tips.filter(t => t.category === cat).length;
+              return `<button class="filter-btn" data-tip-cat="${escape(cat)}">${escape(cat)} (${count})</button>`;
+            }).join('')}
+          </div>
+
+          <div class="tips-filter-row">
+            <span class="tips-filter-label">レベル</span>
+            <button class="filter-btn active" data-tip-level="all">すべて</button>
+            ${levels.map(lv => {
+              const count = tips.filter(t => t.level === lv.id).length;
+              return `<button class="filter-btn" data-tip-level="${escape(lv.id)}">${escape(lv.label)} (${count})</button>`;
+            }).join('')}
+          </div>
+        </div>
+
+        <div class="tips-meta-bar">
+          <span id="tips-visible-count">${tips.length}</span> / ${tips.length} 件
+        </div>
+
+        <div class="tips-grid">
+          ${tips.map(tipCard).join('')}
+        </div>
+
+        <div class="tips-empty" id="tips-empty" style="display:none">
+          <p>該当する TIPS がありません。検索キーワードやフィルタを見直してください。</p>
+        </div>
+      </div>
+    `;
+
+    // フィルタ・検索のロジック
+    let currentCat = 'all';
+    let currentLevel = 'all';
+    let currentQuery = '';
+    const cards = [...container.querySelectorAll('.tip-card')];
+    const visibleCountEl = container.querySelector('#tips-visible-count');
+    const emptyEl = container.querySelector('#tips-empty');
+
+    const applyFilters = () => {
+      let visible = 0;
+      cards.forEach(card => {
+        const matchCat = currentCat === 'all' || card.dataset.category === currentCat;
+        const matchLevel = currentLevel === 'all' || card.dataset.level === currentLevel;
+        const matchQuery = !currentQuery || (card.dataset.keywords || '').includes(currentQuery);
+        const show = matchCat && matchLevel && matchQuery;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      if (visibleCountEl) visibleCountEl.textContent = visible;
+      if (emptyEl) emptyEl.style.display = visible === 0 ? '' : 'none';
+    };
+
+    container.querySelectorAll('[data-tip-cat]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        container.querySelectorAll('[data-tip-cat]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCat = btn.dataset.tipCat;
+        applyFilters();
+      });
+    });
+    container.querySelectorAll('[data-tip-level]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        container.querySelectorAll('[data-tip-level]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLevel = btn.dataset.tipLevel;
+        applyFilters();
+      });
+    });
+    const searchInput = container.querySelector('#tips-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        currentQuery = String(e.target.value || '').trim().toLowerCase();
+        applyFilters();
+      });
+    }
+  }
+
   function renderLinks(container) {
     const allLinks = getAllLinks();
     const categories = [...new Set(allLinks.map(l => l.category || 'その他'))];

@@ -707,6 +707,170 @@ body.landing-mode .header-search-btn {
 }
 
 /* ========================================
+   TIPS集 ページ
+   ======================================== */
+.tips-page .tips-controls {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tips-page .tips-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--text-muted);
+}
+.tips-page .tips-search-wrap input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: var(--text);
+  font-family: inherit;
+}
+.tips-page .tips-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.tips-page .tips-filter-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-right: 4px;
+  letter-spacing: 0.05em;
+}
+.tips-page .tips-meta-bar {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.tips-page .tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+.tips-page .tip-card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.tips-page .tip-card:hover {
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-sm);
+}
+.tips-page .tip-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tips-page .tip-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+.tips-page .tip-badge.tip-cat {
+  background: var(--primary-faint);
+  color: var(--primary);
+}
+.tips-page .tip-badge.tip-level-basic {
+  background: #e6f4ea;
+  color: #1a7f37;
+}
+.tips-page .tip-badge.tip-level-intermediate {
+  background: #fff3cd;
+  color: #856404;
+}
+.tips-page .tip-badge.tip-level-advanced {
+  background: #fde2e2;
+  color: #b42318;
+}
+.tips-page .tip-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.4;
+}
+.tips-page .tip-card-summary {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+.tips-page .tip-card-section {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+.tips-page .tip-card-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.tips-page .tip-card-section p { margin: 0; }
+.tips-page .tip-card-section ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.tips-page .tip-card-section ul li { margin-bottom: 2px; }
+.tips-page .tip-example pre {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  line-height: 1.55;
+}
+.tips-page .tip-caution {
+  background: #fffbe6;
+  border-left: 3px solid #f0c54e;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: #6f5b00;
+}
+.tips-page .tip-caution .tip-card-label { color: #856404; }
+.tips-page .tips-empty {
+  padding: 32px;
+  text-align: center;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+}
+
+/* ========================================
    FAQ ページ
    ======================================== */
 .faq-section {
