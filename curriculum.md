@@ -275,6 +275,9 @@ claude-training-app/
 ├── ai-tutor/
 │   ├── README.md               # AIチューター セットアップ手順
 │   └── project-instructions.md # Claude.ai Project 指示文
+├── docs/
+│   ├── research/                       # 調査メモ（PDF抽出・候補一覧など）
+│   └── instructor-guide.md             # 講師向け運用メモ（受講者には共有しない内部メモ）
 ├── curriculum.md       # カリキュラム & 実装計画（本ファイル）
 ├── CLAUDE.md           # プロジェクト開発ルール・プロセス定義
 ├── build-dist.ps1      # 配布用フォルダ生成スクリプト（PowerShell）
