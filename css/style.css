@@ -1986,14 +1986,14 @@ body.present-mode .related-tips-box { display: none; }
 /* ========================================
    コンテンツ用テーブル
    ======================================== */
-.comparison-table, .product-table, .mcp-table {
+.comparison-table, .product-table, .mcp-table, .info-table {
   width: 100%;
   border-collapse: collapse;
   margin: 16px 0;
   font-size: 13px;
 }
 
-.comparison-table th, .product-table th, .mcp-table th {
+.comparison-table th, .product-table th, .mcp-table th, .info-table th {
   background: var(--bg);
   padding: 10px 14px;
   text-align: left;
@@ -2003,14 +2003,14 @@ body.present-mode .related-tips-box { display: none; }
   border-bottom: 2px solid var(--border);
 }
 
-.comparison-table td, .product-table td, .mcp-table td {
+.comparison-table td, .product-table td, .mcp-table td, .info-table td {
   padding: 10px 14px;
   border-bottom: 1px solid var(--border-light);
   color: var(--text-secondary);
   vertical-align: top;
 }
 
-.comparison-table tr:hover td, .product-table tr:hover td, .mcp-table tr:hover td {
+.comparison-table tr:hover td, .product-table tr:hover td, .mcp-table tr:hover td, .info-table tr:hover td {
   background: var(--surface-hover);
 }
 
