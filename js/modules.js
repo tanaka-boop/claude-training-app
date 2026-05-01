@@ -1164,7 +1164,7 @@ const MODULES = [
       // 2-2: OfficeでExcel / PowerPoint / Wordを扱う
       // ========================================
       {
-        title: '2-2. Office で Excel / PowerPoint / Word を扱う',
+        title: '2-2. Office アプリで Claude を使う — Excel / PowerPoint / Word',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -1977,13 +1977,13 @@ const MODULES = [
     // ========================================
     practices: [
       {
-        section: '2-2. Office で Excel / PowerPoint / Word を扱う',
+        section: '2-2. Office アプリで Claude を使う — Excel / PowerPoint / Word',
         title: 'Excel データの傾向を読み取る',
         task: '手元にある Excel データ（売上・顧客・アンケート等）を開き、Claude in Excel で以下を依頼してみましょう。\n\n1. 「このデータから読み取れる傾向を3つ挙げて」\n2. 返ってきた示唆の中から1つ選び、「この点をさらに深掘りして」と追加指示\n3. 最後に「経営会議で報告するとしたら、どんなグラフが適切か」と聞く',
         hint: 'データがない場合は、サンプルの売上データ（3ヶ月分・5商品程度）を自分で作ってから試しましょう。'
       },
       {
-        section: '2-2. Office で Excel / PowerPoint / Word を扱う',
+        section: '2-2. Office アプリで Claude を使う — Excel / PowerPoint / Word',
         title: 'PowerPoint のスライド構成を作る',
         task: '自分が関わっている（または想定する）案件について、Claude in PowerPoint で提案書の構成を依頼してください。\n\n1. 「この案件の提案書を8〜10枚構成で作って。各スライドのタイトルとキーメッセージを提案して」\n2. 構成が出たら、「3枚目のスライドを役員向けの表現に書き直して」と追加指示\n3. 「全体のストーリーラインを1文で表現して」とまとめを依頼',
         hint: '案件の背景（業界・課題・提案の方向性）を最初に伝えると、精度の高い構成が返ります。'
@@ -3430,7 +3430,7 @@ const TIPS = [
     ],
     caution: '一気に PPT 化すると、見た目は整っていても論点が弱い資料になる。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 1, label: '第2回 2-2. Office で Excel / PowerPoint / Word を扱う' }]
+    relatedSections: [{ m: 1, s: 1, label: '第2回 2-2. Office アプリで Claude を使う — Excel / PowerPoint / Word' }]
   },
   {
     id: 'tip-010',
@@ -3446,7 +3446,7 @@ const TIPS = [
     ],
     caution: '素材抽出と資料化を同時に頼むと、論点の抜け漏れに気づきにくい。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 1, label: '第2回 2-2. Office で Excel / PowerPoint / Word を扱う' }]
+    relatedSections: [{ m: 1, s: 1, label: '第2回 2-2. Office アプリで Claude を使う — Excel / PowerPoint / Word' }]
   },
   {
     id: 'tip-011',
