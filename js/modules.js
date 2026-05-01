@@ -1025,42 +1025,52 @@ const MODULES = [
           <div class="visual-mapping">
             <div class="mapping-header">
               <span class="mapping-from">作りたいもの</span>
+              <span class="mapping-arrow"></span>
               <span class="mapping-to">使う機能</span>
             </div>
             <div class="mapping-row">
               <span class="mapping-from">文書・表の下書き</span>
+              <span class="mapping-arrow">→</span>
               <span class="mapping-to">Chat / Artifact</span>
             </div>
             <div class="mapping-row">
               <span class="mapping-from">Excel 分析・加工</span>
+              <span class="mapping-arrow">→</span>
               <span class="mapping-to">Claude in Excel</span>
             </div>
             <div class="mapping-row">
               <span class="mapping-from">PowerPoint 構成・改善</span>
+              <span class="mapping-arrow">→</span>
               <span class="mapping-to">Claude in PowerPoint</span>
             </div>
             <div class="mapping-row">
               <span class="mapping-from">Word 要約・校正</span>
+              <span class="mapping-arrow">→</span>
               <span class="mapping-to">Claude in Word</span>
             </div>
             <div class="mapping-row">
               <span class="mapping-from">Web 調査・論点整理</span>
+              <span class="mapping-arrow">→</span>
               <span class="mapping-to">Research</span>
             </div>
             <div class="mapping-row">
               <span class="mapping-from">触れる成果物（試作品）</span>
+              <span class="mapping-arrow">→</span>
               <span class="mapping-to">Artifact（HTML/JS）</span>
             </div>
             <div class="mapping-row">
               <span class="mapping-from">Web ページ要約・補助</span>
+              <span class="mapping-arrow">→</span>
               <span class="mapping-to">Claude in Chrome</span>
             </div>
             <div class="mapping-row">
               <span class="mapping-from">ファイルの一括処理</span>
+              <span class="mapping-arrow">→</span>
               <span class="mapping-to">Cowork</span>
             </div>
             <div class="mapping-row">
               <span class="mapping-from">定型業務の自動実行</span>
+              <span class="mapping-arrow">→</span>
               <span class="mapping-to">Scheduled tasks</span>
             </div>
           </div>
@@ -2137,18 +2147,22 @@ const MODULES = [
           <div class="visual-mapping">
             <div class="mapping-header">
               <span class="mapping-from">レベル</span>
+              <span class="mapping-arrow"></span>
               <span class="mapping-to">使うもの → 作れるもの</span>
             </div>
             <div class="mapping-row">
               <span class="mapping-from">簡易</span>
+              <span class="mapping-arrow">→</span>
               <span class="mapping-to">Artifact → 診断ツール、画面モック、シミュレーター</span>
             </div>
             <div class="mapping-row">
               <span class="mapping-from">中級</span>
+              <span class="mapping-arrow">→</span>
               <span class="mapping-to">Cowork → ファイルを使った成果物（レポート、集計表）</span>
             </div>
             <div class="mapping-row">
               <span class="mapping-from">高度</span>
+              <span class="mapping-arrow">→</span>
               <span class="mapping-to">Claude Code → データ処理、複数画面、再利用可能なツール</span>
             </div>
           </div>
