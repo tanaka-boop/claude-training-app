@@ -95,7 +95,7 @@ const MODULES = [
 
           <div class="tip-box">
             <strong>💡 すでに持っているスキルは活かせます</strong><br>
-            チャット形式で対話する、ファイルを添付する、Web検索を使う — これらの基本操作は ChatGPT や Gemini と同じです。新しく覚えることは意外と少ないはずです。
+            ChatGPT や Gemini で身につけた「チャットで対話する」「ファイルを添付する」「Web検索を使う」といった基本操作は、そのまま Claude でも活かせます。
           </div>
         `
       },
@@ -154,21 +154,11 @@ const MODULES = [
             </div>
           </div>
 
-          <h3>具体例で見る違い</h3>
-          <div class="visual-before-after">
-            <div class="ba-item before">
-              <div class="ba-label">例：ChatGPTに依頼</div>
-              <p>「この議事録を要約して」</p>
-              <p>→ 短い要約が返ってくる</p>
-              <p style="margin-top:8px;color:var(--text-muted)">長い議事録だと途中で切れることがある</p>
-            </div>
-            <div class="ba-arrow">→</div>
-            <div class="ba-item after">
-              <div class="ba-label">例：Claudeに依頼</div>
-              <p>「この議事録を要約して」</p>
-              <p>→ 長文でも安定して全体を処理</p>
-              <p style="margin-top:8px;color:var(--text-muted)">「決定事項・宿題・次回アジェンダに分けて」と追加指示で精度UP</p>
-            </div>
+          <h3>具体例で見る Claude の強み</h3>
+          <div class="example-box">
+            <strong>📌 構造化指示への忠実さ</strong><br><br>
+            指示：「この議事録を、決定事項・宿題（担当者と期限付き）・次回アジェンダ案に分けて整理してください。です・ます調で。」<br><br>
+            → Claude は指定した3つの区分・フォーマット・文体をそのまま守って出力します。「箇条書き3点で」「表形式で」といった細かいルール指定にも忠実です。
           </div>
 
           <div class="info-box">
@@ -2262,7 +2252,7 @@ const MODULES = [
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🪝</div>
-              <div class="grid-title">Hooks</div>
+              <div class="grid-title">Hooks（フックス）</div>
               <div class="grid-desc">「特定のタイミングで自動実行される処理」。作業の前後にチェックを挟み込む</div>
             </div>
             <div class="visual-grid-item">
@@ -2288,7 +2278,7 @@ const MODULES = [
             </div>
           </div>
 
-          <h3>Hooks — 自動チェックを組み込む</h3>
+          <h3>Hooks（フックス） — 自動チェックを組み込む</h3>
           <p>Hooks は、Claude Code の作業フローに<strong>自動的なチェックポイントを挟む</strong>仕組みです。</p>
 
           <div class="visual-steps">

@@ -521,7 +521,7 @@ body.landing-mode .header-search-btn {
 
 /* トピック詳細ページ */
 .topic-detail {
-  max-width: 800px;
+  max-width: none;
 }
 
 .topic-detail .breadcrumb {
