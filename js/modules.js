@@ -384,6 +384,8 @@ const MODULES = [
             </tbody>
           </table>
 
+          <p><strong>つまり、「何を任せるか」（作業スタイル）と「どこで使うか」（利用場所）を分けて理解する</strong>のが、Claude を整理するコツです。</p>
+
           <div class="info-box">
             <strong>ℹ️ 800 での前提</strong><br>
             Claude Code は基本的に <strong>Cursor IDE 上で使う</strong>前提で説明します。CLI（ターミナル）も同じ Claude Code ですが、研修では「使える人向けの補足・上級利用」として扱います。<strong>CLI を覚えなくても Claude Code は使えます</strong>ので安心してください。
