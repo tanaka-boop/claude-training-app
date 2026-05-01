@@ -870,6 +870,131 @@ body.landing-mode .header-search-btn {
   border-radius: var(--radius-sm);
 }
 
+/* 関連セクションリンク（TIPS集側） */
+.tips-page .tip-related-sections ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.tips-page .tip-related-sections li { margin: 0; }
+.tips-page .tip-related-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-family: inherit;
+  color: var(--primary);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.tips-page .tip-related-link:hover {
+  border-color: var(--primary);
+  background: var(--primary-faint);
+}
+.tips-page .tip-related-link::before { content: '↗ '; opacity: 0.7; margin-right: 2px; }
+
+/* フォーカス時の一時ハイライト */
+@keyframes tip-card-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(18,125,112,0.55); border-color: var(--primary); }
+  60%  { box-shadow: 0 0 0 8px rgba(18,125,112,0); border-color: var(--primary); }
+  100% { box-shadow: 0 0 0 0 rgba(18,125,112,0); }
+}
+.tips-page .tip-card.tip-card-focus {
+  border-color: var(--primary);
+  animation: tip-card-pulse 1.4s ease-out 2;
+  background: var(--primary-faint);
+}
+
+/* ========================================
+   学習セクション内の「関連TIPS」ボックス
+   ======================================== */
+.related-tips-box {
+  margin: 24px 0;
+  padding: 16px 20px;
+  background: var(--primary-faint);
+  border: 1px solid var(--primary-light);
+  border-radius: var(--radius-sm);
+}
+.related-tips-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.related-tips-icon { font-size: 18px; }
+.related-tips-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--primary);
+}
+.related-tips-count {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--surface);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.related-tips-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.related-tips-list li { margin: 0; }
+.related-tips-link {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+}
+.related-tips-link:hover {
+  border-color: var(--primary);
+  background: white;
+  transform: translateX(2px);
+}
+.related-tips-cat {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--primary-faint);
+  padding: 1px 7px;
+  border-radius: 10px;
+}
+.related-tips-name {
+  font-weight: 600;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.related-tips-foot {
+  margin: 8px 0 0;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* 研修モードでは関連TIPS導線を非表示（スライドの邪魔にならないよう） */
+body.present-mode .related-tips-box { display: none; }
+
 /* ========================================
    FAQ ページ
    ======================================== */

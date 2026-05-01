@@ -130,12 +130,18 @@
     document.getElementById('present-mode-bar')?.remove();
   }
 
+  // TIPS集の遷移時フォーカス用（特定TIPSにスクロール・ハイライトする）
+  let pendingTipFocus = null;
+
   // --- ナビゲーション ---
-  function navigateTo(page, moduleIndex, sectionIndex) {
+  function navigateTo(page, moduleIndex, sectionIndex, options) {
     currentPage = page;
     currentModule = moduleIndex !== undefined ? moduleIndex : null;
     currentSection = sectionIndex !== undefined ? sectionIndex : null;
     if (page !== 'module' || currentMode !== 'present') presentSectionIndex = 0;
+    if (page === 'tips' && options && options.tipId) {
+      pendingTipFocus = options.tipId;
+    }
 
     // ヘッダーナビのアクティブ状態
     document.querySelectorAll('.header-nav-link').forEach(el => {
@@ -415,6 +421,31 @@
                 ${sec.content}
               </div>
 
+              ${(() => {
+                const relTips = (typeof getRelatedTipsForSection === 'function') ? getRelatedTipsForSection(moduleIndex, sectionIndex) : [];
+                if (!relTips.length) return '';
+                return `
+                  <aside class="related-tips-box" aria-label="このセクションに関連するTIPS">
+                    <div class="related-tips-head">
+                      <span class="related-tips-icon">💡</span>
+                      <span class="related-tips-title">このセクションに関連するTIPS</span>
+                      <span class="related-tips-count">${relTips.length} 件</span>
+                    </div>
+                    <ul class="related-tips-list">
+                      ${relTips.map(t => `
+                        <li class="related-tips-item">
+                          <button type="button" class="related-tips-link" data-tip-id="${t.id}">
+                            <span class="related-tips-cat">${t.category}</span>
+                            <span class="related-tips-name">${t.title}</span>
+                          </button>
+                        </li>
+                      `).join('')}
+                    </ul>
+                    <p class="related-tips-foot">クリックでTIPS集に移動し、該当TIPSをハイライト表示します。</p>
+                  </aside>
+                `;
+              })()}
+
               <div style="margin-bottom:24px;">
                 ${!completed ? `
                   <button class="btn btn-primary" id="btn-mark-complete">このトピックを完了にする</button>
@@ -457,6 +488,13 @@
         e.preventDefault();
         renderTopicDetail(container, parseInt(el.dataset.mi), parseInt(el.dataset.si));
         window.scrollTo(0, 0);
+      });
+    });
+    // 関連TIPSリンク → TIPS集へ遷移し、対象TIPSにフォーカス
+    container.querySelectorAll('.related-tips-link').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        navigateTo('tips', null, null, { tipId: btn.dataset.tipId });
       });
     });
     // 目次クリック
@@ -538,7 +576,8 @@
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
     const tipCard = (tip) => `
-      <article class="tip-card"
+      <article class="tip-card" id="tip-card-${escape(tip.id)}"
+        data-tip-id="${escape(tip.id)}"
         data-category="${escape(tip.category)}"
         data-level="${escape(tip.level)}"
         data-keywords="${escape((tip.title + ' ' + (tip.summary||'') + ' ' + (tip.whenToUse||'') + ' ' + (tip.caution||'') + ' ' + (tip.example||'') + ' ' + (tip.howToUse||[]).join(' ')).toLowerCase())}">
@@ -553,6 +592,14 @@
         ${(tip.howToUse && tip.howToUse.length) ? `<div class="tip-card-section"><span class="tip-card-label">使い方</span><ul>${tip.howToUse.map(s => `<li>${escape(s)}</li>`).join('')}</ul></div>` : ''}
         ${tip.example ? `<div class="tip-card-section tip-example"><span class="tip-card-label">例文</span><pre>${escape(tip.example)}</pre></div>` : ''}
         ${tip.caution ? `<div class="tip-card-section tip-caution"><span class="tip-card-label">注意点</span><p>${escape(tip.caution)}</p></div>` : ''}
+        ${(tip.relatedSections && tip.relatedSections.length) ? `
+          <div class="tip-card-section tip-related-sections">
+            <span class="tip-card-label">関連セクション</span>
+            <ul>
+              ${tip.relatedSections.map(r => `<li><button type="button" class="tip-related-link" data-rel-m="${r.m}" data-rel-s="${r.s}">${escape(r.label)}</button></li>`).join('')}
+            </ul>
+          </div>
+        ` : ''}
       </article>
     `;
 
@@ -646,6 +693,30 @@
         currentQuery = String(e.target.value || '').trim().toLowerCase();
         applyFilters();
       });
+    }
+
+    // 関連セクションリンク → 学習コンテンツへ遷移
+    container.querySelectorAll('.tip-related-link').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const m = parseInt(btn.dataset.relM);
+        const s = parseInt(btn.dataset.relS);
+        if (!isNaN(m) && !isNaN(s)) navigateTo('topic-detail', m, s);
+      });
+    });
+
+    // フォーカス対象TIPSがあればスクロール＋一時ハイライト
+    if (pendingTipFocus) {
+      const focusId = pendingTipFocus;
+      pendingTipFocus = null;
+      const target = container.querySelector('#tip-card-' + focusId);
+      if (target) {
+        target.classList.add('tip-card-focus');
+        // スクロールは描画後に実行（位置計算のため）
+        setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'center' }), 0);
+        // 一定時間後にハイライト解除
+        setTimeout(() => target.classList.remove('tip-card-focus'), 3500);
+      }
     }
   }
 

@@ -3201,7 +3201,8 @@ const TIPS = [
     ],
     example: 'まず実装はせず、現在の構造を確認してください。変更対象ファイル、影響範囲、実装方針、確認方法を整理してから報告してください。',
     caution: '全体を把握しないまま変更すると、意図しないファイルに影響が及ぶことがある。',
-    relatedSession: '第3回'
+    relatedSession: '第3回',
+    relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
   },
   {
     id: 'tip-002',
@@ -3217,7 +3218,8 @@ const TIPS = [
     ],
     example: '今回は js/modules.js の MODULES[2] のみを対象にしてください。第1回・第2回、表示ロジック、CSS には触らないでください。',
     caution: '範囲を絞るほど安全だが、依存ファイルがある場合は報告ルールも併記する。',
-    relatedSession: '第3回'
+    relatedSession: '第3回',
+    relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
   },
   {
     id: 'tip-003',
@@ -3233,7 +3235,8 @@ const TIPS = [
     ],
     example: '実装後、変更ファイル、変更内容、確認した画面、コンソールエラーの有無、残課題を報告してください。',
     caution: '確認条件を先に指定しないと、「動いた／動いてない」だけの曖昧な報告になりがち。',
-    relatedSession: '第3回'
+    relatedSession: '第3回',
+    relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
   },
 
   // ---- Claude Code ----
@@ -3250,7 +3253,8 @@ const TIPS = [
       'ファイルツリーを見ながら指示を出す'
     ],
     caution: 'エディター上で開いていても、対象範囲は明示する。「見えている＝編集してよい」ではない。',
-    relatedSession: '第3回'
+    relatedSession: '第3回',
+    relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
   },
   {
     id: 'tip-005',
@@ -3266,7 +3270,8 @@ const TIPS = [
     ],
     example: 'まず実装計画を出してください。問題なければ、小さな単位で実装し、最後に確認結果を報告してください。',
     caution: '一気に大改修を頼むと、意図しない変更や手戻りが増える。',
-    relatedSession: '第3回'
+    relatedSession: '第3回',
+    relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
   },
   {
     id: 'tip-006',
@@ -3282,7 +3287,8 @@ const TIPS = [
       '「いまどうなっているか」を Claude に説明させ認識のズレを揃える'
     ],
     caution: '無理に続けるより、フォルダ・目的・成果物・禁止事項・変更対象の準備5点に戻るほうが早い。',
-    relatedSession: '第3回'
+    relatedSession: '第3回',
+    relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
   },
 
   // ---- Cowork ----
@@ -3299,7 +3305,8 @@ const TIPS = [
       '結果を確認してから元ファイルに反映する'
     ],
     caution: '重要ファイル・顧客資料・契約書・機密資料は特にバックアップを取る。',
-    relatedSession: '第2回'
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 5, label: '第2回 2-6. Cowork でファイル作業を任せる' }]
   },
   {
     id: 'tip-008',
@@ -3314,7 +3321,10 @@ const TIPS = [
       '出力形式と確認方法を先に決める'
     ],
     caution: '前提が曖昧だと、見た目は整っていても使いにくい成果物になる。',
-    relatedSession: '第2回 / 第3回'
+    relatedSession: '第2回',
+    relatedSections: [
+      { m: 1, s: 5, label: '第2回 2-6. Cowork でファイル作業を任せる' }
+    ]
   },
 
   // ---- 成果物作成 ----
@@ -3331,7 +3341,8 @@ const TIPS = [
       '図表案・本文を作らせ、最後にレビュー観点で点検させる'
     ],
     caution: '一気に PPT 化すると、見た目は整っていても論点が弱い資料になる。',
-    relatedSession: '第2回'
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 1, label: '第2回 2-2. Office で Excel / PowerPoint / Word を扱う' }]
   },
   {
     id: 'tip-010',
@@ -3346,7 +3357,8 @@ const TIPS = [
       '次に提案ストーリーを構築させる'
     ],
     caution: '素材抽出と資料化を同時に頼むと、論点の抜け漏れに気づきにくい。',
-    relatedSession: '第2回'
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 1, label: '第2回 2-2. Office で Excel / PowerPoint / Word を扱う' }]
   },
   {
     id: 'tip-011',
@@ -3361,7 +3373,8 @@ const TIPS = [
       'フィードバックをもらって改善する'
     ],
     caution: '本番システムではないことを明示し、データ保存・セキュリティ要件は別途検討する。',
-    relatedSession: '第2回'
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 3, label: '第2回 2-4. Artifact で「触れる成果物」を作る' }]
   },
 
   // ---- Research ----
@@ -3377,7 +3390,8 @@ const TIPS = [
       'クライアントの意思決定にどう繋がるかまで書かせる'
     ],
     caution: '重要な数字・固有名詞・出典は必ず一次情報で確認する。',
-    relatedSession: '第2回'
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Research で調査する' }]
   },
   {
     id: 'tip-013',
@@ -3392,7 +3406,8 @@ const TIPS = [
       '示唆 → 提案 → スライド化 → Claude（Chat / Artifact / Skills）'
     ],
     caution: 'ツールごとの得意分野を理解し、最終的な判断は人間が行う。',
-    relatedSession: '第2回'
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Research で調査する' }]
   },
   {
     id: 'tip-014',
@@ -3407,7 +3422,11 @@ const TIPS = [
       '集約先を1箇所（Notion・Wiki 等）に決める'
     ],
     caution: '最新情報は変わりやすいため、固定知識にしすぎない。範囲は「自分のチームで使うもの」に絞る。',
-    relatedSession: '第3回'
+    relatedSession: '第2回 / 第3回',
+    relatedSections: [
+      { m: 1, s: 2, label: '第2回 2-3. Research で調査する' },
+      { m: 2, s: 4, label: '第3回 3-5. チーム展開する' }
+    ]
   },
 
   // ---- Skills / 再現性 ----
@@ -3425,7 +3444,8 @@ const TIPS = [
     ],
     example: '候補例：議事録作成、提案書レビュー、調査レポート、PPT 構成生成、Excel 分析、UI レビュー、プロトタイプ手順。',
     caution: '一度しか使わない作業は、無理に Skill 化しなくてよい。',
-    relatedSession: '第3回'
+    relatedSession: '第3回',
+    relatedSections: [{ m: 2, s: 0, label: '第3回 3-1. Skills で手順を標準化する' }]
   },
   {
     id: 'tip-016',
@@ -3440,7 +3460,8 @@ const TIPS = [
       '効率：手作業より速いか・レビュー手間が許容範囲か確認'
     ],
     caution: '作った後の検証と改善がないと、形だけの Skill になる。',
-    relatedSession: '第3回'
+    relatedSession: '第3回',
+    relatedSections: [{ m: 2, s: 0, label: '第3回 3-1. Skills で手順を標準化する' }]
   },
   {
     id: 'tip-017',
@@ -3456,7 +3477,8 @@ const TIPS = [
       '大きい場合は DESIGN.md / CONTENT.md / REVIEW.md に分割し参照する'
     ],
     caution: '古いルールが残ると逆効果。定期的に見直し、使われていない規約は外す。',
-    relatedSession: '第3回'
+    relatedSession: '第3回',
+    relatedSections: [{ m: 2, s: 3, label: '第3回 3-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
   },
 
   // ---- チーム展開 ----
@@ -3473,7 +3495,8 @@ const TIPS = [
       '成功事例をもとに定期的に更新する'
     ],
     caution: 'テンプレートは使いっぱなしにせず、運用しながら改善する。',
-    relatedSession: '第3回'
+    relatedSession: '第3回',
+    relatedSections: [{ m: 2, s: 4, label: '第3回 3-5. チーム展開する' }]
   },
   {
     id: 'tip-019',
@@ -3489,7 +3512,8 @@ const TIPS = [
       '最初の30〜60分の体験課題を1つ用意する'
     ],
     caution: '運用ルールが複雑すぎると使われない。最初はシンプルにする。',
-    relatedSession: '第3回'
+    relatedSession: '第3回',
+    relatedSections: [{ m: 2, s: 4, label: '第3回 3-5. チーム展開する' }]
   },
   {
     id: 'tip-020',
@@ -3504,7 +3528,8 @@ const TIPS = [
       'インシデント対応フローも事前に決める'
     ],
     caution: '「Claude がやったから OK」は通らない。最終チェックは必ず人が行う。',
-    relatedSession: '第3回'
+    relatedSession: '第3回',
+    relatedSections: [{ m: 2, s: 4, label: '第3回 3-5. チーム展開する' }]
   },
 
   // ---- 上級・補助 ----
@@ -3521,7 +3546,8 @@ const TIPS = [
       'チームルールとレビュー前提で運用する'
     ],
     caution: '便利さだけで選ばない。誤操作の影響範囲を先に想定する。',
-    relatedSession: '第3回（補助資料）'
+    relatedSession: '第3回（補助資料）',
+    relatedSections: [{ m: 2, s: 3, label: '第3回 3-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
   },
   {
     id: 'tip-022',
@@ -3536,7 +3562,8 @@ const TIPS = [
       'チームで使う場合は共通ルールとレビューを前提にする'
     ],
     caution: 'ファイル構造や役割を理解しないまま触ると、想定外の挙動につながる。',
-    relatedSession: '第3回（補助資料）'
+    relatedSession: '第3回（補助資料）',
+    relatedSections: [{ m: 2, s: 3, label: '第3回 3-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
   },
   {
     id: 'tip-023',
@@ -3551,9 +3578,16 @@ const TIPS = [
       'チーム運用に組み込む場合はガイドラインを整備する'
     ],
     caution: '研修本編の必須事項ではなく、必要な人が使う発展 TIPS として扱う。',
-    relatedSession: '第3回（補助資料）'
+    relatedSession: '第3回（補助資料）',
+    relatedSections: [{ m: 2, s: 3, label: '第3回 3-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
   }
 ];
+
+// セクション → 関連TIPS逆引き
+function getRelatedTipsForSection(moduleIndex, sectionIndex) {
+  if (typeof TIPS === 'undefined') return [];
+  return TIPS.filter(t => (t.relatedSections || []).some(r => r.m === moduleIndex && r.s === sectionIndex));
+}
 
 // 修了テスト用の問題（全モジュールのクイズからシャッフルして出題）
 function generateFinalTestQuestions() {
