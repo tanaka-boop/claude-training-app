@@ -1170,6 +1170,44 @@ const MODULES = [
             <p><strong>Office 連携は「相談相手」であり「自動実行ツール」ではない</strong></p>
             <p>Claude in Office は、ファイル内容について Claude と対話する機能です。Chat と同じく、出力を鵜呑みにせず確認してから適用してください。特に数値データの分析結果は、元データと照合する習慣をつけましょう。</p>
           </div>
+
+          <h3>スライドは「いきなり完成形」を作らせない — 段階生成のコツ</h3>
+          <p>「提案書を10枚作って」と一気に依頼すると、見た目は整っていても<strong>論点・ストーリー・意思決定への接続が弱い</strong>スライドが返ってきがちです。次の順で段階的に作らせ、各段階で人がレビューします。</p>
+
+          <div class="visual-steps">
+            <div class="visual-step-item">
+              <div class="step-marker">1</div>
+              <div class="step-body">
+                <div class="step-title">構成案を作る</div>
+                <div class="step-desc">「この案件で意思決定者に伝えるべき論点を洗い出し、10枚のストーリーラインを提案して」</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">2</div>
+              <div class="step-body">
+                <div class="step-title">1枚ごとのキーメッセージを作る</div>
+                <div class="step-desc">「各スライドのタイトルとキーメッセージを、結論が伝わる一文で書いて」</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">3</div>
+              <div class="step-body">
+                <div class="step-title">図表案・本文を作る</div>
+                <div class="step-desc">「各スライドのキーメッセージを支える図表案・本文を提案して。出典が必要なら明記して」</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">4</div>
+              <div class="step-body">
+                <div class="step-title">レビュー観点で点検する</div>
+                <div class="step-desc">「論理飛び・数字根拠・読み手目線・1スライド1メッセージの観点でレビューして」</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <p><strong>提案資料は見た目より「論点・ストーリー・意思決定への接続」</strong>。デザインを整える前に、伝えたい論点と読み手の意思決定にどうつながるかを揃えるのが先です。うまくいった生成手順自体は、第3回の Skills 化対象として再利用できます。</p>
+          </div>
         `
       },
 
@@ -1271,6 +1309,60 @@ const MODULES = [
           <div class="warning-box">
             <p><strong>Research は「初稿を作る助手」であり「確定情報の提供者」ではない</strong></p>
             <p>調査結果はあくまで出発点です。出典のURLが無効なケースや、情報が古いケースもあります。クライアントに提出する調査レポートの場合は、必ず一次情報に当たって確認してください。</p>
+          </div>
+
+          <h3>調査結果を「示唆・提案」に変換する</h3>
+          <p>Research の出力は情報の山です。そのままでは資料になりません。<strong>「この情報から何が言えるか」「クライアントの意思決定にどうつながるか」</strong>まで Claude に考えさせて、初めて使える形になります。</p>
+
+          <div class="visual-before-after">
+            <div class="ba-item before">
+              <div class="ba-label">情報収集で止まる</div>
+              <ul>
+                <li>「○○業界の動向を調べて」だけで終わる</li>
+                <li>調査結果が箇条書きの山で止まる</li>
+                <li>クライアントの論点に結びつかない</li>
+              </ul>
+            </div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-item after">
+              <div class="ba-label">示唆まで変換する</div>
+              <ul>
+                <li>「上の調査から、当社にとっての機会・脅威を3つずつ整理して」</li>
+                <li>「クライアントの意思決定に必要な論点を、推奨アクション付きで」</li>
+                <li>調査→示唆→提案の流れまで一気に進める</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>他ツールとの併用 — NotebookLM など</h3>
+          <p>大量の社内資料・PDF・録音文字起こしなどをまとめて把握したい場面では、<strong>NotebookLM のような「資料に紐付いた回答」を返すツールとの併用</strong>も有効な選択肢です。役割分担の目安：</p>
+
+          <div class="visual-mapping">
+            <div class="mapping-header">
+              <span class="mapping-from">やりたいこと</span>
+              <span class="mapping-arrow"></span>
+              <span class="mapping-to">適したツール</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">Web 横断調査・出典付きレポート</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">Claude の Research</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">手元の大量資料を読ませて Q&amp;A・図解化</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">NotebookLM など資料連動型ツール</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">調査 → 示唆 → 提案 → スライド生成</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">Claude（Chat / Artifact / Skills を組み合わせ）</span>
+            </div>
+          </div>
+
+          <h3>AI ニュース・業界情報は「定点観測」に組み込む</h3>
+          <div class="info-box">
+            <p>変化の速い分野は、<strong>個人で追わず、チームで定点観測する仕組み</strong>を作るのが効きます。週次の調査担当を回す、共通の Research 質問テンプレートを Skill 化する、まとめ先を一箇所に集約する、といった運用設計が第3回のチーム展開と直結します。</p>
           </div>
         `
       },
@@ -1871,7 +1963,9 @@ const MODULES = [
         { q: 'Chrome 拡張を使う際の注意点は？', a: 'Chrome 拡張を使うと、表示中のページ内容が Claude に送信されます。クライアントの機密情報や個人情報が含まれるページ（社内システム、顧客管理画面等）では、送信してよい情報かどうかを判断してから使ってください。また、Project の自動参照やファイルアップロードは Chrome 拡張では使えません。', category: '💼 Office・Chrome' },
         { q: 'Cowork はどのような作業に向いていますか？', a: '複数資料の整理、Excel の加工、Word・PowerPoint の下書き、ファイル構成の確認、レポートの初稿作成など、ファイルを直接扱う作業に向いています。Chat が「対話で相談する」のに対し、Cowork は「作業を委任する」イメージです。作業用コピーを作ってから渡すことをお勧めします。', category: '📂 Cowork' },
         { q: 'Scheduled tasks はどのような業務に使えますか？', a: '毎週の業界ニュース収集、定例会議前の確認事項整理、週次レポートの下書き、タスクのリマインド、定期的な競合情報チェックなど、「繰り返し」「定型」「準備作業」に効果を発揮します。「毎回同じようにやっている作業」を洗い出し、Claude に任せられないか考えてみてください。', category: '📂 Cowork' },
-        { q: 'Claude で作った成果物はそのまま提出してよいですか？', a: '第1回の復習になりますが、どの機能で作った成果物も「優秀な同僚の初稿」です。特に Research の数値・出典、Artifact の計算ロジック、Office 連携の分析結果は、自分で確認してから使ってください。成果物の最終責任は常に自分にあります。', category: '✍️ プロンプト・品質' }
+        { q: 'Claude で作った成果物はそのまま提出してよいですか？', a: '第1回の復習になりますが、どの機能で作った成果物も「優秀な同僚の初稿」です。特に Research の数値・出典、Artifact の計算ロジック、Office 連携の分析結果は、自分で確認してから使ってください。成果物の最終責任は常に自分にあります。', category: '✍️ プロンプト・品質' },
+        { q: 'スライド生成を Claude に任せる時のコツは何ですか？', a: 'いきなり「10枚作って」と任せると、見た目は整っても論点・ストーリーが弱くなりがちです。次の順で段階的に作らせるのがコツです：(1) 構成・ストーリーラインを作る、(2) 1枚ごとのキーメッセージを作る、(3) 図表案・本文を作る、(4) 論理飛び・数字根拠・読み手目線で点検する。各段階で人がレビューし、デザインは最後に整えます。うまくいった生成手順自体は Skill 化して再利用すると効率的です。', category: '✍️ プロンプト・品質' },
+        { q: 'NotebookLM など他のAIツールと Claude はどう併用できますか？', a: '役割分担で考えると整理しやすいです。Web 横断調査・出典付きレポートは Claude の Research、手元の大量資料を読ませて Q&A・図解化する用途は NotebookLM のような資料連動型ツール、調査→示唆→提案→スライド化の一連の流れは Claude（Chat / Artifact / Skills の組み合わせ）が向きます。「すべて Claude」ではなく、得意分野で使い分けるのが効率的です。', category: '💡 Claudeの基本' }
       ]
     }
   },
@@ -2013,6 +2107,67 @@ const MODULES = [
           <div class="warning-box">
             <p><strong>Skill は「固定」ではなく「進化」させるもの</strong></p>
             <p>一度作った Skill をそのまま使い続けるのではなく、実際に使ってみてうまくいかない部分があれば改善します。「この Skill の手順3が曖昧で出力がブレる」といったフィードバックをチームで集め、定期的に見直しましょう。</p>
+          </div>
+
+          <h3>Skills 化候補の見極め</h3>
+          <p>すべての業務を Skills 化する必要はありません。<strong>3つの条件が揃ったとき</strong>に効果が大きくなります。</p>
+
+          <div class="visual-grid cols-3">
+            <div class="visual-grid-item">
+              <div class="grid-icon">🔁</div>
+              <div class="grid-title">繰り返し発生する</div>
+              <div class="grid-desc">月次・週次・案件ごとなど、似た作業が何度も発生する</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🪜</div>
+              <div class="grid-title">手順が明確化できる</div>
+              <div class="grid-desc">「まず○○、次に△△」と段取りで言語化できる</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🎯</div>
+              <div class="grid-title">品質基準がある</div>
+              <div class="grid-desc">「このレベルなら OK」とチームで合意できる基準がある</div>
+            </div>
+          </div>
+
+          <p>具体的な候補例：</p>
+          <div class="visual-grid cols-2">
+            <div class="visual-grid-item">
+              <div class="grid-icon">📝</div>
+              <div class="grid-title">業務系</div>
+              <div class="grid-desc">議事録、提案書レビュー、調査レポート、Excel 分析の標準手順、要約フォーマット</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🛠️</div>
+              <div class="grid-title">成果物系</div>
+              <div class="grid-desc">PPT 構成生成、UI レビュー、プロトタイプ作成手順、提案資料のストーリーライン作成</div>
+            </div>
+          </div>
+
+          <h3>Skills は作って終わりではない — 運用テストの観点</h3>
+          <p>作った Skill は、<strong>3つの観点でテスト</strong>して育てます。</p>
+
+          <div class="visual-mapping">
+            <div class="mapping-header">
+              <span class="mapping-from">観点</span>
+              <span class="mapping-arrow"></span>
+              <span class="mapping-to">確認すること</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">発動</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">指示通りにこの Skill が呼び出されているか／別の手順に流れていないか</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">品質</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">期待する成果物が出ているか／チームの品質基準を満たすか</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">効率</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">手作業より速く済んでいるか／レビュー・修正の手間が許容範囲か</span>
+            </div>
           </div>
         `
       },
@@ -2188,6 +2343,58 @@ const MODULES = [
               <div class="grid-icon">📄</div>
               <div class="grid-title">定型レポート生成</div>
               <div class="grid-desc">毎月の報告書を、テンプレートとデータから自動生成する仕組み</div>
+            </div>
+          </div>
+
+          <h3>Cowork と Claude Code の使い分け（再確認）</h3>
+          <p>第1回 1-4 で扱った使い分けを、ここで作業に入る前にもう一度押さえておきます。</p>
+
+          <div class="visual-mapping">
+            <div class="mapping-header">
+              <span class="mapping-from">使い分け</span>
+              <span class="mapping-arrow"></span>
+              <span class="mapping-to">向いている場面</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">Cowork</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">手元のファイル群（Word・Excel・PDF・画像）を読ませて整理・要約・成果物化する</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">Claude Code</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">プロジェクトフォルダ単位で、複数ファイルを横断した分析・ツール構築・自動化を行う</span>
+            </div>
+          </div>
+
+          <h3>始める前の準備 — 作業フォルダ・目的・禁止事項を整える</h3>
+          <p>Cowork も Claude Code も、<strong>最初の準備で成果の8〜9割が決まります</strong>。作業を始める前に、次の5点を整えてから着手します。</p>
+
+          <div class="visual-grid cols-2">
+            <div class="visual-grid-item">
+              <div class="grid-icon">📁</div>
+              <div class="grid-title">作業用フォルダを切る</div>
+              <div class="grid-desc">元データの直接編集を避けるため、作業コピーをまとめたフォルダを用意する。Cowork なら参照ファイル群、Claude Code ならプロジェクトフォルダ。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🎯</div>
+              <div class="grid-title">目的と成果物を1行で定義</div>
+              <div class="grid-desc">「何のために」「最終的に何を出すか」をこちら側で言語化しておく。曖昧なまま依頼すると Claude も迷走する。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🚫</div>
+              <div class="grid-title">禁止事項を先に書く</div>
+              <div class="grid-desc">触ってほしくないファイル・データ、変更してほしくないロジックを最初に明示する。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🎯</div>
+              <div class="grid-title">変更対象の範囲を限定</div>
+              <div class="grid-desc">「今回は◯◯ファイルの△△部分だけ」のように、作業範囲を最初に絞る。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">✅</div>
+              <div class="grid-title">完了条件を決める</div>
+              <div class="grid-desc">「これが満たされたら完了」とする条件を、作業前に書き出しておく。レビュー基準にもなる。</div>
             </div>
           </div>
 
@@ -2383,6 +2590,44 @@ const MODULES = [
               <span class="mapping-to">補助資料扱い — Bypass Permissions、Downloads 自動コピー、xurl、.claude フォルダ操作</span>
             </div>
           </div>
+
+          <h3>うまく動かない時の戻り道</h3>
+          <p>Claude Code が意図と違う動きをする・出力品質が落ちる・無限に修正を続ける、といった場面では、<strong>「もっと強い指示を出す」より「準備に戻る」</strong>のが効きます。</p>
+
+          <div class="visual-steps">
+            <div class="visual-step-item">
+              <div class="step-marker">1</div>
+              <div class="step-body">
+                <div class="step-title">文脈を整理する</div>
+                <div class="step-desc">会話が長くなると Claude も迷子になります。新しいスレッドで、目的・現状・残課題を1段落で再提示してから依頼し直す。</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">2</div>
+              <div class="step-body">
+                <div class="step-title">作業を分割する</div>
+                <div class="step-desc">「一気に全部直す」を諦め、「まず◯◯だけ」「次に△△」と段階に切る。各段階で人がレビューする。</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">3</div>
+              <div class="step-body">
+                <div class="step-title">対象ファイルを限定する</div>
+                <div class="step-desc">対象を絞り直し、「他のファイルは読まなくていい／触らないで」と明示する。情報過多のときほど効きます。</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">4</div>
+              <div class="step-body">
+                <div class="step-title">現状調査に戻る</div>
+                <div class="step-desc">「いまファイルがどうなっているか／何が問題か」を Claude に説明させ、認識のズレを揃えてから次の手を決める。</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <p><strong>長時間うまくいかない時は、いったん手を止めて「準備の5点（フォルダ・目的・成果物・禁止事項・変更対象）」に戻る</strong>のが近道です。指示を強くするより、前提を整え直すほうが効きます。</p>
+          </div>
         `
       },
 
@@ -2430,6 +2675,31 @@ const MODULES = [
               <div class="grid-title">書かなくてよいこと</div>
               <div class="grid-desc">一般的なプログラミング知識、一時的な作業指示（それはチャットで伝える）</div>
             </div>
+          </div>
+
+          <h4>ルールファイルは CLAUDE.md だけではない — DESIGN.md / CONTENT.md</h4>
+          <p>規模が大きくなると、CLAUDE.md にすべて書くと長くなりすぎます。<strong>役割別のルールファイルに分け、CLAUDE.md からは「詳しくは○○.md を参照」と参照する</strong>設計が便利です。</p>
+
+          <div class="visual-grid cols-3">
+            <div class="visual-grid-item">
+              <div class="grid-icon">🎨</div>
+              <div class="grid-title">DESIGN.md</div>
+              <div class="grid-desc">UI のトンマナ、配色、タイポグラフィ、コンポーネントの使い方。非デザイナーでも一定品質を保てる。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">📝</div>
+              <div class="grid-title">CONTENT.md</div>
+              <div class="grid-desc">文体・用語・構成パターン・「書かないこと」のルール。教材・コラム・社内文書で品質を揃える。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">📋</div>
+              <div class="grid-title">REVIEW.md</div>
+              <div class="grid-desc">レビュー観点と合格基準。誰がレビューしても同じ目線でチェックできる。</div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <p><strong>ルールファイルは小さく分ける／参照する</strong>のが運用のコツです。1ファイルに全部書くと、Claude がどのルールを優先するか判断できなくなります。CLAUDE.md は「インデックス」、各 .md は「個別の章」と捉えると整理しやすくなります。</p>
           </div>
 
           <h3>Hooks（フックス） — 自動チェックを組み込む</h3>
@@ -2621,6 +2891,47 @@ const MODULES = [
           <div class="warning-box">
             <p><strong>「全員が同じレベルで使える」を目指さない</strong></p>
             <p>チーム展開で重要なのは、全員を上級者にすることではありません。<strong>各自が自分の業務で Claude を使いこなせるレベルに到達すること</strong>が目標です。得意な人がリードし、苦手な人は簡単な使い方から始める — そのための Skills や Project が、チーム全体の底上げを支えます。</p>
+          </div>
+
+          <h3>新メンバー向けオンボーディング資料</h3>
+          <p>「チーム共通 Project / Skills / CLAUDE.md があるけれど、新メンバーが何をどう使えばよいか分からない」になりがちです。<strong>1ページで読めるオンボーディング資料</strong>を用意します。</p>
+
+          <div class="visual-grid cols-2">
+            <div class="visual-grid-item">
+              <div class="grid-icon">🗺️</div>
+              <div class="grid-title">入れる項目</div>
+              <div class="grid-desc">チームでよく使う Project と入り口、定番 Skills の呼び方、CLAUDE.md / DESIGN.md のありか、情報管理のNG例、レビュー依頼先</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🎬</div>
+              <div class="grid-title">最初の30〜60分の体験</div>
+              <div class="grid-desc">「最初に試す課題」を1つ用意し、定番 Skill を使って成果物を1本作って、レビュー先に出すまでを通しでやってもらう</div>
+            </div>
+          </div>
+
+          <h3>AI 情報を「チームで定点観測」する</h3>
+          <p>AI の動きが速い分野は、<strong>個人任せだと格差が広がります</strong>。チームで定点観測の仕組みを作ると、全員のキャッチアップ負荷が下がります。</p>
+
+          <div class="visual-grid cols-3">
+            <div class="visual-grid-item">
+              <div class="grid-icon">📅</div>
+              <div class="grid-title">担当を回す</div>
+              <div class="grid-desc">週次でAI情報の調査担当を持ち回り、5〜10分のサマリーを共有する</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🔧</div>
+              <div class="grid-title">調査を Skill 化</div>
+              <div class="grid-desc">「直近1週間の Claude / AI ニュースを 5 トピックに整理する」などの調査手順を Skill にして、誰がやっても同じ品質に揃える</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">📚</div>
+              <div class="grid-title">集約先を決める</div>
+              <div class="grid-desc">Notion・社内 Wiki など1箇所にまとめ、検索可能にする。個人の手元にバラ撒かない</div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <p><strong>取り上げる範囲は「自分のチームで使うもの」に絞る</strong>のがコツです。すべてを追わず、Claude の主要アップデート・チームで使うツール・案件で必要なテーマに限定すれば、続けられる定点観測になります。</p>
           </div>
 
           <div class="visual-big-message">
@@ -2841,6 +3152,10 @@ const MODULES = [
         { q: 'Bypass Permissions のような権限モードは使ってよいですか？', a: '便利ですが誤操作の影響も大きくなります。業務利用では「作業コピーで使う・低リスク作業に限定する・チームルールに従う・レビューを通す」を前提にしてください。機密情報や重要ファイルを扱う作業では特に慎重に運用します。', category: '🔧 Claude Code' },
         { q: 'Web 記事や外部ファイルを Claude Code に渡すにはどうすればよいですか？', a: 'PDF・Word・Markdown・画像などはファイルパスで渡すと扱いやすくなります。長文記事・ログイン要のページ・SNS 投稿などは、Web Clipper 系のツールで Markdown 化してから渡すと安定します。元ファイルを直接編集させず、作業コピーで作業させるのが安全です。', category: '🔧 Claude Code' },
         { q: '.claude フォルダは触ってよいですか？', a: '仕組みを理解する目的で確認するのは有用ですが、初心者が不用意に編集するのは避けてください。チームで使う場合は、共通ルールやレビューを前提に扱い、変更内容は記録・共有します。', category: '🔧 Claude Code' },
+        { q: 'Cowork や Claude Code を始める前に何を準備すべきですか？', a: '次の5点を作業前に整えると成果が安定します。(1) 作業用フォルダ（元データを直接編集しないコピー）、(2) 目的と最終成果物を1行で言語化、(3) 触ってほしくない禁止事項を書き出す、(4) 変更対象の範囲を限定する、(5) 完了条件を明文化する。これらをそろえてから依頼すると、無駄な手戻りを大きく減らせます。', category: '🔧 Claude Code' },
+        { q: 'Claude Code がうまく動かない時はどうすればよいですか？', a: '「もっと強い指示を出す」より「準備に戻る」が近道です。(1) 文脈を整理する（新しいスレッドで目的・現状・残課題を再提示）、(2) 作業を分割する、(3) 対象ファイルを限定する、(4) 現状調査に戻り認識のズレを揃える。長時間うまくいかない時は、フォルダ・目的・成果物・禁止事項・変更対象の5点を整え直すのが効果的です。', category: '🔧 Claude Code' },
+        { q: 'Skills 化すべき業務はどう見極めればよいですか？', a: '次の3条件が揃ったときに Skills 化の効果が大きくなります。(1) 繰り返し発生する（月次・週次・案件ごと）、(2) 手順が明確化できる（段取りで言語化できる）、(3) 品質基準がある（チームで合意できる「OKレベル」がある）。具体例は議事録、提案書レビュー、調査レポート、Excel 分析の標準手順、PPT 構成生成、UI レビュー、プロトタイプ作成手順など。作った後は発動・品質・効率の3観点でテストしながら育てます。', category: '🔧 Claude Code' },
+        { q: 'AI 情報を追うためのおすすめの方法はありますか？', a: '個人で全部追うのは続きません。チームで定点観測の仕組みを作るのが現実的です。(1) 週次の調査担当を持ち回り、5〜10分のサマリーを共有、(2) 「直近1週間の主要アップデートを5トピックに整理する」などの調査手順を Skill 化、(3) Notion や社内 Wiki など1箇所に集約。範囲は「自分のチームで使うもの」（Claude の主要アップデート、チームで使うツール、案件で必要なテーマ）に絞ると続けられます。', category: '💡 Claudeの基本' },
         { q: 'チームで Claude を使うときのルールは何ですか？', a: '最低限、以下を決めましょう。(1) 対象業務（どの業務から始めるか）、(2) 共通化するもの（Project・Skills・CLAUDE.md）、(3) 情報管理ルール（何を渡してよいか、結果の保存先）、(4) レビュー体制（誰が確認・承認するか）、(5) 成功事例の共有方法。完璧なルールを最初から作る必要はなく、運用しながら改善する前提で始めましょう。', category: '💡 Claudeの基本' },
         { q: 'クライアント情報や機密情報をどう扱うべきですか？', a: '「何を Claude に渡してよいか」のガイドラインをチームで策定してください。公開情報やサマリー化された情報は比較的安全ですが、個人情報・契約金額・NDA 対象情報は慎重に扱う必要があります。迷った場合は上長に確認する、というルールを設けるのも有効です。万一のインシデント対応フローも事前に決めておきましょう。', category: '💡 Claudeの基本' }
       ]
