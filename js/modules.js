@@ -226,7 +226,7 @@ const MODULES = [
             <div class="visual-grid-item">
               <div class="grid-icon">⚡</div>
               <div class="grid-title">Claude Code</div>
-              <div class="grid-desc">高度な作業を任せる。800 では Cursor IDE 上で使うのが基本（CLI は補足）。品質ルールの固定と自動化。<strong>第3回で学習</strong></div>
+              <div class="grid-desc">複数ファイル編集・アプリ改修・データ処理など、高度な作業を任せる。CLI または IDE から利用できる。<strong>第3回で学習</strong></div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
@@ -300,7 +300,7 @@ const MODULES = [
                 <strong>高度な作業を任せる</strong><br>
                 コード・アプリ・複数ファイル編集・データ処理など。<br>
                 品質ルール固定、再現性の高い自動化。<br>
-                <strong>800 では Cursor IDE で使う</strong>のが基本（CLI は補足）
+                CLI または IDE から利用できる<strong>必要に応じて使う高度な選択肢</strong>
               </div>
             </div>
           </div>
@@ -314,7 +314,7 @@ const MODULES = [
                 <th>作業スタイル</th>
                 <th>何をするものか</th>
                 <th>主な利用場所</th>
-                <th>800 での扱い</th>
+                <th>位置づけ</th>
               </tr>
             </thead>
             <tbody>
@@ -322,7 +322,7 @@ const MODULES = [
                 <td><strong>Chat</strong></td>
                 <td>会話しながら相談・整理・下書きする</td>
                 <td>Web / Desktop / Mobile</td>
-                <td>まず使う基本</td>
+                <td>初心者がまず使う基本</td>
               </tr>
               <tr>
                 <td><strong>Cowork</strong></td>
@@ -333,8 +333,8 @@ const MODULES = [
               <tr>
                 <td><strong>Claude Code</strong></td>
                 <td>コード・アプリ・複数ファイル作業を任せる</td>
-                <td>Cursor IDE / CLI / 各種 IDE</td>
-                <td>Cursor IDE を基本、CLI は補足</td>
+                <td>CLI / IDE</td>
+                <td>必要に応じて使う高度な作業向け。IDE 利用では Cursor のノウハウもある</td>
               </tr>
             </tbody>
           </table>
@@ -359,7 +359,7 @@ const MODULES = [
               <tr>
                 <td><strong>Claude Desktop</strong></td>
                 <td>Chat / Cowork</td>
-                <td>ローカルファイルや作業委任に向く</td>
+                <td>初心者にも使いやすい。ローカルファイルや作業委任に向く</td>
               </tr>
               <tr>
                 <td><strong>Mobile アプリ</strong></td>
@@ -367,19 +367,14 @@ const MODULES = [
                 <td>外出先の確認・メモ・軽い相談</td>
               </tr>
               <tr>
-                <td><strong>Cursor IDE</strong></td>
+                <td><strong>IDE</strong>（Cursor / VS Code / JetBrains 等）</td>
                 <td>Claude Code</td>
-                <td><strong>800 での推奨</strong>。ファイルを見ながら改修できる</td>
+                <td>複数ファイルやアプリ改修に向く。社内には Cursor 活用のノウハウもある</td>
               </tr>
               <tr>
                 <td>CLI</td>
                 <td>Claude Code</td>
                 <td>ターミナルで使う。上級者・エンジニア向けの補足</td>
-              </tr>
-              <tr>
-                <td>VS Code / JetBrains 等</td>
-                <td>Claude Code</td>
-                <td>Cursor 以外の IDE 利用者向けの補足</td>
               </tr>
             </tbody>
           </table>
@@ -387,8 +382,9 @@ const MODULES = [
           <p><strong>つまり、「何を任せるか」（作業スタイル）と「どこで使うか」（利用場所）を分けて理解する</strong>のが、Claude を整理するコツです。</p>
 
           <div class="info-box">
-            <strong>ℹ️ 800 での前提</strong><br>
-            Claude Code は基本的に <strong>Cursor IDE 上で使う</strong>前提で説明します。CLI（ターミナル）も同じ Claude Code ですが、研修では「使える人向けの補足・上級利用」として扱います。<strong>CLI を覚えなくても Claude Code は使えます</strong>ので安心してください。
+            <strong>ℹ️ まずはここから</strong><br>
+            <strong>初心者はまず Web 版または Claude Desktop で Chat / Cowork を使えば十分</strong>です。Claude Code は、複数ファイル編集やアプリ改修などが必要になったときの<strong>高度な選択肢</strong>です。<br>
+            IDE で使う場合、社内には Cursor での活用ノウハウもありますが、<strong>Cursor は全員必須ではありません</strong>。CLI はエンジニアや慣れた人向けの補足として扱います。
           </div>
 
           <h3>判断フロー — いつ、どれを使う？</h3>
@@ -2530,8 +2526,8 @@ const MODULES = [
             <p><strong>📚 TIPS は後からでも参照できます</strong>：以下の TIPS は、自習モードの「TIPS集」ページにカテゴリ別・レベル別でまとめられています。研修中に全部覚える必要はなく、業務で必要になったときに見返せば十分です。</p>
           </div>
 
-          <h4>1. VS Code / Cursor 拡張版で使う</h4>
-          <p>Claude Code は VS Code や Cursor の拡張機能としても利用できます。ファイルを見ながら作業を依頼でき、ターミナル操作に慣れていない人でもチャットに近い感覚で使えます。閲覧・編集・確認を同じ画面で進められるため、非エンジニアにはまずエディター上での利用がおすすめです。</p>
+          <h4>1. 利用場所を選ぶ — IDE と CLI</h4>
+          <p>Claude Code は CLI（ターミナル）でも IDE（Cursor / VS Code / JetBrains 等）でも使えます。ファイルを見ながら作業を進めたい場合は IDE が便利で、社内には <strong>Cursor の活用ノウハウもあります</strong>（必須ではありません）。CLI はエンジニアや慣れた人向けの選択肢です。<strong>初心者はまず Claude Desktop の Chat / Cowork で十分</strong>な場面が多いので、Claude Code が必要かを先に判断してから利用場所を選びましょう。</p>
 
           <h4>2. 作業前に現状調査を依頼する</h4>
           <p>いきなり実装させず、まずリポジトリ構造や対象ファイルを確認させます。どのファイルを変更するか、どこに影響があるかを説明させてから着手することで、既存構造を壊しにくくなります。</p>
@@ -3187,7 +3183,7 @@ const MODULES = [
         title: 'Claude Code 用の安全な修正指示テンプレートを作る',
         task: '<strong>目的</strong>：チームで再利用できる「Claude Code への安全な修正指示テンプレート」を作成し、誰が使っても同じ品質で作業を依頼できる状態にする。<br><br>' +
           '<strong>想定シーン</strong>：自分が関わるプロジェクト（社内ツール、Webサイト、教材アプリなど）で、Claude Code に修正や追加機能の実装を依頼する場面。<br><br>' +
-          '<strong>使用する Claude 機能</strong>：Claude Code（VS Code / Cursor 拡張版を推奨）。必要に応じて CLAUDE.md にテンプレートを章として記載する。<br><br>' +
+          '<strong>使用する Claude 機能</strong>：Claude Code（CLI または Cursor / VS Code / JetBrains などの IDE で）。必要に応じて CLAUDE.md にテンプレートを章として記載する。<br><br>' +
           '<strong>入力情報</strong>：対象プロジェクトの概要、変更したい内容、触ってほしくないファイル、確認したい画面・項目、チームのレビュー体制。<br><br>' +
           '<strong>作成する指示テンプレート（6点）</strong>：(1) 作業開始時の現状調査指示、(2) 変更対象ファイルを限定する指示、(3) 実装前に計画を出させる指示、(4) 実装後に確認結果を報告させる指示、(5) commit 前のチェック指示、(6) チームで共有する場合の注意点。<br><br>' +
           '<strong>プロンプト例（参考）</strong>：「まず実装はせず、◯◯ファイルの構造と影響範囲を確認してください。今回の対象は△△のみで、□□には触らないでください。実装前に変更方針・確認方法・リスクを簡潔に提示してください。実装後は変更ファイル・確認した画面・コンソールエラーの有無・残課題を報告してください。」<br><br>' +
@@ -3334,17 +3330,17 @@ const TIPS = [
     id: 'tip-004',
     category: 'Claude Code',
     level: 'basic',
-    title: 'Cursor IDE で使う（800 の基本）',
-    summary: '800 では Claude Code を Cursor IDE 上で使うのが基本。VS Code 拡張版や CLI も同じ Claude Code だが、まずは Cursor IDE から始めるのが分かりやすい。',
-    whenToUse: 'Claude Code で既存ファイルを見ながら修正・確認したいとき。',
+    title: 'IDE で Claude Code を使う',
+    summary: 'Claude Code は CLI だけでなく IDE でも使える。複数ファイル編集やアプリ改修にはファイルを見ながら作業できる IDE が便利。社内には Cursor の活用ノウハウもあるが、Cursor は全員必須ではない。',
+    whenToUse: '複数ファイルを横断する高度な作業を Claude Code に任せたいとき。非エンジニアや初心者は、まず Claude Desktop で Chat / Cowork を使うところから始めれば十分。',
     howToUse: [
-      'Cursor IDE をインストールし、Claude Code の設定を有効にする',
-      'プロジェクトフォルダを開いた状態で会話を始める',
-      'ファイルツリーを見ながら指示を出す',
-      '（補足）VS Code / JetBrains 等の IDE でも Claude Code 拡張は利用可能',
-      '（補足）CLI はターミナルから使える上級者向けの選択肢'
+      'まずは Claude Desktop の Chat / Cowork で十分かを確認する（多くの場合これで足りる）',
+      'コード・アプリ改修・複数ファイル横断が必要になったら IDE 利用を検討する',
+      '使う IDE を選ぶ（Cursor / VS Code / JetBrains など。社内には Cursor のノウハウあり）',
+      'プロジェクトフォルダを開いた状態で会話を始め、ファイルツリーを見ながら指示を出す',
+      '（補足）CLI はターミナルから使える、エンジニアや慣れた人向けの選択肢'
     ],
-    caution: 'エディター上で開いていても、対象範囲は明示する。「見えている＝編集してよい」ではない。CLI を覚えなくても Claude Code は使える。',
+    caution: 'IDE 上で開いていても、対象範囲は明示する。「見えている＝編集してよい」ではない。Cursor は全員必須ではなく、IDE を使わなくても Claude Code は CLI で使える。',
     relatedSession: '第3回',
     relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
   },
