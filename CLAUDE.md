@@ -105,7 +105,24 @@ claude-training-app/
 - 外部CDNは使わない（オフライン動作のため）
 - コンテンツ変更は modules.js のみで完結させる
 - JS/CSS を変更したら `index.html` のキャッシュバスティング `?v=N` を必ずインクリメントする
-- 配布フォルダを更新するときは `build-dist.ps1` を再実行する
+
+## 公開・配布フロー
+このリポジトリは **GitHub Pages** で公開している。
+- 公開元は `master` ブランチの **ルート直下**（`docs/` でも `dist/` でもない）
+- リポジトリ内の `index.html` / `css/` / `js/` / `assets/` などの実ファイルがそのまま配信される
+- 旧配布スクリプト `build-dist.ps1` / `build-dist.bat` は削除済み（コミット `94f497e`）。**現在は使用しない**
+- Google Drive 配布版は廃止済み。配布は GitHub Pages 一本化
+
+### 公開手順
+1. 対象ファイルを更新する
+2. JS/CSS を変更した場合は `index.html` のキャッシュバスティング `?v=N` をインクリメントする
+3. `master` に commit / push する
+4. GitHub Pages の `pages-build-deployment` ワークフロー完了を確認する（通常 30〜60秒）
+5. 公開URL（https://eight-hundred-boop.github.io/claude-training-app/）で表示・コンソールエラー・主要導線を確認する
+
+### Claude Code への指示時の注意
+- **配布スクリプトの実行を提案・実行しない**（存在しないため）
+- 公開反映は `git push` のみ。追加のビルドステップは不要
 
 ## ターゲットユーザー
 - **職種**: コンサルタント（非エンジニア・ビジネス職）
