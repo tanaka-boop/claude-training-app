@@ -203,7 +203,7 @@
               <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
             </div>
             <h2>自分で学ぶ</h2>
-            <p>復習・クイズ・FAQ を自分のペースで。</p>
+            <p>復習・練習問題・クイズ・TIPS集・FAQ を自分のペースで。</p>
             <span class="landing-btn">自習モードで開く</span>
           </div>
         </div>
@@ -229,7 +229,7 @@
       <div class="fade-in">
         <div class="home-hero">
           <h1>Claude スキルアップ講座</h1>
-          <p class="subtitle">研修内容の復習、参考資料・リンク集、FAQで、Claude活用スキルを高めましょう。</p>
+          <p class="subtitle">学習コンテンツの復習・練習問題・クイズ・TIPS集・リンク集・FAQで、Claude活用スキルを自分のペースで高めましょう。</p>
         </div>
 
         <div class="training-overview">
