@@ -5,30 +5,44 @@
 
 const MODULES = [
   // ============================================================
-  // 第1回：Claudeで仕事の初速を上げる
+  // 第1回：Claudeで仕事の初速を上げ、成果物を作る
   // ============================================================
   {
     id: 'session-1',
-    title: '第1回：Claudeで仕事の初速を上げる',
+    title: '第1回：Claudeで仕事の初速を上げ、成果物を作る',
     shortTitle: '第1回',
-    description: 'Claudeの特徴を理解し、Chatで業務の初速を上げるまでを一気に体験する',
-    target: 'マネージャー以上（ChatGPT/Gemini経験者）',
+    description: 'Claudeの特徴を理解してChatで初速を上げ、Office・Research・Artifact・Coworkで業務成果物まで作れるようになる',
+    target: 'Claude を業務で使い始めたい方',
     duration: '自分のペースで',
     prereq: 'Claudeアカウント（事前準備済み）',
     icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>`,
     objectives: [
-      'Claudeが何者か、他の生成AIと何が違うかを説明できる',
+      'Claudeが何者か、業務のどこに効くかを説明できる',
       'Claudeの主要機能を把握し、業務での使いどころをイメージできる',
       'Chat / Cowork / Claude Code の3モードを場面に応じて選べる',
       'Chatで壁打ち・下書き・要約を実行できる',
       'プロンプト3要素（前提の共有・タスク・ルール）で的確に指示が出せる',
       'AIの出力を鵜呑みにせず、確認・修正・責任を持つ姿勢が身についている',
-      'ProjectとArtifactを使って、業務成果物を作り始められる'
+      'ProjectとArtifactを使って、業務成果物を作り始められる',
+      'Claudeで作れる成果物の種類（文書・表・スライド・調査・チャート・プロトタイプ）を把握している',
+      'Claude in Office（Excel / PowerPoint / Word）で既存業務の質とスピードを上げられる',
+      'Researchで調査結果を示唆付きで整理できる',
+      'Artifactで診断ツール・ダッシュボード等の「プロトタイプ」を作れる',
+      'Chrome拡張でブラウザ上の作業を効率化できる',
+      'Coworkでファイル作業を委任できる',
+      'Scheduled tasksで定型業務を自動実行できる'
     ],
     coverGroups: [
-      { label: 'Claudeを知る', icon: '💡', sections: [0, 1, 2, 3], objectives: ['Claudeが何者か説明できる', '他の生成AIとの違いを理解する', '主要機能の全体像を把握する', '3モードを使い分けられる'] },
-      { label: 'Chatで仕事を始める', icon: '💬', sections: [4, 5, 6], objectives: ['Chatで壁打ち・下書き・要約ができる', '良い指示の出し方を身につける', '出力の確認・修正ができる'] },
-      { label: '成果物にする', icon: '🏗️', sections: [7], objectives: ['ProjectとArtifactで業務成果物を作れる'] }
+      { label: 'Claudeを知る', icon: '💡', sections: [0, 1, 2], objectives: ['Claudeが何者か説明できる', '主要機能の全体像を把握する', '3モードを使い分けられる'] },
+      { label: 'Chatで仕事を始める', icon: '💬', sections: [3, 4, 5], objectives: ['Chatで壁打ち・下書き・要約ができる', '良い指示の出し方を身につける', '出力の確認・修正ができる'] },
+      { label: '成果物にする', icon: '🏗️', sections: [6], objectives: ['ProjectとArtifactで業務成果物を作れる'] },
+      { label: '成果物の幅を広げる', icon: '📋', sections: [7], objectives: ['Claudeで作れる成果物の全体像を把握する'] },
+      { label: 'Officeで成果物を作る', icon: '💼', sections: [8], objectives: ['Excel / PowerPoint / Word の業務を加速する'] },
+      { label: '調査・分析する', icon: '🔍', sections: [9], objectives: ['Researchで調査し示唆を出す'] },
+      { label: 'プロトタイプを作る', icon: '🎨', sections: [10], objectives: ['Artifactで提案・PJ用の試作品を作る'] },
+      { label: 'ブラウザで支援する', icon: '🌐', sections: [11], objectives: ['Chrome拡張でWeb作業を効率化する'] },
+      { label: 'ファイル作業を任せる', icon: '🤝', sections: [12], objectives: ['Coworkでファイル操作を委任する'] },
+      { label: '定型業務を自動化する', icon: '⏰', sections: [13], objectives: ['Scheduled tasksで繰り返し作業を自動化する'] }
     ],
     sections: [
 
@@ -40,10 +54,10 @@ const MODULES = [
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
-          <p>Claude がどんなAIで、業務のどこに効くかを押さえます。ChatGPT や Gemini を使ったことがある皆さんが、Claude を使い始める際の出発点です。</p>
+          <p>Claude がどんなAIで、業務のどこに効くかを押さえます。本講座を進めるうえでの出発点です。</p>
 
           <h3>Claudeとは</h3>
-          <p>Claude は Anthropic が開発した生成AIアシスタントです。ChatGPT や Gemini と同じ「大規模言語モデル（LLM）」を基盤にしていますが、<strong>設計思想と得意領域</strong>に違いがあります。</p>
+          <p>Claude は Anthropic が開発した生成AIアシスタントです。「大規模言語モデル（LLM）」を基盤にしており、<strong>長文処理・指示への忠実さ・考えるパートナーとしての設計</strong>に強みがあります。</p>
 
           <div class="visual-grid cols-3">
             <div class="visual-grid-item">
@@ -64,7 +78,7 @@ const MODULES = [
           </div>
 
           <h3>業務での使いどころ</h3>
-          <p>Claude は「検索の代わり」ではなく、<strong>業務の相棒</strong>として使うと真価を発揮します。</p>
+          <p>Claude が効くのは、次のような場面。</p>
 
           <div class="visual-grid cols-2">
             <div class="visual-grid-item">
@@ -84,100 +98,33 @@ const MODULES = [
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
-              <div class="grid-title">分析・構造化</div>
+              <div class="grid-title">分析・構造化整理</div>
               <div class="grid-desc">データの傾向分析、SWOT整理、競合比較表の作成など</div>
             </div>
-          </div>
-
-          <div class="visual-highlight-card">
-            <p><strong>この研修のゴール</strong>：Claude を業務の相棒として使えるようになること。まずは Chat から始めて、徐々に活用範囲を広げていきます。</p>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🏗️</div>
+              <div class="grid-title">提案書、プロジェクト資料、データ分析・レポート作成</div>
+              <div class="grid-desc">構成案・スライド・図表・KPI可視化まで、業務成果物の生成</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🖥️</div>
+              <div class="grid-title">プロトタイプ・アプリの作成</div>
+              <div class="grid-desc">診断ツール、シミュレーター、画面モック</div>
+            </div>
           </div>
 
           <div class="tip-box">
-            <strong>💡 すでに持っているスキルは活かせます</strong><br>
-            ChatGPT や Gemini で身につけた「チャットで対話する」「ファイルを添付する」「Web検索を使う」といった基本操作は、そのまま Claude でも活かせます。
+            <strong>💡 まず Chat から</strong><br>
+            Claude は Chat（対話）を中心に、Cowork（ファイル作業）や Claude Code（高度作業）、Office アドインや Artifact など多彩な接点を持ちます。第1回ではまず Chat から始め、後半・第2回で他の接点へ広げていきます。
           </div>
         `
       },
 
       // ========================================
-      // 1-2: ChatGPT / Geminiとの共通点・違い
+      // 1-2: Claudeの主要機能マップ
       // ========================================
       {
-        title: '1-2. ChatGPT / Geminiとの共通点・違い',
-        type: 'lecture',
-        content: `
-          <h3>このセクションで学ぶこと</h3>
-          <p>すでに使っている生成AIとの共通点を確認し、Claude ならではの強みを理解します。「どこが同じで、どこが違うのか」を整理することで、Claude を効率よく使い始められます。</p>
-
-          <h3>生成AIの共通点 — すでに知っていること</h3>
-          <p>ChatGPT・Gemini・Claude は、いずれも大規模言語モデル（LLM）をベースにしたAIアシスタントです。基本的な使い方は共通しています。</p>
-
-          <div class="visual-grid cols-3">
-            <div class="visual-grid-item">
-              <div class="grid-icon">💬</div>
-              <div class="grid-title">チャット形式の対話</div>
-              <div class="grid-desc">テキストで指示を出し、テキストで返ってくる。会話の流れで深掘りできる</div>
-            </div>
-            <div class="visual-grid-item">
-              <div class="grid-icon">📎</div>
-              <div class="grid-title">ファイル添付</div>
-              <div class="grid-desc">PDF・Excel・画像などを添付して、中身について質問・処理できる</div>
-            </div>
-            <div class="visual-grid-item">
-              <div class="grid-icon">🌐</div>
-              <div class="grid-title">Web検索</div>
-              <div class="grid-desc">最新情報が必要なときに、Webを検索して回答に反映できる</div>
-            </div>
-          </div>
-
-          <h3>Claude の強み — ここが違う</h3>
-          <p>同じ「生成AI」でも、製品ごとに設計思想が異なります。Claude が業務で特に力を発揮する場面を整理します。</p>
-
-          <div class="visual-comparison">
-            <div class="comparison-item">
-              <h4>ChatGPT / Gemini が得意なこと</h4>
-              <ul>
-                <li>画像生成・音声対話が充実</li>
-                <li>プラグイン／拡張のエコシステムが広い</li>
-                <li>汎用的な質問応答・日常タスク</li>
-              </ul>
-            </div>
-            <div class="comparison-item">
-              <h4>Claude が得意なこと</h4>
-              <ul>
-                <li>長文の安定処理（報告書・議事録を丸ごと）</li>
-                <li>指示への忠実さ（ルール遵守・出力形式の制御）</li>
-                <li>構造化・論点整理（壁打ち相手として優秀）</li>
-                <li>ファイルを直接編集する「Cowork」モード</li>
-              </ul>
-            </div>
-          </div>
-
-          <h3>具体例で見る Claude の強み</h3>
-          <div class="example-box">
-            <strong>📌 構造化指示への忠実さ</strong><br><br>
-            指示：「この議事録を、決定事項・宿題（担当者と期限付き）・次回アジェンダ案に分けて整理してください。です・ます調で。」<br><br>
-            → Claude は指定した3つの区分・フォーマット・文体をそのまま守って出力します。「箇条書き3点で」「表形式で」といった細かいルール指定にも忠実です。
-          </div>
-
-          <div class="info-box">
-            <strong>ℹ️ 「どちらが優れている」ではない</strong><br>
-            生成AIはタスクによって得意不得意が違います。Claude は「長い文書を読んで構造化する」「指示どおりの形式で出力する」「一緒に考える」場面で特に力を発揮します。必要に応じて使い分けるのが現実的です。
-          </div>
-
-          <div class="tip-box">
-            <strong>💡 移行のコツ</strong><br>
-            ChatGPT で使っていたプロンプトは、そのまま Claude でも使えます。まずは同じ指示を試してみて、出力の違いを体感するのが最速の学び方です。
-          </div>
-        `
-      },
-
-      // ========================================
-      // 1-3: Claudeの主要機能マップ
-      // ========================================
-      {
-        title: '1-3. Claudeの主要機能マップ',
+        title: '1-2. Claudeの主要機能マップ',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -207,7 +154,7 @@ const MODULES = [
             <div class="visual-grid-item">
               <div class="grid-icon">🔍</div>
               <div class="grid-title">Research</div>
-              <div class="grid-desc">複数ソースを統合した包括的調査レポート。深く調べたいときに使う。<strong>第2回で学習</strong></div>
+              <div class="grid-desc">複数ソースを統合した包括的調査レポート。深く調べたいときに使う。<strong>後半（1-10）で学習</strong></div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🌐</div>
@@ -221,22 +168,22 @@ const MODULES = [
             <div class="visual-grid-item">
               <div class="grid-icon">📂</div>
               <div class="grid-title">Cowork</div>
-              <div class="grid-desc">ゴールを伝えてファイル作業を任せる。PPTX / XLSX / DOCX をフォルダに直接出力。<strong>第2回で学習</strong></div>
+              <div class="grid-desc">ゴールを伝えてファイル作業を任せる。PPTX / XLSX / DOCX をフォルダに直接出力。<strong>後半（1-13）で学習</strong></div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">⚡</div>
               <div class="grid-title">Claude Code</div>
-              <div class="grid-desc">複数ファイル編集・アプリ改修・データ処理など、高度な作業を任せる。CLI または IDE から利用できる。<strong>第3回で学習</strong></div>
+              <div class="grid-desc">複数ファイル編集・アプリ改修・データ処理など、高度な作業を任せる。CLI または IDE から利用できる。<strong>第2回（2-3）で学習</strong></div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
               <div class="grid-title">Office アドイン</div>
-              <div class="grid-desc">Excel / PowerPoint / Word の中から Claude を呼び出す。<strong>第2回で学習</strong></div>
+              <div class="grid-desc">Excel / PowerPoint / Word の中から Claude を呼び出す。<strong>後半（1-9）で学習</strong></div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🌐</div>
               <div class="grid-title">Chrome 拡張</div>
-              <div class="grid-desc">ブラウザで開いたページを Claude に読ませて要約・分析。<strong>第2回で学習</strong></div>
+              <div class="grid-desc">ブラウザで開いたページを Claude に読ませて要約・分析。<strong>後半（1-12）で学習</strong></div>
             </div>
           </div>
 
@@ -245,26 +192,26 @@ const MODULES = [
             <div class="visual-grid-item">
               <div class="grid-icon">🧩</div>
               <div class="grid-title">Skills</div>
-              <div class="grid-desc">繰り返すタスクの手順を標準化。チームの作法を Claude に覚えさせる。<strong>第3回で学習</strong></div>
+              <div class="grid-desc">繰り返すタスクの手順を標準化。チームの作法を Claude に覚えさせる。<strong>第2回（2-1）で学習</strong></div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔗</div>
               <div class="grid-title">MCP / Connectors</div>
-              <div class="grid-desc">Slack・Notion・Google Drive 等の社内ツールと Claude を接続。<strong>第3回で学習</strong></div>
+              <div class="grid-desc">Slack・Notion・Google Drive 等の社内ツールと Claude を接続。<strong>第2回（2-2）で学習</strong></div>
             </div>
           </div>
 
           <div class="visual-highlight-card">
-            <p><strong>今日のフォーカス</strong>：この第1回では <strong>Chat・Project・Artifact</strong> を中心に学びます。それ以外の機能は第2回・第3回で順に扱うので、今は「こういうものがある」と頭に入れておけばOKです。</p>
+            <p><strong>今日のフォーカス</strong>：第1回の前半では <strong>Chat・Project・Artifact</strong> を中心に学びます。Office・Research・Cowork などは後半（1-8〜1-14）、Skills・MCP・Claude Code は第2回で順に扱うので、今は「こういうものがある」と頭に入れておけばOKです。</p>
           </div>
         `
       },
 
       // ========================================
-      // 1-4: Chat / Cowork / Claude Code の使い分け
+      // 1-3: Chat / Cowork / Claude Code の使い分け
       // ========================================
       {
-        title: '1-4. Chat / Cowork / Claude Code の使い分け',
+        title: '1-3. Chat / Cowork / Claude Code の使い分け',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -298,9 +245,9 @@ const MODULES = [
               <div class="grid-title">Claude Code</div>
               <div class="grid-desc">
                 <strong>高度な作業を任せる</strong><br>
-                コード・アプリ・複数ファイル編集・データ処理など。<br>
-                品質ルール固定、再現性の高い自動化。<br>
-                CLI または IDE から利用できる<strong>必要に応じて使う高度な選択肢</strong>
+                プロトタイプ、コード・アプリ・複数ファイル編集・データ処理など。<br>
+                <strong>Claude Desktop で使うのが基本</strong>、<br>
+                CLI / IDE はより細かく使いたい人向け
               </div>
             </div>
           </div>
@@ -332,9 +279,9 @@ const MODULES = [
               </tr>
               <tr>
                 <td><strong>Claude Code</strong></td>
-                <td>コード・アプリ・複数ファイル作業を任せる</td>
-                <td>CLI / IDE</td>
-                <td>必要に応じて使う高度な作業向け。IDE 利用では Cursor のノウハウもある</td>
+                <td>プロトタイプ、コード・アプリ・複数ファイル作業を任せる</td>
+                <td><strong>Desktop が基本</strong>、CLI / IDE は上級者向け</td>
+                <td>まず Desktop で試し、より高度に使いたい人は CLI / IDE を選ぶ</td>
               </tr>
             </tbody>
           </table>
@@ -358,8 +305,8 @@ const MODULES = [
               </tr>
               <tr>
                 <td><strong>Claude Desktop</strong></td>
-                <td>Chat / Cowork</td>
-                <td>初心者にも使いやすい。ローカルファイルや作業委任に向く</td>
+                <td>Chat / Cowork / <strong>Claude Code</strong></td>
+                <td>初心者にも使いやすい。<strong>Claude Code もここから始めるのが基本</strong></td>
               </tr>
               <tr>
                 <td><strong>Mobile アプリ</strong></td>
@@ -367,14 +314,14 @@ const MODULES = [
                 <td>外出先の確認・メモ・軽い相談</td>
               </tr>
               <tr>
-                <td><strong>IDE</strong>（Cursor / VS Code / JetBrains 等）</td>
-                <td>Claude Code</td>
-                <td>複数ファイルやアプリ改修に向く。社内には Cursor 活用のノウハウもある</td>
+                <td><strong>IDE</strong>（VS Code / Cursor / JetBrains 拡張など）</td>
+                <td>Claude Code（より高度）</td>
+                <td>コードや教材ファイルを見ながら作業したい人向け。社内には Cursor 活用のノウハウもある</td>
               </tr>
               <tr>
-                <td>CLI</td>
-                <td>Claude Code</td>
-                <td>ターミナルで使う。上級者・エンジニア向けの補足</td>
+                <td>CLI（ターミナル）</td>
+                <td>Claude Code（より高度）</td>
+                <td>並列作業や自動化を求めるようになってからで OK</td>
               </tr>
             </tbody>
           </table>
@@ -382,9 +329,14 @@ const MODULES = [
           <p><strong>つまり、「何を任せるか」（作業スタイル）と「どこで使うか」（利用場所）を分けて理解する</strong>のが、Claude を整理するコツです。</p>
 
           <div class="info-box">
-            <strong>ℹ️ まずはここから</strong><br>
-            <strong>初心者はまず Web 版または Claude Desktop で Chat / Cowork を使えば十分</strong>です。Claude Code は、複数ファイル編集やアプリ改修などが必要になったときの<strong>高度な選択肢</strong>です。<br>
-            IDE で使う場合、社内には Cursor での活用ノウハウもありますが、<strong>Cursor は全員必須ではありません</strong>。CLI はエンジニアや慣れた人向けの補足として扱います。
+            <strong>ℹ️ Claude Code は Claude Desktop から始めるのが基本</strong><br>
+            Chat / Cowork と同じデスクトップアプリの中で、特別な準備なしに使えます。CLI や IDE は、より細かく使いたくなったときに検討すれば十分です。
+          </div>
+
+          <div class="info-box">
+            <strong>📖 CLI と IDE とは？</strong><br>
+            <strong>CLI（コマンドラインインターフェース）</strong>：ターミナルやコマンドプロンプトと呼ばれる、文字でコンピューターに指示を出す画面です。並列作業や自動化を求めるようになってから使い始めれば十分です。<br>
+            <strong>IDE（統合開発環境）</strong>：VS Code / Cursor / JetBrains 拡張などのコードエディタ。ファイルを横に並べて見ながら編集できるツールです。コードや教材ファイルを編集する人向けです。
           </div>
 
           <h3>判断フロー — いつ、どれを使う？</h3>
@@ -411,7 +363,7 @@ const MODULES = [
             <div class="flow-step">
               <div class="flow-num">📂</div>
               <div class="flow-label">Cowork</div>
-              <div class="flow-desc">第2回で詳しく</div>
+              <div class="flow-desc">後半で詳しく</div>
             </div>
           </div>
           <div class="visual-flow" style="margin-top: 12px;">
@@ -424,7 +376,7 @@ const MODULES = [
             <div class="flow-step">
               <div class="flow-num">⚡</div>
               <div class="flow-label">Claude Code</div>
-              <div class="flow-desc">第3回で詳しく</div>
+              <div class="flow-desc">第2回で詳しく</div>
             </div>
           </div>
 
@@ -467,17 +419,17 @@ const MODULES = [
           </div>
 
           <div class="info-box">
-            <strong>ℹ️ Cowork と Claude Code は第2回・第3回で詳しく</strong><br>
-            今日は Chat の使い方をしっかり身につけることに集中します。Cowork・Claude Code は「こういうものがある」と知っておけば十分です。
+            <strong>ℹ️ Cowork は後半、Claude Code は第2回で詳しく</strong><br>
+            前半は Chat の使い方をしっかり身につけることに集中します。Cowork・Claude Code は「こういうものがある」と知っておけば十分です。
           </div>
         `
       },
 
       // ========================================
-      // 1-5: Chatで壁打ち・下書き・要約
+      // 1-4: Chatで壁打ち・下書き・要約
       // ========================================
       {
-        title: '1-5. Chatで壁打ち・下書き・要約',
+        title: '1-4. Chatで壁打ち・下書き・要約',
         type: 'hands-on',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -559,10 +511,10 @@ const MODULES = [
       },
 
       // ========================================
-      // 1-6: 良い指示の出し方
+      // 1-5: 良い指示の出し方
       // ========================================
       {
-        title: '1-6. 良い指示の出し方',
+        title: '1-5. 良い指示の出し方',
         type: 'hands-on',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -651,10 +603,10 @@ const MODULES = [
       },
 
       // ========================================
-      // 1-7: 出力を疑う・直す・責任を持つ
+      // 1-6: 出力を疑う・直す・責任を持つ
       // ========================================
       {
-        title: '1-7. 出力を疑う・直す・責任を持つ',
+        title: '1-6. 出力を疑う・直す・責任を持つ',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -739,17 +691,17 @@ const MODULES = [
           </div>
 
           <div class="tip-box">
-            <strong>💡 ChatGPT / Gemini でも同じ</strong><br>
-            ハルシネーションはすべての生成AIに共通するリスクです。Claude 特有の問題ではありません。すでに他の生成AI で「出力を確認する習慣」がある方は、そのままClaude でも活かしてください。
+            <strong>💡 これは生成AI共通の習慣</strong><br>
+            ハルシネーションはすべての生成AIに共通するリスクです。Claude 特有の問題ではありません。「出力を確認する」習慣を、業務での生成AI活用すべてに共通する基本動作として身につけてください。
           </div>
         `
       },
 
       // ========================================
-      // 1-8: Project / Artifactで成果物にする
+      // 1-7: Project / Artifactで成果物にする
       // ========================================
       {
-        title: '1-8. Project / Artifact で成果物にする',
+        title: '1-7. Project / Artifact で成果物にする',
         type: 'hands-on',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -818,7 +770,7 @@ const MODULES = [
             <div class="visual-grid-item">
               <div class="grid-icon">🖥️</div>
               <div class="grid-title">インタラクティブUI</div>
-              <div class="grid-desc">簡易ダッシュボード、診断ツール、シミュレーター、画面モック。提案の論点を「触れる成果物」として具体化</div>
+              <div class="grid-desc">簡易ダッシュボード、診断ツール、シミュレーター、画面モック。提案の論点を「プロトタイプ」として具体化</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔄</div>
@@ -864,197 +816,22 @@ const MODULES = [
           </div>
 
           <div class="visual-highlight-card">
-            <p><strong>第1回のまとめ</strong>：今日学んだ Chat・Project・Artifact だけでも、日常業務の多くのシーンで Claude を活用できます。まずはこの3つを使いこなし、慣れてきたら第2回（Cowork・Office）、第3回（Skills・MCP・Claude Code）へ進みましょう。</p>
+            <p><strong>第1回前半のまとめ</strong>：ここまで学んだ Chat・Project・Artifact だけでも、日常業務の多くのシーンで Claude を活用できます。まずはこの3つを使いこなし、続く後半（Office・Research・Cowork）、第2回（Skills・MCP・Claude Code）へ進みましょう。</p>
           </div>
         `
       }
-    ],
+,
 
-    // ========================================
-    // クイズ（10問）
-    // ========================================
-    quiz: [
-      {
-        question: 'ChatGPT / Gemini と比べた Claude の特徴として、最も適切なものはどれですか？',
-        options: ['画像生成に特化している', '長文処理の安定性と指示への忠実さに強みがある', 'プラグインのエコシステムが最も広い', '音声対話に最も優れている'],
-        correct: 1,
-        explanation: 'Claude は長文の安定処理（200Kトークン）と、指示への忠実さ（出力形式・ルール遵守）に強みがあります。画像生成やプラグインエコシステムは他サービスが充実しています。'
-      },
-      {
-        question: 'Claude の3つのモード（Chat / Cowork / Claude Code）について正しいものはどれですか？',
-        options: ['全員が最初から Claude Code を使うべき', 'Cowork は対話専用のモード', 'Chat はすべての基盤で、迷ったらまず Chat を使う', 'Chat と Cowork は全く同じ機能'],
-        correct: 2,
-        explanation: 'Chat はすべての基盤です。Cowork はファイルを直接操作して成果物を作るモード、Claude Code は品質ルールの固定と高度な自動化のモード。迷ったら Chat から始めましょう。'
-      },
-      {
-        question: 'プロンプトの3要素として正しい組み合わせはどれですか？',
-        options: ['入力・処理・出力', '前提の共有・タスク定義・ルール指定', '質問・回答・確認', '要約・分析・報告'],
-        correct: 1,
-        explanation: '「前提の共有」で背景を伝え、「タスク定義」でゴールを明確にし、「ルール指定」で出力の形を決める。この3要素を意識するだけで出力の質が大きく上がります。'
-      },
-      {
-        question: '「競合分析して」というプロンプトの改善として最も適切なものはどれですか？',
-        options: ['「競合分析してください。お願いします」と丁寧にする', '「競合分析して。早く」と簡潔にする', '「ITコンサルとして、A社・B社・C社のクラウドERPを機能・価格・実績で比較。表形式で出力」と3要素を入れる', '「競合分析して。できるだけ詳しく」と量を増やす'],
-        correct: 2,
-        explanation: '前提（ITコンサル）・タスク（3社比較、比較軸の指定）・ルール（表形式で出力）の3要素を満たすことで、的確な出力が得られます。丁寧さや量の指定だけでは精度は上がりません。'
-      },
-      {
-        question: 'Claude の出力に対する適切な姿勢はどれですか？',
-        options: ['AIの出力は常に正確なので、そのまま使ってよい', '出力は「優秀な同僚の初稿」として、確認・修正・最終判断を行う', 'AIの出力は信用できないので使わない方がよい', '数字や固有名詞の確認は不要'],
-        correct: 1,
-        explanation: 'AI の出力は「優秀な同僚の初稿」です。そのまま使うのではなく、確認→修正→仕上げのプロセスを経て、自分の責任で最終成果物にします。'
-      },
-      {
-        question: 'ハルシネーション（でっち上げ）について正しいものはどれですか？',
-        options: ['Claude だけに発生する問題で、ChatGPT では起きない', '出典を求めれば必ず正確な情報が返ってくる', '数字・固有名詞・引用は特に注意が必要で、重要情報は自分で裏取りする', 'Web検索をONにすればハルシネーションは完全になくなる'],
-        correct: 2,
-        explanation: 'ハルシネーションはすべての生成AIに共通するリスクです。特に数字・固有名詞・引用元は確認が必要。Web検索ONで精度は上がりますが、重要情報は自分で照合する習慣が大切です。'
-      },
-      {
-        question: 'Project の主な目的として最も適切なものはどれですか？',
-        options: ['会話履歴を無限に保存する', '案件固有の背景・ルール・参照資料を保持し、毎回の前提説明を省略する', 'Claude の回答速度を上げる', 'チームメンバー全員の会話を閲覧する'],
-        correct: 1,
-        explanation: 'Project は案件固有の Instructions とナレッジベースを保持し、毎回同じ前提を伝え直す手間を省きます。Project 内の全会話で自動参照されるため、すぐ本題に入れます。'
-      },
-      {
-        question: 'Artifact について正しいものはどれですか？',
-        options: ['チャットの回答をコピーしたもの', '会話とは独立した成果物で、文書・図表・インタラクティブUIなどを生成できる', 'Artifact は画像生成専用の機能', 'Artifact は一度作ると修正できない'],
-        correct: 1,
-        explanation: 'Artifact は会話とは独立した成果物です。文書・表・図表・Webページ・ダッシュボードなどを生成でき、追加指示で修正するとバージョンが記録されます。'
-      },
-      {
-        question: 'Chat で壁打ちをするときのコツとして適切なものはどれですか？',
-        options: ['正解を1つだけ求める', '複数の切り口を出してもらい、気になるものを深掘りする', 'できるだけ短い質問にする', '壁打ちは Chat ではできない'],
-        correct: 1,
-        explanation: '壁打ちは「正解を求める」のではなく「考えを整理し、視野を広げる」使い方です。複数の切り口を出してもらい、「2番目を深掘りして」と会話を続けると効果的です。'
-      },
-      {
-        question: 'Cowork と Claude Code について、第1回の時点で正しい理解はどれですか？',
-        options: ['今すぐ全機能を使いこなす必要がある', 'Chat で十分なので、Cowork と Claude Code は不要', 'Chat をまず使いこなし、必要に応じて Cowork（第2回）、Claude Code（第3回）へ進む', 'Cowork と Claude Code は同じ機能'],
-        correct: 2,
-        explanation: 'まずは Chat で壁打ち・下書き・要約をしっかり使いこなすことが大切です。ファイル作成が必要になったら Cowork、品質の固定が必要になったら Claude Code を学びましょう。'
-      }
-    ],
-
-    // ========================================
-    // 練習問題
-    // ========================================
-    practices: [
-      {
-        section: '1-5. Chatで壁打ち・下書き・要約',
-        title: '会議メモから論点整理を作る',
-        task: '手元の会議メモ（なければ適当な長文メール）を Claude に添付し、「この内容を、決定事項・未決事項・宿題（担当者付き）に分けて整理してください」と依頼してみましょう。出力を確認し、足りない点があれば追加指示で修正してください。',
-        hint: '出力形式を具体的に指定すると精度が上がります。「箇条書きで」「表形式で」など試してみましょう。'
-      },
-      {
-        section: '1-5. Chatで壁打ち・下書き・要約',
-        title: '提案の切り口を壁打ちする',
-        task: '自分が関わっている（または想定する）案件について、「この案件に対する提案の切り口を5つ挙げて、それぞれのメリットとリスクを教えてください」と Claude に依頼してください。返ってきた5つのうち1つを選び、「この切り口をさらに深掘りして」と会話を続けてみましょう。'
-      },
-      {
-        section: '1-6. 良い指示の出し方',
-        title: 'プロンプト3要素で書き直す',
-        task: '以下の雑なプロンプトを、3要素（前提の共有・タスク定義・ルール指定）を満たす形に書き直してから Claude に投げてください。\n\n悪い例：「競合分析して」\n\nヒント：あなたは何業界の何の案件で、どの競合の何を比較したいのか、出力はどういう形式が欲しいのか。',
-        hint: '例：「あなたはITコンサルタントです。A社・B社・C社のクラウドERPサービスを、機能・価格・導入実績で比較してください。比較表（Markdown）で出力し、最後に推奨を1段落で述べてください。」'
-      },
-      {
-        section: '1-6. 良い指示の出し方',
-        title: '「Claudeへの指示」を設定する',
-        task: 'claude.ai の設定 > 一般 >「Claudeへの指示」に、自分の前提情報を登録してください。\n新しいチャットで「私についてどんな前提を持っていますか？」と聞いて、反映されていることを確認しましょう。',
-        hint: '例：「私は経営コンサルティングファームのシニアコンサルタントです。出力はです・ます調、結論先行で。」'
-      },
-      {
-        section: '1-7. 出力を疑う・直す・責任を持つ',
-        title: 'ハルシネーションを体験する',
-        task: '「2024年の日本のSaaS市場規模を、出典付きで教えてください」を Claude に投げて、返ってきた数字と出典を別途検索して照合してください。\n次に Web 検索 ON で同じ質問を投げて、結果の違いを比較しましょう。',
-        hint: '出典URLが実在するか、数字が正確かを確認してみてください。Web検索ONとOFFで精度がどう変わるかがポイントです。'
-      },
-      {
-        section: '1-8. Project / Artifact で成果物にする',
-        title: 'Projectを作成して壁打ちする',
-        task: 'claude.ai >「プロジェクト」から新規プロジェクトを作成してください。\nInstructions に案件概要を記入し、参照資料があればアップロード。\n「この案件の論点を3つ整理して」と試してください。\nProjectなしの通常チャットとの応答の違いを比較してみましょう。'
-      },
-      {
-        section: '1-8. Project / Artifact で成果物にする',
-        title: 'Artifactで成果物を作る',
-        task: 'Chat で壁打ちした内容や比較分析の結果を、Artifact として残してみましょう。\n\n1. 「この内容を比較表のArtifactにして」と依頼\n2. 「さらにMermaid図で全体像を可視化して」と追加指示\n3. バージョン履歴で前のバージョンに戻せることを確認'
-      },
-      {
-        section: '1-8. Project / Artifact で成果物にする',
-        title: 'インタラクティブなArtifactを作る',
-        task: '業務で使えるインタラクティブな成果物を Claude に作ってもらいましょう。\n\n例：「クライアントの業務改善の優先度を診断するツールを作って。5つの質問に答えると、改善領域の優先度がチャートで表示される」\n\nArtifact内でクリック・入力ができることを確認してください。',
-        hint: '診断ツール、シミュレーター、簡易ダッシュボード、画面モックなど。「提案の論点を触れる形にしたい」と伝えてみましょう。'
-      }
-    ],
-
-    // ========================================
-    // リンク集・FAQ
-    // ========================================
-    selfStudyResources: {
-      links: [
-        { title: 'Claude.ai（公式サイト）', url: 'https://claude.ai/', desc: 'Claude のチャット・Cowork はここからアクセス', category: '🚀 はじめる' },
-        { title: 'Claude デスクトップアプリ ダウンロード', url: 'https://claude.com/download', desc: 'Mac / Windows 対応', category: '🚀 はじめる' },
-        { title: 'Claude プロンプトライブラリ', url: 'https://docs.anthropic.com/en/prompt-library/library', desc: '用途別のプロンプト例を多数掲載', category: '📖 プロンプトを学ぶ' },
-        { title: 'Claude Tips & Tricks（YouTube）', url: 'https://www.youtube.com/playlist?list=PLf2m23nhTg5VEz8sS0ORurJk3lBL7nB0V', desc: 'Anthropic 公式の使い方動画', category: '📖 プロンプトを学ぶ' },
-        { title: 'Anthropic Cookbook', url: 'https://github.com/anthropics/anthropic-cookbook', desc: '実践的なユースケースとコード例', category: '📖 プロンプトを学ぶ' },
-        { title: 'Anthropic 公式ドキュメント', url: 'https://docs.anthropic.com/', desc: 'Claude の技術仕様・機能一覧・ベストプラクティス', category: '📚 公式リファレンス' },
-        { title: 'Claude サポートサイト', url: 'https://support.claude.com/', desc: 'Project・Artifact・各機能の使い方ガイド', category: '📚 公式リファレンス' }
-      ],
-      faq: [
-        { q: 'Claude と ChatGPT / Gemini の違いは何ですか？', a: 'Claude は長文処理の安定性（200Kトークン）、指示への忠実さ（出力形式・ルール遵守）、構造化・論点整理の精度に強みがあります。また、ファイルを直接操作する Cowork モードは Claude 独自の機能です。ChatGPT は画像生成やプラグインエコシステム、Gemini は Google サービスとの連携が充実しています。タスクに応じて使い分けるのが現実的です。', category: '💡 Claudeの基本' },
-        { q: 'Claude ではまず何から使えばよいですか？', a: 'まずは Chat から始めましょう。壁打ち（論点整理）、下書き（メール・報告書の素案）、要約（長い文書を要点に絞る）の3パターンが最も使用頻度が高いです。慣れてきたら Project で案件の背景を登録し、Artifact で成果物を残すとさらに効率が上がります。', category: '💡 Claudeの基本' },
-        { q: 'Chat / Cowork / Claude Code はどう使い分けますか？', a: '「対話で済むか？」→ Chat。「ファイルを直接作ってほしいか？」→ Cowork。「毎回同じ品質で繰り返したいか？」→ Claude Code。迷ったら Chat からで問題ありません。', category: '💡 Claudeの基本' },
-        { q: 'Project とは何ですか？', a: 'Project は案件固有の背景情報・ルール・参照資料を Claude に覚えさせる仕組みです。Instructions（指示文）とナレッジベース（参照資料）を設定すると、その Project 内の全会話で自動参照されます。毎回同じ前提を説明し直す手間がなくなります。', category: '🖥️ Chat・Projects' },
-        { q: 'Artifact とは何ですか？', a: 'Artifact は会話とは独立した成果物です。文書・表・図表・Webページ・ダッシュボードなどを生成でき、追加指示で修正するとバージョンが記録されます。チャットの回答は流れていきますが、Artifact は残ります。「これを Artifact にして」と依頼するか、Claude が自動的に生成します。', category: '🖥️ Chat・Projects' },
-        { q: 'Cowork や Claude Code は最初から使うべきですか？', a: 'いいえ。まずは Chat で壁打ち・下書き・要約を使いこなすことが最優先です。ファイルを直接作ってほしい場面が出てきたら Cowork（第2回）、品質の再現性が必要になったら Claude Code（第3回）を学びましょう。', category: '💡 Claudeの基本' },
-        { q: 'Claude の出力をそのまま使ってよいですか？', a: 'そのまま提出することは推奨しません。Claude の出力は「優秀な同僚の初稿」です。特に数字・固有名詞・引用元は裏取りが必要です。確認→修正→仕上げのプロセスを経て、自分の責任で最終成果物にしてください。', category: '✍️ プロンプト・品質' },
-        { q: 'プロンプトの3要素は必ず全部入れるべきですか？', a: '必ずしも全部必要ではありません。簡単な質問なら不要ですが、業務で精度の高い出力が欲しいときは3要素（前提の共有・タスク定義・ルール指定）を意識すると品質が上がります。まず簡潔に指示して、返ってきた出力を見て追加指示するやり方も有効です。', category: '✍️ プロンプト・品質' }
-      ]
-    }
-  },
-
-
-  // ============================================================
-  // 第2回：成果物を作る
-  // ============================================================
-  {
-    id: 'session-2',
-    title: '第2回：成果物を作る',
-    shortTitle: '第2回',
-    description: 'Claudeを使って文書・表・スライド・調査レポート・触れる成果物まで、業務成果物を自分で作れるようになる',
-    target: '第1回 完了者',
-    duration: '自分のペースで',
-    prereq: '第1回 完了',
-    icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
-    objectives: [
-      'Claudeで作れる成果物の種類（文書・表・スライド・調査・チャート・触れる成果物）を把握している',
-      'Claude in Office（Excel / PowerPoint / Word）で既存業務の質とスピードを上げられる',
-      'Researchで調査結果を示唆付きで整理できる',
-      'Artifactで診断ツール・ダッシュボード等の「触れる成果物」を作れる',
-      'Chrome拡張でブラウザ上の作業を効率化できる',
-      'Coworkでファイル作業を委任できる',
-      'Scheduled tasksで定型業務を自動実行できる'
-    ],
-    coverGroups: [
-      { label: '成果物の幅を広げる', icon: '📋', sections: [0], objectives: ['Claudeで作れる成果物の全体像を把握する'] },
-      { label: 'Officeで成果物を作る', icon: '💼', sections: [1], objectives: ['Excel / PowerPoint / Word の業務を加速する'] },
-      { label: '調査・分析する', icon: '🔍', sections: [2], objectives: ['Researchで調査し示唆を出す'] },
-      { label: '触れる成果物を作る', icon: '🎨', sections: [3], objectives: ['Artifactで提案・PJ用の試作品を作る'] },
-      { label: 'ブラウザで支援する', icon: '🌐', sections: [4], objectives: ['Chrome拡張でWeb作業を効率化する'] },
-      { label: 'ファイル作業を任せる', icon: '🤝', sections: [5], objectives: ['Coworkでファイル操作を委任する'] },
-      { label: '定型業務を自動化する', icon: '⏰', sections: [6], objectives: ['Scheduled tasksで繰り返し作業を自動化する'] }
-    ],
-    sections: [
 
       // ========================================
       // 2-1: 成果物の種類を広げる
       // ========================================
       {
-        title: '2-1. 成果物の種類を広げる',
+        title: '1-8. 成果物の種類を広げる',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
-          <p>第1回では Chat を使ったテキストのやり取りが中心でした。しかし Claude で作れるものは文章だけではありません。このセクションでは、Claude を使って作れる<strong>成果物の全体像</strong>を一覧し、「こんなものも作れるのか」という視野を広げます。</p>
+          <p>第1回の前半では Chat を使ったテキストのやり取りが中心でした。しかし Claude で作れるものは文章だけではありません。このセクションでは、Claude を使って作れる<strong>成果物の全体像</strong>を一覧し、「こんなものも作れるのか」という視野を広げます。</p>
 
           <h3>Claude で作れる成果物マップ</h3>
           <p>Claude で作れる成果物は、大きく6つのカテゴリに分かれます。</p>
@@ -1087,7 +864,7 @@ const MODULES = [
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🖥️</div>
-              <div class="grid-title">触れる成果物</div>
+              <div class="grid-title">プロトタイプ</div>
               <div class="grid-desc">診断ツール、シミュレーター、画面モック、簡易ダッシュボード</div>
             </div>
           </div>
@@ -1127,7 +904,7 @@ const MODULES = [
               <span class="mapping-to">Research</span>
             </div>
             <div class="mapping-row">
-              <span class="mapping-from">触れる成果物（試作品）</span>
+              <span class="mapping-from">プロトタイプ（試作品）</span>
               <span class="mapping-arrow">→</span>
               <span class="mapping-to">Artifact（HTML/JS）</span>
             </div>
@@ -1155,7 +932,7 @@ const MODULES = [
           </div>
 
           <div class="info-box">
-            <p><strong>この第2回で学ぶ流れ</strong>：Office → Research → Artifact → Chrome → Cowork → Scheduled tasks の順に、それぞれの機能で何が作れるかを実践します。</p>
+            <p><strong>後半で学ぶ流れ</strong>：Office → Research → Artifact → Chrome → Cowork → Scheduled tasks の順に、それぞれの機能で何が作れるかを実践します。</p>
           </div>
         `
       },
@@ -1164,11 +941,141 @@ const MODULES = [
       // 2-2: OfficeでExcel / PowerPoint / Wordを扱う
       // ========================================
       {
-        title: '2-2. Office アプリで Claude を使う — Excel / PowerPoint / Word',
+        title: '1-9. Office アプリで Claude を使う — Excel / PowerPoint / Word',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
           <p>Claude in Office を使うと、Excel・PowerPoint・Word の中で直接 Claude に指示が出せます。普段の Office 作業にAIを組み込むことで、分析・資料作成・文書校正の質とスピードを同時に上げられます。</p>
+
+          <h3>インストール手順（PowerPoint アドインを研修中にセット）</h3>
+          <p>普段使う Office アプリ（PowerPoint / Word / Excel）に Claude のアドインを追加すると、ファイルを開いたまま Claude を呼び出せるようになります。研修中は <strong>PowerPoint アドインを実際にインストール</strong>します。Word / Excel は同じ手順なので研修後にご自身で入れてください。</p>
+
+          <div class="warning-box">
+            <p><strong>⚠️ 利用前提</strong></p>
+            <ul>
+              <li>Claude のプラン：Pro / Max / Team / Enterprise（無料プランでは使えません）</li>
+              <li>PowerPoint は Max / Team / Enterprise のみという情報もあるため、社内のプラン契約を IT 部門に確認してください</li>
+              <li>Word は 2026年4月公開のパブリックベータ版です</li>
+              <li>Mac / Windows どちらでも使えます</li>
+            </ul>
+          </div>
+
+          <h4>インストール対象アドイン</h4>
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>アドイン</th>
+                <th>用途</th>
+                <th>Marketplace URL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Claude for PowerPoint</strong></td>
+                <td>スライド構成・改善</td>
+                <td><a href="https://marketplace.microsoft.com/en-us/product/office/wa200010001" target="_blank" rel="noopener">marketplace.microsoft.com/.../wa200010001</a></td>
+              </tr>
+              <tr>
+                <td><strong>Claude for Word</strong></td>
+                <td>文書要約・校正・Tracked Changes</td>
+                <td><a href="https://marketplace.microsoft.com/en-us/product/office/wa200010453" target="_blank" rel="noopener">marketplace.microsoft.com/.../wa200010453</a></td>
+              </tr>
+              <tr>
+                <td><strong>Claude for Excel</strong></td>
+                <td>データ分析・集計</td>
+                <td><a href="https://marketplace.microsoft.com/en-us/product/saas/wa200009404" target="_blank" rel="noopener">marketplace.microsoft.com/.../wa200009404</a></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>公式ヘルプ：<a href="https://support.claude.com/en/articles/13521390-use-claude-for-powerpoint" target="_blank" rel="noopener">PowerPoint</a> / <a href="https://support.claude.com/en/articles/14465370-use-claude-for-word" target="_blank" rel="noopener">Word</a> / <a href="https://support.claude.com/en/articles/12650343-use-claude-for-excel" target="_blank" rel="noopener">Excel</a></p>
+
+          <h4>PowerPoint アドインのインストール手順（研修中に実施・約3〜5分）</h4>
+          <div class="visual-steps">
+            <div class="visual-step-item">
+              <div class="step-marker">1</div>
+              <div class="step-body">
+                <div class="step-title">PowerPoint を起動</div>
+                <div class="step-desc">PC にインストール済みのデスクトップアプリを開く</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">2</div>
+              <div class="step-body">
+                <div class="step-title">「ホーム」タブ → 「アドイン」をクリック</div>
+                <div class="step-desc">または「挿入」タブ → 「アドインを取得」</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">3</div>
+              <div class="step-body">
+                <div class="step-title">ストア検索で「Claude」と入力</div>
+                <div class="step-desc">候補の中から「Claude for PowerPoint」を探す</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">4</div>
+              <div class="step-body">
+                <div class="step-title">「Claude for PowerPoint」を「追加」</div>
+                <div class="step-desc">表示されたボタンをクリックする</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">5</div>
+              <div class="step-body">
+                <div class="step-title">ライセンス条項に同意</div>
+                <div class="step-desc">読んで「同意」をクリック</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">6</div>
+              <div class="step-body">
+                <div class="step-title">リボンに Claude アイコンが表示</div>
+                <div class="step-desc">インストール完了後、PowerPoint の上部リボンに Claude アイコンが追加される</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">7</div>
+              <div class="step-body">
+                <div class="step-title">Microsoft 365 アカウントでサインイン</div>
+                <div class="step-desc">Claude アイコンをクリックして、職場/学校アカウントで認証</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">8</div>
+              <div class="step-body">
+                <div class="step-title">Claude（Anthropic）アカウントでサインイン</div>
+                <div class="step-desc">続けて、Claude のアカウント（claude.ai のログイン情報）で認証</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">9</div>
+              <div class="step-body">
+                <div class="step-title">サイドペインに Claude のチャット欄が表示</div>
+                <div class="step-desc">表示されればインストール成功</div>
+              </div>
+            </div>
+          </div>
+
+          <h4>研修後：Word / Excel も同じ手順でインストール</h4>
+          <p><strong>手順は PowerPoint とまったく同じ</strong>です。Word / Excel をそれぞれ起動して、上記の Step 1〜9 を繰り返してください。3つとも入れると、本セクションで紹介する Office 連携が全アプリで使えるようになります。</p>
+
+          <div class="warning-box">
+            <p><strong>⚠️ 各アプリで個別にインストールが必要</strong></p>
+            <p>PowerPoint で入れても Word / Excel には自動で入りません。それぞれのアプリで同じ手順を行ってください。</p>
+          </div>
+
+          <h4>うまくいかないときの対処</h4>
+          <ul>
+            <li><strong>アドインストアに Claude が出てこない</strong> → 会社の M365 設定で App Store が制限されている可能性があります。IT 管理者にお問い合わせください</li>
+            <li><strong>サインインできない</strong> → ブラウザの認証ポップアップがブロックされていないか確認してください</li>
+            <li><strong>アイコンが表示されない</strong> → PowerPoint を再起動／「挿入」タブの「個人用アドイン」から確認してください</li>
+          </ul>
+
+          <div class="info-box">
+            <strong>💡 Tips</strong><br>
+            Claude は Excel / PowerPoint / Word をまたいで <strong>1つの会話で複数アプリを編集できます</strong>。たとえば PowerPoint で構成を作り → そのまま Word で配布資料化、といった流れがアプリ切り替えなしで進められます。
+          </div>
 
           <h3>Claude in Excel — データを読み解く</h3>
           <p>Excel の中で Claude を呼び出し、データの分析や整理を依頼できます。計算式を書くのではなく、<strong>日本語で「このデータをどう読むか」を相談する</strong>感覚です。</p>
@@ -1254,6 +1161,65 @@ const MODULES = [
             <p>Claude in Office は、ファイル内容について Claude と対話する機能です。Chat と同じく、出力を鵜呑みにせず確認してから適用してください。特に数値データの分析結果は、元データと照合する習慣をつけましょう。</p>
           </div>
 
+          <h3>アドインの履歴は「同じファイルを開いている間だけ」残ります</h3>
+          <p>Office アドインのチャット履歴は、同じファイルを開いている間は保持されますが、アプリを閉じるとリセットされます。仕様は以下のとおりです。</p>
+
+          <div class="visual-grid cols-2">
+            <div class="visual-grid-item">
+              <div class="grid-icon">✅</div>
+              <div class="grid-title">同じファイルを開いている間</div>
+              <div class="grid-desc">履歴は保持され、会話の続きから作業できます。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">❌</div>
+              <div class="grid-title">PowerPointを閉じる/別ファイルを開く</div>
+              <div class="grid-desc">履歴はリセットされ、過去の会話は復元できません。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">❌</div>
+              <div class="grid-title">エクスポート機能なし</div>
+              <div class="grid-desc">チャット内容をファイルとして保存・書き出す公式機能は提供されていません。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">❌</div>
+              <div class="grid-title">クロスアプリ会話は消える</div>
+              <div class="grid-desc">複数アプリを同時に使った会話は、セッション終了で残りません。</div>
+            </div>
+          </div>
+
+          <h4>大事な内容を残す方法</h4>
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>方法</th>
+                <th>内容</th>
+                <th>向く場面</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>その場で残す</strong></td>
+                <td>チャット欄から内容をコピーして Word やメモに貼り付ける</td>
+                <td>一時的な記録</td>
+              </tr>
+              <tr>
+                <td><strong>ナレッジに移す</strong></td>
+                <td>claude.ai 本体の Project に持ち込んで続きを検討する（第1回 1-7 で学習）</td>
+                <td>案件のナレッジとして残したい</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="info-box">
+            <strong>💡 棲み分けのコツ</strong><br>
+            アドインは「下書き・即時のヘルプ」、深い検討やナレッジ化は claude.ai の Project に持ち込む。この棲み分けが、Claude を業務で安定して使うコツです。
+          </div>
+
+          <div class="info-box">
+            <strong>📦 さらに高度な使い方は第2回で</strong><br>
+            うまくいった「指示の型化」や「定型ワークフローの再利用」は第2回で扱います。
+          </div>
+
           <h3>スライドは「いきなり完成形」を作らせない — 段階生成のコツ</h3>
           <p>「提案書を10枚作って」と一気に依頼すると、見た目は整っていても<strong>論点・ストーリー・意思決定への接続が弱い</strong>スライドが返ってきがちです。次の順で段階的に作らせ、各段階で人がレビューします。</p>
 
@@ -1289,7 +1255,7 @@ const MODULES = [
           </div>
 
           <div class="info-box">
-            <p><strong>提案資料は見た目より「論点・ストーリー・意思決定への接続」</strong>。デザインを整える前に、伝えたい論点と読み手の意思決定にどうつながるかを揃えるのが先です。うまくいった生成手順自体は、第3回の Skills 化対象として再利用できます。</p>
+            <p><strong>提案資料は見た目より「論点・ストーリー・意思決定への接続」</strong>。デザインを整える前に、伝えたい論点と読み手の意思決定にどうつながるかを揃えるのが先です。うまくいった生成手順自体は、第2回の Skills 化対象として再利用できます。</p>
           </div>
         `
       },
@@ -1298,7 +1264,7 @@ const MODULES = [
       // 2-3: Researchで調査する
       // ========================================
       {
-        title: '2-3. Research で調査する',
+        title: '1-10. Research で調査する',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -1445,22 +1411,22 @@ const MODULES = [
 
           <h3>AI ニュース・業界情報は「定点観測」に組み込む</h3>
           <div class="info-box">
-            <p>変化の速い分野は、<strong>個人で追わず、チームで定点観測する仕組み</strong>を作るのが効きます。週次の調査担当を回す、共通の Research 質問テンプレートを Skill 化する、まとめ先を一箇所に集約する、といった運用設計が第3回のチーム展開と直結します。</p>
+            <p>変化の速い分野は、<strong>個人で追わず、チームで定点観測する仕組み</strong>を作るのが効きます。週次の調査担当を回す、共通の Research 質問テンプレートを Skill 化する、まとめ先を一箇所に集約する、といった運用設計が第2回のチーム展開と直結します。</p>
           </div>
         `
       },
 
       // ========================================
-      // 2-4: Artifactで提案・PJ用の"触れる成果物"を作る
+      // 2-4: Artifactで提案・PJ用の"プロトタイプ"を作る
       // ========================================
       {
-        title: '2-4. Artifact で「触れる成果物」を作る',
+        title: '1-11. Artifact で「プロトタイプ」を作る',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
-          <p>第1回で Artifact の基本を学びました。ここではさらに一歩進んで、<strong>実際に操作できる「触れる成果物」</strong>を Artifact で作る方法を学びます。診断ツール、シミュレーター、ダッシュボードなど、提案やプロジェクトの論点を具体化するための試作品です。</p>
+          <p>前半で Artifact の基本を学びました。ここではさらに一歩進んで、<strong>実際に操作できる「プロトタイプ」</strong>を Artifact で作る方法を学びます。診断ツール、シミュレーター、ダッシュボードなど、提案やプロジェクトの論点を具体化するための試作品です。</p>
 
-          <h3>「触れる成果物」とは</h3>
+          <h3>「プロトタイプ」とは</h3>
           <p>文書や表とは違い、<strong>ユーザーが操作して結果が変わる成果物</strong>のことです。Claude の Artifact は HTML・CSS・JavaScript を生成でき、ブラウザ上でそのまま動作します。</p>
 
           <div class="visual-grid cols-3">
@@ -1496,7 +1462,7 @@ const MODULES = [
             </div>
           </div>
 
-          <h3>なぜ「触れる成果物」が提案に効くのか</h3>
+          <h3>なぜ「プロトタイプ」が提案に効くのか</h3>
           <div class="visual-before-after">
             <div class="ba-item before">
               <div class="ba-label">スライドだけの提案</div>
@@ -1508,7 +1474,7 @@ const MODULES = [
             </div>
             <div class="ba-arrow">→</div>
             <div class="ba-item after">
-              <div class="ba-label">触れる成果物を添えた提案</div>
+              <div class="ba-label">プロトタイプを添えた提案</div>
               <ul>
                 <li>実際に操作して体験してもらう</li>
                 <li>「これがやりたいことです」が一瞬で伝わる</li>
@@ -1551,7 +1517,7 @@ const MODULES = [
 
           <h3>重要な注意点</h3>
           <div class="warning-box">
-            <p><strong>「触れる成果物」は試作品であり、本番システムではない</strong></p>
+            <p><strong>「プロトタイプ」は試作品であり、本番システムではない</strong></p>
             <p>Artifact で作るものはあくまで<strong>提案やプロジェクトの論点を具体化するための「たたき台」</strong>です。クライアントに見せる際は「これは認識合わせのための試作品です」と必ず説明してください。本番システムの開発は別途エンジニアリングが必要です。</p>
           </div>
 
@@ -1565,7 +1531,7 @@ const MODULES = [
       // 2-5: Chromeでブラウザ作業を支援する
       // ========================================
       {
-        title: '2-5. Chrome でブラウザ作業を支援する',
+        title: '1-12. Chrome でブラウザ作業を支援する',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -1637,7 +1603,7 @@ const MODULES = [
       // 2-6: Coworkでファイル作業を任せる
       // ========================================
       {
-        title: '2-6. Cowork でファイル作業を任せる',
+        title: '1-13. Cowork でファイル作業を任せる',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -1749,7 +1715,7 @@ const MODULES = [
       // 2-7: 定型業務をScheduled tasks化する
       // ========================================
       {
-        title: '2-7. 定型業務を Scheduled tasks 化する',
+        title: '1-14. 定型業務を Scheduled tasks 化する',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -1835,9 +1801,63 @@ const MODULES = [
     ],
 
     // ========================================
-    // 第2回 クイズ（12問）
+    // クイズ（21問）
     // ========================================
     quiz: [
+      {
+        question: 'Claude の3つのモード（Chat / Cowork / Claude Code）について正しいものはどれですか？',
+        options: ['全員が最初から Claude Code を使うべき', 'Cowork は対話専用のモード', 'Chat はすべての基盤で、迷ったらまず Chat を使う', 'Chat と Cowork は全く同じ機能'],
+        correct: 2,
+        explanation: 'Chat はすべての基盤です。Cowork はファイルを直接操作して成果物を作るモード、Claude Code は品質ルールの固定と高度な自動化のモード。迷ったら Chat から始めましょう。'
+      },
+      {
+        question: 'プロンプトの3要素として正しい組み合わせはどれですか？',
+        options: ['入力・処理・出力', '前提の共有・タスク定義・ルール指定', '質問・回答・確認', '要約・分析・報告'],
+        correct: 1,
+        explanation: '「前提の共有」で背景を伝え、「タスク定義」でゴールを明確にし、「ルール指定」で出力の形を決める。この3要素を意識するだけで出力の質が大きく上がります。'
+      },
+      {
+        question: '「競合分析して」というプロンプトの改善として最も適切なものはどれですか？',
+        options: ['「競合分析してください。お願いします」と丁寧にする', '「競合分析して。早く」と簡潔にする', '「ITコンサルとして、A社・B社・C社のクラウドERPを機能・価格・実績で比較。表形式で出力」と3要素を入れる', '「競合分析して。できるだけ詳しく」と量を増やす'],
+        correct: 2,
+        explanation: '前提（ITコンサル）・タスク（3社比較、比較軸の指定）・ルール（表形式で出力）の3要素を満たすことで、的確な出力が得られます。丁寧さや量の指定だけでは精度は上がりません。'
+      },
+      {
+        question: 'Claude の出力に対する適切な姿勢はどれですか？',
+        options: ['AIの出力は常に正確なので、そのまま使ってよい', '出力は「優秀な同僚の初稿」として、確認・修正・最終判断を行う', 'AIの出力は信用できないので使わない方がよい', '数字や固有名詞の確認は不要'],
+        correct: 1,
+        explanation: 'AI の出力は「優秀な同僚の初稿」です。そのまま使うのではなく、確認→修正→仕上げのプロセスを経て、自分の責任で最終成果物にします。'
+      },
+      {
+        question: 'ハルシネーション（でっち上げ）について正しいものはどれですか？',
+        options: ['Claude だけに発生する問題で、他の生成AI では起きない', '出典を求めれば必ず正確な情報が返ってくる', '数字・固有名詞・引用は特に注意が必要で、重要情報は自分で裏取りする', 'Web検索をONにすればハルシネーションは完全になくなる'],
+        correct: 2,
+        explanation: 'ハルシネーションはすべての生成AIに共通するリスクです。特に数字・固有名詞・引用元は確認が必要。Web検索ONで精度は上がりますが、重要情報は自分で照合する習慣が大切です。'
+      },
+      {
+        question: 'Project の主な目的として最も適切なものはどれですか？',
+        options: ['会話履歴を無限に保存する', '案件固有の背景・ルール・参照資料を保持し、毎回の前提説明を省略する', 'Claude の回答速度を上げる', 'チームメンバー全員の会話を閲覧する'],
+        correct: 1,
+        explanation: 'Project は案件固有の Instructions とナレッジベースを保持し、毎回同じ前提を伝え直す手間を省きます。Project 内の全会話で自動参照されるため、すぐ本題に入れます。'
+      },
+      {
+        question: 'Artifact について正しいものはどれですか？',
+        options: ['チャットの回答をコピーしたもの', '会話とは独立した成果物で、文書・図表・インタラクティブUIなどを生成できる', 'Artifact は画像生成専用の機能', 'Artifact は一度作ると修正できない'],
+        correct: 1,
+        explanation: 'Artifact は会話とは独立した成果物です。文書・表・図表・Webページ・ダッシュボードなどを生成でき、追加指示で修正するとバージョンが記録されます。'
+      },
+      {
+        question: 'Chat で壁打ちをするときのコツとして適切なものはどれですか？',
+        options: ['正解を1つだけ求める', '複数の切り口を出してもらい、気になるものを深掘りする', 'できるだけ短い質問にする', '壁打ちは Chat ではできない'],
+        correct: 1,
+        explanation: '壁打ちは「正解を求める」のではなく「考えを整理し、視野を広げる」使い方です。複数の切り口を出してもらい、「2番目を深掘りして」と会話を続けると効果的です。'
+      },
+      {
+        question: 'Cowork と Claude Code について、第1回の時点で正しい理解はどれですか？',
+        options: ['今すぐ全機能を使いこなす必要がある', 'Chat で十分なので、Cowork と Claude Code は不要', 'Chat をまず使いこなし、必要に応じて Cowork（後半）、Claude Code（第2回）へ進む', 'Cowork と Claude Code は同じ機能'],
+        correct: 2,
+        explanation: 'まずは Chat で壁打ち・下書き・要約をしっかり使いこなすことが大切です。ファイル作成が必要になったら Cowork、品質の固定が必要になったら Claude Code を学びましょう。'
+      },
       {
         question: 'Excel に入った売上データの傾向を把握したい場合、最も適切な Claude の使い方はどれですか？',
         options: [
@@ -1861,7 +1881,7 @@ const MODULES = [
         explanation: 'Research の強みは、複数の情報源を自動で横断調査し、要点を整理して出典付きで報告してくれる点です。ただし正確性の保証はなく、重要な情報は必ず一次情報に当たって確認する必要があります。'
       },
       {
-        question: 'Artifact で作った「触れる成果物」をクライアントに見せる際、必ず伝えるべきことは何ですか？',
+        question: 'Artifact で作った「プロトタイプ」をクライアントに見せる際、必ず伝えるべきことは何ですか？',
         options: [
           '使用したプログラミング言語の説明',
           '「これは認識合わせのための試作品です」という位置づけ',
@@ -1869,7 +1889,7 @@ const MODULES = [
           'Artifact の使い方の技術的な説明'
         ],
         correct: 1,
-        explanation: 'Artifact で作る「触れる成果物」は、提案やプロジェクトの論点を具体化するための「たたき台」です。クライアントが本番システムだと誤解しないよう、試作品であることを必ず伝えましょう。'
+        explanation: 'Artifact で作る「プロトタイプ」は、提案やプロジェクトの論点を具体化するための「たたき台」です。クライアントが本番システムだと誤解しないよう、試作品であることを必ず伝えましょう。'
       },
       {
         question: 'Chrome 拡張で Claude を使う際、注意すべきことは何ですか？',
@@ -1938,7 +1958,7 @@ const MODULES = [
         explanation: 'Research は出典付きで報告してくれますが、URLが無効なケースや情報が古いケースもあります。クライアントに提出する調査レポートでは、必ず一次情報に当たって数値や事実を確認してください。'
       },
       {
-        question: '次のうち、Artifact の「触れる成果物」として作るのに最も適しているのはどれですか？',
+        question: '次のうち、Artifact の「プロトタイプ」として作るのに最も適しているのはどれですか？',
         options: [
           '社内の人事管理システム',
           'クライアントとの認識合わせ用の IT 成熟度診断ツール',
@@ -1946,7 +1966,7 @@ const MODULES = [
           '個人情報を扱う顧客登録フォーム'
         ],
         correct: 1,
-        explanation: 'Artifact で作る「触れる成果物」は、論点を具体化するための試作品です。認識合わせ用の診断ツールは好例です。本番システムや個人情報を扱う仕組みには Artifact は適しません。'
+        explanation: 'Artifact で作る「プロトタイプ」は、論点を具体化するための試作品です。認識合わせ用の診断ツールは好例です。本番システムや個人情報を扱う仕組みには Artifact は適しません。'
       },
       {
         question: 'Word で長い報告書をクライアント提出用に整える場合、Claude in Word の活用として適切な順序はどれですか？',
@@ -1973,53 +1993,98 @@ const MODULES = [
     ],
 
     // ========================================
-    // 第2回 練習問題（8問）
+    // 練習問題
     // ========================================
     practices: [
       {
-        section: '2-2. Office アプリで Claude を使う — Excel / PowerPoint / Word',
+        section: '1-4. Chatで壁打ち・下書き・要約',
+        title: '会議メモから論点整理を作る',
+        task: '手元の会議メモ（なければ適当な長文メール）を Claude に添付し、「この内容を、決定事項・未決事項・宿題（担当者付き）に分けて整理してください」と依頼してみましょう。出力を確認し、足りない点があれば追加指示で修正してください。',
+        hint: '出力形式を具体的に指定すると精度が上がります。「箇条書きで」「表形式で」など試してみましょう。'
+      },
+      {
+        section: '1-4. Chatで壁打ち・下書き・要約',
+        title: '提案の切り口を壁打ちする',
+        task: '自分が関わっている（または想定する）案件について、「この案件に対する提案の切り口を5つ挙げて、それぞれのメリットとリスクを教えてください」と Claude に依頼してください。返ってきた5つのうち1つを選び、「この切り口をさらに深掘りして」と会話を続けてみましょう。'
+      },
+      {
+        section: '1-5. 良い指示の出し方',
+        title: 'プロンプト3要素で書き直す',
+        task: '以下の雑なプロンプトを、3要素（前提の共有・タスク定義・ルール指定）を満たす形に書き直してから Claude に投げてください。\n\n悪い例：「競合分析して」\n\nヒント：あなたは何業界の何の案件で、どの競合の何を比較したいのか、出力はどういう形式が欲しいのか。',
+        hint: '例：「あなたはITコンサルタントです。A社・B社・C社のクラウドERPサービスを、機能・価格・導入実績で比較してください。比較表（Markdown）で出力し、最後に推奨を1段落で述べてください。」'
+      },
+      {
+        section: '1-5. 良い指示の出し方',
+        title: '「Claudeへの指示」を設定する',
+        task: 'claude.ai の設定 > 一般 >「Claudeへの指示」に、自分の前提情報を登録してください。\n新しいチャットで「私についてどんな前提を持っていますか？」と聞いて、反映されていることを確認しましょう。',
+        hint: '例：「私は経営コンサルティングファームのシニアコンサルタントです。出力はです・ます調、結論先行で。」'
+      },
+      {
+        section: '1-6. 出力を疑う・直す・責任を持つ',
+        title: 'ハルシネーションを体験する',
+        task: '「2024年の日本のSaaS市場規模を、出典付きで教えてください」を Claude に投げて、返ってきた数字と出典を別途検索して照合してください。\n次に Web 検索 ON で同じ質問を投げて、結果の違いを比較しましょう。',
+        hint: '出典URLが実在するか、数字が正確かを確認してみてください。Web検索ONとOFFで精度がどう変わるかがポイントです。'
+      },
+      {
+        section: '1-7. Project / Artifact で成果物にする',
+        title: 'Projectを作成して壁打ちする',
+        task: 'claude.ai >「プロジェクト」から新規プロジェクトを作成してください。\nInstructions に案件概要を記入し、参照資料があればアップロード。\n「この案件の論点を3つ整理して」と試してください。\nProjectなしの通常チャットとの応答の違いを比較してみましょう。'
+      },
+      {
+        section: '1-7. Project / Artifact で成果物にする',
+        title: 'Artifactで成果物を作る',
+        task: 'Chat で壁打ちした内容や比較分析の結果を、Artifact として残してみましょう。\n\n1. 「この内容を比較表のArtifactにして」と依頼\n2. 「さらにMermaid図で全体像を可視化して」と追加指示\n3. バージョン履歴で前のバージョンに戻せることを確認'
+      },
+      {
+        section: '1-7. Project / Artifact で成果物にする',
+        title: 'インタラクティブなArtifactを作る',
+        task: '業務で使えるインタラクティブな成果物を Claude に作ってもらいましょう。\n\n例：「クライアントの業務改善の優先度を診断するツールを作って。5つの質問に答えると、改善領域の優先度がチャートで表示される」\n\nArtifact内でクリック・入力ができることを確認してください。',
+        hint: '診断ツール、シミュレーター、簡易ダッシュボード、画面モックなど。「提案の論点を触れる形にしたい」と伝えてみましょう。'
+      },
+      {
+        section: '1-9. Office アプリで Claude を使う — Excel / PowerPoint / Word',
         title: 'Excel データの傾向を読み取る',
         task: '手元にある Excel データ（売上・顧客・アンケート等）を開き、Claude in Excel で以下を依頼してみましょう。\n\n1. 「このデータから読み取れる傾向を3つ挙げて」\n2. 返ってきた示唆の中から1つ選び、「この点をさらに深掘りして」と追加指示\n3. 最後に「経営会議で報告するとしたら、どんなグラフが適切か」と聞く',
         hint: 'データがない場合は、サンプルの売上データ（3ヶ月分・5商品程度）を自分で作ってから試しましょう。'
       },
       {
-        section: '2-2. Office アプリで Claude を使う — Excel / PowerPoint / Word',
+        section: '1-9. Office アプリで Claude を使う — Excel / PowerPoint / Word',
         title: 'PowerPoint のスライド構成を作る',
         task: '自分が関わっている（または想定する）案件について、Claude in PowerPoint で提案書の構成を依頼してください。\n\n1. 「この案件の提案書を8〜10枚構成で作って。各スライドのタイトルとキーメッセージを提案して」\n2. 構成が出たら、「3枚目のスライドを役員向けの表現に書き直して」と追加指示\n3. 「全体のストーリーラインを1文で表現して」とまとめを依頼',
         hint: '案件の背景（業界・課題・提案の方向性）を最初に伝えると、精度の高い構成が返ります。'
       },
       {
-        section: '2-3. Research で調査する',
+        section: '1-10. Research で調査する',
         title: '競合調査レポートを作成する',
         task: 'Research を使って、以下の手順で競合調査を行ってください。\n\n1. 自分が関わる業界の競合3社を選ぶ\n2. 「○○業界のA社・B社・C社について、主力サービス・価格帯・強みを調査して、比較表にまとめてください。出典も明記してください」と依頼\n3. 返ってきた比較表の出典URLを実際にクリックして、情報が正確かを確認\n4. 「この調査結果から、当社にとっての機会とリスクを整理して」と示唆を依頼',
         hint: '出典URLが無効だった場合や数値が不正確だった場合は、どこが間違っていたかをメモしておきましょう。Research の限界を理解することも重要です。'
       },
       {
-        section: '2-4. Artifact で「触れる成果物」を作る',
+        section: '1-11. Artifact で「プロトタイプ」を作る',
         title: 'IT 成熟度診断ツールを作る',
         task: 'Artifact を使って、クライアント向けの簡易診断ツールを作ってみましょう。\n\n1. 「クライアント企業のIT活用成熟度を5段階で診断するツールを作ってください。質問は5問で、回答に応じて総合スコアとアドバイスを表示してください」と依頼\n2. 生成された Artifact を実際に操作して回答してみる\n3. 「質問を1つ追加して」「結果にレーダーチャートを追加して」と修正指示を出す\n4. 完成したら HTML をダウンロードして、ブラウザで開けることを確認',
         hint: '「これは認識合わせのための試作品です」と伝えた上で、クライアントに見せることを想像して作りましょう。'
       },
       {
-        section: '2-4. Artifact で「触れる成果物」を作る',
+        section: '1-11. Artifact で「プロトタイプ」を作る',
         title: 'ROI シミュレーターを作る',
         task: 'Artifact を使って、提案の効果を試算するシミュレーターを作ってみましょう。\n\n1. 「DX推進による業務効率化のROIシミュレーターを作ってください。入力項目は、現在の作業時間、削減率、人件費単価の3つ。年間のコスト削減額とROIを自動計算して表示してください」と依頼\n2. 数値を変えて結果が連動することを確認\n3. 「入力値の妥当性チェック（マイナス値の排除等）を追加して」と品質を上げる\n4. 「結果をグラフでも表示して」とビジュアルを強化',
         hint: 'シミュレーターの計算ロジックが正しいか、自分で計算して照合してみましょう。'
       },
       {
-        section: '2-5. Chrome でブラウザ作業を支援する',
+        section: '1-12. Chrome でブラウザ作業を支援する',
         title: 'Web 調査を Chrome 拡張で効率化する',
         task: 'Chrome 拡張を使って、Web 調査を効率化してみましょう。\n\n1. 調査したいテーマ（業界動向・競合サービス等）のWebページを3つ開く\n2. 各ページで Claude に「このページの要点を3つにまとめて」と依頼\n3. 3つの要約を比較し、「この3つの情報源から、共通する傾向を整理して」と依頼',
         hint: '機密情報が含まれないページ（公開されているIR資料、プレスリリース等）で試しましょう。'
       },
       {
-        section: '2-6. Cowork でファイル作業を任せる',
+        section: '1-13. Cowork でファイル作業を任せる',
         title: 'Cowork で複数ファイルを整理する',
         task: 'Cowork を使って、複数ファイルの整理を委任してみましょう。\n\n1. 議事録・メモ・メールなどのファイルを3〜5件用意する（コピーを作る）\n2. Cowork にアップロードし、「これらの資料から、案件ごとの決定事項・未決事項・宿題を整理して」と依頼\n3. 出力を確認し、「表形式にまとめ直して」「宿題に期限を追加して」と追加指示',
         hint: '必ず元ファイルのコピーを使ってください。Cowork はファイルを直接変更する可能性があります。'
       },
       {
-        section: '2-7. 定型業務を Scheduled tasks 化する',
+        section: '1-14. 定型業務を Scheduled tasks 化する',
         title: '自分の定型業務を洗い出す',
         task: 'Scheduled tasks の設定に入る前に、まず自動化の候補を洗い出してみましょう。\n\n1. 自分の1週間のルーティンを振り返り、「毎回ほぼ同じ手順でやっている作業」を5つ書き出す\n2. その中から、Claude に任せられそうなもの（情報収集・整理・下書き系）を2つ選ぶ\n3. 選んだ2つについて、「毎週○曜日に、○○を○○の形式でまとめて」というスケジュール指示文を書く\n4. 余力があれば、Cowork で実際に Scheduled task を1つ設定してみる',
         hint: '最初は頻度の高い小さな作業から始めましょう。「毎朝の業界ニュース要約」などが手軽な第一歩です。'
@@ -2027,10 +2092,17 @@ const MODULES = [
     ],
 
     // ========================================
-    // 第2回 自習リソース
+    // リンク集・FAQ
     // ========================================
     selfStudyResources: {
       links: [
+        { title: 'Claude.ai（公式サイト）', url: 'https://claude.ai/', desc: 'Claude のチャット・Cowork はここからアクセス', category: '🚀 はじめる' },
+        { title: 'Claude デスクトップアプリ ダウンロード', url: 'https://claude.com/download', desc: 'Mac / Windows 対応', category: '🚀 はじめる' },
+        { title: 'Claude プロンプトライブラリ', url: 'https://docs.anthropic.com/en/prompt-library/library', desc: '用途別のプロンプト例を多数掲載', category: '📖 プロンプトを学ぶ' },
+        { title: 'Claude Tips & Tricks（YouTube）', url: 'https://www.youtube.com/playlist?list=PLf2m23nhTg5VEz8sS0ORurJk3lBL7nB0V', desc: 'Anthropic 公式の使い方動画', category: '📖 プロンプトを学ぶ' },
+        { title: 'Anthropic Cookbook', url: 'https://github.com/anthropics/anthropic-cookbook', desc: '実践的なユースケースとコード例', category: '📖 プロンプトを学ぶ' },
+        { title: 'Anthropic 公式ドキュメント', url: 'https://docs.anthropic.com/', desc: 'Claude の技術仕様・機能一覧・ベストプラクティス', category: '📚 公式リファレンス' },
+        { title: 'Claude サポートサイト', url: 'https://support.claude.com/', desc: 'Project・Artifact・各機能の使い方ガイド', category: '📚 公式リファレンス' },
         { title: 'Claude in Office（Anthropic 公式）', url: 'https://www.anthropic.com/claude-in-office', desc: 'Excel / PowerPoint / Word との連携ガイド', category: '💼 Officeで使う' },
         { title: 'Cowork 公式ドキュメント', url: 'https://docs.anthropic.com/en/docs/cowork', desc: 'Cowork の機能と使い方ガイド', category: '💼 Officeで使う' },
         { title: 'Claude in Chrome 拡張', url: 'https://chromewebstore.google.com/detail/claude/danfoobapigkipfachmebkhbhegkahpc', desc: 'Chrome 拡張のインストールページ', category: '🌐 Chromeで使う' },
@@ -2039,9 +2111,16 @@ const MODULES = [
         { title: 'Scheduled tasks ガイド', url: 'https://support.anthropic.com/en/articles/11053627-what-are-scheduled-tasks', desc: 'Scheduled tasks の設定方法', category: '📚 公式リファレンス' }
       ],
       faq: [
+        { q: 'Claude ではまず何から使えばよいですか？', a: 'まずは Chat から始めましょう。壁打ち（論点整理）、下書き（メール・報告書の素案）、要約（長い文書を要点に絞る）の3パターンが最も使用頻度が高いです。慣れてきたら Project で案件の背景を登録し、Artifact で成果物を残すとさらに効率が上がります。', category: '💡 Claudeの基本' },
+        { q: 'Chat / Cowork / Claude Code はどう使い分けますか？', a: '「対話で済むか？」→ Chat。「ファイルを直接作ってほしいか？」→ Cowork。「毎回同じ品質で繰り返したいか？」→ Claude Code。迷ったら Chat からで問題ありません。', category: '💡 Claudeの基本' },
+        { q: 'Project とは何ですか？', a: 'Project は案件固有の背景情報・ルール・参照資料を Claude に覚えさせる仕組みです。Instructions（指示文）とナレッジベース（参照資料）を設定すると、その Project 内の全会話で自動参照されます。毎回同じ前提を説明し直す手間がなくなります。', category: '🖥️ Chat・Projects' },
+        { q: 'Artifact とは何ですか？', a: 'Artifact は会話とは独立した成果物です。文書・表・図表・Webページ・ダッシュボードなどを生成でき、追加指示で修正するとバージョンが記録されます。チャットの回答は流れていきますが、Artifact は残ります。「これを Artifact にして」と依頼するか、Claude が自動的に生成します。', category: '🖥️ Chat・Projects' },
+        { q: 'Cowork や Claude Code は最初から使うべきですか？', a: 'いいえ。まずは Chat で壁打ち・下書き・要約を使いこなすことが最優先です。ファイルを直接作ってほしい場面が出てきたら Cowork（後半）、品質の再現性が必要になったら Claude Code（第2回）を学びましょう。', category: '💡 Claudeの基本' },
+        { q: 'Claude の出力をそのまま使ってよいですか？', a: 'そのまま提出することは推奨しません。Claude の出力は「優秀な同僚の初稿」です。特に数字・固有名詞・引用元は裏取りが必要です。確認→修正→仕上げのプロセスを経て、自分の責任で最終成果物にしてください。', category: '✍️ プロンプト・品質' },
+        { q: 'プロンプトの3要素は必ず全部入れるべきですか？', a: '必ずしも全部必要ではありません。簡単な質問なら不要ですが、業務で精度の高い出力が欲しいときは3要素（前提の共有・タスク定義・ルール指定）を意識すると品質が上がります。まず簡潔に指示して、返ってきた出力を見て追加指示するやり方も有効です。', category: '✍️ プロンプト・品質' },
         { q: 'Claude in Office では具体的に何ができますか？', a: 'Excel ではデータの傾向分析・集計観点の提案・グラフ化方針の相談・異常値の洗い出し、PowerPoint では構成案の作成・タイトル改善・ストーリーライン整理、Word では要約・文体統一・章立て見直し・クライアント向け表現変換ができます。Office 内で直接 Claude と対話する形で利用します。', category: '💼 Office・Chrome' },
         { q: 'Research と通常の Web 検索の違いは何ですか？', a: 'Research は複数の情報源を自動で横断調査し、要点を構造化して出典付きで報告してくれます。通常の Web 検索は自分でキーワードを考え、各サイトを読み、情報を取捨選択・整理する必要があります。ただし Research の結果も「初稿」なので、重要な数値や事実は必ず一次情報に当たって確認してください。', category: '💡 Claudeの基本' },
-        { q: 'Artifact で作る「触れる成果物」とは何ですか？', a: '診断ツール、シミュレーター、ダッシュボード、画面モック、業務フロー可視化など、ユーザーが実際に操作できる成果物のことです。Artifact が HTML/CSS/JavaScript を生成し、ブラウザ上でそのまま動作します。提案やプロジェクトの論点を具体化する「たたき台」として活用します。', category: '💡 Claudeの基本' },
+        { q: 'Artifact で作る「プロトタイプ」とは何ですか？', a: '診断ツール、シミュレーター、ダッシュボード、画面モック、業務フロー可視化など、ユーザーが実際に操作できる成果物のことです。Artifact が HTML/CSS/JavaScript を生成し、ブラウザ上でそのまま動作します。提案やプロジェクトの論点を具体化する「たたき台」として活用します。', category: '💡 Claudeの基本' },
         { q: 'プロトタイプをクライアントに見せる際の注意点は？', a: '必ず「これは認識合わせのための試作品です」と伝えてください。Artifact で作るものは本番システムではなく、論点を具体化するためのたたき台です。データの保存機能がないこと、セキュリティ対策が施されていないことなどを説明し、本番開発は別途必要であることを明確にしましょう。', category: '✍️ プロンプト・品質' },
         { q: 'Chrome 拡張を使う際の注意点は？', a: 'Chrome 拡張を使うと、表示中のページ内容が Claude に送信されます。クライアントの機密情報や個人情報が含まれるページ（社内システム、顧客管理画面等）では、送信してよい情報かどうかを判断してから使ってください。また、Project の自動参照やファイルアップロードは Chrome 拡張では使えません。', category: '💼 Office・Chrome' },
         { q: 'Cowork はどのような作業に向いていますか？', a: '複数資料の整理、Excel の加工、Word・PowerPoint の下書き、ファイル構成の確認、レポートの初稿作成など、ファイルを直接扱う作業に向いています。Chat が「対話で相談する」のに対し、Cowork は「作業を委任する」イメージです。作業用コピーを作ってから渡すことをお勧めします。', category: '📂 Cowork' },
@@ -2054,16 +2133,16 @@ const MODULES = [
   },
 
   // ============================================================
-  // 第3回：品質と再現性を上げる
+  // 第2回：品質と再現性を上げる
   // ============================================================
   {
-    id: 'session-3',
-    title: '第3回：品質と再現性を上げる',
-    shortTitle: '第3回',
+    id: 'session-2',
+    title: '第2回：品質と再現性を上げる',
+    shortTitle: '第2回',
     description: 'Claude活用を個人の便利技で終わらせず、チームで再現性高く使うための仕組みを作る',
-    target: '第2回 完了者',
+    target: '第1回 完了者',
     duration: '自分のペースで',
-    prereq: '第2回 完了',
+    prereq: '第1回 完了',
     icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
     objectives: [
       'Skills で業務手順を標準化し、チームで再利用できる',
@@ -2082,10 +2161,10 @@ const MODULES = [
     sections: [
 
       // ========================================
-      // 3-1: Skillsで手順を標準化する
+      // 2-1: Skillsで手順を標準化する
       // ========================================
       {
-        title: '3-1. Skills で手順を標準化する',
+        title: '2-1. Skills で手順を標準化する',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -2256,10 +2335,10 @@ const MODULES = [
       },
 
       // ========================================
-      // 3-2: MCP / Connectorsで社内ナレッジにつなぐ
+      // 2-2: MCP / Connectorsで社内ナレッジにつなぐ
       // ========================================
       {
-        title: '3-2. MCP / Connectors で社内ナレッジにつなぐ',
+        title: '2-2. MCP / Connectors で社内ナレッジにつなぐ',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -2360,14 +2439,14 @@ const MODULES = [
       },
 
       // ========================================
-      // 3-3: Claude Codeで高度な作業を任せる
+      // 2-3: Claude Codeで高度な作業を任せる
       // ========================================
       {
-        title: '3-3. Claude Code で高度な作業を任せる',
+        title: '2-3. Claude Code で高度な作業を任せる',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
-          <p>第2回で Artifact（簡易な触れる成果物）と Cowork（ファイル作業の委任）を学びました。Claude Code は、これらよりさらに<strong>高度な作業 — 複数ファイルの処理、データ分析ツール、再利用可能なプロトタイプ</strong>を扱える環境です。</p>
+          <p>第1回で Artifact（簡易なプロトタイプ）と Cowork（ファイル作業の委任）を学びました。Claude Code は、これらよりさらに<strong>高度な作業 — 複数ファイルの処理、データ分析ツール、再利用可能なプロトタイプ</strong>を扱える環境です。</p>
 
           <h3>成果物作成の3つのレベル</h3>
           <p>Claude で成果物を作る手段は、複雑さに応じて使い分けます。</p>
@@ -2430,7 +2509,7 @@ const MODULES = [
           </div>
 
           <h3>Cowork と Claude Code の使い分け（再確認）</h3>
-          <p>第1回 1-4 で扱った使い分けを、ここで作業に入る前にもう一度押さえておきます。</p>
+          <p>第1回 1-3 で扱った使い分けを、ここで作業に入る前にもう一度押さえておきます。</p>
 
           <div class="visual-mapping">
             <div class="mapping-header">
@@ -2526,8 +2605,36 @@ const MODULES = [
             <p><strong>📚 TIPS は後からでも参照できます</strong>：以下の TIPS は、自習モードの「TIPS集」ページにカテゴリ別・レベル別でまとめられています。研修中に全部覚える必要はなく、業務で必要になったときに見返せば十分です。</p>
           </div>
 
-          <h4>1. 利用場所を選ぶ — IDE と CLI</h4>
-          <p>Claude Code は CLI（ターミナル）でも IDE（Cursor / VS Code / JetBrains 等）でも使えます。ファイルを見ながら作業を進めたい場合は IDE が便利で、社内には <strong>Cursor の活用ノウハウもあります</strong>（必須ではありません）。CLI はエンジニアや慣れた人向けの選択肢です。<strong>初心者はまず Claude Desktop の Chat / Cowork で十分</strong>な場面が多いので、Claude Code が必要かを先に判断してから利用場所を選びましょう。</p>
+          <h4>1. 利用場所を選ぶ — Desktop / CLI / IDE / VS Code 拡張</h4>
+          <p>Claude Code はいろんなタッチポイントから使えます。<strong>自分の作業スタイルに合わせて選びましょう</strong>。</p>
+          <div class="visual-mapping">
+            <div class="mapping-header">
+              <span class="mapping-from">状況</span>
+              <span class="mapping-arrow"></span>
+              <span class="mapping-to">推奨 — 理由</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">エディタで成果物を見ながら／ターミナル苦手／並列作業しない</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">VS Code 拡張（または Cursor / JetBrains 拡張） — エディタ画面の中で作業が完結する</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">エディタで成果物を見ながら／ターミナル可／並列作業したい</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">CLI — 複数の Claude Code を同時に起動して、並行で進められる</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">エディタは使わず、ファイル中心で使う</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">Desktop — 軽快で初心者向け。Cowork との切り替えもスムーズ</span>
+            </div>
+            <div class="mapping-row">
+              <span class="mapping-from">Web 版（claude.com の Code）</span>
+              <span class="mapping-arrow">→</span>
+              <span class="mapping-to">（基本スルーで OK） — GitHub を重く使う人向けの位置づけ</span>
+            </div>
+          </div>
+          <p><strong>最初は Desktop から始めると迷わない</strong>です。CLI や IDE は並列作業や自動化を求めるようになってから検討で十分です。</p>
 
           <h4>2. 作業前に現状調査を依頼する</h4>
           <p>いきなり実装させず、まずリポジトリ構造や対象ファイルを確認させます。どのファイルを変更するか、どこに影響があるかを説明させてから着手することで、既存構造を壊しにくくなります。</p>
@@ -2540,7 +2647,7 @@ const MODULES = [
           <p>「全部直して」ではなく、対象ファイルや対象範囲を明示します。既存機能や他の領域への影響を最小化し、小さく変更して都度確認する流れにします。</p>
           <div class="example-box">
             <strong>📌 指示例</strong><br>
-            「今回は js/modules.js の MODULES[2] のみを対象にしてください。第1回・第2回、表示ロジック、CSS には触らないでください。」
+            「今回は js/modules.js の MODULES[1] のみを対象にしてください。第2回のみ対象で、第1回・表示ロジック・CSS には触らないでください。」
           </div>
 
           <h4>4. 実装前に計画を出させる</h4>
@@ -2597,6 +2704,62 @@ const MODULES = [
               <span class="mapping-arrow">→</span>
               <span class="mapping-to">Open in Browser — HTML やプロトタイプをブラウザで確認しやすくする</span>
             </div>
+          </div>
+
+          <h3>知っておくと効く小ワザ</h3>
+          <p>日々の Claude Code 作業で、覚えておくと効率が上がる小さな工夫。1つひとつは些細ですが、毎日繰り返す摩擦を減らす効果が大きいです。</p>
+
+          <h4>キーボードショートカット（チャット欄）</h4>
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>キー</th>
+                <th>効果</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ESC 2 回</strong></td>
+                <td>直前の指示を巻き戻して書き直せる。誤字や条件抜けに気づいた直後に有効</td>
+              </tr>
+              <tr>
+                <td><strong>↑ キー</strong></td>
+                <td>過去の指示を呼び出して再利用できる（連打でさらに遡る）</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h4>Mac × Finder 連携</h4>
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>操作</th>
+                <th>効果</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Opt + ⌘ + C（Finder）</strong></td>
+                <td>選択ファイルの絶対パスをコピー。チャット欄に貼ればワークスペース外のファイルも渡せる</td>
+              </tr>
+              <tr>
+                <td><strong>⌘ + Shift + R（VS Code / Cursor）</strong></td>
+                <td>エディタで選択中のファイルを Finder で即開く。Slack/メール添付・Figma 連携がスムーズ</td>
+              </tr>
+              <tr>
+                <td><strong>⌘ + Shift + .（Finder）</strong></td>
+                <td>隠しファイル表示。<code>.claude/</code> の中身（commands、settings.json）を覗いて自分の設定を見直す</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="example-box">
+            <strong>📌 活用例：契約書レビューを 3 分で回す</strong><br>
+            ショートカットを組み合わせると、Finder 上のファイルを Claude Code に渡して結果を即受け取る流れが速くなります。<br><br>
+            1. 先方からの契約書を Finder で選択 → <code>Opt + ⌘ + C</code><br>
+            2. Claude Code のチャット欄に貼り付けて「この契約書をレビューして」<br>
+            3. 修正提案を確認後「修正案を新ファイルとして保存して」<br>
+            4. 出力ファイルを <code>⌘ + Shift + R</code> で Finder で開いて先方へ送信
           </div>
 
           <h3>慣れたら使う TIPS</h3>
@@ -2677,6 +2840,29 @@ const MODULES = [
             </div>
           </div>
 
+          <h3>補助TIPS：モバイルからの指示（remote-control / Dispatch）</h3>
+          <p>スマホアプリから Claude Code や Cowork にタスクを送れる仕組みです。</p>
+          <div class="visual-grid cols-2">
+            <div class="visual-grid-item">
+              <div class="grid-icon">📱</div>
+              <div class="grid-title">移動中にタスク投入</div>
+              <div class="grid-desc">移動中にタスクを投げて、デスクに戻ってから成果物を確認する流れが組めます。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">✏️</div>
+              <div class="grid-title">どこからでも依頼できる</div>
+              <div class="grid-desc">「ちょっとした調べ物・下書き依頼」をどこからでも投入できます。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">📅</div>
+              <div class="grid-title">社内利用申請の進捗に合わせて</div>
+              <div class="grid-desc">詳細運用は社内のスマホアプリ利用申請の進捗に合わせて案内します。</div>
+            </div>
+          </div>
+          <div class="info-box">
+            <p><strong>💡 紹介程度の認識で OK</strong>（必須機能ではありません）。本格的に使う場面が出てきたら、別途使い方を共有します。</p>
+          </div>
+
           <h3>うまく動かない時の戻り道</h3>
           <p>Claude Code が意図と違う動きをする・出力品質が落ちる・無限に修正を続ける、といった場面では、<strong>「もっと強い指示を出す」より「準備に戻る」</strong>のが効きます。</p>
 
@@ -2718,10 +2904,10 @@ const MODULES = [
       },
 
       // ========================================
-      // 3-4: CLAUDE.md / Hooks / Subagentsで品質を固定する
+      // 2-4: CLAUDE.md / Hooks / Subagentsで品質を固定する
       // ========================================
       {
-        title: '3-4. CLAUDE.md / Hooks / Subagents で品質を固定する',
+        title: '2-4. CLAUDE.md / Hooks / Subagents で品質を固定する',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -2840,7 +3026,7 @@ const MODULES = [
           </div>
 
           <h3>快適化TIPSをチームで再現可能にする</h3>
-          <p>3-3 で紹介した個人レベルの TIPS は、CLAUDE.md やテンプレートを通じて<strong>チームで再現できる状態にする</strong>ことで、組織としての強みになります。</p>
+          <p>2-3 で紹介した個人レベルの TIPS は、CLAUDE.md やテンプレートを通じて<strong>チームで再現できる状態にする</strong>ことで、組織としての強みになります。</p>
 
           <div class="visual-grid cols-2">
             <div class="visual-grid-item">
@@ -2878,10 +3064,10 @@ const MODULES = [
       },
 
       // ========================================
-      // 3-5: チーム展開する
+      // 2-5: チーム展開する
       // ========================================
       {
-        title: '3-5. チーム展開する',
+        title: '2-5. チーム展開する',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -3030,7 +3216,7 @@ const MODULES = [
     ],
 
     // ========================================
-    // 第3回 クイズ（11問）
+    // 第2回 クイズ（11問）
     // ========================================
     quiz: [
       {
@@ -3157,29 +3343,29 @@ const MODULES = [
     ],
 
     // ========================================
-    // 第3回 練習問題（6問）
+    // 第2回 練習問題（6問）
     // ========================================
     practices: [
       {
-        section: '3-1. Skills で手順を標準化する',
+        section: '2-1. Skills で手順を標準化する',
         title: '議事録作成 Skill を設計する',
         task: '自分のチームで使える「議事録作成 Skill」を設計してください。\n\n1. 議事録に必ず含めるべき項目を洗い出す（日時、参加者、議題、決定事項、宿題、次回予定等）\n2. 「この Skill を使って議事録を作成して」と Claude に依頼した際に期待する出力形式を定義する\n3. 守るべきルール（文体、粒度、順序等）を書き出す\n4. 実際に Claude で「この手順に従って、以下の会議メモから議事録を作ってください」と試す',
         hint: 'まず実際の会議メモ（簡単なものでOK）を用意し、Skill の定義と一緒に Claude に渡して試しましょう。出力を見て「ここが足りない」と感じた部分を Skill に追記する、というサイクルで改善します。'
       },
       {
-        section: '3-1. Skills で手順を標準化する',
+        section: '2-1. Skills で手順を標準化する',
         title: '提案書レビュー手順を標準化する',
         task: 'チーム共通の「提案書レビュー Skill」を設計してください。\n\n1. 提案書のレビュー観点を5つ以上洗い出す（構成の論理性、数値の根拠、読み手への配慮、文体の統一、ページ数の適切さ等）\n2. 各観点のチェック基準を具体的に定義する（例：「各スライドに1つのキーメッセージがあるか」）\n3. Claude に「この提案書をレビューして」と依頼する際のプロンプトテンプレートを作成する\n4. 実際の提案書（または架空のもの）でテストする',
         hint: '「レビューして」だけでは漠然とした指摘しか返りません。チェック観点を具体的に定義し、各観点ごとに◎○△×の評価を出させると、実用的なレビュー結果が得られます。'
       },
       {
-        section: '3-3. Claude Code で高度な作業を任せる',
+        section: '2-3. Claude Code で高度な作業を任せる',
         title: 'Claude Code への安全な修正指示を作成する',
         task: '以下のシナリオで、Claude Code に出す修正指示文を作成してください。\n\nシナリオ：チーム内で使っている月次レポートのHTMLテンプレートがある。今月から集計項目を2つ追加したい（「新規顧客数」「解約率」）。既存のレイアウトは壊したくない。\n\n1. 変更対象を明確にした指示文を書く\n2. 禁止事項（触ってほしくない部分）を明記する\n3. 確認条件（何をもって完了とするか）を定義する\n4. 段階的に進める手順（まずデータ項目追加 → 表示確認 → レイアウト調整）を書く',
         hint: '「月次レポートを改善して」ではなく「○○ファイルの△△セクションに□□を追加して。既存の◇◇は変更しないで」のように、範囲・禁止事項・完了条件を具体的に書くのがポイントです。'
       },
       {
-        section: '3-3. Claude Code で高度な作業を任せる',
+        section: '2-3. Claude Code で高度な作業を任せる',
         title: 'Claude Code 用の安全な修正指示テンプレートを作る',
         task: '<strong>目的</strong>：チームで再利用できる「Claude Code への安全な修正指示テンプレート」を作成し、誰が使っても同じ品質で作業を依頼できる状態にする。<br><br>' +
           '<strong>想定シーン</strong>：自分が関わるプロジェクト（社内ツール、Webサイト、教材アプリなど）で、Claude Code に修正や追加機能の実装を依頼する場面。<br><br>' +
@@ -3193,19 +3379,19 @@ const MODULES = [
         hint: '最初から完璧を目指す必要はありません。直近で行った1件の依頼を「型」に当てはめて書き直してみると、自分の指示のどこが曖昧だったかが見えてきます。'
       },
       {
-        section: '3-4. CLAUDE.md / Hooks / Subagents で品質を固定する',
+        section: '2-4. CLAUDE.md / Hooks / Subagents で品質を固定する',
         title: 'チーム品質チェックリストを作成する',
         task: 'Claude が生成した成果物の品質をチェックするためのリストを作成してください。\n\n1. 成果物の種類（文書、表、スライド、ツール）ごとにチェック項目を5つ以上定義する\n2. 各チェック項目に「確認方法」を具体的に書く（例：「数値は元データと照合する」「リンクは全てクリックして確認する」）\n3. 「誰が、いつ、どのタイミングでチェックするか」の運用ルールを決める\n4. このチェックリストを CLAUDE.md に組み込む形で整理する',
         hint: 'チェック項目は「何を確認するか」だけでなく「どうやって確認するか」まで書くと実用的です。また、全項目を毎回チェックするのは非現実的なので、重要度に応じた優先順位をつけましょう。'
       },
       {
-        section: '3-5. チーム展開する',
+        section: '2-5. チーム展開する',
         title: 'Project / Skills / Connectors の運用ルールを作成する',
         task: 'チームで Claude を活用する際の運用ルールを設計してください。\n\n1. チーム共通 Project に登録すべき情報（案件概要、業界知識、文体ルール等）を洗い出す\n2. チームで共有すべき Skills を3つ選び、管理方法（誰が更新権限を持つか、更新頻度等）を決める\n3. Connectors で接続すべき情報源と、接続してはいけない情報源のガイドラインを作成する\n4. 新メンバーが入った際のオンボーディング手順を書く',
         hint: 'ルールは「厳しすぎて誰も守れない」よりも「最低限これだけは守る」で始めましょう。運用しながら改善する前提で、まず小さく始めてフィードバックを集めることが重要です。'
       },
       {
-        section: '3-5. チーム展開する',
+        section: '2-5. チーム展開する',
         title: '情報管理ルールを策定する',
         task: 'チームで Claude を使う際の情報管理ルールを策定してください。\n\n1. Claude に渡してよい情報・渡してはいけない情報の基準を定義する\n2. 成果物の保存先と共有範囲を決める\n3. レビュー体制（誰が確認し、誰が承認するか）を明文化する\n4. インシデント発生時の対応フロー（誤って機密情報を渡してしまった場合等）を想定する\n5. これらをチーム内で共有するための1枚サマリーを作成する',
         hint: '完璧なルールを最初から作る必要はありません。「これだけは絶対ダメ」（機密情報の直接入力等）と「推奨事項」（レビュー後に提出等）を分けて整理すると、チームが守りやすいルールになります。'
@@ -3213,7 +3399,7 @@ const MODULES = [
     ],
 
     // ========================================
-    // 第3回 自習リソース
+    // 第2回 自習リソース
     // ========================================
     selfStudyResources: {
       links: [
@@ -3255,14 +3441,10 @@ const MODULES = [
 // 全部覚えるものではなく、必要な時に参照するもの
 // ============================================================
 const TIPS_CATEGORIES = [
-  'まず試す',
-  'Claude Code',
-  'Cowork',
-  '成果物作成',
-  'Research',
-  'Skills / 再現性',
-  'チーム展開',
-  '上級・補助'
+  '🌐 共通',
+  '💬 Chat 個別',
+  '📂 Cowork 個別',
+  '⚡ Claude Code 個別'
 ];
 
 const TIPS_LEVELS = [
@@ -3275,7 +3457,7 @@ const TIPS = [
   // ---- まず試す ----
   {
     id: 'tip-001',
-    category: 'まず試す',
+    category: '⚡ Claude Code 個別',
     level: 'basic',
     title: '実装前に現状調査を依頼する',
     summary: 'いきなり実装させず、まず構造・変更対象・影響範囲・確認方法を確認させる。',
@@ -3287,12 +3469,12 @@ const TIPS = [
     ],
     example: 'まず実装はせず、現在の構造を確認してください。変更対象ファイル、影響範囲、実装方針、確認方法を整理してから報告してください。',
     caution: '全体を把握しないまま変更すると、意図しないファイルに影響が及ぶことがある。',
-    relatedSession: '第3回',
-    relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
   },
   {
     id: 'tip-002',
-    category: 'まず試す',
+    category: '⚡ Claude Code 個別',
     level: 'basic',
     title: '変更対象ファイルを限定する',
     summary: '「全部直して」ではなく、対象ファイルや対象範囲を明示する。',
@@ -3302,14 +3484,14 @@ const TIPS = [
       '触ってほしくないファイルを禁止事項として明示する',
       '関連ファイルへの軽微修正が必要な場合は事前に報告させる'
     ],
-    example: '今回は js/modules.js の MODULES[2] のみを対象にしてください。第1回・第2回、表示ロジック、CSS には触らないでください。',
+    example: '今回は js/modules.js の MODULES[1] のみを対象にしてください。第2回のみ対象で、第1回・表示ロジック・CSS には触らないでください。',
     caution: '範囲を絞るほど安全だが、依存ファイルがある場合は報告ルールも併記する。',
-    relatedSession: '第3回',
-    relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
   },
   {
     id: 'tip-003',
-    category: 'まず試す',
+    category: '⚡ Claude Code 個別',
     level: 'basic',
     title: '実装後に確認結果を報告させる',
     summary: '実装して終わりにせず、確認画面・コンソールエラー・変更ファイル・残課題まで報告させる。',
@@ -3321,14 +3503,14 @@ const TIPS = [
     ],
     example: '実装後、変更ファイル、変更内容、確認した画面、コンソールエラーの有無、残課題を報告してください。',
     caution: '確認条件を先に指定しないと、「動いた／動いてない」だけの曖昧な報告になりがち。',
-    relatedSession: '第3回',
-    relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
   },
 
   // ---- Claude Code ----
   {
     id: 'tip-004',
-    category: 'Claude Code',
+    category: '⚡ Claude Code 個別',
     level: 'basic',
     title: 'IDE で Claude Code を使う',
     summary: 'Claude Code は CLI だけでなく IDE でも使える。複数ファイル編集やアプリ改修にはファイルを見ながら作業できる IDE が便利。社内には Cursor の活用ノウハウもあるが、Cursor は全員必須ではない。',
@@ -3341,12 +3523,12 @@ const TIPS = [
       '（補足）CLI はターミナルから使える、エンジニアや慣れた人向けの選択肢'
     ],
     caution: 'IDE 上で開いていても、対象範囲は明示する。「見えている＝編集してよい」ではない。Cursor は全員必須ではなく、IDE を使わなくても Claude Code は CLI で使える。',
-    relatedSession: '第3回',
-    relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
   },
   {
     id: 'tip-005',
-    category: 'Claude Code',
+    category: '⚡ Claude Code 個別',
     level: 'basic',
     title: '作業は「計画 → 実装 → 確認」で頼む',
     summary: 'まず計画、次に小さく実装、最後に確認結果を報告させる。',
@@ -3358,12 +3540,12 @@ const TIPS = [
     ],
     example: 'まず実装計画を出してください。問題なければ、小さな単位で実装し、最後に確認結果を報告してください。',
     caution: '一気に大改修を頼むと、意図しない変更や手戻りが増える。',
-    relatedSession: '第3回',
-    relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
   },
   {
     id: 'tip-006',
-    category: 'Claude Code',
+    category: '⚡ Claude Code 個別',
     level: 'intermediate',
     title: 'うまく動かない時は「準備」に戻る',
     summary: '会話が長くなった・出力がズレた時は、強い指示より文脈整理・作業分割・対象限定・現状調査に戻る。',
@@ -3375,14 +3557,14 @@ const TIPS = [
       '「いまどうなっているか」を Claude に説明させ認識のズレを揃える'
     ],
     caution: '無理に続けるより、フォルダ・目的・成果物・禁止事項・変更対象の準備5点に戻るほうが早い。',
-    relatedSession: '第3回',
-    relatedSections: [{ m: 2, s: 2, label: '第3回 3-3. Claude Code で高度な作業を任せる' }]
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
   },
 
   // ---- Cowork ----
   {
     id: 'tip-007',
-    category: 'Cowork',
+    category: '📂 Cowork 個別',
     level: 'basic',
     title: 'Cowork は作業コピーで使う',
     summary: '元ファイルを直接触らせず、作業用フォルダやコピーを使う。',
@@ -3393,12 +3575,12 @@ const TIPS = [
       '結果を確認してから元ファイルに反映する'
     ],
     caution: '重要ファイル・顧客資料・契約書・機密資料は特にバックアップを取る。',
-    relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 5, label: '第2回 2-6. Cowork でファイル作業を任せる' }]
+    relatedSession: '第1回',
+    relatedSections: [{ m: 0, s: 12, label: '第1回 1-13. Cowork でファイル作業を任せる' }]
   },
   {
     id: 'tip-008',
-    category: 'Cowork',
+    category: '📂 Cowork 個別',
     level: 'basic',
     title: 'Cowork の最初の30分で前提を整える',
     summary: '目的・成果物・入力ファイル・禁止事項・出力形式・確認方法を最初に伝える。',
@@ -3409,16 +3591,16 @@ const TIPS = [
       '出力形式と確認方法を先に決める'
     ],
     caution: '前提が曖昧だと、見た目は整っていても使いにくい成果物になる。',
-    relatedSession: '第2回',
+    relatedSession: '第1回',
     relatedSections: [
-      { m: 1, s: 5, label: '第2回 2-6. Cowork でファイル作業を任せる' }
+      { m: 0, s: 12, label: '第1回 1-13. Cowork でファイル作業を任せる' }
     ]
   },
 
   // ---- 成果物作成 ----
   {
     id: 'tip-009',
-    category: '成果物作成',
+    category: '💬 Chat 個別',
     level: 'basic',
     title: 'スライドはいきなり完成形を作らせない',
     summary: '構成 → 1枚ごとのメッセージ → 図表案 → 文言 → デザイン の順で段階生成する。',
@@ -3429,12 +3611,12 @@ const TIPS = [
       '図表案・本文を作らせ、最後にレビュー観点で点検させる'
     ],
     caution: '一気に PPT 化すると、見た目は整っていても論点が弱い資料になる。',
-    relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 1, label: '第2回 2-2. Office アプリで Claude を使う — Excel / PowerPoint / Word' }]
+    relatedSession: '第1回',
+    relatedSections: [{ m: 0, s: 8, label: '第1回 1-9. Office アプリで Claude を使う — Excel / PowerPoint / Word' }]
   },
   {
     id: 'tip-010',
-    category: '成果物作成',
+    category: '💬 Chat 個別',
     level: 'intermediate',
     title: '提案書は「素材抽出」から始める',
     summary: '商談メモや議事録から、課題・要望・意思決定基準・競合・予算・スケジュールを抽出してから提案ストーリーを作る。',
@@ -3445,14 +3627,14 @@ const TIPS = [
       '次に提案ストーリーを構築させる'
     ],
     caution: '素材抽出と資料化を同時に頼むと、論点の抜け漏れに気づきにくい。',
-    relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 1, label: '第2回 2-2. Office アプリで Claude を使う — Excel / PowerPoint / Word' }]
+    relatedSession: '第1回',
+    relatedSections: [{ m: 0, s: 8, label: '第1回 1-9. Office アプリで Claude を使う — Excel / PowerPoint / Word' }]
   },
   {
     id: 'tip-011',
-    category: '成果物作成',
+    category: '💬 Chat 個別',
     level: 'basic',
-    title: '触れる成果物は議論のたたき台として扱う',
+    title: 'プロトタイプは議論のたたき台として扱う',
     summary: '診断ツール・シミュレーター・画面モック・ダッシュボードは、提案の説得力を高める補助。',
     whenToUse: '抽象的な構想や To-Be 業務を具体化したいとき。',
     howToUse: [
@@ -3461,14 +3643,14 @@ const TIPS = [
       'フィードバックをもらって改善する'
     ],
     caution: '本番システムではないことを明示し、データ保存・セキュリティ要件は別途検討する。',
-    relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 3, label: '第2回 2-4. Artifact で「触れる成果物」を作る' }]
+    relatedSession: '第1回',
+    relatedSections: [{ m: 0, s: 10, label: '第1回 1-11. Artifact で「プロトタイプ」を作る' }]
   },
 
   // ---- Research ----
   {
     id: 'tip-012',
-    category: 'Research',
+    category: '💬 Chat 個別',
     level: 'basic',
     title: '調査は「示唆」に変換する',
     summary: '情報収集で終わらせず、ファクト・示唆・提案への使い方を分けて整理する。',
@@ -3478,12 +3660,12 @@ const TIPS = [
       'クライアントの意思決定にどう繋がるかまで書かせる'
     ],
     caution: '重要な数字・固有名詞・出典は必ず一次情報で確認する。',
-    relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Research で調査する' }]
+    relatedSession: '第1回',
+    relatedSections: [{ m: 0, s: 9, label: '第1回 1-10. Research で調査する' }]
   },
   {
     id: 'tip-013',
-    category: 'Research',
+    category: '💬 Chat 個別',
     level: 'intermediate',
     title: '大量資料は他ツール併用も考える',
     summary: '手元の大量資料の把握には NotebookLM 等の併用も選択肢。Claude では示唆化・構成化・成果物化に集中させる。',
@@ -3494,12 +3676,12 @@ const TIPS = [
       '示唆 → 提案 → スライド化 → Claude（Chat / Artifact / Skills）'
     ],
     caution: 'ツールごとの得意分野を理解し、最終的な判断は人間が行う。',
-    relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Research で調査する' }]
+    relatedSession: '第1回',
+    relatedSections: [{ m: 0, s: 9, label: '第1回 1-10. Research で調査する' }]
   },
   {
     id: 'tip-014',
-    category: 'Research',
+    category: '💬 Chat 個別',
     level: 'intermediate',
     title: 'AI 情報は「定点観測」する',
     summary: '都度検索だけでなく、定期的に見る情報源と確認サイクルを決める。',
@@ -3510,17 +3692,17 @@ const TIPS = [
       '集約先を1箇所（Notion・Wiki 等）に決める'
     ],
     caution: '最新情報は変わりやすいため、固定知識にしすぎない。範囲は「自分のチームで使うもの」に絞る。',
-    relatedSession: '第2回 / 第3回',
+    relatedSession: '第1回 / 第2回',
     relatedSections: [
-      { m: 1, s: 2, label: '第2回 2-3. Research で調査する' },
-      { m: 2, s: 4, label: '第3回 3-5. チーム展開する' }
+      { m: 0, s: 9, label: '第1回 1-10. Research で調査する' },
+      { m: 1, s: 4, label: '第2回 2-5. チーム展開する' }
     ]
   },
 
   // ---- Skills / 再現性 ----
   {
     id: 'tip-015',
-    category: 'Skills / 再現性',
+    category: '🌐 共通',
     level: 'intermediate',
     title: 'Skills 化すべき業務を見極める',
     summary: '繰り返し発生する × 手順が明確化できる × 品質基準がある、の3条件が揃ったら候補。',
@@ -3532,12 +3714,12 @@ const TIPS = [
     ],
     example: '候補例：議事録作成、提案書レビュー、調査レポート、PPT 構成生成、Excel 分析、UI レビュー、プロトタイプ手順。',
     caution: '一度しか使わない作業は、無理に Skill 化しなくてよい。',
-    relatedSession: '第3回',
-    relatedSections: [{ m: 2, s: 0, label: '第3回 3-1. Skills で手順を標準化する' }]
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 0, label: '第2回 2-1. Skills で手順を標準化する' }]
   },
   {
     id: 'tip-016',
-    category: 'Skills / 再現性',
+    category: '🌐 共通',
     level: 'intermediate',
     title: 'Skills は作って終わりにしない',
     summary: '「発動するか／期待品質になるか／効率化するか」の3観点でテストしながら育てる。',
@@ -3548,12 +3730,12 @@ const TIPS = [
       '効率：手作業より速いか・レビュー手間が許容範囲か確認'
     ],
     caution: '作った後の検証と改善がないと、形だけの Skill になる。',
-    relatedSession: '第3回',
-    relatedSections: [{ m: 2, s: 0, label: '第3回 3-1. Skills で手順を標準化する' }]
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 0, label: '第2回 2-1. Skills で手順を標準化する' }]
   },
   {
     id: 'tip-017',
-    category: 'Skills / 再現性',
+    category: '🌐 共通',
     level: 'intermediate',
     title: 'CLAUDE.md を業務マニュアルとして使う',
     summary: 'プロジェクトの前提・禁止事項・出力形式・レビュー観点・トンマナ・成果物ルールを書く。',
@@ -3565,14 +3747,14 @@ const TIPS = [
       '大きい場合は DESIGN.md / CONTENT.md / REVIEW.md に分割し参照する'
     ],
     caution: '古いルールが残ると逆効果。定期的に見直し、使われていない規約は外す。',
-    relatedSession: '第3回',
-    relatedSections: [{ m: 2, s: 3, label: '第3回 3-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 3, label: '第2回 2-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
   },
 
   // ---- チーム展開 ----
   {
     id: 'tip-018',
-    category: 'チーム展開',
+    category: '🌐 共通',
     level: 'intermediate',
     title: 'よく使う指示をチームで共有する',
     summary: '個人の便利プロンプトで終わらせず、テンプレート・Project・Skills・CLAUDE.md に落とす。',
@@ -3583,12 +3765,12 @@ const TIPS = [
       '成功事例をもとに定期的に更新する'
     ],
     caution: 'テンプレートは使いっぱなしにせず、運用しながら改善する。',
-    relatedSession: '第3回',
-    relatedSections: [{ m: 2, s: 4, label: '第3回 3-5. チーム展開する' }]
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 4, label: '第2回 2-5. チーム展開する' }]
   },
   {
     id: 'tip-019',
-    category: 'チーム展開',
+    category: '🌐 共通',
     level: 'intermediate',
     title: 'チームオンボーディング資料を作る',
     summary: 'Claude の使い方・禁止事項・レビュー観点・よく使うテンプレート・相談先を1ページにまとめる。',
@@ -3600,12 +3782,12 @@ const TIPS = [
       '最初の30〜60分の体験課題を1つ用意する'
     ],
     caution: '運用ルールが複雑すぎると使われない。最初はシンプルにする。',
-    relatedSession: '第3回',
-    relatedSections: [{ m: 2, s: 4, label: '第3回 3-5. チーム展開する' }]
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 4, label: '第2回 2-5. チーム展開する' }]
   },
   {
     id: 'tip-020',
-    category: 'チーム展開',
+    category: '🌐 共通',
     level: 'basic',
     title: 'レビュー責任を明確にする',
     summary: 'Claude が作った成果物でも、最終責任は人間が持つ。',
@@ -3616,14 +3798,14 @@ const TIPS = [
       'インシデント対応フローも事前に決める'
     ],
     caution: '「Claude がやったから OK」は通らない。最終チェックは必ず人が行う。',
-    relatedSession: '第3回',
-    relatedSections: [{ m: 2, s: 4, label: '第3回 3-5. チーム展開する' }]
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 4, label: '第2回 2-5. チーム展開する' }]
   },
 
   // ---- 上級・補助 ----
   {
     id: 'tip-021',
-    category: '上級・補助',
+    category: '⚡ Claude Code 個別',
     level: 'advanced',
     title: '権限モードは慎重に使う',
     summary: 'Bypass Permissions などの権限モードは便利だが、誤操作のリスクも大きくなる。',
@@ -3634,12 +3816,12 @@ const TIPS = [
       'チームルールとレビュー前提で運用する'
     ],
     caution: '便利さだけで選ばない。誤操作の影響範囲を先に想定する。',
-    relatedSession: '第3回（補助資料）',
-    relatedSections: [{ m: 2, s: 3, label: '第3回 3-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
+    relatedSession: '第2回（補助資料）',
+    relatedSections: [{ m: 1, s: 3, label: '第2回 2-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
   },
   {
     id: 'tip-022',
-    category: '上級・補助',
+    category: '⚡ Claude Code 個別',
     level: 'advanced',
     title: '.claude フォルダや設定ファイルは不用意に触らない',
     summary: '仕組み理解には役立つが、初心者が不用意に編集するのは避ける。',
@@ -3650,12 +3832,12 @@ const TIPS = [
       'チームで使う場合は共通ルールとレビューを前提にする'
     ],
     caution: 'ファイル構造や役割を理解しないまま触ると、想定外の挙動につながる。',
-    relatedSession: '第3回（補助資料）',
-    relatedSections: [{ m: 2, s: 3, label: '第3回 3-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
+    relatedSession: '第2回（補助資料）',
+    relatedSections: [{ m: 1, s: 3, label: '第2回 2-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
   },
   {
     id: 'tip-023',
-    category: '上級・補助',
+    category: '⚡ Claude Code 個別',
     level: 'advanced',
     title: '自動化スクリプトや外部 CLI は補助資料扱い',
     summary: 'Downloads 自動コピー、xurl、外部 CLI 連携などは便利だが、環境依存・権限・API 設定が絡む。',
@@ -3666,8 +3848,108 @@ const TIPS = [
       'チーム運用に組み込む場合はガイドラインを整備する'
     ],
     caution: '研修本編の必須事項ではなく、必要な人が使う発展 TIPS として扱う。',
-    relatedSession: '第3回（補助資料）',
-    relatedSections: [{ m: 2, s: 3, label: '第3回 3-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
+    relatedSession: '第2回（補助資料）',
+    relatedSections: [{ m: 1, s: 3, label: '第2回 2-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
+  },
+
+  // ---- 知っておくと効く小ワザ系（追加） ----
+  {
+    id: 'tip-024',
+    category: '⚡ Claude Code 個別',
+    level: 'basic',
+    title: 'ESC 2 回で直前の指示を巻き戻す',
+    summary: '誤字や条件抜けに気づいた直後、ESC を 2 回押すと直前の指示まで巻き戻して書き直せる。',
+    whenToUse: '指示を送った直後に「あ、ちょっと違った」と気づいたとき。',
+    howToUse: [
+      '指示送信直後に ESC を 2 回押す',
+      '直前のメッセージまで巻き戻る',
+      '修正して再送信'
+    ],
+    caution: '複数遡りたい場合は ↑ キー（tip-025）で履歴をたどる。',
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+  },
+  {
+    id: 'tip-025',
+    category: '⚡ Claude Code 個別',
+    level: 'basic',
+    title: '↑ キーで過去の指示を呼び出す',
+    summary: 'チャット欄で ↑ キーを押すと直前の指示が呼び出される。連打でさらに遡れる。',
+    whenToUse: '同じ指示や似た指示を再利用したいとき。長文指示の修正再送時にも便利。',
+    howToUse: [
+      'チャット欄で ↑ キーを押す',
+      '連打で過去履歴を遡る',
+      'そのまま送信、または編集して再送'
+    ],
+    caution: 'ターミナル経験者には馴染みのある操作。慣れると指示の再利用が高速化する。',
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+  },
+  {
+    id: 'tip-026',
+    category: '⚡ Claude Code 個別',
+    level: 'basic',
+    title: 'Opt+⌘+C で Finder のファイルパスを渡す',
+    summary: 'Mac の Finder で選択ファイルの絶対パスをコピーし、チャット欄に貼ればワークスペース外のファイルも渡せる。',
+    whenToUse: '契約書レビュー、Slack・メールで受け取った PDF 処理など、ワークスペース外のファイルを Claude Code に渡したいとき。',
+    howToUse: [
+      'Finder で対象ファイルを選択',
+      'Opt + ⌘ + C で絶対パスをクリップボードにコピー',
+      'Claude Code のチャット欄に貼り付けて指示'
+    ],
+    example: '「~/Documents/契約書.pdf をレビューしてください。」',
+    caution: '機密情報を含むファイルは特に慎重に。作業コピーを使う原則は同じ。',
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+  },
+  {
+    id: 'tip-027',
+    category: '⚡ Claude Code 個別',
+    level: 'basic',
+    title: '⌘+Shift+R で出力ファイルを Finder で即開く',
+    summary: 'VS Code / Cursor で選択中のファイルを Finder で即開けるショートカット。Slack / メール / Figma への共有がスムーズ。',
+    whenToUse: 'Claude Code が作成した Markdown / PDF / 画像 / HTML を、Slack やメールに添付したいとき。',
+    howToUse: [
+      'エディタで対象ファイルを選択',
+      '⌘ + Shift + R で Finder が開く',
+      '添付・ドラッグ&ドロップで次のアクションへ'
+    ],
+    caution: '共有前に必ず人が目視確認。',
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+  },
+  {
+    id: 'tip-028',
+    category: '⚡ Claude Code 個別',
+    level: 'advanced',
+    title: '⌘+Shift+. で隠しフォルダを表示し設定を見直す',
+    summary: 'Mac の Finder で ⌘+Shift+. を押すと隠しファイル・隠しフォルダが表示される。.claude/ の中身（commands、settings.json）を覗いて自分の設定を見直す。',
+    whenToUse: '自分の Claude Code 設定や使っているスキルをメンテナンスしたいとき。',
+    howToUse: [
+      'Finder で ⌘+Shift+. を押す',
+      '.claude/ を開く',
+      'commands/ と settings.json を確認',
+      '使っていないスキルや設定を整理'
+    ],
+    caution: '中身を不用意に編集しない（tip-022 参照）。読むだけのつもりが事故につながる。',
+    relatedSession: '第2回（補助資料）',
+    relatedSections: [{ m: 1, s: 3, label: '第2回 2-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
+  },
+  {
+    id: 'tip-029',
+    category: '⚡ Claude Code 個別',
+    level: 'intermediate',
+    title: 'Effort 設定を使い分けて思考の深さを調整する',
+    summary: 'Claude Code の Effort 設定を Extra High にすると、より深く考えた回答が返る。タスクの重さに応じて切り替える。',
+    whenToUse: '戦略立案・リサーチ・構成案作成・複雑な修正など、思考の質が成果物に直結するタスクのとき。',
+    howToUse: [
+      '思考の質が重要なタスクで Extra High に切り替え',
+      '定型作業や事実確認はデフォルトで十分',
+      '時間とトークン消費のバランスを見て使い分ける'
+    ],
+    caution: '全タスクで最高設定にすると時間とコストが増える。タスクの重さに応じて選ぶ。',
+    relatedSession: '第2回',
+    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
   }
 ];
 
