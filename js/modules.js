@@ -774,6 +774,12 @@ const MODULES = [
             </div>
           </div>
 
+          <div class="info-box">
+            <strong>🎨 Artifactギャラリーに「貯まるもの」と「貯まらないもの」</strong><br>
+            Artifactとして生成され、サイドバーの「Artifact」一覧に貯まるのは、画面の中で開いて見られるもの——Markdown文書・図（Mermaid）・HTML／インタラクティブUI・コードなど。チャットで作るとそのまま一覧に登録され、あとから検索・再利用できる。<br><br>
+            一方、PowerPoint・Word・Excel・PDF はダウンロードして開くファイルで、Artifact一覧には登録されない。これらは Office アドイン（1-9）や Cowork（1-13）で作る成果物。「ギャラリーに残るのは Markdown／図／HTML 系、Office ファイルはダウンロード」と覚えておけばOK。
+          </div>
+
           <h3>Artifact の活用シーン</h3>
           <div class="visual-grid cols-2">
             <div class="visual-grid-item">
@@ -1596,6 +1602,14 @@ const MODULES = [
         content: `
           <h3>このセクションで学ぶこと</h3>
           <p>Cowork の<strong>「フォルダごと渡して、ファイルを直接読み書きさせる」</strong>使い方を理解し、Chat との違いを踏まえてファイル作業を任せられるようになります。Cowork は Claude のデスクトップアプリで使えるモードです。</p>
+
+          <h4>データの置き場所が違う：クラウド型（Chat）と ローカル型（Cowork）</h4>
+          <p>Chat と Cowork の根っこの違いは「ファイルをどこに置いて読ませるか」。</p>
+          <ul>
+            <li><strong>Chat＝クラウド型</strong>：ファイルをクラウドにアップロードし、それを Claude が読む。「アップロードする」というワンクッションが要る。</li>
+            <li><strong>Cowork＝ローカル型</strong>：ファイルは自分の PC に置いたまま、そのフォルダへのアクセスを許可して Claude が直接読む。アップロードのワンクッションがなく、フォルダの中身をまとめて扱える。</li>
+          </ul>
+          <p>だから、案件の前提資料やナレッジを手元のフォルダに置いておけば、毎回アップロードし直さなくても、必要なときに Claude がそこを参照する。中身は自分でいつでも確認・編集できるので、常に最新に保てる。</p>
 
           <h3>Chat との決定的な違い — フォルダに直接アクセスできる</h3>
           <p>Chat は「テキストで対話」する場で、ファイルは1つずつ<strong>添付</strong>し、結果はコピーやダウンロードで持ち出す“持ち込み・持ち出し”型です。1回で渡しきれるタスクに向きます。</p>
@@ -2963,6 +2977,30 @@ const MODULES = [
               <span class="mapping-to">Open in Browser — HTML やプロトタイプをブラウザで確認しやすくする</span>
             </div>
           </div>
+
+          <h4>9. スラッシュコマンドでセッションを操作する（<code>/</code> コマンド）</h4>
+          <p>Claude Code では <code>/</code>（スラッシュ）始まりのコマンドでセッションを操作できる。<code>/</code> を打つと候補が出るので、そこから選ぶ。</p>
+          <p>まず前提として、Claude は会話・読んだファイル・ツールの出力などをすべて「コンテキスト（作業中の記憶）」として持つ。これには上限があり、埋まってくると応答の質が落ちたり、自動要約が走って遅くなる。下のコマンドはこれを手当てするためのもの。</p>
+          <p><strong>よく使うコマンド</strong></p>
+          <ul>
+            <li><code>/help</code> — 使えるコマンド一覧。バージョンで変わるので、まずこれで現物確認</li>
+            <li><code>/context</code> — いまの使用量を表示（見るだけ。これ自体は軽くならない）</li>
+            <li><code>/compact</code> — 会話を要約して圧縮。満杯前（6〜7割）に手動で打つのがコツ。「<code>/compact ◯◯は残して</code>」と残す内容を指定も可</li>
+            <li><code>/clear</code> — 履歴を全消去して最初から。タスク切替時に。戻せないので、消す前に進捗を CLAUDE.md に書く</li>
+            <li><code>/cost</code> — このセッションのトークン消費・コスト</li>
+            <li><code>/status</code> — バージョン・接続・状態の確認</li>
+            <li><code>/memory</code> — CLAUDE.md（常時参照されるメモ）を編集</li>
+            <li><code>/init</code> — プロジェクトを分析して CLAUDE.md のたたき台を生成</li>
+            <li><code>/review</code> — コードのレビュー</li>
+            <li><code>/mcp</code> — Slack / Notion など外部ツール連携の接続確認</li>
+          </ul>
+          <p><strong>重くなった・質が落ちたと感じたら</strong></p>
+          <ol>
+            <li><code>/context</code>（または <code>/status</code>）で使用量を確認</li>
+            <li>7〜8割を超えたら <code>/compact</code> で圧縮、別タスクなら <code>/clear</code></li>
+            <li><code>/clear</code> の前に決定事項を CLAUDE.md へ</li>
+          </ol>
+          <p>※「遅い」は通信や大きな出力が原因のこともあり、必ずしもコンテキストのせいとは限らない。Claude Code は更新が速くコマンドが増減するので、正確な最新一覧は <code>/help</code> で確認。</p>
 
           <h3>知っておくと効く小ワザ</h3>
           <p>日々の Claude Code 作業で、覚えておくと効率が上がる小さな工夫。1つひとつは些細ですが、毎日繰り返す摩擦を減らす効果が大きいです。</p>
