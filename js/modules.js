@@ -34,17 +34,10 @@ const MODULES = [
       'よく使う手順を Skill として型化し、Chat・Cowork から呼び出せる'
     ],
     coverGroups: [
-      { label: 'Claudeを知る', icon: '💡', sections: [0, 1, 2], objectives: ['Claudeが何者か説明できる', '主要機能の全体像を把握する', '3モードを使い分けられる'] },
-      { label: 'Chatで仕事を始める', icon: '💬', sections: [3, 4, 5], objectives: ['Chatで壁打ち・下書き・要約ができる', '良い指示の出し方を身につける', '出力の確認・修正ができる'] },
-      { label: '成果物にする', icon: '🏗️', sections: [6], objectives: ['ProjectとArtifactで業務成果物を作れる'] },
-      { label: '成果物の幅を広げる', icon: '📋', sections: [7], objectives: ['Claudeで作れる成果物の全体像を把握する'] },
-      { label: 'Officeで成果物を作る', icon: '💼', sections: [8], objectives: ['Excel / PowerPoint / Word の業務を加速する'] },
-      { label: '調査・分析する', icon: '🔍', sections: [9], objectives: ['Researchで調査し示唆を出す'] },
-      { label: 'プロトタイプを作る', icon: '🎨', sections: [10], objectives: ['Artifactで提案・PJ用の試作品を作る'] },
-      { label: 'ブラウザで支援する', icon: '🌐', sections: [11], objectives: ['Chrome拡張でWeb作業を効率化する'] },
-      { label: 'ファイル作業を任せる', icon: '🤝', sections: [12], objectives: ['Coworkでファイル操作を委任する'] },
-      { label: '定型業務を自動化する', icon: '⏰', sections: [13], objectives: ['Scheduled tasksで繰り返し作業を自動化する'] },
-      { label: '手順を型にする', icon: '🧩', sections: [14], objectives: ['よく使う手順を Skill として型化し、Chat・Coworkから呼び出す'] }
+      { label: 'Claudeを知る', icon: '💡', sections: [0, 1, 2], objectives: ['Claudeが何者か説明できる', '主要機能の全体像を把握する', 'Chat / Cowork / Code を使い分けられる'] },
+      { label: 'Chatを使いこなす', icon: '💬', sections: [3, 4, 5], objectives: ['Chatで壁打ち・下書き・要約ができる', 'プロンプト3要素で良い指示を出せる', '出力を確認・修正し責任を持てる'] },
+      { label: '成果物を作る', icon: '🏗️', sections: [6, 7, 8, 9, 10], objectives: ['Project / Artifactで成果物にできる', '成果物の種類と作り分けがわかる', 'Office・Research・プロトタイプを活用できる'] },
+      { label: '業務に組み込む', icon: '⚙️', sections: [11, 12, 13, 14], objectives: ['Chrome / Coworkで日常業務を支援・委任できる', 'Scheduled tasksで定型業務を自動化できる', 'よく使う手順をSkillとして型化できる'] }
     ],
     sections: [
 
@@ -1814,60 +1807,97 @@ const MODULES = [
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
-          <p>Skill とは何かを理解し、自分の繰り返し作業を1つ「型」にできるようになります。</p>
+          <p>Skill とは何かを理解し、資料作成やリサーチでの活用イメージを持ち、自分の繰り返し作業を1つ「型」にできるようになります。</p>
 
           <h3>Skill とは</h3>
-          <p>毎回ほぼ同じ指示を打ち込んでいる作業はありませんか。「議事録をこの体裁で整えて」「この文章をクライアント向けの文体に直して」——こうした<strong>よく使う手順・指示を「型」として保存し、いつでも呼び出して再利用できる機能</strong>が Skill です。一度作っておけば、次からは長いプロンプトを書き直さずに、その型を呼ぶだけで同じ品質のアウトプットが返ってきます。</p>
-          <p>1-14 で学んだ Scheduled tasks が「決まった時刻に自動で動かす」仕組みなら、Skill は「決まった手順を、必要なときに呼び出す」仕組み、と捉えると分かりやすいでしょう。</p>
+          <p>毎回ほぼ同じ指示を打ち込んでいる作業はありませんか。「議事録をこの体裁で整えて」「この観点で競合を調べて」——こうした<strong>よく使う手順・指示・出力形式を「型」として保存し、いつでも呼び出して再利用できる機能</strong>が Skill です。一度作れば、次からは長いプロンプトを書き直さずに、その型を呼ぶだけで同じ品質のアウトプットが返ってきます。</p>
+          <p>属人化しがちな「うまいやり方」を、誰でも同じ品質で再現できる形にできるのが Skill の価値です。</p>
 
-          <h3>Chat でも Cowork でも使える</h3>
-          <p>ここが大きなポイントです。Skill は Claude Code だけのものではありません。<strong>Chat でも Cowork でも、同じ Skill を呼び出して使えます。</strong></p>
+          <h3>同じ Skill を Chat でも Cowork でも呼べる</h3>
+          <p>つくった Skill は特定の場所に縛られず、同じ型をそのまま呼び出せます。たとえば「議事録フォーマット」Skill なら、次のように使えます。</p>
 
           <div class="visual-grid cols-2">
             <div class="visual-grid-item">
               <div class="grid-icon">💬</div>
-              <div class="grid-title">Chat / Cowork</div>
-              <div class="grid-desc">日常のやり取りの中で「あの型でお願い」と呼び出す。資料作成や文章整形など、普段の業務はここが中心。</div>
+              <div class="grid-title">Chat の場合</div>
+              <div class="grid-desc">会議メモを貼り付けて「議事録フォーマットで整理して」と呼ぶ。</div>
             </div>
             <div class="visual-grid-item">
-              <div class="grid-icon">⚡</div>
-              <div class="grid-title">Claude Code</div>
-              <div class="grid-desc">ファイル操作やコード生成を伴う作業で、同じ型を呼び出す。</div>
+              <div class="grid-icon">📂</div>
+              <div class="grid-title">Cowork の場合</div>
+              <div class="grid-desc">メモのファイルを渡して「議事録フォーマットで」と呼ぶ。</div>
             </div>
           </div>
 
-          <p>つまり、一度作った「型」は場所を選ばず使い回せます。普段チャットで仕事をしている人こそ、Skill を覚えておく価値があります。</p>
+          <p>どちらでも同じ型・同じ品質で仕上がります。一度つくれば、その都度作り直す必要がありません。</p>
 
-          <h3>実務での使い方（例）</h3>
-          <p>たとえば「議事録フォーマット」Skill を作っておくと、こう使えます。</p>
-          <table class="info-table">
-            <thead>
-              <tr>
-                <th>やりたいこと</th>
-                <th>チャットでの呼び出し</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>商談メモを議事録に整える</td>
-                <td>「議事録フォーマットで、このメモを整理して」＋ メモを貼る</td>
-              </tr>
-              <tr>
-                <td>社内向け文章をクライアント向けに直す</td>
-                <td>「クライアント向け文体に変換して」＋ 原文を貼る</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>毎回「日付・参加者・決定事項・ToDo の順で、です・ます調で…」と指示を書き直す必要がなくなり、初速がぐっと上がります。</p>
+          <h3>実務での活用例</h3>
+          <p>特に効くのは「毎回フォーマットや観点が決まっている作業」です。</p>
+
+          <div class="visual-grid cols-2">
+            <div class="visual-grid-item">
+              <div class="grid-icon">📝</div>
+              <div class="grid-title">資料作成</div>
+              <div class="grid-desc">
+                ・議事録フォーマット（日付・参加者・決定事項・宿題・次回アジェンダの順、です・ます調で整える）<br>
+                ・クライアント向け文体への変換（社内メモを提出用のトーンに整える）<br>
+                ・提案書のレビュー観点チェック（決まった5観点で叩く）
+              </div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🔍</div>
+              <div class="grid-title">リサーチ</div>
+              <div class="grid-desc">
+                ・競合・市場調査の型（「機能・価格・実績の観点で比較表に」「出典URL付きで」など枠組みを固定）<br>
+                ・調査結果を示唆に変換する型（機会・脅威を3つずつ → 推奨アクションまで）
+              </div>
+            </div>
+          </div>
+
+          <p>毎回ゼロから長い指示を書き直す必要がなくなり、出力の品質も揃います。</p>
+
+          <h3>どう作る？（基本）</h3>
+          <p>難しく考えず、いつもの指示を「型」にするところから始めます。</p>
+          <div class="visual-steps">
+            <div class="visual-step-item">
+              <div class="step-marker">1</div>
+              <div class="step-body">
+                <div class="step-title">繰り返している作業を1つ選ぶ</div>
+                <div class="step-desc">「今週2回以上、似た指示を書いたな」というものが候補です。</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">2</div>
+              <div class="step-body">
+                <div class="step-title">名前と「いつ使うか」を決める</div>
+                <div class="step-desc">例：「議事録整形」＝会議メモを議事録にするとき。</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">3</div>
+              <div class="step-body">
+                <div class="step-title">手順・ルール・出力形式を書く</div>
+                <div class="step-desc">やる順番／守る文体・禁止事項／出力の形（見出し・項目・文字数）を書きます。</div>
+              </div>
+            </div>
+            <div class="visual-step-item">
+              <div class="step-marker">4</div>
+              <div class="step-body">
+                <div class="step-title">一度試して直す</div>
+                <div class="step-desc">実際のメモや資料で呼び出し、物足りない点を追記して育てます。</div>
+              </div>
+            </div>
+          </div>
+          <p>最初から完璧でなくてOK。使いながら少しずつ精度を上げていきます。</p>
 
           <div class="tip-box">
             <strong>💡 まずは1つだけ</strong><br>
             「今週、同じような指示を2回以上書いたな」という作業を1つ思い出してみてください。それが最初の Skill 候補です。完璧を目指さず、いつもの指示文をそのまま型にするところから始めれば十分です。
           </div>
 
-          <div class="info-box">
-            <strong>📦 ここでは「型にする」感覚をつかむだけ</strong><br>
-            どんな作業を Skill にすべきかの見極め、作った型の運用、チームでの共有・標準化といった本格的な作り方は、第2回の <strong>2-1</strong> でまとめて深掘りします。ここでは「繰り返しの手順は型にして再利用できる」というイメージを持てれば十分です。
+          <div class="warning-box">
+            <p><strong>ここでは「型にする」感覚をつかむだけ</strong></p>
+            <p>どんな作業を Skill にすべきかの見極め、作った型の運用、チームでの共有・標準化といった本格的な作り方は、第2回の <strong>2-1</strong> でまとめて深掘りします。ここでは「繰り返しの手順は型にして再利用できる」というイメージを持てれば十分です。</p>
           </div>
         `
       },
