@@ -37,7 +37,7 @@ const MODULES = [
       { label: 'Claudeを知る', icon: '💡', sections: [0, 1, 2], objectives: ['Claudeが何者か説明できる', '主要機能の全体像を把握する', 'Chat / Cowork / Code を使い分けられる'] },
       { label: 'Chatを使いこなす', icon: '💬', sections: [3, 4, 5], objectives: ['Chatで壁打ち・下書き・要約ができる', 'プロンプト3要素で良い指示を出せる', '出力を確認・修正し責任を持てる'] },
       { label: '成果物を作る', icon: '🏗️', sections: [6, 7, 8, 9, 10], objectives: ['Project / Artifactで成果物にできる', '成果物の種類と作り分けがわかる', 'Office・Research・プロトタイプを活用できる'] },
-      { label: '業務に組み込む', icon: '⚙️', sections: [11, 12, 13, 14], objectives: ['Chrome / Coworkで日常業務を支援・委任できる', 'Scheduled tasksで定型業務を自動化できる', 'よく使う手順をSkillとして型化できる'] }
+      { label: '業務に組み込む', icon: '⚙️', sections: [11, 12, 13, 14], objectives: ['Coworkでファイル作業を任せられる（委任）', 'Chrome拡張でブラウザ作業を支援できる', 'Scheduled tasksで定型業務を自動化できる', 'よく使う手順をSkillとして型化できる'] }
     ],
     sections: [
 
@@ -2298,12 +2298,9 @@ const MODULES = [
     ],
     coverGroups: [
       { label: '第1回の復習', icon: '🔁', sections: [0], objectives: ['第1回の要点と Skills の基礎を振り返る'] },
-      { label: '手順を標準化する', icon: '🧩', sections: [1], objectives: ['Skillsで業務手順を型にして再利用する'] },
-      { label: 'ナレッジにつなぐ', icon: '🔗', sections: [2], objectives: ['MCP / Connectorsで社内情報を適切に渡す'] },
-      { label: '高度な作業を任せる', icon: '💻', sections: [3], objectives: ['Claude Codeで複雑な作業を安全に委任する'] },
-      { label: '使いこなす', icon: '🛠️', sections: [4], objectives: ['実践TIPS・ショートカットで効率化する'] },
-      { label: '品質を固定する', icon: '✅', sections: [5], objectives: ['CLAUDE.md / Hooks / Subagentsで品質管理する'] },
-      { label: 'チームで広げる', icon: '👥', sections: [6], objectives: ['チームでの運用ルールと展開方法を設計する'] }
+      { label: '型化と接続', icon: '🧩', sections: [1, 2], objectives: ['Skillsで業務手順を型にして再利用する', 'MCP / Connectorsで社内ナレッジを安全につなぐ'] },
+      { label: 'Claude Codeで任せる', icon: '💻', sections: [3, 4], objectives: ['Claude Codeで高度な作業を安全に任せられる', '実践TIPS・ショートカットで効率化できる'] },
+      { label: '品質とチーム展開', icon: '✅', sections: [5, 6], objectives: ['CLAUDE.md / Hooks / Subagentsで品質を固定する', 'チームに展開し組織で品質を上げる'] }
     ],
     sections: [
 
