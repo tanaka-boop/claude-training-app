@@ -30,7 +30,8 @@ const MODULES = [
       'Artifactで診断ツール・ダッシュボード等の「プロトタイプ」を作れる',
       'Chrome拡張でブラウザ上の作業を効率化できる',
       'Coworkでファイル作業を委任できる',
-      'Scheduled tasksで定型業務を自動実行できる'
+      'Scheduled tasksで定型業務を自動実行できる',
+      'よく使う手順を Skill として型化し、Chat・Cowork から呼び出せる'
     ],
     coverGroups: [
       { label: 'Claudeを知る', icon: '💡', sections: [0, 1, 2], objectives: ['Claudeが何者か説明できる', '主要機能の全体像を把握する', '3モードを使い分けられる'] },
@@ -42,7 +43,8 @@ const MODULES = [
       { label: 'プロトタイプを作る', icon: '🎨', sections: [10], objectives: ['Artifactで提案・PJ用の試作品を作る'] },
       { label: 'ブラウザで支援する', icon: '🌐', sections: [11], objectives: ['Chrome拡張でWeb作業を効率化する'] },
       { label: 'ファイル作業を任せる', icon: '🤝', sections: [12], objectives: ['Coworkでファイル操作を委任する'] },
-      { label: '定型業務を自動化する', icon: '⏰', sections: [13], objectives: ['Scheduled tasksで繰り返し作業を自動化する'] }
+      { label: '定型業務を自動化する', icon: '⏰', sections: [13], objectives: ['Scheduled tasksで繰り返し作業を自動化する'] },
+      { label: '手順を型にする', icon: '🧩', sections: [14], objectives: ['よく使う手順を Skill として型化し、Chat・Coworkから呼び出す'] }
     ],
     sections: [
 
@@ -705,7 +707,7 @@ const MODULES = [
         type: 'hands-on',
         content: `
           <h3>このセクションで学ぶこと</h3>
-          <p>Chat での対話を「使い捨て」で終わらせず、<strong>案件の資産として蓄積し、成果物として残す</strong>方法を学びます。Project と Artifact を使うと、Claude の活用レベルが一段上がります。</p>
+          <p>Chat での対話を「その場限り」で終わらせず、<strong>案件の資産として蓄積し、成果物として残す</strong>方法を学びます。Project と Artifact を使うと、Claude の活用レベルが一段上がります。</p>
 
           <h3>Project — 案件ごとの「自分用Claude」</h3>
           <p>Project は、案件固有の背景情報・ルール・参照資料を Claude に覚えさせる仕組みです。一度設定すれば、その Project 内の全会話で自動的に参照されます。</p>
@@ -740,12 +742,12 @@ const MODULES = [
 
           <div class="example-box">
             <strong>📌 Instructions の記述例</strong><br><br>
-            「# A社 ERP導入案件<br>
-            - クライアント：A社（製造業・従業員500名）<br>
-            - フェーズ：要件定義（Phase 1 完了、Phase 2 進行中）<br>
-            - 主要ステークホルダー：情報システム部 田中部長<br>
+            「# B社 新商品ローンチ マーケティング戦略案件<br>
+            - クライアント：B社（食品メーカー・健康志向の新ブランドを立ち上げ）<br>
+            - フェーズ：戦略策定（市場調査・コンセプト確定済、メディアプラン策定中）<br>
+            - 主要ステークホルダー：マーケティング本部 鈴木部長<br>
             - 出力ルール：結論先行、です・ます調、数字には出典を付ける<br>
-            - 禁止：競合他社名を伏せ字にしないこと」
+            - 禁止：景品表示法・薬機法に抵触しうる表現（効果の断定・最大級表現）を使わないこと」
           </div>
 
           <div class="tip-box">
@@ -824,7 +826,7 @@ const MODULES = [
 
 
       // ========================================
-      // 2-1: 成果物の種類を広げる
+      // 1-8: 成果物の種類を広げる
       // ========================================
       {
         title: '1-8. 成果物の種類を広げる',
@@ -938,7 +940,7 @@ const MODULES = [
       },
 
       // ========================================
-      // 2-2: OfficeでExcel / PowerPoint / Wordを扱う
+      // 1-9: Office アプリで Claude を使う — Excel / PowerPoint / Word
       // ========================================
       {
         title: '1-9. Office アプリで Claude を使う — Excel / PowerPoint / Word',
@@ -954,7 +956,6 @@ const MODULES = [
             <p><strong>⚠️ 利用前提</strong></p>
             <ul>
               <li>Claude のプラン：Pro / Max / Team / Enterprise（無料プランでは使えません）</li>
-              <li>PowerPoint は Max / Team / Enterprise のみという情報もあるため、社内のプラン契約を IT 部門に確認してください</li>
               <li>Word は 2026年4月公開のパブリックベータ版です</li>
               <li>Mac / Windows どちらでも使えます</li>
             </ul>
@@ -1067,7 +1068,6 @@ const MODULES = [
 
           <h4>うまくいかないときの対処</h4>
           <ul>
-            <li><strong>アドインストアに Claude が出てこない</strong> → 会社の M365 設定で App Store が制限されている可能性があります。IT 管理者にお問い合わせください</li>
             <li><strong>サインインできない</strong> → ブラウザの認証ポップアップがブロックされていないか確認してください</li>
             <li><strong>アイコンが表示されない</strong> → PowerPoint を再起動／「挿入」タブの「個人用アドイン」から確認してください</li>
           </ul>
@@ -1261,7 +1261,7 @@ const MODULES = [
       },
 
       // ========================================
-      // 2-3: Researchで調査する
+      // 1-10: Research で調査する
       // ========================================
       {
         title: '1-10. Research で調査する',
@@ -1408,16 +1408,11 @@ const MODULES = [
               <span class="mapping-to">Claude（Chat / Artifact / Skills を組み合わせ）</span>
             </div>
           </div>
-
-          <h3>AI ニュース・業界情報は「定点観測」に組み込む</h3>
-          <div class="info-box">
-            <p>変化の速い分野は、<strong>個人で追わず、チームで定点観測する仕組み</strong>を作るのが効きます。週次の調査担当を回す、共通の Research 質問テンプレートを Skill 化する、まとめ先を一箇所に集約する、といった運用設計が第2回のチーム展開と直結します。</p>
-          </div>
         `
       },
 
       // ========================================
-      // 2-4: Artifactで提案・PJ用の"プロトタイプ"を作る
+      // 1-11: Artifact で「プロトタイプ」を作る
       // ========================================
       {
         title: '1-11. Artifact で「プロトタイプ」を作る',
@@ -1528,7 +1523,7 @@ const MODULES = [
       },
 
       // ========================================
-      // 2-5: Chromeでブラウザ作業を支援する
+      // 1-12: Chrome でブラウザ作業を支援する
       // ========================================
       {
         title: '1-12. Chrome でブラウザ作業を支援する',
@@ -1600,70 +1595,77 @@ const MODULES = [
       },
 
       // ========================================
-      // 2-6: Coworkでファイル作業を任せる
+      // 1-13: Cowork でファイル作業を任せる
       // ========================================
       {
         title: '1-13. Cowork でファイル作業を任せる',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
-          <p>Cowork は、Claude のデスクトップアプリで使えるモードです。Chat が「対話」なのに対し、Cowork は<strong>「作業を任せる」</strong>感覚に近い使い方です。ファイルを渡して、加工・作成・整理を Claude に委任できます。</p>
+          <p>Cowork の<strong>「フォルダごと渡して、ファイルを直接読み書きさせる」</strong>使い方を理解し、Chat との違いを踏まえてファイル作業を任せられるようになります。Cowork は Claude のデスクトップアプリで使えるモードです。</p>
 
-          <h3>Chat と Cowork の違い</h3>
-          <div class="visual-before-after">
-            <div class="ba-item before">
-              <div class="ba-label">Chat</div>
-              <ul>
-                <li>テキストで対話する</li>
-                <li>ファイルは添付して参照してもらう</li>
-                <li>出力はチャット上に表示される</li>
-                <li>出力をコピーして自分で貼り付ける</li>
-              </ul>
-            </div>
-            <div class="ba-arrow">→</div>
-            <div class="ba-item after">
-              <div class="ba-label">Cowork</div>
-              <ul>
-                <li>ファイルを渡して作業を依頼する</li>
-                <li>Claude がファイルを直接読み書きする</li>
-                <li>成果物がファイルとして生成される</li>
-                <li>ダウンロードしてそのまま使える</li>
-              </ul>
-            </div>
+          <h3>Chat との決定的な違い — フォルダに直接アクセスできる</h3>
+          <p>Chat は「テキストで対話」する場で、ファイルは1つずつ<strong>添付</strong>し、結果はコピーやダウンロードで持ち出す“持ち込み・持ち出し”型です。1回で渡しきれるタスクに向きます。</p>
+          <p>Cowork は<strong>作業フォルダごと Claude に渡し、その中のファイルを直接ひらいて読み・加工し、新しいファイルとして書き出せます</strong>。アップロードとダウンロードの往復がいらないのが最大の違いです（単発なら従来どおり添付でも構いません）。</p>
+
+          <div class="visual-highlight-card">
+            <p><strong>💡 ここが非エンジニアにとっての大きなメリット</strong>：コードもコマンドも書かずに、手元のフォルダにあるファイル群（Excel・Word・PowerPoint・PDF など）をそのまま読ませ、成果物も同じフォルダに作らせられます。「ファイルを触る作業」を丸ごと任せられるのが Cowork の核心です。</p>
           </div>
 
-          <h3>Cowork が力を発揮する場面</h3>
+          <h3>Chat と Cowork の使い分け</h3>
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>観点</th>
+                <th>💬 Chat</th>
+                <th>📂 Cowork</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ファイルの渡し方</td>
+                <td>1つずつ添付</td>
+                <td>フォルダごと接続</td>
+              </tr>
+              <tr>
+                <td>ファイル操作</td>
+                <td>添付したものを読む</td>
+                <td>フォルダ内を直接 読む・作る・書き換える</td>
+              </tr>
+              <tr>
+                <td>成果物</td>
+                <td>テキスト／Artifact をコピー</td>
+                <td>フォルダにファイルとして出力</td>
+              </tr>
+              <tr>
+                <td>向く場面</td>
+                <td>壁打ち・下書き・要約</td>
+                <td>複数ファイルの整理・加工・一括処理</td>
+              </tr>
+            </tbody>
+          </table>
 
-          <div class="visual-grid cols-3">
+          <h3>Cowork が力を発揮する場面</h3>
+          <div class="visual-grid cols-2">
             <div class="visual-grid-item">
               <div class="grid-icon">📁</div>
               <div class="grid-title">複数資料の整理</div>
-              <div class="grid-desc">議事録5件を渡して「案件ごとに決定事項を整理して」</div>
+              <div class="grid-desc">議事録複数、素材のまとめ、フォルダ内のファイル構成の確認</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📊</div>
               <div class="grid-title">Excel の加工</div>
-              <div class="grid-desc">CSVデータを渡して「月別の売上集計表を作って」</div>
+              <div class="grid-desc">複数シートのデータ統合、集計、異常値抽出</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📝</div>
               <div class="grid-title">Word・PowerPoint の下書き</div>
-              <div class="grid-desc">要件をまとめたメモを渡して「報告書の初稿を Word で作って」</div>
-            </div>
-            <div class="visual-grid-item">
-              <div class="grid-icon">🖼️</div>
-              <div class="grid-title">素材の整理</div>
-              <div class="grid-desc">散在する画像や資料を渡して「カテゴリ別に整理して一覧を作って」</div>
+              <div class="grid-desc">議事録テンプレートへの入力、スライドドラフトの作成</div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📋</div>
-              <div class="grid-title">ファイル構成の確認</div>
-              <div class="grid-desc">フォルダ内のファイルを読み取り「不足しているドキュメントを指摘して」</div>
-            </div>
-            <div class="visual-grid-item">
-              <div class="grid-icon">📄</div>
-              <div class="grid-title">レポートの初稿作成</div>
-              <div class="grid-desc">調査メモと過去レポートを渡して「同じフォーマットで今月分を作って」</div>
+              <div class="grid-title">レポート初稿作成</div>
+              <div class="grid-desc">複数資料を読んで初稿を一括で完成させる</div>
             </div>
           </div>
 
@@ -1672,47 +1674,52 @@ const MODULES = [
             <div class="visual-step-item">
               <div class="step-marker">1</div>
               <div class="step-body">
-                <div class="step-title">ファイルを Cowork にアップロードする</div>
-                <div class="step-desc">作業対象のファイルを Cowork のワークスペースにドラッグ＆ドロップ、または添付します。</div>
+                <div class="step-title">フォルダを渡す</div>
+                <div class="step-desc">作業用フォルダ（元ファイルのコピーを入れたもの）を Cowork に指定します。</div>
               </div>
             </div>
             <div class="visual-step-item">
               <div class="step-marker">2</div>
               <div class="step-body">
                 <div class="step-title">やってほしい作業を伝える</div>
-                <div class="step-desc">「このCSVから月別売上の集計表を作って」のように、成果物のイメージを伝えます。</div>
+                <div class="step-desc">「このフォルダの議事録を案件ごとに整理して」のように、成果物のイメージを伝えます。</div>
               </div>
             </div>
             <div class="visual-step-item">
               <div class="step-marker">3</div>
               <div class="step-body">
                 <div class="step-title">Claude が作業を実行する</div>
-                <div class="step-desc">Claude がファイルを読み取り、加工・作成し、成果物ファイルを生成します。作業中に Claude から確認の質問が来ることもあります。</div>
+                <div class="step-desc">Claude がフォルダ内のファイルを直接読み取り、加工・作成します（離席してもOK）。作業中に確認の質問が来ることもあります。</div>
               </div>
             </div>
             <div class="visual-step-item">
               <div class="step-marker">4</div>
               <div class="step-body">
-                <div class="step-title">成果物を確認・ダウンロードする</div>
-                <div class="step-desc">生成されたファイルを確認し、修正が必要なら追加指示を出します。OKならダウンロードして利用します。</div>
+                <div class="step-title">フォルダ内の成果物を確認する</div>
+                <div class="step-desc">フォルダ内に出力された成果物を確認し、修正が必要なら追加指示を出します。</div>
               </div>
             </div>
           </div>
 
           <h3>注意点</h3>
           <div class="warning-box">
-            <p><strong>作業用コピーを使う</strong></p>
-            <p>Cowork にファイルを渡す際は、<strong>元ファイルのコピーを作ってから渡す</strong>ことをお勧めします。Claude がファイルを直接変更するため、意図しない変更が元ファイルに及ぶリスクを避けられます。</p>
+            <p><strong>作業用フォルダ（コピー）で使う</strong></p>
+            <p>Cowork はフォルダ内のファイルを直接書き換えられるため、元データが上書きされるリスクがあります。<strong>元ファイルのコピーを入れた作業用フォルダ</strong>を渡してください。Cowork は Claude Desktop 専用です。</p>
           </div>
 
-          <div class="info-box">
-            <p>Cowork はデスクトップアプリ（Windows / Mac）で使える機能です。ブラウザ版の claude.ai からは利用できません。</p>
+          <div class="warning-box">
+            <p><strong>社内利用ルール（必ず守る）</strong></p>
+            <ul>
+              <li><strong>操作はローカル環境に限定</strong>：BOX・Google ドライブなどの共有フォルダは探索・操作しません（現状、これらは Claude のエージェントからアクセスできません）。Cowork に渡すのはローカルの作業用フォルダのみにしてください。</li>
+              <li><strong>アカウント管理は SSO で実施</strong>します。</li>
+              <li><strong>個人情報・機密情報などの入力は禁止</strong>です。</li>
+            </ul>
           </div>
         `
       },
 
       // ========================================
-      // 2-7: 定型業務をScheduled tasks化する
+      // 1-14: 定型業務をScheduled tasks化する
       // ========================================
       {
         title: '1-14. 定型業務を Scheduled tasks 化する',
@@ -1795,6 +1802,113 @@ const MODULES = [
 
           <div class="info-box">
             <p>Scheduled tasks は Cowork（デスクトップアプリ）の機能です。アプリが起動していなくても、設定したスケジュールに従って Claude が自動実行します。</p>
+          </div>
+        `
+      },
+
+      // ========================================
+      // 1-15: よく使う手順を Skill にする（入門）
+      // ========================================
+      {
+        title: '1-15. よく使う手順を Skill にする（入門）',
+        type: 'lecture',
+        content: `
+          <h3>このセクションで学ぶこと</h3>
+          <p>Skill とは何かを理解し、自分の繰り返し作業を1つ「型」にできるようになります。</p>
+
+          <h3>Skill とは</h3>
+          <p>毎回ほぼ同じ指示を打ち込んでいる作業はありませんか。「議事録をこの体裁で整えて」「この文章をクライアント向けの文体に直して」——こうした<strong>よく使う手順・指示を「型」として保存し、いつでも呼び出して再利用できる機能</strong>が Skill です。一度作っておけば、次からは長いプロンプトを書き直さずに、その型を呼ぶだけで同じ品質のアウトプットが返ってきます。</p>
+          <p>1-14 で学んだ Scheduled tasks が「決まった時刻に自動で動かす」仕組みなら、Skill は「決まった手順を、必要なときに呼び出す」仕組み、と捉えると分かりやすいでしょう。</p>
+
+          <h3>Chat でも Cowork でも使える</h3>
+          <p>ここが大きなポイントです。Skill は Claude Code だけのものではありません。<strong>Chat でも Cowork でも、同じ Skill を呼び出して使えます。</strong></p>
+
+          <div class="visual-grid cols-2">
+            <div class="visual-grid-item">
+              <div class="grid-icon">💬</div>
+              <div class="grid-title">Chat / Cowork</div>
+              <div class="grid-desc">日常のやり取りの中で「あの型でお願い」と呼び出す。資料作成や文章整形など、普段の業務はここが中心。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">⚡</div>
+              <div class="grid-title">Claude Code</div>
+              <div class="grid-desc">ファイル操作やコード生成を伴う作業で、同じ型を呼び出す。</div>
+            </div>
+          </div>
+
+          <p>つまり、一度作った「型」は場所を選ばず使い回せます。普段チャットで仕事をしている人こそ、Skill を覚えておく価値があります。</p>
+
+          <h3>実務での使い方（例）</h3>
+          <p>たとえば「議事録フォーマット」Skill を作っておくと、こう使えます。</p>
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>やりたいこと</th>
+                <th>チャットでの呼び出し</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>商談メモを議事録に整える</td>
+                <td>「議事録フォーマットで、このメモを整理して」＋ メモを貼る</td>
+              </tr>
+              <tr>
+                <td>社内向け文章をクライアント向けに直す</td>
+                <td>「クライアント向け文体に変換して」＋ 原文を貼る</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>毎回「日付・参加者・決定事項・ToDo の順で、です・ます調で…」と指示を書き直す必要がなくなり、初速がぐっと上がります。</p>
+
+          <div class="tip-box">
+            <strong>💡 まずは1つだけ</strong><br>
+            「今週、同じような指示を2回以上書いたな」という作業を1つ思い出してみてください。それが最初の Skill 候補です。完璧を目指さず、いつもの指示文をそのまま型にするところから始めれば十分です。
+          </div>
+
+          <div class="info-box">
+            <strong>📦 ここでは「型にする」感覚をつかむだけ</strong><br>
+            どんな作業を Skill にすべきかの見極め、作った型の運用、チームでの共有・標準化といった本格的な作り方は、第2回の <strong>2-1</strong> でまとめて深掘りします。ここでは「繰り返しの手順は型にして再利用できる」というイメージを持てれば十分です。
+          </div>
+        `
+      },
+
+      // ========================================
+      // 第1回のまとめ
+      // ========================================
+      {
+        title: '🏁 第1回のまとめ',
+        type: 'lecture',
+        content: `
+          <h3>このセクションのゴール</h3>
+          <p>第1回は「<strong>個人で仕事の初速を上げ、成果物を作る</strong>」がテーマでした。要点を振り返ります。</p>
+
+          <h3>今回の要点</h3>
+          <div class="visual-grid cols-2">
+            <div class="visual-grid-item">
+              <div class="grid-icon">🚀</div>
+              <div class="grid-title">前半：仕事の初速を上げる</div>
+              <div class="grid-desc">Claude の強みは <strong>長文に強い・指示に忠実・考えるパートナー</strong>。すべての基盤は Chat。迷ったらまず Chat から。良い指示は <strong>前提の共有・タスク・ルール</strong> の3要素。出力は「優秀な同僚の初稿」として、確認・修正・最終責任は自分が持つ。<strong>Project</strong> で案件の前提を保持し、<strong>Artifact</strong> で会話から独立した成果物（文書・図表・プロトタイプ）にする。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🏗️</div>
+              <div class="grid-title">後半：成果物を作る</div>
+              <div class="grid-desc">成果物の種類に応じて <strong>Office アドイン／Research／Artifact／Cowork</strong> を使い分ける。<strong>Cowork</strong> は「作業フォルダごと渡して直接読み書き」が核心。<strong>Chrome 拡張</strong>でブラウザ作業、<strong>Scheduled tasks</strong> で定型業務を支援・自動化。</div>
+            </div>
+          </div>
+
+          <h3>今日からやること</h3>
+          <div class="info-box">
+            <ul>
+              <li>設定の「Claudeへの指示」に自分の前提（役職・業界・トーン）を登録する</li>
+              <li>担当案件で Project を1つ作り、Instructions を書く</li>
+              <li>よく作る成果物を1つ、Artifact か Cowork で作ってみる</li>
+              <li>Office アドイン（PowerPoint など）を入れて1回使ってみる</li>
+            </ul>
+          </div>
+
+          <h3>次回（第2回）へ</h3>
+          <div class="visual-highlight-card">
+            <p>第1回は「個人で速く・成果物を作る」。第2回は <strong>Skills・MCP・Claude Code・CLAUDE.md</strong> で「<strong>品質と再現性を上げ、チームに広げる</strong>」段階に進みます。</p>
           </div>
         `
       }
@@ -2145,20 +2259,106 @@ const MODULES = [
     prereq: '第1回 完了',
     icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
     objectives: [
-      'Skills で業務手順を標準化し、チームで再利用できる',
-      'MCP / Connectors で社内ナレッジを Claude に接続し、出力品質を上げられる',
-      'Claude Code で高度な作業（データ処理・ツール構築）を安全に任せられる',
-      'CLAUDE.md / Hooks / Subagents で品質を固定し、抜け漏れを防げる',
-      'チームで Claude 活用を展開する際の運用ルール・共有方法を設計できる'
+      'Skills で業務手順を型化し、チームで再利用できる',
+      'MCP / Connectors で社内ナレッジを Claude に接続できる',
+      'Claude Code で複数ファイル・データ処理・ツール作成を任せられる',
+      'Claude Code を Desktop / CLI / IDE で使い分け、実践TIPSやショートカットで効率化できる',
+      'CLAUDE.md / Hooks / Subagents で品質を固定できる',
+      '個人の便利技をチームに展開できる'
     ],
     coverGroups: [
-      { label: '手順を標準化する', icon: '🧩', sections: [0], objectives: ['Skillsで業務手順を型にして再利用する'] },
-      { label: 'ナレッジにつなぐ', icon: '🔗', sections: [1], objectives: ['MCP / Connectorsで社内情報を適切に渡す'] },
-      { label: '高度な作業を任せる', icon: '💻', sections: [2], objectives: ['Claude Codeで複雑な作業を安全に委任する'] },
-      { label: '品質を固定する', icon: '✅', sections: [3], objectives: ['CLAUDE.md / Hooks / Subagentsで品質管理する'] },
-      { label: 'チームで広げる', icon: '👥', sections: [4], objectives: ['チームでの運用ルールと展開方法を設計する'] }
+      { label: '第1回の復習', icon: '🔁', sections: [0], objectives: ['第1回の要点と Skills の基礎を振り返る'] },
+      { label: '手順を標準化する', icon: '🧩', sections: [1], objectives: ['Skillsで業務手順を型にして再利用する'] },
+      { label: 'ナレッジにつなぐ', icon: '🔗', sections: [2], objectives: ['MCP / Connectorsで社内情報を適切に渡す'] },
+      { label: '高度な作業を任せる', icon: '💻', sections: [3], objectives: ['Claude Codeで複雑な作業を安全に委任する'] },
+      { label: '使いこなす', icon: '🛠️', sections: [4], objectives: ['実践TIPS・ショートカットで効率化する'] },
+      { label: '品質を固定する', icon: '✅', sections: [5], objectives: ['CLAUDE.md / Hooks / Subagentsで品質管理する'] },
+      { label: 'チームで広げる', icon: '👥', sections: [6], objectives: ['チームでの運用ルールと展開方法を設計する'] }
     ],
     sections: [
+
+      // ========================================
+      // 第1回の復習
+      // ========================================
+      {
+        title: '🔁 第1回の復習',
+        type: 'lecture',
+        content: `
+          <h3>このセクションのゴール</h3>
+          <p>第1回で身につけた「初速の出し方」と「成果物の作り方」、そして Skills の基礎を1画面で振り返り、第2回への足場を整えます。</p>
+
+          <h3>前半：初速を出す基本</h3>
+          <div class="visual-grid cols-3">
+            <div class="visual-grid-item">
+              <div class="grid-icon">💬</div>
+              <div class="grid-title">基盤は Chat</div>
+              <div class="grid-desc">まず Chat で対話。難しい設定より、まず投げて返ってきた初稿を磨く。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">📐</div>
+              <div class="grid-title">プロンプト3要素</div>
+              <div class="grid-desc">「前提・タスク・ルール」をそろえると出力が安定する。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">✅</div>
+              <div class="grid-title">出力は“優秀な同僚の初稿”</div>
+              <div class="grid-desc">鵜呑みにせず確認・修正。最終責任は自分が持つ。</div>
+            </div>
+          </div>
+
+          <div class="tip-box">
+            <strong>💡 Project で前提を保持し、Artifact で独立した成果物を切り出す</strong><br>
+            ・<strong>Project</strong> — 前提・資料を入れておけば毎回説明し直さなくてよい<br>
+            ・<strong>Artifact</strong> — 文書やコードを本文と切り離し、単独で編集・再利用できる
+          </div>
+
+          <h3>後半：成果物につなげる</h3>
+          <table class="info-table">
+            <thead>
+              <tr>
+                <th>機能</th>
+                <th>できること</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Office アドイン</td>
+                <td>Word / Excel / PowerPoint 上で直接 Claude を呼ぶ</td>
+              </tr>
+              <tr>
+                <td>Research</td>
+                <td>複数ソースを調べて根拠付きでまとめる</td>
+              </tr>
+              <tr>
+                <td>Artifact</td>
+                <td>成果物を独立した形で作成・編集</td>
+              </tr>
+              <tr>
+                <td>Cowork</td>
+                <td>作業フォルダごと渡し、ファイルを直接読み書き</td>
+              </tr>
+              <tr>
+                <td>Chrome</td>
+                <td>ブラウザ上の作業を支援</td>
+              </tr>
+              <tr>
+                <td>Scheduled tasks</td>
+                <td>定型作業を時間で自動実行</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="info-box">
+            <strong>⚠️ 1-15 で触れた Skills（スキル）の基礎を再確認</strong><br>
+            Skills は「手順・指示を型化」して再利用する仕組みです。一度作れば Chat でも Cowork でも同じ手順を呼び出せ、属人化を防ぐ第一歩になります。
+          </div>
+
+          <h3>第2回への橋渡し</h3>
+          <div class="visual-highlight-card">
+            <p>第2回は、これらを土台に<strong>品質と再現性を高める</strong>段階へ。Skills も、まずは型化して再利用するところから一歩ずつ進めていきます。</p>
+          </div>
+        `
+      },
 
       // ========================================
       // 2-1: Skillsで手順を標準化する
@@ -2168,6 +2368,7 @@ const MODULES = [
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
+          <p>第1回 1-15 では「Skill＝よく使う手順の型」を個人で使う基礎を学びました。ここからは一歩進めて、<strong>チームで標準化し、品質を固定する</strong>ところまで踏み込みます。第1回 1-15 の基礎（個人での型化）を土台に、チーム標準化・品質固定へとつなげていきましょう。</p>
           <p>これまでの研修で、Claude への指示の出し方やプロンプトの3要素を学びました。しかし、うまくいったプロンプトを毎回ゼロから書くのは非効率です。<strong>Skills は、業務手順やルールを Claude に再利用させるための仕組み</strong>です。一度作った「うまくいく型」をチームで共有し、誰がやっても同じ品質の出力を得られるようにします。</p>
 
           <h3>Skills とは</h3>
@@ -2442,11 +2643,11 @@ const MODULES = [
       // 2-3: Claude Codeで高度な作業を任せる
       // ========================================
       {
-        title: '2-3. Claude Code で高度な作業を任せる',
+        title: '2-3. Claude Code で高度な作業を任せる（基礎）',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
-          <p>第1回で Artifact（簡易なプロトタイプ）と Cowork（ファイル作業の委任）を学びました。Claude Code は、これらよりさらに<strong>高度な作業 — 複数ファイルの処理、データ分析ツール、再利用可能なプロトタイプ</strong>を扱える環境です。</p>
+          <p>第1回で Artifact（簡易なプロトタイプ）と Cowork（ファイル作業の委任）を学びました。Claude Code は、これらよりさらに<strong>高度な作業 — 複数ファイルの処理、データ分析ツール、再利用可能なプロトタイプ</strong>を扱える環境です。本セクションでは、安全に任せるための基礎（成果物のレベル・準備・安全な指示の出し方）を押さえます。</p>
 
           <h3>成果物作成の3つのレベル</h3>
           <p>Claude で成果物を作る手段は、複雑さに応じて使い分けます。</p>
@@ -2599,8 +2800,24 @@ const MODULES = [
             <p>Claude Code が生成・修正したコードやファイルの最終責任は自分にあります。「Claude Code がやったから大丈夫」ではなく、結果を確認して責任を持つ姿勢は他の機能と同じです。</p>
           </div>
 
+          <div class="info-box">
+            <p><strong>📦 次は「使いこなす」へ</strong>：ここまでが Claude Code を安全に任せる基礎です。続く <strong>2-4</strong> では、「どこで・どう動かすか」の選び方と、作業効率を上げる実践 TIPS・ショートカットを扱います。</p>
+          </div>
+        `
+      },
+
+      // ========================================
+      // 2-4: Claude Code を使いこなす（実践TIPS・小ワザ）
+      // ========================================
+      {
+        title: '2-4. Claude Code を使いこなす（実践TIPS・小ワザ）',
+        type: 'lecture',
+        content: `
+          <h3>このセクションで学ぶこと</h3>
+          <p>2-3 で押さえた基礎（範囲を限定・禁止事項を明示・小さく進める・確認する）を土台に、Claude Code を<strong>「どこで・どう動かすか」</strong>を選び、実践のコツとショートカットで作業効率を上げられるようになります。</p>
+
           <h3>Claude Code を安全かつ快適に使う基本TIPS</h3>
-          <p>上の4つの基本（範囲を限定・禁止事項を明示・小さく進める・確認する）を押さえたうえで、日常的に Claude Code を使ううえで効果が大きい実践 TIPS を紹介します。<strong>すべてを覚える必要はありません</strong>。型として使えそうなものから取り入れてください。</p>
+          <p>2-3 の4つの基本（範囲を限定・禁止事項を明示・小さく進める・確認する）を押さえたうえで、日常的に Claude Code を使ううえで効果が大きい実践 TIPS を紹介します。<strong>すべてを覚える必要はありません</strong>。型として使えそうなものから取り入れてください。</p>
           <div class="info-box">
             <p><strong>📚 TIPS は後からでも参照できます</strong>：以下の TIPS は、自習モードの「TIPS集」ページにカテゴリ別・レベル別でまとめられています。研修中に全部覚える必要はなく、業務で必要になったときに見返せば十分です。</p>
           </div>
@@ -2904,10 +3121,10 @@ const MODULES = [
       },
 
       // ========================================
-      // 2-4: CLAUDE.md / Hooks / Subagentsで品質を固定する
+      // 2-5: CLAUDE.md / Hooks / Subagentsで品質を固定する
       // ========================================
       {
-        title: '2-4. CLAUDE.md / Hooks / Subagents で品質を固定する',
+        title: '2-5. CLAUDE.md / Hooks / Subagents で品質を固定する',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -3026,7 +3243,7 @@ const MODULES = [
           </div>
 
           <h3>快適化TIPSをチームで再現可能にする</h3>
-          <p>2-3 で紹介した個人レベルの TIPS は、CLAUDE.md やテンプレートを通じて<strong>チームで再現できる状態にする</strong>ことで、組織としての強みになります。</p>
+          <p>2-4 で紹介した個人レベルの TIPS は、CLAUDE.md やテンプレートを通じて<strong>チームで再現できる状態にする</strong>ことで、組織としての強みになります。</p>
 
           <div class="visual-grid cols-2">
             <div class="visual-grid-item">
@@ -3064,10 +3281,10 @@ const MODULES = [
       },
 
       // ========================================
-      // 2-5: チーム展開する
+      // 2-6: チーム展開する
       // ========================================
       {
-        title: '2-5. チーム展開する',
+        title: '2-6. チーム展開する',
         type: 'lecture',
         content: `
           <h3>このセクションで学ぶこと</h3>
@@ -3210,6 +3427,62 @@ const MODULES = [
             <div class="big-message-icon">🎯</div>
             <div class="big-message-text">人が判断し、Claude が実行する — このサイクルをチームで回す</div>
             <div class="big-message-sub">個人の便利技を、チームの標準に。標準を、組織の力に。</div>
+          </div>
+        `
+      },
+
+      // ========================================
+      // 第2回のまとめ
+      // ========================================
+      {
+        title: '🏁 第2回のまとめ',
+        type: 'lecture',
+        content: `
+          <h3>このセクションのゴール</h3>
+          <p>第2回は「<strong>品質と再現性を上げ、チームに広げる</strong>」がテーマでした。要点を振り返ります。</p>
+
+          <h3>今回の要点</h3>
+          <div class="visual-grid cols-2">
+            <div class="visual-grid-item">
+              <div class="grid-icon">🧩</div>
+              <div class="grid-title">Skills</div>
+              <div class="grid-desc">繰り返し × 手順が明確 × 品質基準あり の業務を型化し、チームで再利用。作って終わりにせず「発動・品質・効率」で検証する。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">🔗</div>
+              <div class="grid-title">MCP / Connectors</div>
+              <div class="grid-desc">社内ナレッジを接続して出力品質を上げる。「必要な情報を・適切な粒度で・鮮度を意識して」。機密・権限外の情報は不用意に接続しない。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">⚡</div>
+              <div class="grid-title">Claude Code</div>
+              <div class="grid-desc">複数ファイル・データ処理・ツール作成を任せる。準備（フォルダ／目的／禁止事項／対象範囲／完了条件）と「計画 → 実装 → 確認」で安全に進める。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">📋</div>
+              <div class="grid-title">CLAUDE.md / Hooks / Subagents</div>
+              <div class="grid-desc">作業ルール・自動チェック・役割分担で品質を固定。個人の便利技をチームの再現可能な型にする。</div>
+            </div>
+            <div class="visual-grid-item">
+              <div class="grid-icon">👥</div>
+              <div class="grid-title">チーム展開</div>
+              <div class="grid-desc">効果が見えやすくリスクの低い業務から、共通化（Project / Skills / CLAUDE.md）・情報管理ルール・レビュー体制・成功事例の蓄積を回す。</div>
+            </div>
+          </div>
+
+          <h3>今日からやること</h3>
+          <div class="info-box">
+            <ul>
+              <li>繰り返している業務を1つ選び、Skill 化の候補にする</li>
+              <li>案件で使う社内情報源を1つ Connector でつなぐ（権限・機密を確認）</li>
+              <li>Claude Code を Desktop で1回試す（作業用フォルダ＋小さなタスク）</li>
+              <li>チームで共通化すべきもの（Project / Skills / ルール）を1つ決める</li>
+            </ul>
+          </div>
+
+          <h3>全体のまとめ</h3>
+          <div class="visual-highlight-card">
+            <p>第1回で「個人の初速と成果物」、第2回で「品質・再現性・チーム展開」。Claude / Claude Code を “使ってみる” から “<strong>業務の型にする</strong>” へ。困ったら <strong>TIPS集</strong> と <strong>FAQ</strong> を見直しながら、自分のチームで効くものから取り入れていきましょう。</p>
           </div>
         `
       }
@@ -3359,13 +3632,13 @@ const MODULES = [
         hint: '「レビューして」だけでは漠然とした指摘しか返りません。チェック観点を具体的に定義し、各観点ごとに◎○△×の評価を出させると、実用的なレビュー結果が得られます。'
       },
       {
-        section: '2-3. Claude Code で高度な作業を任せる',
+        section: '2-3. Claude Code で高度な作業を任せる（基礎）',
         title: 'Claude Code への安全な修正指示を作成する',
         task: '以下のシナリオで、Claude Code に出す修正指示文を作成してください。\n\nシナリオ：チーム内で使っている月次レポートのHTMLテンプレートがある。今月から集計項目を2つ追加したい（「新規顧客数」「解約率」）。既存のレイアウトは壊したくない。\n\n1. 変更対象を明確にした指示文を書く\n2. 禁止事項（触ってほしくない部分）を明記する\n3. 確認条件（何をもって完了とするか）を定義する\n4. 段階的に進める手順（まずデータ項目追加 → 表示確認 → レイアウト調整）を書く',
         hint: '「月次レポートを改善して」ではなく「○○ファイルの△△セクションに□□を追加して。既存の◇◇は変更しないで」のように、範囲・禁止事項・完了条件を具体的に書くのがポイントです。'
       },
       {
-        section: '2-3. Claude Code で高度な作業を任せる',
+        section: '2-3. Claude Code で高度な作業を任せる（基礎）',
         title: 'Claude Code 用の安全な修正指示テンプレートを作る',
         task: '<strong>目的</strong>：チームで再利用できる「Claude Code への安全な修正指示テンプレート」を作成し、誰が使っても同じ品質で作業を依頼できる状態にする。<br><br>' +
           '<strong>想定シーン</strong>：自分が関わるプロジェクト（社内ツール、Webサイト、教材アプリなど）で、Claude Code に修正や追加機能の実装を依頼する場面。<br><br>' +
@@ -3379,19 +3652,19 @@ const MODULES = [
         hint: '最初から完璧を目指す必要はありません。直近で行った1件の依頼を「型」に当てはめて書き直してみると、自分の指示のどこが曖昧だったかが見えてきます。'
       },
       {
-        section: '2-4. CLAUDE.md / Hooks / Subagents で品質を固定する',
+        section: '2-5. CLAUDE.md / Hooks / Subagents で品質を固定する',
         title: 'チーム品質チェックリストを作成する',
         task: 'Claude が生成した成果物の品質をチェックするためのリストを作成してください。\n\n1. 成果物の種類（文書、表、スライド、ツール）ごとにチェック項目を5つ以上定義する\n2. 各チェック項目に「確認方法」を具体的に書く（例：「数値は元データと照合する」「リンクは全てクリックして確認する」）\n3. 「誰が、いつ、どのタイミングでチェックするか」の運用ルールを決める\n4. このチェックリストを CLAUDE.md に組み込む形で整理する',
         hint: 'チェック項目は「何を確認するか」だけでなく「どうやって確認するか」まで書くと実用的です。また、全項目を毎回チェックするのは非現実的なので、重要度に応じた優先順位をつけましょう。'
       },
       {
-        section: '2-5. チーム展開する',
+        section: '2-6. チーム展開する',
         title: 'Project / Skills / Connectors の運用ルールを作成する',
         task: 'チームで Claude を活用する際の運用ルールを設計してください。\n\n1. チーム共通 Project に登録すべき情報（案件概要、業界知識、文体ルール等）を洗い出す\n2. チームで共有すべき Skills を3つ選び、管理方法（誰が更新権限を持つか、更新頻度等）を決める\n3. Connectors で接続すべき情報源と、接続してはいけない情報源のガイドラインを作成する\n4. 新メンバーが入った際のオンボーディング手順を書く',
         hint: 'ルールは「厳しすぎて誰も守れない」よりも「最低限これだけは守る」で始めましょう。運用しながら改善する前提で、まず小さく始めてフィードバックを集めることが重要です。'
       },
       {
-        section: '2-5. チーム展開する',
+        section: '2-6. チーム展開する',
         title: '情報管理ルールを策定する',
         task: 'チームで Claude を使う際の情報管理ルールを策定してください。\n\n1. Claude に渡してよい情報・渡してはいけない情報の基準を定義する\n2. 成果物の保存先と共有範囲を決める\n3. レビュー体制（誰が確認し、誰が承認するか）を明文化する\n4. インシデント発生時の対応フロー（誤って機密情報を渡してしまった場合等）を想定する\n5. これらをチーム内で共有するための1枚サマリーを作成する',
         hint: '完璧なルールを最初から作る必要はありません。「これだけは絶対ダメ」（機密情報の直接入力等）と「推奨事項」（レビュー後に提出等）を分けて整理すると、チームが守りやすいルールになります。'
@@ -3470,7 +3743,7 @@ const TIPS = [
     example: 'まず実装はせず、現在の構造を確認してください。変更対象ファイル、影響範囲、実装方針、確認方法を整理してから報告してください。',
     caution: '全体を把握しないまま変更すると、意図しないファイルに影響が及ぶことがある。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+    relatedSections: [{ m: 1, s: 3, label: '第2回 2-3. Claude Code で高度な作業を任せる（基礎）' }]
   },
   {
     id: 'tip-002',
@@ -3487,7 +3760,7 @@ const TIPS = [
     example: '今回は js/modules.js の MODULES[1] のみを対象にしてください。第2回のみ対象で、第1回・表示ロジック・CSS には触らないでください。',
     caution: '範囲を絞るほど安全だが、依存ファイルがある場合は報告ルールも併記する。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+    relatedSections: [{ m: 1, s: 3, label: '第2回 2-3. Claude Code で高度な作業を任せる（基礎）' }]
   },
   {
     id: 'tip-003',
@@ -3504,7 +3777,7 @@ const TIPS = [
     example: '実装後、変更ファイル、変更内容、確認した画面、コンソールエラーの有無、残課題を報告してください。',
     caution: '確認条件を先に指定しないと、「動いた／動いてない」だけの曖昧な報告になりがち。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+    relatedSections: [{ m: 1, s: 3, label: '第2回 2-3. Claude Code で高度な作業を任せる（基礎）' }]
   },
 
   // ---- Claude Code ----
@@ -3524,7 +3797,7 @@ const TIPS = [
     ],
     caution: 'IDE 上で開いていても、対象範囲は明示する。「見えている＝編集してよい」ではない。Cursor は全員必須ではなく、IDE を使わなくても Claude Code は CLI で使える。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+    relatedSections: [{ m: 1, s: 4, label: '第2回 2-4. Claude Code を使いこなす（実践TIPS・小ワザ）' }]
   },
   {
     id: 'tip-005',
@@ -3541,7 +3814,7 @@ const TIPS = [
     example: 'まず実装計画を出してください。問題なければ、小さな単位で実装し、最後に確認結果を報告してください。',
     caution: '一気に大改修を頼むと、意図しない変更や手戻りが増える。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+    relatedSections: [{ m: 1, s: 3, label: '第2回 2-3. Claude Code で高度な作業を任せる（基礎）' }]
   },
   {
     id: 'tip-006',
@@ -3558,7 +3831,7 @@ const TIPS = [
     ],
     caution: '無理に続けるより、フォルダ・目的・成果物・禁止事項・変更対象の準備5点に戻るほうが早い。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+    relatedSections: [{ m: 1, s: 4, label: '第2回 2-4. Claude Code を使いこなす（実践TIPS・小ワザ）' }]
   },
 
   // ---- Cowork ----
@@ -3695,7 +3968,7 @@ const TIPS = [
     relatedSession: '第1回 / 第2回',
     relatedSections: [
       { m: 0, s: 9, label: '第1回 1-10. Research で調査する' },
-      { m: 1, s: 4, label: '第2回 2-5. チーム展開する' }
+      { m: 1, s: 6, label: '第2回 2-6. チーム展開する' }
     ]
   },
 
@@ -3715,7 +3988,7 @@ const TIPS = [
     example: '候補例：議事録作成、提案書レビュー、調査レポート、PPT 構成生成、Excel 分析、UI レビュー、プロトタイプ手順。',
     caution: '一度しか使わない作業は、無理に Skill 化しなくてよい。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 0, label: '第2回 2-1. Skills で手順を標準化する' }]
+    relatedSections: [{ m: 1, s: 1, label: '第2回 2-1. Skills で手順を標準化する' }]
   },
   {
     id: 'tip-016',
@@ -3731,7 +4004,7 @@ const TIPS = [
     ],
     caution: '作った後の検証と改善がないと、形だけの Skill になる。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 0, label: '第2回 2-1. Skills で手順を標準化する' }]
+    relatedSections: [{ m: 1, s: 1, label: '第2回 2-1. Skills で手順を標準化する' }]
   },
   {
     id: 'tip-017',
@@ -3748,7 +4021,7 @@ const TIPS = [
     ],
     caution: '古いルールが残ると逆効果。定期的に見直し、使われていない規約は外す。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 3, label: '第2回 2-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
+    relatedSections: [{ m: 1, s: 5, label: '第2回 2-5. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
   },
 
   // ---- チーム展開 ----
@@ -3766,7 +4039,7 @@ const TIPS = [
     ],
     caution: 'テンプレートは使いっぱなしにせず、運用しながら改善する。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 4, label: '第2回 2-5. チーム展開する' }]
+    relatedSections: [{ m: 1, s: 6, label: '第2回 2-6. チーム展開する' }]
   },
   {
     id: 'tip-019',
@@ -3783,7 +4056,7 @@ const TIPS = [
     ],
     caution: '運用ルールが複雑すぎると使われない。最初はシンプルにする。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 4, label: '第2回 2-5. チーム展開する' }]
+    relatedSections: [{ m: 1, s: 6, label: '第2回 2-6. チーム展開する' }]
   },
   {
     id: 'tip-020',
@@ -3799,7 +4072,7 @@ const TIPS = [
     ],
     caution: '「Claude がやったから OK」は通らない。最終チェックは必ず人が行う。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 4, label: '第2回 2-5. チーム展開する' }]
+    relatedSections: [{ m: 1, s: 6, label: '第2回 2-6. チーム展開する' }]
   },
 
   // ---- 上級・補助 ----
@@ -3817,7 +4090,7 @@ const TIPS = [
     ],
     caution: '便利さだけで選ばない。誤操作の影響範囲を先に想定する。',
     relatedSession: '第2回（補助資料）',
-    relatedSections: [{ m: 1, s: 3, label: '第2回 2-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
+    relatedSections: [{ m: 1, s: 5, label: '第2回 2-5. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
   },
   {
     id: 'tip-022',
@@ -3833,7 +4106,7 @@ const TIPS = [
     ],
     caution: 'ファイル構造や役割を理解しないまま触ると、想定外の挙動につながる。',
     relatedSession: '第2回（補助資料）',
-    relatedSections: [{ m: 1, s: 3, label: '第2回 2-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
+    relatedSections: [{ m: 1, s: 5, label: '第2回 2-5. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
   },
   {
     id: 'tip-023',
@@ -3849,7 +4122,7 @@ const TIPS = [
     ],
     caution: '研修本編の必須事項ではなく、必要な人が使う発展 TIPS として扱う。',
     relatedSession: '第2回（補助資料）',
-    relatedSections: [{ m: 1, s: 3, label: '第2回 2-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
+    relatedSections: [{ m: 1, s: 5, label: '第2回 2-5. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
   },
 
   // ---- 知っておくと効く小ワザ系（追加） ----
@@ -3867,7 +4140,7 @@ const TIPS = [
     ],
     caution: '複数遡りたい場合は ↑ キー（tip-025）で履歴をたどる。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+    relatedSections: [{ m: 1, s: 4, label: '第2回 2-4. Claude Code を使いこなす（実践TIPS・小ワザ）' }]
   },
   {
     id: 'tip-025',
@@ -3883,7 +4156,7 @@ const TIPS = [
     ],
     caution: 'ターミナル経験者には馴染みのある操作。慣れると指示の再利用が高速化する。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+    relatedSections: [{ m: 1, s: 4, label: '第2回 2-4. Claude Code を使いこなす（実践TIPS・小ワザ）' }]
   },
   {
     id: 'tip-026',
@@ -3900,7 +4173,7 @@ const TIPS = [
     example: '「~/Documents/契約書.pdf をレビューしてください。」',
     caution: '機密情報を含むファイルは特に慎重に。作業コピーを使う原則は同じ。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+    relatedSections: [{ m: 1, s: 4, label: '第2回 2-4. Claude Code を使いこなす（実践TIPS・小ワザ）' }]
   },
   {
     id: 'tip-027',
@@ -3916,7 +4189,7 @@ const TIPS = [
     ],
     caution: '共有前に必ず人が目視確認。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+    relatedSections: [{ m: 1, s: 4, label: '第2回 2-4. Claude Code を使いこなす（実践TIPS・小ワザ）' }]
   },
   {
     id: 'tip-028',
@@ -3933,7 +4206,7 @@ const TIPS = [
     ],
     caution: '中身を不用意に編集しない（tip-022 参照）。読むだけのつもりが事故につながる。',
     relatedSession: '第2回（補助資料）',
-    relatedSections: [{ m: 1, s: 3, label: '第2回 2-4. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
+    relatedSections: [{ m: 1, s: 5, label: '第2回 2-5. CLAUDE.md / Hooks / Subagents で品質を固定する' }]
   },
   {
     id: 'tip-029',
@@ -3949,7 +4222,7 @@ const TIPS = [
     ],
     caution: '全タスクで最高設定にすると時間とコストが増える。タスクの重さに応じて選ぶ。',
     relatedSession: '第2回',
-    relatedSections: [{ m: 1, s: 2, label: '第2回 2-3. Claude Code で高度な作業を任せる' }]
+    relatedSections: [{ m: 1, s: 4, label: '第2回 2-4. Claude Code を使いこなす（実践TIPS・小ワザ）' }]
   }
 ];
 
