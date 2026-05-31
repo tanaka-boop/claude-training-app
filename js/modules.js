@@ -1917,22 +1917,36 @@ const MODULES = [
             <div class="visual-grid-item">
               <div class="grid-icon">🚀</div>
               <div class="grid-title">前半：仕事の初速を上げる</div>
-              <div class="grid-desc">Claude の強みは <strong>長文に強い・指示に忠実・考えるパートナー</strong>。すべての基盤は Chat。迷ったらまず Chat から。良い指示は <strong>前提の共有・タスク・ルール</strong> の3要素。出力は「優秀な同僚の初稿」として、確認・修正・最終責任は自分が持つ。<strong>Project</strong> で案件の前提を保持し、<strong>Artifact</strong> で会話から独立した成果物（文書・図表・プロトタイプ）にする。</div>
+              <div class="grid-desc">
+                <ul>
+                  <li><strong>基盤は Chat</strong> — まず Chat。壁打ち・下書き・要約から。</li>
+                  <li><strong>プロンプト3要素</strong> — 前提・タスク・ルールで出力の質が決まる。</li>
+                  <li><strong>出力は“初稿”</strong> — そのまま使わず確認・修正。最終責任は自分。</li>
+                  <li><strong>Project / Artifact</strong> — 前提を保持し、成果物として残す。</li>
+                </ul>
+              </div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🏗️</div>
               <div class="grid-title">後半：成果物を作る</div>
-              <div class="grid-desc">成果物の種類に応じて <strong>Office アドイン／Research／Artifact／Cowork</strong> を使い分ける。<strong>Cowork</strong> は「作業フォルダごと渡して直接読み書き」が核心。<strong>Chrome 拡張</strong>でブラウザ作業、<strong>Scheduled tasks</strong> で定型業務を支援・自動化。</div>
+              <div class="grid-desc">
+                <ul>
+                  <li><strong>使い分け</strong> — Office／Research／Artifact／Cowork を成果物に応じて選ぶ。</li>
+                  <li><strong>Cowork</strong> — フォルダごと渡してファイル作業を委任する。</li>
+                  <li><strong>Chrome / Scheduled tasks</strong> — ブラウザ作業を支援、定型業務を自動化。</li>
+                  <li><strong>Skill</strong> — よく使う手順を型にして再利用（Chat・Cowork でも）。</li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <h3>今日からやること</h3>
+          <h3>今日からやること（まず1つでOK）</h3>
           <div class="info-box">
             <ul>
-              <li>設定の「Claudeへの指示」に自分の前提（役職・業界・トーン）を登録する</li>
-              <li>担当案件で Project を1つ作り、Instructions を書く</li>
-              <li>よく作る成果物を1つ、Artifact か Cowork で作ってみる</li>
-              <li>Office アドイン（PowerPoint など）を入れて1回使ってみる</li>
+              <li><strong>「Claudeへの指示」に前提を登録</strong> — 役職・業界・トーンを1回だけ。</li>
+              <li><strong>担当案件で Project を1つ作る</strong> — Instructions に概要を書く。</li>
+              <li><strong>成果物を1つ作る</strong> — Artifact か Cowork で。</li>
+              <li><strong>Office アドインを1回使う</strong> — PowerPoint などを入れて試す。</li>
             </ul>
           </div>
 
@@ -3473,37 +3487,65 @@ const MODULES = [
             <div class="visual-grid-item">
               <div class="grid-icon">🧩</div>
               <div class="grid-title">Skills</div>
-              <div class="grid-desc">繰り返し × 手順が明確 × 品質基準あり の業務を型化し、チームで再利用。作って終わりにせず「発動・品質・効率」で検証する。</div>
+              <div class="grid-desc">
+                <ul>
+                  <li><strong>型化して再利用</strong> — よく使う手順を型にし、チームで共有。</li>
+                  <li><strong>型化の条件</strong> — 繰り返し × 手順が明確 × 品質基準あり。</li>
+                  <li><strong>作って終わりにしない</strong> — 「発動・品質・効率」で検証して育てる。</li>
+                </ul>
+              </div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">🔗</div>
               <div class="grid-title">MCP / Connectors</div>
-              <div class="grid-desc">社内ナレッジを接続して出力品質を上げる。「必要な情報を・適切な粒度で・鮮度を意識して」。機密・権限外の情報は不用意に接続しない。</div>
+              <div class="grid-desc">
+                <ul>
+                  <li><strong>社内ナレッジを接続</strong> — 渡す情報の質で出力品質が上がる。</li>
+                  <li><strong>接続の原則</strong> — 必要な情報を・適切な粒度で・鮮度を意識して。</li>
+                  <li><strong>接続の注意</strong> — 機密・権限外の情報は不用意につながない。</li>
+                </ul>
+              </div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">⚡</div>
               <div class="grid-title">Claude Code</div>
-              <div class="grid-desc">複数ファイル・データ処理・ツール作成を任せる。準備（フォルダ／目的／禁止事項／対象範囲／完了条件）と「計画 → 実装 → 確認」で安全に進める。</div>
+              <div class="grid-desc">
+                <ul>
+                  <li><strong>高度な作業を任せる</strong> — 複数ファイル・データ処理・ツール作成。</li>
+                  <li><strong>安全に進める</strong> — 準備（フォルダ／目的／禁止／範囲／完了条件）→ 計画 → 実装 → 確認。</li>
+                  <li><strong>使い分け</strong> — Desktop / CLI / IDE。まずは Desktop から。</li>
+                </ul>
+              </div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">📋</div>
               <div class="grid-title">CLAUDE.md / Hooks / Subagents</div>
-              <div class="grid-desc">作業ルール・自動チェック・役割分担で品質を固定。個人の便利技をチームの再現可能な型にする。</div>
+              <div class="grid-desc">
+                <ul>
+                  <li><strong>CLAUDE.md</strong> — プロジェクトの作業ルール。Claude Code が自動参照。</li>
+                  <li><strong>Hooks / Subagents</strong> — 自動チェックと役割分担で品質を固定。</li>
+                </ul>
+              </div>
             </div>
             <div class="visual-grid-item">
               <div class="grid-icon">👥</div>
               <div class="grid-title">チーム展開</div>
-              <div class="grid-desc">効果が見えやすくリスクの低い業務から、共通化（Project / Skills / CLAUDE.md）・情報管理ルール・レビュー体制・成功事例の蓄積を回す。</div>
+              <div class="grid-desc">
+                <ul>
+                  <li><strong>小さく始める</strong> — 効果が見えやすくリスクの低い業務から。</li>
+                  <li><strong>共通化と運用</strong> — Project / Skills / CLAUDE.md を型にし、情報管理・レビュー・成功事例を回す。</li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <h3>今日からやること</h3>
+          <h3>今日からやること（まず1つでOK）</h3>
           <div class="info-box">
             <ul>
-              <li>繰り返している業務を1つ選び、Skill 化の候補にする</li>
-              <li>案件で使う社内情報源を1つ Connector でつなぐ（権限・機密を確認）</li>
-              <li>Claude Code を Desktop で1回試す（作業用フォルダ＋小さなタスク）</li>
-              <li>チームで共通化すべきもの（Project / Skills / ルール）を1つ決める</li>
+              <li><strong>Skill 化の候補を1つ選ぶ</strong> — 繰り返している業務から。</li>
+              <li><strong>社内情報源を1つ Connector でつなぐ</strong> — 権限・機密を確認。</li>
+              <li><strong>Claude Code を Desktop で1回試す</strong> — 作業用フォルダ＋小さなタスク。</li>
+              <li><strong>チームで共通化するものを1つ決める</strong> — Project / Skills / ルール。</li>
             </ul>
           </div>
 
