@@ -2777,7 +2777,7 @@ body.present-mode #page-container:has(.slide-cover) {
 /* --- 研修モード サイドバー --- */
 .present-sidebar {
   position: fixed;
-  right: 12px;
+  left: 12px;
   top: calc(var(--header-height) + 8px);
   width: 240px;
   max-height: calc(100vh - var(--header-height) - 80px);
@@ -4048,13 +4048,14 @@ body.landing-mode #global-footer {
    ======================================== */
 .learn-layout {
   display: grid;
-  grid-template-columns: 1fr 240px;
+  grid-template-columns: 240px 1fr;
   gap: 32px;
   align-items: start;
 }
 
 .learn-toc {
   position: sticky;
+  order: -1;
   top: calc(var(--header-height) + 16px);
   background: var(--surface);
   border: 1px solid var(--border);
@@ -4175,6 +4176,7 @@ body.landing-mode #global-footer {
   .learn-toc {
     position: static;
     max-height: none;
+    order: 0;
   }
 }
 
