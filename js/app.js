@@ -20,6 +20,20 @@
   let currentSection = null;
   let presentSectionIndex = 0;
 
+  // ページ遷移時に最上部へ戻す。
+  // html に scroll-behavior: smooth が指定されているため、コンテンツ差し替え直後の
+  // window.scrollTo はスムーズ動作が中断され Safari / Mac で効かないことがある。
+  // 一時的に scroll-behavior: auto にして瞬間スクロールし、確実に最上部へ戻す。
+  function scrollToTop() {
+    const html = document.documentElement;
+    const prev = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
+    window.scrollTo({ top: 0, left: 0 });
+    html.scrollTop = 0;
+    document.body.scrollTop = 0;
+    html.style.scrollBehavior = prev;
+  }
+
   // --- 進捗管理 ---
   function loadProgress() {
     try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
@@ -175,7 +189,7 @@
         default: renderHome(container); break;
       }
     }
-    window.scrollTo(0, 0);
+    scrollToTop();
   }
 
   // ========================================
@@ -487,7 +501,7 @@
       el.addEventListener('click', (e) => {
         e.preventDefault();
         renderTopicDetail(container, parseInt(el.dataset.mi), parseInt(el.dataset.si));
-        window.scrollTo(0, 0);
+        scrollToTop();
       });
     });
     // 関連TIPSリンク → TIPS集へ遷移し、対象TIPSにフォーカス
@@ -502,7 +516,7 @@
       el.addEventListener('click', (e) => {
         e.preventDefault();
         renderTopicDetail(container, parseInt(el.dataset.tocMi), parseInt(el.dataset.tocSi));
-        window.scrollTo(0, 0);
+        scrollToTop();
       });
     });
     // タブ切り替え
@@ -824,7 +838,7 @@
 
   // --- モジュール（タブ型、後方互換） ---
   function renderModule(container, moduleIndex) {
-    window.scrollTo(0, 0);
+    scrollToTop();
     const mod = MODULES[moduleIndex];
     const progress = getModuleProgress(moduleIndex);
     const res = mod.selfStudyResources || {};
@@ -1016,7 +1030,7 @@
   }
 
   function renderPresentModule(container, moduleIndex) {
-    window.scrollTo(0, 0);
+    scrollToTop();
     const mod = MODULES[moduleIndex];
     const totalSlides = mod.sections.length + 1;
     const slideIdx = Math.min(presentSectionIndex, totalSlides - 1);
