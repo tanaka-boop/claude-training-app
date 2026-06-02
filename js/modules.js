@@ -1947,7 +1947,7 @@ const MODULES = [
 
           <h3>次回（第2回）へ</h3>
           <div class="visual-highlight-card">
-            <p>第1回は「個人で速く・成果物を作る」。第2回は <strong>Skills・MCP・Claude Code・CLAUDE.md</strong> で「<strong>品質と再現性を上げ、チームに広げる</strong>」段階に進みます。</p>
+            <p>第1回は「個人で速く・成果物を作る」。第2回は <strong>Claude Code</strong> で「<strong>一段上の成果物を自分で作る</strong>」段階に進みます。</p>
           </div>
         `
       }
