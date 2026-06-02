@@ -3465,6 +3465,9 @@ body.landing-mode #global-footer {
   cursor: pointer;
   transition: all 0.25s ease;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .landing-card:hover {
@@ -3516,6 +3519,7 @@ body.landing-mode #global-footer {
   color: white;
   background: var(--primary);
   transition: background 0.2s;
+  margin-top: auto;
 }
 
 .landing-card:hover .landing-btn {
